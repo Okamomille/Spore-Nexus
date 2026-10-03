@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" factoryName="Application" name="Minecraft Data (:neoforge)" type="Application">
+    <option name="MAIN_CLASS_NAME" value="dev.architectury.transformer.TransformerRuntime"/>
+    <module name="sporenexus.neoforge.main"/>
+    <option name="PROGRAM_PARAMETERS" value="--mod sporenexus --client --output &quot;D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\src\main\resources&quot; --existing &quot;D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\src\main\resources&quot;"/>
+    <option name="VM_PARAMETERS" value="&quot;-Darchitectury.main.class=D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\.gradle\architectury\.main_class&quot; &quot;-Darchitectury.runtime.transformer=D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\.gradle\architectury\.transforms&quot; &quot;-Darchitectury.properties=D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\.gradle\architectury\.properties&quot; -Djdk.attach.allowAttachSelf=true &quot;-javaagent:D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\.gradle\architectury\architectury-transformer-agent.jar&quot; -Dfabric.dli.config=D:\MINECRAFT@@0020MODDING\spore_nexus-26.2-multiloader\.gradle\loom-cache\projects\neoforge\launch.cfg -Dfabric.dli.env=data"/>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/neoforge\run/"/>
+    <method v="2">
+      <option enabled="true" name="Make"/>
+    </method>
+    <envs>
+
+    </envs>
+    <shortenClasspath name="ARGS_FILE"/>
+  <classpathModifications/></configuration>
+</component>

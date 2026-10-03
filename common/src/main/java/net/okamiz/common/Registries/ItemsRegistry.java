@@ -1,0 +1,41 @@
+package net.okamiz.common.Registries;
+
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
+import net.okamiz.SporeNexus;
+
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+public class ItemsRegistry {
+
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(SporeNexus.MOD_ID, Registries.ITEM);
+
+    public static final RegistrySupplier<Item> FUNGALSTEEL_INGOT = registerItem("fungalsteel_ingot", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+
+
+
+
+
+
+    public static Identifier id(String name) {
+        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, name);
+    }
+
+    public static <T extends Item> RegistrySupplier<T> registerItem(
+            String name,
+            Function<Item.Properties, T> factory,
+            Supplier<Item.Properties> properties) {
+
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id(name));
+
+        return ITEMS.register(name,
+                () -> factory.apply(properties.get().setId(itemKey)));
+    }
+}

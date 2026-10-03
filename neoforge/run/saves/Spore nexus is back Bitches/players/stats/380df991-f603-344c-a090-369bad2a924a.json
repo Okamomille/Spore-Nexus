@@ -1,0 +1,29 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 2526,
+      "minecraft:time_since_rest": 2073,
+      "minecraft:walk_one_cm": 3987,
+      "minecraft:total_world_time": 2269,
+      "minecraft:leave_game": 5,
+      "minecraft:fly_one_cm": 5935,
+      "minecraft:crouch_one_cm": 185,
+      "minecraft:sneak_time": 78,
+      "minecraft:play_time": 2073,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 2073,
+      "minecraft:drop": 3
+    },
+    "minecraft:picked_up": {
+      "sporenexus:fungalsteel_ingot": 3
+    },
+    "minecraft:dropped": {
+      "sporenexus:fungalsteel_ingot": 3
+    },
+    "minecraft:used": {
+      "minecraft:iron_block": 1,
+      "sporenexus:fungalsteel_block": 17
+    }
+  },
+  "DataVersion": 4903
+}
