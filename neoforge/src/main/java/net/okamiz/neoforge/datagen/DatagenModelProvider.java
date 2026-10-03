@@ -58,7 +58,7 @@ public class DatagenModelProvider extends ModelProvider {
 
 
         /* MUSHROOMS */
-        registerMushroom(blockModels, BlocksRegistry.COAL_RESOURCE_MUSRHOOM.get(), "coal");
+        registerMushroom(blockModels, BlocksRegistry.COAL_RESOURCE_MUSHROOM.get(), "coal");
     }
 
 
