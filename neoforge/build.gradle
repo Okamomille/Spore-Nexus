@@ -10,6 +10,8 @@ architectury {
 //This is for datagen -> Datagen is generated with neoforge and files are sent to common,
 // so it works on fabric without having to generate them there.
 loom {
+    accessWidenerPath = project(':common').loom.accessWidenerPath
+
     runs {
         data {
             clientData()
@@ -54,12 +56,6 @@ dependencies {
 
     common(project(path: ':common')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
-}
-
-sourceSets {
-    main {
-        resources.srcDir project(':common').file('src/main/generated/resources').absolutePath
-    }
 }
 
 processResources {

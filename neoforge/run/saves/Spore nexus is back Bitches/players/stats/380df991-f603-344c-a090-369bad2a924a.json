@@ -1,28 +1,34 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:sprint_one_cm": 2526,
-      "minecraft:time_since_rest": 2073,
-      "minecraft:walk_one_cm": 3987,
-      "minecraft:total_world_time": 2269,
-      "minecraft:leave_game": 5,
-      "minecraft:fly_one_cm": 5935,
-      "minecraft:crouch_one_cm": 185,
-      "minecraft:sneak_time": 78,
-      "minecraft:play_time": 2073,
-      "minecraft:jump": 7,
-      "minecraft:time_since_death": 2073,
-      "minecraft:drop": 3
-    },
-    "minecraft:picked_up": {
-      "sporenexus:fungalsteel_ingot": 3
-    },
-    "minecraft:dropped": {
-      "sporenexus:fungalsteel_ingot": 3
-    },
     "minecraft:used": {
       "minecraft:iron_block": 1,
-      "sporenexus:fungalsteel_block": 17
+      "sporenexus:fungalsteel_block": 22
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 2870,
+      "minecraft:time_since_rest": 3642,
+      "minecraft:walk_one_cm": 9161,
+      "minecraft:total_world_time": 3961,
+      "minecraft:leave_game": 12,
+      "minecraft:fly_one_cm": 9764,
+      "minecraft:crouch_one_cm": 344,
+      "minecraft:sneak_time": 99,
+      "minecraft:play_time": 3642,
+      "minecraft:jump": 17,
+      "minecraft:time_since_death": 3642,
+      "minecraft:drop": 14
+    },
+    "minecraft:picked_up": {
+      "sporenexus:fungal_essence": 3,
+      "sporenexus:ethereal_essence": 3,
+      "sporenexus:fungalsteel_ingot": 5,
+      "sporenexus:infernal_essence": 3
+    },
+    "minecraft:dropped": {
+      "sporenexus:fungalsteel_ingot": 5,
+      "sporenexus:infernal_essence": 3,
+      "sporenexus:ethereal_essence": 3,
+      "sporenexus:fungal_essence": 3
     }
   },
   "DataVersion": 4903

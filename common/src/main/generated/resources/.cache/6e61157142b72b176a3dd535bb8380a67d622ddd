@@ -1,6 +1,12 @@
-// 26.2	2026-10-03T14:12:09.0347429	Model Definitions - sporenexus
+// 26.2	2026-10-03T15:26:30.6921344	Model Definitions - sporenexus
 0cf44414630c86301ee257babfdbba73ccedd385 assets/sporenexus/blockstates/fungalsteel_block.json
+20f09b29b6f56f7c56ef525f92b4fea2b734c8f3 assets/sporenexus/items/ethereal_essence.json
 46100bd5efa374b015309a54470b43a60fd6125f assets/sporenexus/items/fungalsteel_block.json
 76657ec198404d4fc583037e40dfdf777cd18f13 assets/sporenexus/items/fungalsteel_ingot.json
+2610de831e4694bbff36d383dfbaa3810b8a53e4 assets/sporenexus/items/fungal_essence.json
+8fd24b83bf2df76ee79d26622b8aff6db26b0932 assets/sporenexus/items/infernal_essence.json
 52ebc1dd37e526c615f1d6b7b92bcb83abca29cb assets/sporenexus/models/block/fungalsteel_block.json
+9ac40d5b7dcfeca620779d02f53b713fa1d165da assets/sporenexus/models/item/ethereal_essence.json
 b239f5c1951e441875a9aece4f8b505c6fb777db assets/sporenexus/models/item/fungalsteel_ingot.json
+15427e2f5da5dd3c666008ab07e30c43f00221db assets/sporenexus/models/item/fungal_essence.json
+b95e097aeeda8e2f22829c9aea6ebc7874f92532 assets/sporenexus/models/item/infernal_essence.json
