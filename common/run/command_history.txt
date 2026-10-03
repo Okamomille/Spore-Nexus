@@ -1,0 +1,3 @@
+/time set 5000
+/fill -1 67 36
+/fill -1 67 36 ~ ~ ~ minecraft:cyan_terracotta

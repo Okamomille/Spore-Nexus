@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/sporenexus.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/sporenexus.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/sporenexus.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/sporenexus.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/sporenexus.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/sporenexus.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/sporenexus.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/sporenexus.fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/sporenexus.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/sporenexus.fabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/sporenexus.neoforge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/sporenexus.neoforge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/sporenexus.neoforge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/sporenexus.neoforge.test.iml" />
+    </modules>
+  </component>
+</project>
