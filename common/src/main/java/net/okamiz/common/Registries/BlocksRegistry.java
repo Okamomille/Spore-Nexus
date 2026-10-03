@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -25,6 +26,9 @@ public class BlocksRegistry {
     public static final RegistrySupplier<Block> FUNGALSTEEL_BLOCK = registerBlock("fungalsteel_block", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB );
 
+
+    public static final RegistrySupplier<Block> COAL_RESOURCE_MUSRHOOM = registerBlock("coal_resource_mushroom", ResourceMushroomBlock::new,
+            () -> BlockBehaviour.Properties.of().sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB );
 
 
 

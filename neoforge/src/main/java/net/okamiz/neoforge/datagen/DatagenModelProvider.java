@@ -3,11 +3,22 @@ package net.okamiz.neoforge.datagen;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.Block;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 import net.okamiz.common.Registries.BlocksRegistry;
 import net.okamiz.common.Registries.ItemsRegistry;
+
+import java.util.Optional;
 
 public class DatagenModelProvider extends ModelProvider {
     public DatagenModelProvider(PackOutput output) {
@@ -44,5 +55,46 @@ public class DatagenModelProvider extends ModelProvider {
 
         /* BLOCKS */
         blockModels.createTrivialCube(BlocksRegistry.FUNGALSTEEL_BLOCK.get());
+
+
+        /* MUSHROOMS */
+        registerMushroom(blockModels, BlocksRegistry.COAL_RESOURCE_MUSRHOOM.get(), "coal");
+    }
+
+
+    private static final TextureSlot STEM = TextureSlot.create("stem");
+    private static final TextureSlot CAP = TextureSlot.create("cap");
+
+    private static Identifier id(String path) {
+        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, path);
+    }
+
+    private static Material tex(String path) {
+        return new Material(id(path));
+    }
+
+    private void registerMushroom(BlockModelGenerators blockModels, Block block, String ore) {
+        var states = PropertyDispatch.initial(ResourceMushroomBlock.AGE);
+        Identifier lastModel = null;
+
+        for (int age = 0; age < 3; age++) {
+
+            ModelTemplate template = new ModelTemplate(
+                    Optional.of(id("block/template/mushroom_stage_" + age)),
+                    Optional.of("_stage_" + age),
+                    STEM, CAP, TextureSlot.PARTICLE);
+
+
+            TextureMapping mapping = new TextureMapping()
+                    .put(STEM, tex("block/mushroom/stem"))
+                    .put(CAP, tex("block/mushroom/" + ore + "_cap"))
+                    .put(TextureSlot.PARTICLE, tex("block/mushroom/stem"));
+
+            lastModel = template.create(block, mapping, blockModels.modelOutput);
+            states.select(age, BlockModelGenerators.plainVariant(lastModel));
+        }
+
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(states));
+        blockModels.registerSimpleItemModel(block, lastModel);
     }
 }

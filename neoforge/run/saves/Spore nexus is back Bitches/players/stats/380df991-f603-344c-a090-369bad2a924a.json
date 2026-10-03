@@ -1,40 +1,43 @@
 {
   "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 17194,
+      "minecraft:walk_one_cm": 22215,
+      "minecraft:leave_game": 15,
+      "minecraft:play_time": 17194,
+      "minecraft:jump": 53,
+      "minecraft:time_since_death": 17194,
+      "minecraft:drop": 14,
+      "minecraft:open_enderchest": 1,
+      "minecraft:sprint_one_cm": 6508,
+      "minecraft:total_world_time": 18769,
+      "minecraft:fly_one_cm": 30711,
+      "minecraft:crouch_one_cm": 661,
+      "minecraft:sneak_time": 256
+    },
+    "minecraft:used": {
+      "minecraft:bone_meal": 25,
+      "minecraft:ender_chest": 1,
+      "minecraft:item_frame": 51,
+      "minecraft:quartz_pillar": 1,
+      "sporenexus:coal_resource_mushroom": 13,
+      "minecraft:stripped_dark_oak_log": 15,
+      "minecraft:iron_block": 1,
+      "minecraft:gray_concrete": 24,
+      "minecraft:dirt": 3,
+      "sporenexus:fungalsteel_block": 22
+    },
     "minecraft:picked_up": {
       "sporenexus:fungal_essence": 3,
       "sporenexus:infernal_essence": 3,
       "sporenexus:ethereal_essence": 3,
       "sporenexus:fungalsteel_ingot": 5
     },
-    "minecraft:used": {
-      "minecraft:ender_chest": 1,
-      "minecraft:item_frame": 51,
-      "minecraft:quartz_pillar": 1,
-      "minecraft:stripped_dark_oak_log": 15,
-      "minecraft:iron_block": 1,
-      "minecraft:gray_concrete": 24,
-      "sporenexus:fungalsteel_block": 22
-    },
     "minecraft:dropped": {
       "sporenexus:fungalsteel_ingot": 5,
       "sporenexus:ethereal_essence": 3,
       "sporenexus:fungal_essence": 3,
       "sporenexus:infernal_essence": 3
-    },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 13268,
-      "minecraft:walk_one_cm": 20697,
-      "minecraft:leave_game": 13,
-      "minecraft:play_time": 13268,
-      "minecraft:jump": 22,
-      "minecraft:time_since_death": 13268,
-      "minecraft:drop": 14,
-      "minecraft:open_enderchest": 1,
-      "minecraft:sprint_one_cm": 5887,
-      "minecraft:total_world_time": 14636,
-      "minecraft:fly_one_cm": 22112,
-      "minecraft:crouch_one_cm": 525,
-      "minecraft:sneak_time": 161
     }
   },
   "DataVersion": 4903
