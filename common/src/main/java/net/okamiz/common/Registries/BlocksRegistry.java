@@ -27,8 +27,9 @@ public class BlocksRegistry {
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB );
 
 
-    public static final RegistrySupplier<Block> COAL_RESOURCE_MUSRHOOM = registerBlock("coal_resource_mushroom", ResourceMushroomBlock::new,
-            () -> BlockBehaviour.Properties.of().sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB );
+    public static final RegistrySupplier<Block> COAL_RESOURCE_MUSHROOM = registerBlock("coal_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.COAL_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.of().sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
 
 
 
