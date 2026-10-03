@@ -7,7 +7,7 @@ license = "Insert License Here"
 modId = "sporenexus"
 version = "${version}"
 displayName = "Spore Nexus"
-authors = "Me!"
+authors = "Okamiz"
 description = '''
 This is an example description! Tell everyone what your mod is about!
 '''

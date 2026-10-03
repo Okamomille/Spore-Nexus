@@ -7,6 +7,21 @@ architectury {
     neoForge()
 }
 
+//This is for datagen -> Datagen is generated with neoforge and files are sent to common,
+// so it works on fabric without having to generate them there.
+loom {
+    runs {
+        data {
+            clientData()
+
+            programArguments.addAll '--mod', "sporenexus",
+                '--all',
+                '--output', project(':common').file('src/main/generated/resources/').getAbsolutePath(),
+               '--existing', project(':common').file('src/main/resources/').getAbsolutePath()
+        }
+    }
+}
+
 configurations {
     common {
         canBeResolved = true
@@ -39,6 +54,12 @@ dependencies {
 
     common(project(path: ':common')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
+}
+
+sourceSets {
+    main {
+        resources.srcDir project(':common').file('src/main/generated/resources').absolutePath
+    }
 }
 
 processResources {
