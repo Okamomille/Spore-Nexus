@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "sporenexus",
+  "version": "${version}",
+  "name": "Spore Nexus",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/sporenexus/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.okamiz.fabric.SporeNexusFabric"
+    ],
+    "client": [
+      "net.okamiz.fabric.client.SporeNexusFabricClient"
+    ]
+  },
+  "mixins": [
+    "sporenexus.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "architectury": ">=21.0.7",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
