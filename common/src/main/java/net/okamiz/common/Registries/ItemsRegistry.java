@@ -29,6 +29,31 @@ public class ItemsRegistry {
     public static final RegistrySupplier<Item> ETHEREAL_ESSENCE = registerItem("ethereal_essence", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
+    /* FRAGMENTS */
+
+    /* ORES */
+    public static final RegistrySupplier<Item> COAL_FRAGMENTS = registerItem("coal_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> COPPER_FRAGMENTS = registerItem("copper_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> DIAMOND_FRAGMENTS = registerItem("diamond_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> EMERALD_FRAGMENTS = registerItem("emerald_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> FUNGALSTEEL_FRAGMENTS = registerItem("fungalsteel_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> GOLD_FRAGMENTS = registerItem("gold_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> IRON_FRAGMENTS = registerItem("iron_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> LAPIS_LAZULI_FRAGMENTS = registerItem("lapis_lazuli_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> NETHERITE_FRAGMENTS = registerItem("netherite_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> QUARTZ_FRAGMENTS = registerItem("quartz_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> REDSTONE_FRAGMENTS = registerItem("redstone_fragments", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
 
 

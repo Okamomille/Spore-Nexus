@@ -5,9 +5,24 @@
 
 
   "item.sporenexus.fungalsteel_ingot": "Fungalsteel Ingot",
+
   "item.sporenexus.fungal_essence": "Fungal Essence",
   "item.sporenexus.infernal_essence": "Infernal Essence",
   "item.sporenexus.ethereal_essence": "Ethereal Essence",
+
+
+  "item.sporenexus.coal_fragments": "Coal Fragments",
+  "item.sporenexus.copper_fragments": "Copper Fragments",
+  "item.sporenexus.diamond_fragments": "Diamond Fragments",
+  "item.sporenexus.emerald_fragments": "Emerald Fragments",
+  "item.sporenexus.fungalsteel_fragments": "Fungalsteel Fragments",
+  "item.sporenexus.gold_fragments": "Gold Fragments",
+  "item.sporenexus.iron_fragments": "Iron Fragments",
+  "item.sporenexus.lapis_lazuli_fragments": "Lapis Lazuli Fragments",
+  "item.sporenexus.netherite_fragments": "Netherite Fragments",
+  "item.sporenexus.quartz_fragments": "Quartz Fragments",
+  "item.sporenexus.redstone_fragments": "Redstone Fragments",
+
 
 
 
