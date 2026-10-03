@@ -26,9 +26,19 @@ public class DatagenModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ItemsRegistry.INFERNAL_ESSENCE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ItemsRegistry.ETHEREAL_ESSENCE.get(), ModelTemplates.FLAT_ITEM);
 
-
-
-
+        /* FRAGMENTS */
+        /* ORES */
+        itemModels.generateFlatItem(ItemsRegistry.COAL_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.COPPER_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.DIAMOND_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.EMERALD_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.GOLD_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.IRON_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.LAPIS_LAZULI_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.NETHERITE_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.QUARTZ_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.REDSTONE_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
 
 
 

@@ -1,3 +1,12 @@
 /time set 5000
 /fill 7 72 9
 /fill 7 72 9 ~ ~ ~ minecraft:cyan_terracotta
+/fill 21 77 -1
+/fill 21 77 -1 8 74 -1 minecraft:stripped_dark_oak_log
+/give @s minecraft:item_frame[minecraft:block_entity_data={Invisible:1b}]
+/give @p item_frame{EntityTag:{Invisible:1b}}
+/give @s item_frame[entity_data={id:"minecraft:item_frame",Invisible:1b}]
+/fill 8 80 -1
+/fill 8 80 -1 20 78 -1 minecraft:stripped_dark_oak_log
+/fill 19 78 -1
+/fill 19 78 -1 9 79 -1 minecraft:gray_concrete
