@@ -29,5 +29,15 @@
 
   "block.sporenexus.fungalsteel_block": "Fungalsteel Block",
 
-  "block.sporenexus.coal_resource_mushroom": "Coal Resource Mushroom"
+  "block.sporenexus.coal_resource_mushroom": "Coal Resource Mushroom",
+  "block.sporenexus.copper_resource_mushroom": "Copper Resource Mushroom",
+  "block.sporenexus.diamond_resource_mushroom": "Diamond Resource Mushroom",
+  "block.sporenexus.emerald_resource_mushroom": "Emerald Resource Mushroom",
+  "block.sporenexus.fungalsteel_resource_mushroom": "Fungalsteel Resource Mushroom",
+  "block.sporenexus.iron_resource_mushroom": "Iron Resource Mushroom",
+  "block.sporenexus.gold_resource_mushroom": "Gold Resource Mushroom",
+  "block.sporenexus.lapis_lazuli_resource_mushroom": "Lapis Lazuli Resource Mushroom",
+  "block.sporenexus.netherite_resource_mushroom": "Netherite Resource Mushroom",
+  "block.sporenexus.quartz_resource_mushroom": "Quartz Resource Mushroom",
+  "block.sporenexus.redstone_resource_mushroom": "Redstone Resource Mushroom"
 }

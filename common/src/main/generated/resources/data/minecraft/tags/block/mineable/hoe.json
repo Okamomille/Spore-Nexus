@@ -1,0 +1,15 @@
+{
+  "values": [
+    "sporenexus:coal_resource_mushroom",
+    "sporenexus:copper_resource_mushroom",
+    "sporenexus:diamond_resource_mushroom",
+    "sporenexus:emerald_resource_mushroom",
+    "sporenexus:fungalsteel_resource_mushroom",
+    "sporenexus:lapis_lazuli_resource_mushroom",
+    "sporenexus:iron_resource_mushroom",
+    "sporenexus:gold_resource_mushroom",
+    "sporenexus:quartz_resource_mushroom",
+    "sporenexus:redstone_resource_mushroom",
+    "sporenexus:netherite_resource_mushroom"
+  ]
+}
