@@ -19,3 +19,8 @@
 /gamerule random_tick_speed 1500
 /gamerule random_tick_speed 300
 /gamerule random_tick_speed 1500
+/playsound minecraft:block.growing_plant.crop
+/fill 7 73 -2
+/fill 7 73 -2 ~ ~ ~ minecraft:cyan_terracotta hollow
+/fill 7 74 2
+/fill 7 74 2 7 77 8 air

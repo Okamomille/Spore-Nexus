@@ -59,6 +59,16 @@ public class DatagenModelProvider extends ModelProvider {
 
         /* MUSHROOMS */
         registerMushroom(blockModels, BlocksRegistry.COAL_RESOURCE_MUSHROOM.get(), "coal");
+        registerMushroom(blockModels, BlocksRegistry.COPPER_RESOURCE_MUSHROOM.get(), "copper");
+        registerMushroom(blockModels, BlocksRegistry.DIAMOND_RESOURCE_MUSHROOM.get(), "diamond");
+        registerMushroom(blockModels, BlocksRegistry.EMERALD_RESOURCE_MUSHROOM.get(), "emerald");
+        registerMushroom(blockModels, BlocksRegistry.FUNGALSTEEL_RESOURCE_MUSHROOM.get(), "fungalsteel");
+        registerMushroom(blockModels, BlocksRegistry.IRON_RESOURCE_MUSHROOM.get(), "iron");
+        registerMushroom(blockModels, BlocksRegistry.GOLD_RESOURCE_MUSHROOM.get(), "gold");
+        registerMushroom(blockModels, BlocksRegistry.LAPIS_LAZULI_RESOURCE_MUSHROOM.get(), "lapis_lazuli");
+        registerMushroom(blockModels, BlocksRegistry.NETHERITE_RESOURCE_MUSHROOM.get(), "netherite");
+        registerMushroom(blockModels, BlocksRegistry.QUARTZ_RESOURCE_MUSHROOM.get(), "quartz");
+        registerMushroom(blockModels, BlocksRegistry.REDSTONE_RESOURCE_MUSHROOM.get(), "redstone");
     }
 
 
@@ -75,7 +85,7 @@ public class DatagenModelProvider extends ModelProvider {
 
     private void registerMushroom(BlockModelGenerators blockModels, Block block, String ore) {
         var states = PropertyDispatch.initial(ResourceMushroomBlock.AGE);
-        Identifier lastModel = null;
+        Identifier[] models = new Identifier[3];
 
         for (int age = 0; age < 3; age++) {
 
@@ -90,11 +100,11 @@ public class DatagenModelProvider extends ModelProvider {
                     .put(CAP, tex("block/mushroom/" + ore + "_cap"))
                     .put(TextureSlot.PARTICLE, tex("block/mushroom/stem"));
 
-            lastModel = template.create(block, mapping, blockModels.modelOutput);
-            states.select(age, BlockModelGenerators.plainVariant(lastModel));
+            models[age] = template.create(block, mapping, blockModels.modelOutput);
+            states.select(age, BlockModelGenerators.plainVariant(models[age]));
         }
 
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(states));
-        blockModels.registerSimpleItemModel(block, lastModel);
+        blockModels.registerSimpleItemModel(block, models[1]);
     }
 }

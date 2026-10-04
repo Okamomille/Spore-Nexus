@@ -29,7 +29,47 @@ public class BlocksRegistry {
 
     public static final RegistrySupplier<Block> COAL_RESOURCE_MUSHROOM = registerBlock("coal_resource_mushroom",
             props -> new ResourceMushroomBlock(props, ItemsRegistry.COAL_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
-            () -> BlockBehaviour.Properties.of().sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> COPPER_RESOURCE_MUSHROOM = registerBlock("copper_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.COPPER_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> DIAMOND_RESOURCE_MUSHROOM = registerBlock("diamond_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.DIAMOND_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> EMERALD_RESOURCE_MUSHROOM = registerBlock("emerald_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.EMERALD_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> FUNGALSTEEL_RESOURCE_MUSHROOM = registerBlock("fungalsteel_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.FUNGALSTEEL_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> GOLD_RESOURCE_MUSHROOM = registerBlock("gold_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.GOLD_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> IRON_RESOURCE_MUSHROOM = registerBlock("iron_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.IRON_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> LAPIS_LAZULI_RESOURCE_MUSHROOM = registerBlock("lapis_lazuli_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.LAPIS_LAZULI_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> NETHERITE_RESOURCE_MUSHROOM = registerBlock("netherite_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.NETHERITE_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> QUARTZ_RESOURCE_MUSHROOM = registerBlock("quartz_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.QUARTZ_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> REDSTONE_RESOURCE_MUSHROOM = registerBlock("redstone_resource_mushroom",
+            props -> new ResourceMushroomBlock(props, ItemsRegistry.REDSTONE_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
 
 
 
