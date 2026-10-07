@@ -24,3 +24,4 @@
 /fill 7 73 -2 ~ ~ ~ minecraft:cyan_terracotta hollow
 /fill 7 74 2
 /fill 7 74 2 7 77 8 air
+/gamerule random_tick_speed 9

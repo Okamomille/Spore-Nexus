@@ -38,7 +38,7 @@ public class ResourceMushroomBlock extends CropBlock {
     public Supplier<Item> drop;
     public Supplier<Item> secondaryDrop;
 
-    private static final int GROWTH_CHANCE = 15; //1/15 per randomTick
+    private int GROWTH_CHANCE = 15; //1/15 per randomTick
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
             Block.box(5.0, 0.0, 5.0, 11.0, 6.0, 11.0),
@@ -46,10 +46,11 @@ public class ResourceMushroomBlock extends CropBlock {
             Block.box(2.0, 0.0, 2.0, 14.0, 12.0, 14.0),
     };
 
-    public ResourceMushroomBlock(Properties properties, Supplier<Item> drop, Supplier<Item> secondaryDrop) {
+    public ResourceMushroomBlock(Properties properties, Supplier<Item> drop, Supplier<Item> secondaryDrop, int growthTime) {
         super(properties);
         this.drop = drop;
         this.secondaryDrop = secondaryDrop;
+        this.GROWTH_CHANCE = growthTime;
     }
 
 

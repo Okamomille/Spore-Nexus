@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_quartz_fragments": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sporenexus:quartz_fragments"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sporenexus:quartz_from_fragments"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_quartz_fragments"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sporenexus:quartz_from_fragments"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_netherite_fragments": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sporenexus:netherite_fragments"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sporenexus:netherite_from_fragments"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_netherite_fragments"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sporenexus:netherite_from_fragments"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fungalsteel_fragments": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sporenexus:fungalsteel_fragments"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sporenexus:fungalsteel_from_fragments"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fungalsteel_fragments"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sporenexus:fungalsteel_from_fragments"
+    ]
+  }
+}
