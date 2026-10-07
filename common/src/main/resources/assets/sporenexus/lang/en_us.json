@@ -2,6 +2,7 @@
 
   "tab.sporenexus": "Spore Nexus",
 
+ "gui.sporenexus.mycelian_core": "Mycelian Core",
 
 
   "item.sporenexus.fungalsteel_ingot": "Fungalsteel Ingot",
@@ -29,6 +30,8 @@
 
 
   "block.sporenexus.fungalsteel_block": "Fungalsteel Block",
+
+  "block.sporenexus.mycelian_core": "Mycelian Core",
 
   "block.sporenexus.coal_resource_mushroom": "Coal Resource Mushroom",
   "block.sporenexus.copper_resource_mushroom": "Copper Resource Mushroom",
