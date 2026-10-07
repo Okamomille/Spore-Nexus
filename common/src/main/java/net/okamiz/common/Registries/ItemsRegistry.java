@@ -20,6 +20,9 @@ public class ItemsRegistry {
 
 
 
+    public static final RegistrySupplier<Item> NEXUS_FUNGUS = registerItem("nexus_fungus", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
     /* ESSENCES */
 
     public static final RegistrySupplier<Item> FUNGAL_ESSENCE = registerItem("fungal_essence", Item::new,

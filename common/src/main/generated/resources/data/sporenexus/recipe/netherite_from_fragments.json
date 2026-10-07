@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fragments_to_resource",
+  "key": {
+    "X": "sporenexus:netherite_fragments"
+  },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "result": {
+    "id": "minecraft:netherite_scrap"
+  }
+}

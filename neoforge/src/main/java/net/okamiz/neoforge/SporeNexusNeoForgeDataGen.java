@@ -3,6 +3,7 @@ package net.okamiz.neoforge;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -11,6 +12,8 @@ import net.okamiz.SporeNexus;
 import net.okamiz.neoforge.datagen.DatagenBlockLootTableProvider;
 import net.okamiz.neoforge.datagen.DatagenBlockTagsProvider;
 import net.okamiz.neoforge.datagen.DatagenModelProvider;
+import net.okamiz.neoforge.datagen.DatagenRecipeProvider;
+
 
 import java.util.Collections;
 import java.util.List;
@@ -28,5 +31,8 @@ public class SporeNexusNeoForgeDataGen {
         generator.addProvider(true, new DatagenBlockTagsProvider(packOutput, lookupProvider));
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(DatagenBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+
+
+        generator.addProvider(true, new DatagenRecipeProvider.Runner(packOutput, lookupProvider));
     }
 }
