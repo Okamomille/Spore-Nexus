@@ -12,6 +12,8 @@ public final class SporeNexus {
         CreativeTabsRegistry.TABS.register();
         BlockEntitiesRegistry.BLOCK_ENTITIES.register();
         MenusRegistry.MENU_TYPE.register();
+        RecipesRegistry.RECIPE_TYPES.register();
+        RecipesRegistry.RECIPE_SERIALIZERS.register();
 
 
     }

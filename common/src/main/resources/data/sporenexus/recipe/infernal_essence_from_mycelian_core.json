@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mycelian_core",
+  "mushroom_input": "minecraft:red_mushroom",
+  "substract_input": "minecraft:mycelium",
+  "nutrients": ["minecraft:glowstone_dust", "minecraft:redstone"],
+  "result": {
+    "count": 2,
+    "id": "sporenexus:fungal_essence"
+  }
+}

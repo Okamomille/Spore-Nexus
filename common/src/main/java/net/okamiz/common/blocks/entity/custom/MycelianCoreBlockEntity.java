@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
@@ -17,6 +18,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -25,8 +27,13 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.okamiz.common.Registries.BlockEntitiesRegistry;
 import net.okamiz.common.Registries.ItemsRegistry;
+import net.okamiz.common.Registries.RecipesRegistry;
 import net.okamiz.common.menus.custom.MycelianCoreMenu;
+import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipe;
+import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipeInput;
 import org.jspecify.annotations.Nullable;
+
+import java.util.Optional;
 
 public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider {
     public final SimpleContainer inventory = new SimpleContainer(6){
@@ -47,11 +54,6 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
     private static final int NUTRIENT_INPUT_SLOT_2 = 3;
     private static final int NUTRIENT_INPUT_SLOT_3 = 4;
     private static final int OUTPUT_SLOT = 5;
-
-    public static final ItemStack OUTPUT_ITEM = new ItemStack(ItemsRegistry.FUNGAL_ESSENCE.get());
-    public static final ItemStack MUSHROOM_INPUT_ITEM = new ItemStack(Items.BROWN_MUSHROOM);
-    public static final ItemStack SUBSTRACT_INPUT_ITEM = new ItemStack(Blocks.MYCELIUM.asItem());
-    public static final ItemStack NUTRIENT_INPUT_ITEM = new ItemStack(Items.GLOWSTONE_DUST.asItem());
 
 
     public MycelianCoreBlockEntity(BlockPos worldPosition, BlockState blockState) {
@@ -125,54 +127,73 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
         }
     }
 
-    public void tick(Level level, BlockPos pos, BlockState state){
-
-
-        if(hasRecipe() && isOutputSlotEmptyOrReceivable(OUTPUT_ITEM)){
+    public void tick(Level level, BlockPos pos, BlockState state) {
+        if (hasRecipe()) {
             increaseCraftingProgress();
             setChanged(level, pos, state);
-
-            if(hasCraftingFinished()){
-                craftItem(OUTPUT_ITEM);
+            if (hasCraftingFinished()) {
+                craftItem();
                 resetProgress();
             }
-        }else{
+        } else {
             resetProgress();
         }
     }
 
-    private void craftItem(ItemStack result) {
-        for (int slot = MUSHROOM_INPUT_SLOT; slot <= NUTRIENT_INPUT_SLOT_3; slot++) {
-            inventory.getItem(slot).shrink(1);
+    private void craftItem() {
+        Optional<RecipeHolder<MycelianCoreRecipe>> holder = getCurrentRecipe();
+        if (holder.isEmpty()) {
+            return;
+        }
+        MycelianCoreRecipe recipe = holder.get().value();
+        MycelianCoreRecipeInput input = createRecipeInput();
+
+        Optional<int[]> nutrientSlots = recipe.findNutrientSlots(input);
+        if (nutrientSlots.isEmpty()) {
+            return;
+        }
+        ItemStack result = recipe.assemble(input);
+
+        inventory.getItem(MUSHROOM_INPUT_SLOT).shrink(1);
+        inventory.getItem(SUBSTRACT_INPUT_SLOT).shrink(1);
+        for (int slot : nutrientSlots.get()) {
+            inventory.getItem(NUTRIENT_INPUT_SLOT_1 + slot).shrink(1);
         }
 
-        ItemStack output = inventory.getItem(OUTPUT_SLOT);
-        if (output.isEmpty()) {
-            inventory.setItem(OUTPUT_SLOT, result.copy());
+        ItemStack outputSlot = inventory.getItem(OUTPUT_SLOT);
+        if (outputSlot.isEmpty()) {
+            inventory.setItem(OUTPUT_SLOT, result);
         } else {
-            output.grow(result.getCount());
+            outputSlot.grow(result.getCount());
         }
         setChanged();
     }
 
-    private boolean hasRecipe() {
-
-        boolean outputSlotAmount = canInsertAmountIntoOutputSlot(OUTPUT_ITEM.getCount());
-        boolean outputSlotItem = canInsertItemIntoOutputSlot();
-
-        boolean hasMushroomInput = inventory.getItem(MUSHROOM_INPUT_SLOT).is(MUSHROOM_INPUT_ITEM.getItem());
-        boolean hasSubstractInput = inventory.getItem(SUBSTRACT_INPUT_SLOT).is(SUBSTRACT_INPUT_ITEM.getItem());
-        boolean hasNutrientInput = inventory.getItem(NUTRIENT_INPUT_SLOT_1).is(NUTRIENT_INPUT_ITEM.getItem()) ||
-                inventory.getItem(NUTRIENT_INPUT_SLOT_2).is(NUTRIENT_INPUT_ITEM.getItem()) ||
-                inventory.getItem(NUTRIENT_INPUT_SLOT_3).is(NUTRIENT_INPUT_ITEM.getItem());
-
-        boolean hasInput = hasMushroomInput && hasSubstractInput && hasNutrientInput;
-
-        return hasInput && outputSlotAmount && outputSlotItem;
+    private MycelianCoreRecipeInput createRecipeInput() {
+        return new MycelianCoreRecipeInput(
+                inventory.getItem(MUSHROOM_INPUT_SLOT),
+                inventory.getItem(SUBSTRACT_INPUT_SLOT),
+                inventory.getItem(NUTRIENT_INPUT_SLOT_1),
+                inventory.getItem(NUTRIENT_INPUT_SLOT_2),
+                inventory.getItem(NUTRIENT_INPUT_SLOT_3));
     }
 
-    private boolean canInsertItemIntoOutputSlot() {
-        return inventory.getItem(OUTPUT_SLOT).isEmpty() || inventory.getItem(OUTPUT_SLOT).is(OUTPUT_ITEM.getItem());
+    private boolean hasRecipe() {
+        Optional<RecipeHolder<MycelianCoreRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) {
+            return false;
+        }
+        ItemStack output = recipe.get().value().assemble(createRecipeInput());
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    }
+
+    private Optional<RecipeHolder<MycelianCoreRecipe>> getCurrentRecipe() {
+        return ((ServerLevel) level).recipeAccess()
+                .getRecipeFor(RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get(), createRecipeInput(), level);
+    }
+
+    private boolean canInsertItemIntoOutputSlot(ItemStack output) {
+        return inventory.getItem(OUTPUT_SLOT).isEmpty() || inventory.getItem(OUTPUT_SLOT).is(output.getItem());
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
