@@ -1,0 +1,140 @@
+---- Minecraft Network Protocol Error Report ----
+// Please insert The Internet CD #4
+
+Time: 2026-10-07 16:46:09
+Description: Packet handling error
+
+java.lang.NullPointerException: Cannot invoke "net.minecraft.network.FriendlyByteBuf.readBlockPos()" because "extraData" is null
+	at TRANSFORMER/generated_56dfc86@1/net.okamiz.common.menus.custom.MycelianCoreMenu.<init>(MycelianCoreMenu.java:22) ~[7865455239620590353.jar:?] {}
+	at TRANSFORMER/neoforge@26.2.0.52-beta/net.neoforged.neoforge.network.IContainerFactory.create(IContainerFactory.java:35) ~[forge-universal.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.inventory.MenuType.create(MenuType.java:56) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.gui.screens.MenuScreens$ScreenConstructor.fromPacket(MenuScreens.java:123) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.gui.screens.MenuScreens.lambda$create$0(MenuScreens.java:44) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer}
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.gui.screens.MenuScreens.create(MenuScreens.java:44) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.multiplayer.ClientPacketListener.handleOpenScreen(ClientPacketListener.java:1398) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer,neoforge:access_transformer,neoforge:mixin[APP:architectury.mixins.json:client.MixinClientPacketListener from mod architectury]}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.network.protocol.game.ClientboundOpenScreenPacket.handle(ClientboundOpenScreenPacket.java:39) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.network.protocol.game.ClientboundOpenScreenPacket.handle(ClientboundOpenScreenPacket.java:13) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.network.PacketProcessor$ListenerAndPacket.handle(PacketProcessor.java:66) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.network.PacketProcessor.processQueuedPackets(PacketProcessor.java:52) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.Minecraft.runTick(Minecraft.java:1191) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:mixin[APP:architectury.mixins.json:MixinMinecraft from mod architectury]}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.Minecraft.run(Minecraft.java:928) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:mixin[APP:architectury.mixins.json:MixinMinecraft from mod architectury]}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.main.Main.main(Main.java:294) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at net.neoforged.fml.startup.Client.main(Client.java:19) [loader-11.0.16.jar:11.0] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) [architectury-transformer-5.2.92-runtime.jar:5.2.92] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/generated_56dfc86@1/net.okamiz.common.menus.custom.MycelianCoreMenu.<init>(MycelianCoreMenu.java:22) ~[7865455239620590353.jar:?] {}
+	at TRANSFORMER/neoforge@26.2.0.52-beta/net.neoforged.neoforge.network.IContainerFactory.create(IContainerFactory.java:35) ~[forge-universal.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.world.inventory.MenuType.create(MenuType.java:56) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.gui.screens.MenuScreens$ScreenConstructor.fromPacket(MenuScreens.java:123) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.gui.screens.MenuScreens.lambda$create$0(MenuScreens.java:44) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer}
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.gui.screens.MenuScreens.create(MenuScreens.java:44) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:access_transformer}
+-- Incoming Packet --
+Details:
+	Type: clientbound/minecraft:open_screen
+	Is Terminal: false
+	Is Skippable: false
+Stacktrace:
+	at TRANSFORMER/minecraft@26.2/net.minecraft.network.protocol.PacketUtils.fillCrashReport(PacketUtils.java:41) ~[neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl.storeDisconnectionReport(ClientCommonPacketListenerImpl.java:138) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl.onPacketError(ClientCommonPacketListenerImpl.java:124) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.network.PacketProcessor$ListenerAndPacket.handle(PacketProcessor.java:72) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.network.PacketProcessor.processQueuedPackets(PacketProcessor.java:52) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.Minecraft.runTick(Minecraft.java:1191) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:mixin[APP:architectury.mixins.json:MixinMinecraft from mod architectury]}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.Minecraft.run(Minecraft.java:928) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {neoforge:mixin[APP:architectury.mixins.json:MixinMinecraft from mod architectury]}
+	at TRANSFORMER/minecraft@26.2/net.minecraft.client.main.Main.main(Main.java:294) [neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar:?] {}
+	at net.neoforged.fml.startup.Client.main(Client.java:19) [loader-11.0.16.jar:11.0] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) [architectury-transformer-5.2.92-runtime.jar:5.2.92] {}
+
+
+-- Connection --
+Details:
+	Protocol: play
+	Flow: CLIENTBOUND
+	Is Local: true
+	Server type: <none>
+	Server brand: neoforge
+
+-- System Details --
+Details:
+	Minecraft Version: 26.2
+	Minecraft Version ID: 26.2
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 25.0.4.1, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 367308656 bytes (350 MiB) / 2361393152 bytes (2252 MiB) up to 8493465600 bytes (8100 MiB)
+	Memory (heap): init: 508MiB, used: 1895MiB, committed: 2252MiB, max: 8100MiB
+	Memory (non-head): init: 007MiB, used: 246MiB, committed: 249MiB, max: 000MiB
+	CPUs: 20
+	Processor Vendor: GenuineIntel
+	Processor Name: 12th Gen Intel(R) Core(TM) i7-12700H
+	Identifier: Intel64 Family 6 Model 154 Stepping 3
+	Microarchitecture: Alder Lake
+	Frequency (GHz): 2.69
+	Number of physical packages: 1
+	Number of physical CPUs: 14
+	Number of logical CPUs: 20
+	Graphics card #0 name: NVIDIA GeForce RTX 4060 Laptop GPU
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8188.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9144
+	Graphics card #1 name: Intel(R) UHD Graphics
+	Graphics card #1 vendor: Intel Corporation
+	Graphics card #1 VRAM (MiB): 2048.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 32.0.101.6790
+	Graphics card #2 name: Intel(R) Iris(R) Xe Graphics
+	Graphics card #2 vendor: Intel Corporation
+	Graphics card #2 VRAM (MiB): 2048.00
+	Graphics card #2 deviceId: VideoController3
+	Graphics card #2 versionInfo: 32.0.101.6790
+	Memory slot #0 capacity (MiB): 32768.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Virtual memory max (MiB): 34443.15
+	Virtual memory used (MiB): 26475.42
+	Swap memory total (MiB): 2048.00
+	Swap memory used (MiB): 101.82
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 10337.71, total: 460202.31
+	Space in storage for workdir (MiB): available: 140619.78, total: 1907700.00
+	Operating System Version: Microsoft Windows 11 (Home) build 22631
+	Process Elevated: false
+	Process Loads: Uptime: 35s, user: 56s (161.12%), kernel: 6s (16.51%), total: 62s (177.63%)
+	Process Virtual Size (MiB): 376.09
+	Process Resident Size (MiB): 3691.25
+	JVM Flags: 1 total; -XX:StackShadowPages=32
+	Debug Flags: 0 total; 
+	Class Processors: 
+		00,00%: neoforge:neoforge_dev_dist_cleaner
+		00,00%: neoforge:computing_frames (marker)
+		00,00%: neoforge:runtime_enum_extender
+		04,38%: neoforge:access_transformer
+		00,23%: neoforge:mixin
+		00,00%: neoforge:simple_processors_default (marker)
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.biome.biome
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.block.flowerpotblock
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.levelgen.structure.structure
+		00,26%: neoforge.coremods:method_redirector
+	Mod List: 
+		architectury-neoforge-21.0.7.jar                  |Architectury                  |architectury                  |21.0.7              |Manifest: 40e598b365e645ea0335400d59bde08eea59aabe0646869b5d6e36fc346ce747
+		7865455239620590353.jar                           |generated_56dfc86             |generated_56dfc86             |1                   |Manifest: 45ea21ec15f955cb3d8dad354e4ed976e88000217a12cd1910807256c57b738d
+		neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.|Minecraft                     |minecraft                     |26.2                |Manifest: NOSIGNATURE
+		forge-universal.jar                               |NeoForge                      |neoforge                      |26.2.0.52-beta      |Manifest: NOSIGNATURE
+		main                                              |Spore Nexus                   |sporenexus                    |1.0-26.3            |Manifest: NOSIGNATURE
+	Crash Report UUID: 30f28398-4376-45eb-9277-5f6f66ce142c
+	FML: 11.0.16
+	NeoForge: 26.2.0.52-beta

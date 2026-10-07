@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.blocks.custom.MycelianCoreBlock;
 import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 
 import java.util.function.Function;
@@ -25,6 +26,13 @@ public class BlocksRegistry {
 
     public static final RegistrySupplier<Block> FUNGALSTEEL_BLOCK = registerBlock("fungalsteel_block", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB );
+
+    /* BLOCK ENTITES */
+
+    public static final RegistrySupplier<Block> MYCELIAN_CORE = registerBlock("mycelian_core", MycelianCoreBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    /* RESOURCES MUSHROOMS */
 
 
     public static final RegistrySupplier<Block> COAL_RESOURCE_MUSHROOM = registerBlock("coal_resource_mushroom",
