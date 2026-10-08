@@ -13,8 +13,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.blocks.custom.MycelianCoreBlock;
+import net.okamiz.common.blocks.custom.MycelianCoreProxy;
 import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 
 import java.util.function.Function;
@@ -30,7 +32,12 @@ public class BlocksRegistry {
     /* BLOCK ENTITES */
 
     public static final RegistrySupplier<Block> MYCELIAN_CORE = registerBlock("mycelian_core", MycelianCoreBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB);
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
+                    .noOcclusion(), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> MYCELIAN_CORE_PROXY = registerBlock("mycelian_core_proxy", MycelianCoreProxy::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
+                    .noOcclusion().noLootTable(), null);
 
     /* RESOURCES MUSHROOMS */
 

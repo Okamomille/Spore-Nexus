@@ -1,4 +1,4 @@
-// 26.2	2026-10-04T14:07:48.6781642	Loot Tables
+// 26.2	2026-10-07T19:27:01.7014318	Loot Tables
 bdc3f7b74d92b461028cc7aa360ec55ac08fb53a data/sporenexus/loot_table/blocks/coal_resource_mushroom.json
 c4f4b3c515ffda5f52e2a1f993dbee3aefda54b1 data/sporenexus/loot_table/blocks/copper_resource_mushroom.json
 5202d0a262f3176770412c22142c48ca00adb6cd data/sporenexus/loot_table/blocks/diamond_resource_mushroom.json
@@ -8,6 +8,7 @@ f163b315f9217cdcb722bcf5a6f7ce77a47665b1 data/sporenexus/loot_table/blocks/funga
 aba65818b9172ecfd8bf07b7930e104ef861b738 data/sporenexus/loot_table/blocks/gold_resource_mushroom.json
 424cbbc18af586d906a50ea03088f81dc44fed51 data/sporenexus/loot_table/blocks/iron_resource_mushroom.json
 e6046d38f14d9934f2ec142ef34823883cf2f145 data/sporenexus/loot_table/blocks/lapis_lazuli_resource_mushroom.json
+392415fb1262787529b0d919c19e705b1fc8384a data/sporenexus/loot_table/blocks/mycelian_core.json
 d79c12bb4efb4141ca1fe6a32bf4e99172548b7f data/sporenexus/loot_table/blocks/netherite_resource_mushroom.json
 d8166eb9ddc58c05fb510014d2fb50ab119c0416 data/sporenexus/loot_table/blocks/quartz_resource_mushroom.json
 aad4efddf61a8b09825df7da7a3656e1bdae22a3 data/sporenexus/loot_table/blocks/redstone_resource_mushroom.json

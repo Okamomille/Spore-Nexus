@@ -14,7 +14,8 @@ import net.okamiz.common.Registries.RecipesRegistry;
 import java.util.List;
 import java.util.Optional;
 
-public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substractInputItem, List<Ingredient> nutrientInputs, ItemStackTemplate output)
+public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substractInputItem, List<Ingredient> nutrientInputs
+        , ItemStackTemplate output, ItemStackTemplate secondaryOutput)
         implements Recipe<MycelianCoreRecipeInput> {
 
     public static final MapCodec<MycelianCoreRecipe> CODEC = RecordCodecBuilder.mapCodec(instance ->
@@ -22,7 +23,8 @@ public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substr
                     Ingredient.CODEC.fieldOf("mushroom_input").forGetter(MycelianCoreRecipe::mushroomInputItem),
                     Ingredient.CODEC.fieldOf("substract_input").forGetter(MycelianCoreRecipe::substractInputItem),
                     Ingredient.CODEC.listOf().optionalFieldOf("nutrients", List.of()).forGetter(MycelianCoreRecipe::nutrientInputs),
-                    ItemStackTemplate.CODEC.fieldOf("result").forGetter(MycelianCoreRecipe::output)
+                    ItemStackTemplate.CODEC.fieldOf("result").forGetter(MycelianCoreRecipe::output),
+                    ItemStackTemplate.CODEC.fieldOf("secondary_output").forGetter(MycelianCoreRecipe::secondaryOutput)
             ).apply(instance, MycelianCoreRecipe::new));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, MycelianCoreRecipe> STREAM_CODEC =
@@ -31,6 +33,7 @@ public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substr
                     Ingredient.CONTENTS_STREAM_CODEC, MycelianCoreRecipe::substractInputItem,
                     Ingredient.CONTENTS_STREAM_CODEC.apply(ByteBufCodecs.list()), MycelianCoreRecipe::nutrientInputs,
                     ItemStackTemplate.STREAM_CODEC, MycelianCoreRecipe::output,
+                    ItemStackTemplate.STREAM_CODEC, MycelianCoreRecipe::secondaryOutput,
                     MycelianCoreRecipe::new);
 
     /** send slot index for nutrients(0-2) used, or empty. */

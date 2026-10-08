@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sporenexus:block/mycelian_core_proxy",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sporenexus:block/mycelian_core_proxy"
+    },
+    "facing=south": {
+      "model": "sporenexus:block/mycelian_core_proxy",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sporenexus:block/mycelian_core_proxy",
+      "y": 270
+    }
+  }
+}

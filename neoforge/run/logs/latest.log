@@ -1,149 +1,145 @@
-[18:38:38] [main/INFO] (Entrypoint) JVM Uptime at startup: 2750ms
-[18:38:38] [main/INFO] (FMLLoader) Starting FancyModLoader version 11.0.16 (CLIENT in DEV)
-[18:38:38] [main/INFO] (FMLLoader) Game directory: D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\run
-[18:38:38] [main/INFO] (EarlyServiceDiscovery) Found 2 early service jars (out of 129) in 23ms
-[18:38:38] [main/INFO] (FMLLoader) Loading FML Early Services:
-[18:38:38] [main/INFO] (FMLLoader)  - C:/Users/jojob/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/earlydisplay/11.0.16/2d357375a7ea94a1ca86042d48fa4f719a552894/earlydisplay-11.0.16.jar
-[18:38:38] [main/INFO] (FMLLoader)  - C:/Users/jojob/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/loader/11.0.16/42d3bfead0ba3aa89c7d45ac29115defc9967219/loader-11.0.16.jar
-[18:38:38] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (GameLocator) Detected a joined NeoForge and Minecraft configuration. Applying filtering...
-[18:38:39] [fml-loadingscreen/INFO] (LoadingScreenRenderer) GL info: Intel(R) UHD Graphics GL version 3.3.0 - Build 32.0.101.6790, Intel
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (ModDiscoverer) Found mod file "neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar" [locator: game locator]
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (ModDiscoverer) Found mod file "forge-universal.jar" [locator: game locator]
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (InDevFolderLocator) Got mod coordinates main%%D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\build\resources\main;main%%D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\build\classes\java\main;main%%D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\out\production\classes;main%%D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\out\production\resources from env
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (ModDiscoverer) Found mod file "main" [locator: indevfolder, reader: mod manifest]
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (ModDiscoverer) Found mod file "architectury-neoforge-21.0.7.jar" [locator: indevjar, reader: mod manifest]
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (ModDiscoverer) Found mod file "6283482775839425474.jar" [locator: indevjar, reader: mod manifest]
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (ModDiscoverer) Found gamelibrary file "mixinextras-neoforge-0.5.4.jar" [locator: indevjar, reader: mod manifest]
-[18:38:39] [ForkJoinPool.commonPool-worker-6/WARN] (JarSelector) Attempted to select a dependency jar for JarJar which was passed in as source: library:mixinextras.neoforge. Using jar(C:/Users/jojob/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-neoforge/0.5.4/3cb0fec08c25e18fddf797fbdc1b9db83dc4e92f/mixinextras-neoforge-0.5.4.jar)
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (JarInJarDependencyLocator) Found 1 dependencies adding them to mods collection
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (ModDiscoverer) Found library file "net.neoforged.neoforge-coremods-26.2.0.52-beta.jar" [parent: forge-universal.jar, locator: jarinjar, reader: mod manifest]
-[18:38:39] [ForkJoinPool.commonPool-worker-6/INFO] (ModDiscoverer) 
+[12:26:56] [main/INFO] (Entrypoint) JVM Uptime at startup: 3121ms
+[12:26:56] [main/INFO] (FMLLoader) Starting FancyModLoader version 11.0.16 (CLIENT in DEV)
+[12:26:56] [main/INFO] (FMLLoader) Game directory: D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\run
+[12:26:56] [main/INFO] (EarlyServiceDiscovery) Found 2 early service jars (out of 129) in 25ms
+[12:26:56] [main/INFO] (FMLLoader) Loading FML Early Services:
+[12:26:56] [main/INFO] (FMLLoader)  - C:/Users/jojob/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/earlydisplay/11.0.16/2d357375a7ea94a1ca86042d48fa4f719a552894/earlydisplay-11.0.16.jar
+[12:26:56] [main/INFO] (FMLLoader)  - C:/Users/jojob/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/loader/11.0.16/42d3bfead0ba3aa89c7d45ac29115defc9967219/loader-11.0.16.jar
+[12:26:56] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (GameLocator) Detected a joined NeoForge and Minecraft configuration. Applying filtering...
+[12:26:57] [fml-loadingscreen/INFO] (LoadingScreenRenderer) GL info: Intel(R) UHD Graphics GL version 3.3.0 - Build 32.0.101.6790, Intel
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (ModDiscoverer) Found mod file "neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar" [locator: game locator]
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (ModDiscoverer) Found mod file "forge-universal.jar" [locator: game locator]
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (InDevFolderLocator) Got mod coordinates main%%D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\build\resources\main;main%%D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\build\classes\java\main;main%%D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\out\production\classes;main%%D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\out\production\resources from env
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (ModDiscoverer) Found mod file "main" [locator: indevfolder, reader: mod manifest]
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (ModDiscoverer) Found mod file "architectury-neoforge-21.0.7.jar" [locator: indevjar, reader: mod manifest]
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (ModDiscoverer) Found mod file "17910244156826949227.jar" [locator: indevjar, reader: mod manifest]
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (ModDiscoverer) Found gamelibrary file "mixinextras-neoforge-0.5.4.jar" [locator: indevjar, reader: mod manifest]
+[12:26:57] [ForkJoinPool.commonPool-worker-11/WARN] (JarSelector) Attempted to select a dependency jar for JarJar which was passed in as source: library:mixinextras.neoforge. Using jar(C:/Users/jojob/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-neoforge/0.5.4/3cb0fec08c25e18fddf797fbdc1b9db83dc4e92f/mixinextras-neoforge-0.5.4.jar)
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (JarInJarDependencyLocator) Found 1 dependencies adding them to mods collection
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (ModDiscoverer) Found library file "net.neoforged.neoforge-coremods-26.2.0.52-beta.jar" [parent: forge-universal.jar, locator: jarinjar, reader: mod manifest]
+[12:26:57] [ForkJoinPool.commonPool-worker-11/INFO] (ModDiscoverer) 
      Mod List:
 		Name Version (Mod Id)
 
 		Architectury 21.0.7 (architectury)
-		generated_2216388 1 (generated_2216388)
+		generated_1faccf6 1 (generated_1faccf6)
 		Minecraft 26.2 (minecraft)
 		NeoForge 26.2.0.52-beta (neoforge)
-		Spore Nexus 1.0-26.3 (sporenexus)
-[18:38:39] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/jojob/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.3+mixin.0.8.7/41c4a3984a80f4679e759fb9f495587acc5cdac7/sponge-mixin-0.17.3+mixin.0.8.7.jar Service=FML Env=CLIENT
-[18:38:39] [main/INFO] (FMLLoader) Loading FML Plugins:
-[18:38:39] [main/INFO] (FMLLoader)  - C:/Users/jojob/.gradle/caches/fabric-loom/26.2/neoforge/26.2.0.52-beta/forge-universal.jar > net.neoforged.neoforge-coremods-26.2.0.52-beta.jar
-[18:38:40] [main/INFO] (FMLLoader) Building game content classloader:
+		Spore Nexus 1.0-26.2 (sporenexus)
+[12:26:58] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/jojob/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.3+mixin.0.8.7/41c4a3984a80f4679e759fb9f495587acc5cdac7/sponge-mixin-0.17.3+mixin.0.8.7.jar Service=FML Env=CLIENT
+[12:26:58] [main/INFO] (FMLLoader) Loading FML Plugins:
+[12:26:58] [main/INFO] (FMLLoader)  - C:/Users/jojob/.gradle/caches/fabric-loom/26.2/neoforge/26.2.0.52-beta/forge-universal.jar > net.neoforged.neoforge-coremods-26.2.0.52-beta.jar
+[12:26:58] [main/INFO] (FMLLoader) Building game content classloader:
  - architectury (jar(C:/Users/jojob/.gradle/caches/modules-2/files-2.1/dev.architectury/architectury-neoforge/21.0.7/c47ec87515e86af442baf5fb820ec271ac04fbac/architectury-neoforge-21.0.7.jar))
- - generated_2216388 (jar(C:/Users/jojob/AppData/Local/Temp/6283482775839425474.jar))
+ - generated_1faccf6 (jar(C:/Users/jojob/AppData/Local/Temp/17910244156826949227.jar))
  - minecraft (composite(filtered(jar(C:/Users/jojob/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/neoforge-26.2.0.52-beta-minecraft-merged-deobf/26.2/neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar)), filtered(jar(C:/Users/jojob/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/neoforge-26.2.0.52-beta-minecraft-merged-deobf/26.2/neoforge-26.2.0.52-beta-minecraft-merged-deobf-26.2.jar))))
  - mixinextras.neoforge (jar(C:/Users/jojob/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-neoforge/0.5.4/3cb0fec08c25e18fddf797fbdc1b9db83dc4e92f/mixinextras-neoforge-0.5.4.jar))
  - neoforge (composite(filtered(jar(C:/Users/jojob/.gradle/caches/fabric-loom/26.2/neoforge/26.2.0.52-beta/forge-universal.jar))))
  - net.neoforged.fml.generated (empty(VirtualJar/net.neoforged.fml.generated))
  - sporenexus (composite(folder(D:/MINECRAFT MODDING/spore_nexus-26.2-multiloader/neoforge/build/resources/main), folder(D:/MINECRAFT MODDING/spore_nexus-26.2-multiloader/neoforge/build/classes/java/main)))
-[18:38:40] [main/INFO] (FMLLoader) Built game content classloader in 31ms
-[18:38:40] [main/INFO] (mixin) Compatibility level set to JAVA_25
-[18:38:40] [main/WARN] (MixinFacade) Mod file composite(folder(D:/MINECRAFT MODDING/spore_nexus-26.2-multiloader/neoforge/build/resources/main), folder(D:/MINECRAFT MODDING/spore_nexus-26.2-multiloader/neoforge/build/classes/java/main)) declares mixin config sporenexus.mixins.json, but it actually comes from jar(C:/Users/jojob/AppData/Local/Temp/6283482775839425474.jar)
-[18:38:41] [Datafixer Bootstrap #0/INFO] (Minecraft) 298 Datafixer optimizations took 258 milliseconds
-[18:38:41] [pool-13-thread-1/INFO] (MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.4).
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [time, set, time] and [time, set, timemarker] with inputs: [0, 0s, 0d, 0t]
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [time, set, timemarker] and [time, set, time] with inputs: [012]
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [time, of, clock, set, time] and [time, of, clock, set, timemarker] with inputs: [0, 0s, 0d, 0t]
-[18:38:45] [main/WARN] (Minecraft) Ambiguity between arguments [time, of, clock, set, timemarker] and [time, of, clock, set, time] with inputs: [012]
-[18:38:45] [modloading-worker-0/INFO] (NeoForgeMod) NeoForge mod loading, version 26.2.0.52-beta, for MC 26.2
-[18:38:46] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[18:38:46] [Render thread/INFO] (Minecraft) Setting user: Dev
-[18:38:46] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.4.1+2
-[18:38:46] [Render thread/INFO] (Minecraft) Preferring discrete GPU: NVIDIA GeForce RTX 4060 Laptop GPU
-[18:38:46] [Render thread/INFO] (Minecraft) Using graphics backend OpenGL, using drivers: 3.3.0 - Build 32.0.101.6790
-[18:38:46] [Render thread/INFO] (Minecraft) Using graphics device: Intel(R) UHD Graphics (Intel)
-[18:38:46] [Render thread/INFO] (Minecraft) Using graphics device extensions: GL_ARB_multi_draw_indirect, GL_ARB_buffer_storage, GL_ARB_shader_draw_parameters, GL_ARB_base_instance, GL_KHR_debug, GL_ARB_draw_indirect, GL_ARB_clip_control, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
-[18:38:47] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, mod_resources, mod/architectury, mod/sporenexus, mod/neoforge, mod/generated_2216388
-[18:38:47] [resourceLoad/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
-[18:38:47] [resourceLoad/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
-[18:38:47] [resourceLoad/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
-[18:38:48] [resourceLoad/WARN] (Minecraft) Missing model for variant: 'Block{sporenexus:mycelian_core}[facing=north]'
-[18:38:48] [resourceLoad/WARN] (Minecraft) Missing model for variant: 'Block{sporenexus:mycelian_core}[facing=south]'
-[18:38:48] [resourceLoad/WARN] (Minecraft) Missing model for variant: 'Block{sporenexus:mycelian_core}[facing=west]'
-[18:38:48] [resourceLoad/WARN] (Minecraft) Missing model for variant: 'Block{sporenexus:mycelian_core}[facing=east]'
-[18:38:48] [Render thread/WARN] (Minecraft) neoforge:pipeline/item_translucent_unlit shader program does not use sampler Sampler2 defined in the pipeline. This might be a bug.
-[18:38:48] [Render thread/WARN] (Minecraft) neoforge:pipeline/item_cutout_unlit shader program does not use sampler Sampler2 defined in the pipeline. This might be a bug.
-[18:38:48] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Speakers (Realtek(R) Audio)
-[18:38:48] [Render thread/INFO] (Minecraft) Sound engine started
-[18:38:48] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[18:38:48] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
-[18:38:48] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
-[18:38:48] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[18:38:48] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
-[18:38:48] [Render thread/INFO] (Minecraft) Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
-[18:38:49] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
-[18:38:49] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
-[18:38:49] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
-[18:38:49] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
-[18:38:49] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
-[18:38:49] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[18:38:49] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
-[18:38:49] [Render thread/INFO] (AnimationLoader) Loaded 0 entity animations
-[18:38:55] [Render thread/WARN] (CommonHooks) The following mods have version differences that were not resolved:
-generated_a4aa354 (version 1 -> MISSING)
+[12:26:58] [main/INFO] (FMLLoader) Built game content classloader in 41ms
+[12:26:58] [main/INFO] (mixin) Compatibility level set to JAVA_25
+[12:26:58] [main/WARN] (MixinFacade) Mod file composite(folder(D:/MINECRAFT MODDING/spore_nexus-26.2-multiloader/neoforge/build/resources/main), folder(D:/MINECRAFT MODDING/spore_nexus-26.2-multiloader/neoforge/build/classes/java/main)) declares mixin config sporenexus.mixins.json, but it actually comes from jar(C:/Users/jojob/AppData/Local/Temp/17910244156826949227.jar)
+[12:26:59] [Datafixer Bootstrap #0/INFO] (Minecraft) 298 Datafixer optimizations took 276 milliseconds
+[12:27:00] [pool-13-thread-1/INFO] (MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.4).
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [time, set, time] and [time, set, timemarker] with inputs: [0, 0s, 0d, 0t]
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [time, set, timemarker] and [time, set, time] with inputs: [012]
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [time, of, clock, set, time] and [time, of, clock, set, timemarker] with inputs: [0, 0s, 0d, 0t]
+[12:27:05] [main/WARN] (Minecraft) Ambiguity between arguments [time, of, clock, set, timemarker] and [time, of, clock, set, time] with inputs: [012]
+[12:27:05] [modloading-worker-0/INFO] (NeoForgeMod) NeoForge mod loading, version 26.2.0.52-beta, for MC 26.2
+[12:27:06] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[12:27:06] [Render thread/INFO] (Minecraft) Setting user: Dev
+[12:27:06] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.4.1+2
+[12:27:07] [Render thread/INFO] (Minecraft) Preferring discrete GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+[12:27:07] [Render thread/INFO] (Minecraft) Using graphics backend OpenGL, using drivers: 3.3.0 - Build 32.0.101.6790
+[12:27:07] [Render thread/INFO] (Minecraft) Using graphics device: Intel(R) UHD Graphics (Intel)
+[12:27:07] [Render thread/INFO] (Minecraft) Using graphics device extensions: GL_ARB_multi_draw_indirect, GL_ARB_buffer_storage, GL_ARB_shader_draw_parameters, GL_ARB_base_instance, GL_KHR_debug, GL_ARB_draw_indirect, GL_ARB_clip_control, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
+[12:27:08] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, mod_resources, mod/architectury, mod/sporenexus, mod/generated_1faccf6, mod/neoforge
+[12:27:08] [resourceLoad/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
+[12:27:08] [resourceLoad/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
+[12:27:08] [resourceLoad/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
+[12:27:09] [Render thread/WARN] (Minecraft) neoforge:pipeline/item_cutout_unlit shader program does not use sampler Sampler2 defined in the pipeline. This might be a bug.
+[12:27:09] [Render thread/WARN] (Minecraft) neoforge:pipeline/item_translucent_unlit shader program does not use sampler Sampler2 defined in the pipeline. This might be a bug.
+[12:27:09] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Headphones (Realtek(R) Audio)
+[12:27:09] [Render thread/INFO] (Minecraft) Sound engine started
+[12:27:09] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[12:27:09] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[12:27:09] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+[12:27:09] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[12:27:09] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[12:27:09] [Render thread/INFO] (Minecraft) Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
+[12:27:10] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+[12:27:10] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+[12:27:10] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[12:27:10] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+[12:27:10] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[12:27:10] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[12:27:10] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[12:27:10] [Render thread/INFO] (AnimationLoader) Loaded 0 entity animations
+[12:27:24] [Render thread/WARN] (CommonHooks) The following mods have version differences that were not resolved:
+generated_7f377e5 (version 1 -> MISSING)
 Things may not work well.
-[18:38:56] [Render thread/INFO] (Minecraft) Loaded 1602 recipes
-[18:38:56] [Render thread/INFO] (Minecraft) Loaded 1703 advancements
-[18:38:56] [Render thread/INFO] (RecipePriorityManager) Loaded 0 recipe priority overrides
-[18:38:56] [Render thread/WARN] (Minecraft) Missing item model for location sporenexus:mycelian_core
-[18:38:56] [Render thread/WARN] (Minecraft) Recipe sporenexus:fungal_essence_from_mycelian_core can't be placed due to empty ingredients and will be ignored
-[18:38:56] [Render thread/WARN] (Minecraft) Recipe sporenexus:infernal_essence_from_mycelian_core can't be placed due to empty ingredients and will be ignored
-[18:38:56] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.2
-[18:38:56] [Server thread/INFO] (Minecraft) Generating keypair
-[18:38:57] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
-[18:38:57] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:overworld
-[18:38:57] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_nether
-[18:38:57] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_end
-[18:38:57] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
-[18:38:57] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[18:38:57] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[18:38:57] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[18:38:57] [Server thread/INFO] (PermissionAPI) Successfully initialized permission handler neoforge:default_handler
-[18:38:57] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
-[18:38:57] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[18:38:57] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[18:38:58] [Server thread/INFO] (Minecraft) Time elapsed: 976 ms
-[18:38:58] [Server thread/INFO] (Minecraft) Dev[local:E:10d05340] logged in with entity id 28 at (12.382106468062778, 74.0, 8.8948698995237)
-[18:38:58] [Server thread/INFO] (Minecraft) Dev joined the game
-[18:38:58] [Render thread/WARN] (Minecraft) Ignoring chat session from Dev due to missing Services public key
-[18:38:58] [Server thread/INFO] (Minecraft) Changing view distance to 16, from 10
-[18:38:58] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[18:38:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
-[18:38:58] [Render thread/INFO] (Minecraft) Loaded 152 advancements
-[18:38:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
-[18:38:58] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
-[18:38:58] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 8.
-[18:38:59] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
-[18:38:59] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
-[18:38:59] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
-[18:38:59] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
-[18:38:59] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
-[18:39:00] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
-[18:39:42] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 512 reached during a single frame. New capacity will be 1024.
-[18:40:30] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[18:40:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:overworld
-[18:40:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_nether
-[18:40:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_end
-[18:40:30] [Server thread/INFO] (Minecraft) Stopping server
-[18:40:30] [Server thread/INFO] (Minecraft) Saving players
-[18:40:30] [Server thread/INFO] (Minecraft) Dev lost connection: Disconnected
-[18:40:30] [Server thread/INFO] (Minecraft) Dev left the game
-[18:40:30] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[18:40:30] [Server thread/INFO] (Minecraft) Saving worlds
-[18:40:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:overworld
-[18:40:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_nether
-[18:40:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_end
-[18:40:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
-[18:40:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[18:40:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[18:40:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[18:40:32] [Render thread/INFO] (Minecraft) Stopping!
-[18:40:32] [Render thread/INFO] (FMLLoader) Closing FML Loader 4c7b8495
-[18:40:32] [Render thread/INFO] (ModLoader) Clearing ModLoader
+[12:27:25] [Render thread/INFO] (Minecraft) Loaded 1602 recipes
+[12:27:25] [Render thread/INFO] (Minecraft) Loaded 1703 advancements
+[12:27:25] [Render thread/INFO] (RecipePriorityManager) Loaded 0 recipe priority overrides
+[12:27:25] [Render thread/WARN] (Minecraft) Recipe sporenexus:fungal_essence_from_mycelian_core can't be placed due to empty ingredients and will be ignored
+[12:27:25] [Render thread/WARN] (Minecraft) Recipe sporenexus:infernal_essence_from_mycelian_core can't be placed due to empty ingredients and will be ignored
+[12:27:25] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.2
+[12:27:25] [Server thread/INFO] (Minecraft) Generating keypair
+[12:27:25] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
+[12:27:25] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[12:27:25] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:overworld
+[12:27:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_end
+[12:27:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_nether
+[12:27:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
+[12:27:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[12:27:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[12:27:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[12:27:26] [Server thread/INFO] (PermissionAPI) Successfully initialized permission handler neoforge:default_handler
+[12:27:26] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
+[12:27:26] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[12:27:26] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[12:27:27] [Server thread/INFO] (Minecraft) Time elapsed: 1467 ms
+[12:27:27] [Server thread/INFO] (Minecraft) Dev[local:E:e5028fab] logged in with entity id 25 at (17.29662483849334, 74.0, 6.1472199590806085)
+[12:27:28] [Server thread/INFO] (Minecraft) Dev joined the game
+[12:27:28] [Render thread/WARN] (Minecraft) Ignoring chat session from Dev due to missing Services public key
+[12:27:28] [Server thread/INFO] (Minecraft) Changing view distance to 16, from 10
+[12:27:28] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[12:27:28] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
+[12:27:28] [Render thread/INFO] (Minecraft) Loaded 152 advancements
+[12:27:28] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
+[12:27:28] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[12:27:29] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 8.
+[12:27:29] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[12:27:29] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[12:27:29] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[12:27:29] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
+[12:27:30] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
+[12:27:30] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
+[12:27:32] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 512 reached during a single frame. New capacity will be 1024.
+[12:27:42] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[12:27:42] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:overworld
+[12:27:42] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_end
+[12:27:42] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_nether
+[12:27:42] [Server thread/INFO] (Minecraft) Stopping server
+[12:27:42] [Server thread/INFO] (Minecraft) Saving players
+[12:27:42] [Server thread/INFO] (Minecraft) Dev lost connection: Disconnected
+[12:27:42] [Server thread/INFO] (Minecraft) Dev left the game
+[12:27:42] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[12:27:42] [Server thread/INFO] (Minecraft) Saving worlds
+[12:27:42] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:overworld
+[12:27:43] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_end
+[12:27:43] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[Spore nexus is back Bitches]'/minecraft:the_nether
+[12:27:43] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
+[12:27:43] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[12:27:43] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[12:27:43] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[12:27:43] [Render thread/INFO] (Minecraft) Stopping!
+[12:27:44] [Render thread/INFO] (FMLLoader) Closing FML Loader 60714568
+[12:27:44] [Render thread/INFO] (ModLoader) Clearing ModLoader

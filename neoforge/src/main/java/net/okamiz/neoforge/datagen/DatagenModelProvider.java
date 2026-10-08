@@ -58,6 +58,8 @@ public class DatagenModelProvider extends ModelProvider {
         /* BLOCKS */
         blockModels.createTrivialCube(BlocksRegistry.FUNGALSTEEL_BLOCK.get());
 
+        blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE.get());
+        blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE_PROXY.get());
 
         /* MUSHROOMS */
         registerMushroom(blockModels, BlocksRegistry.COAL_RESOURCE_MUSHROOM.get(), "coal");
