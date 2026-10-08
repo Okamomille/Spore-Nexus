@@ -1,0 +1,14 @@
+{
+  "type": "sporenexus:mycelian_core",
+  "mushroom_input": "sporenexus:nexus_fungus",
+  "substract_input": "minecraft:gravel",
+  "nutrients": ["minecraft:iron_ingot", "sporenexus:mineral_quartz", "sporenexus:mineral_quartz"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:mineral_fungus"
+  },
+  "secondary_output": {
+    "count": 2,
+    "id": "minecraft:flint"
+  }
+}
