@@ -36,7 +36,7 @@ import org.jspecify.annotations.Nullable;
 import java.util.Optional;
 
 public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider {
-    public final SimpleContainer inventory = new SimpleContainer(6){
+    public final SimpleContainer inventory = new SimpleContainer(7){
         @Override
         public void setChanged(){
             super.setChanged();
@@ -54,6 +54,7 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
     private static final int NUTRIENT_INPUT_SLOT_2 = 3;
     private static final int NUTRIENT_INPUT_SLOT_3 = 4;
     private static final int OUTPUT_SLOT = 5;
+    private static final int SECONDARY_OUTPUT_SLOT = 6;
 
 
     public MycelianCoreBlockEntity(BlockPos worldPosition, BlockState blockState) {
@@ -153,6 +154,7 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
             return;
         }
         ItemStack result = recipe.assemble(input);
+        ItemStack secondaryOutput = recipe.secondaryOutput().create().copy();
 
         inventory.getItem(MUSHROOM_INPUT_SLOT).shrink(1);
         inventory.getItem(SUBSTRACT_INPUT_SLOT).shrink(1);
@@ -166,6 +168,13 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
         } else {
             outputSlot.grow(result.getCount());
         }
+        ItemStack secondaryOutputSlot = inventory.getItem(SECONDARY_OUTPUT_SLOT);
+        if (secondaryOutputSlot.isEmpty()) {
+            inventory.setItem(SECONDARY_OUTPUT_SLOT, secondaryOutput);
+        } else {
+            secondaryOutputSlot.grow(secondaryOutput.getCount());
+        }
+
         setChanged();
     }
 
@@ -183,8 +192,15 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
         if (recipe.isEmpty()) {
             return false;
         }
+
         ItemStack output = recipe.get().value().assemble(createRecipeInput());
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        ItemStack secondaryOutput = recipe.get().value().secondaryOutput().create().copy();
+
+        boolean canOutput = canInsertAmountIntoOutputSlot(OUTPUT_SLOT, output.getCount()) && canInsertItemIntoOutputSlot(OUTPUT_SLOT, output);
+        boolean canOutputSecondary = canInsertAmountIntoOutputSlot(SECONDARY_OUTPUT_SLOT, secondaryOutput.getCount())
+                && canInsertItemIntoOutputSlot(SECONDARY_OUTPUT_SLOT, secondaryOutput);
+
+        return canOutput && canOutputSecondary;
     }
 
     private Optional<RecipeHolder<MycelianCoreRecipe>> getCurrentRecipe() {
@@ -192,26 +208,17 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
                 .getRecipeFor(RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get(), createRecipeInput(), level);
     }
 
-    private boolean canInsertItemIntoOutputSlot(ItemStack output) {
-        return inventory.getItem(OUTPUT_SLOT).isEmpty() || inventory.getItem(OUTPUT_SLOT).is(output.getItem());
+    private boolean canInsertItemIntoOutputSlot(int SLOT, ItemStack output) {
+        return inventory.getItem(SLOT).isEmpty() || inventory.getItem(SLOT).is(output.getItem());
     }
 
-    private boolean canInsertAmountIntoOutputSlot(int count) {
-        int maxCount = inventory.getItem(OUTPUT_SLOT).isEmpty() ? 64 : inventory.getItem(OUTPUT_SLOT).getMaxStackSize();
-        int currentCount = inventory.getItem(OUTPUT_SLOT).getCount();
+    private boolean canInsertAmountIntoOutputSlot(int SLOT, int count) {
+        int maxCount = inventory.getItem(SLOT).isEmpty() ? 64 : inventory.getItem(SLOT).getMaxStackSize();
+        int currentCount = inventory.getItem(SLOT).getCount();
 
         return maxCount >= currentCount + count;
     }
 
-
-    private boolean isOutputSlotEmptyOrReceivable(ItemStack result) {
-        ItemStack output = inventory.getItem(OUTPUT_SLOT);
-        if (output.isEmpty()) {
-            return true;
-        }
-        return ItemStack.isSameItemSameComponents(output, result)
-                && output.getCount() + result.getCount() <= output.getMaxStackSize();
-    }
 
     private boolean hasCraftingFinished(){
         return progress >= maxProgress;

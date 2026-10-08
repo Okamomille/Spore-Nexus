@@ -19,7 +19,7 @@ public class MycelianCoreMenu extends AbstractContainerMenu {
 
     public MycelianCoreMenu(int containerId, Inventory inv, FriendlyByteBuf extraData){
         this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()),
-                new SimpleContainer(6), new SimpleContainerData(6));
+                new SimpleContainer(7), new SimpleContainerData(7));
     }
 
     public MycelianCoreMenu(int containerId, Inventory inv, BlockEntity entity, SimpleContainer handler, ContainerData data){
@@ -37,7 +37,13 @@ public class MycelianCoreMenu extends AbstractContainerMenu {
         this.addSlot(new Slot(handler, 2, 14, 23));    // nutrient 1
         this.addSlot(new Slot(handler, 3, 14, 47));    // nutrient 2
         this.addSlot(new Slot(handler, 4, 34, 36));    // nutrient 3
-        this.addSlot(new Slot(handler, 5, 134, 37) {   // output
+        this.addSlot(new Slot(handler, 5, 134, 22){   // output
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return false;
+            }
+        });    // output
+        this.addSlot(new Slot(handler, 6, 134, 54) {   // secondary output
             @Override
             public boolean mayPlace(ItemStack stack) {
                 return false;
@@ -75,7 +81,7 @@ public class MycelianCoreMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 6;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 7;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);

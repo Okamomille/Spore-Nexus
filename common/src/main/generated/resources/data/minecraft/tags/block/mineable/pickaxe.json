@@ -1,5 +1,7 @@
 {
   "values": [
-    "sporenexus:fungalsteel_block"
+    "sporenexus:fungalsteel_block",
+    "sporenexus:mycelian_core",
+    "sporenexus:mycelian_core_proxy"
   ]
 }
