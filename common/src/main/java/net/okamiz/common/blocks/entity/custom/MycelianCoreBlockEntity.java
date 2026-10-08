@@ -153,29 +153,27 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
         if (nutrientSlots.isEmpty()) {
             return;
         }
-        ItemStack result = recipe.assemble(input);
-        ItemStack secondaryOutput = recipe.secondaryOutput().create().copy();
+
 
         inventory.getItem(MUSHROOM_INPUT_SLOT).shrink(1);
         inventory.getItem(SUBSTRACT_INPUT_SLOT).shrink(1);
         for (int slot : nutrientSlots.get()) {
             inventory.getItem(NUTRIENT_INPUT_SLOT_1 + slot).shrink(1);
         }
-
-        ItemStack outputSlot = inventory.getItem(OUTPUT_SLOT);
-        if (outputSlot.isEmpty()) {
-            inventory.setItem(OUTPUT_SLOT, result);
-        } else {
-            outputSlot.grow(result.getCount());
-        }
-        ItemStack secondaryOutputSlot = inventory.getItem(SECONDARY_OUTPUT_SLOT);
-        if (secondaryOutputSlot.isEmpty()) {
-            inventory.setItem(SECONDARY_OUTPUT_SLOT, secondaryOutput);
-        } else {
-            secondaryOutputSlot.grow(secondaryOutput.getCount());
-        }
+        ItemStack result = recipe.assemble(input);
+        insertIntoSlot(OUTPUT_SLOT, result);
+        recipe.assembleSecondary().ifPresent(secondary -> insertIntoSlot(SECONDARY_OUTPUT_SLOT, secondary));
 
         setChanged();
+    }
+
+    private void insertIntoSlot(int slot, ItemStack stack) {
+        ItemStack current = inventory.getItem(slot);
+        if (current.isEmpty()) {
+            inventory.setItem(slot, stack);
+        } else {
+            current.grow(stack.getCount());
+        }
     }
 
     private MycelianCoreRecipeInput createRecipeInput() {
@@ -194,11 +192,10 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
         }
 
         ItemStack output = recipe.get().value().assemble(createRecipeInput());
-        ItemStack secondaryOutput = recipe.get().value().secondaryOutput().create().copy();
 
         boolean canOutput = canInsertAmountIntoOutputSlot(OUTPUT_SLOT, output.getCount()) && canInsertItemIntoOutputSlot(OUTPUT_SLOT, output);
-        boolean canOutputSecondary = canInsertAmountIntoOutputSlot(SECONDARY_OUTPUT_SLOT, secondaryOutput.getCount())
-                && canInsertItemIntoOutputSlot(SECONDARY_OUTPUT_SLOT, secondaryOutput);
+        boolean canOutputSecondary = recipe.get().value().assembleSecondary().map(secondary -> canInsertAmountIntoOutputSlot(SECONDARY_OUTPUT_SLOT
+                , secondary.getCount()) && canInsertItemIntoOutputSlot(SECONDARY_OUTPUT_SLOT, secondary)).orElse(true);
 
         return canOutput && canOutputSecondary;
     }

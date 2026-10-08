@@ -1,0 +1,14 @@
+{
+  "type": "sporenexus:mycelian_core",
+  "mushroom_input": "minecraft:brown_mushroom",
+  "substract_input": "minecraft:mycelium",
+  "nutrients": ["minecraft:copper_ingot", "minecraft:redstone", "minecraft:redstone"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:conductive_ingot"
+  },
+  "secondary_output": {
+    "count": 1,
+    "id": "minecraft:coarse_dirt"
+  }
+}

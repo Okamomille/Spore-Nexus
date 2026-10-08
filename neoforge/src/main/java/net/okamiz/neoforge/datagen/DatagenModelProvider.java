@@ -32,7 +32,12 @@ public class DatagenModelProvider extends ModelProvider {
         /* ITEMS */
         itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
 
+        itemModels.generateFlatItem(ItemsRegistry.LUMINESCENT_FIBERS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.MINERAL_QUARTZ.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.CONDUCTIVE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+
         itemModels.generateFlatItem(ItemsRegistry.NEXUS_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.MINERAL_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
 
         /* ESSENCES */
         itemModels.generateFlatItem(ItemsRegistry.FUNGAL_ESSENCE.get(), ModelTemplates.FLAT_ITEM);

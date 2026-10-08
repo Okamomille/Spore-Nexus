@@ -158,5 +158,30 @@ public class DatagenRecipeProvider extends RecipeProvider {
 
 
 
+        /* RESOURCE MUSHROOMS */
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.IRON_RESOURCE_MUSHROOM.get())
+                .pattern("XOX")
+                .pattern("OAO")
+                .pattern("XOX")
+                .define('X', ItemsRegistry.MINERAL_QUARTZ.get())
+                .define('O', Items.IRON_INGOT)
+                .define('A', ItemsRegistry.MINERAL_FUNGUS.get())
+                .unlockedBy("has_mineral_fungus", has(ItemsRegistry.MINERAL_FUNGUS.get()))
+                .group("resource_mushroom")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.QUARTZ_RESOURCE_MUSHROOM.get())
+                .pattern("XOX")
+                .pattern("OAO")
+                .pattern("XOX")
+                .define('X', ItemsRegistry.MINERAL_QUARTZ.get())
+                .define('O', Items.QUARTZ)
+                .define('A', ItemsRegistry.MINERAL_FUNGUS.get())
+                .unlockedBy("has_mineral_fungus", has(ItemsRegistry.MINERAL_FUNGUS.get()))
+                .group("resource_mushroom")
+                .save(output);
+
+
     }
 }

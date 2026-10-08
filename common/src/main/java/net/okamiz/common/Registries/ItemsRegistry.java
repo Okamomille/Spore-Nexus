@@ -20,7 +20,21 @@ public class ItemsRegistry {
 
 
 
+    public static final RegistrySupplier<Item> MINERAL_QUARTZ = registerItem("mineral_quartz", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+    public static final RegistrySupplier<Item> LUMINESCENT_FIBERS = registerItem("luminescent_fibers", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+    public static final RegistrySupplier<Item> CONDUCTIVE_INGOT = registerItem("conductive_ingot", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+
+
+
     public static final RegistrySupplier<Item> NEXUS_FUNGUS = registerItem("nexus_fungus", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> MINERAL_FUNGUS = registerItem("mineral_fungus", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
     /* ESSENCES */
