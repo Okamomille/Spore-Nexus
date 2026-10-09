@@ -38,6 +38,7 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(BlocksRegistry.REDSTONE_RESOURCE_MUSHROOM.get());
 
         dropSelf(BlocksRegistry.MYCELIAN_CORE.get());
+        dropSelf(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get());
     }
 
     @Override

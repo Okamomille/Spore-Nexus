@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:mineral_fungus",
+  "resource_input": ["minecraft:iron_ingot", "minecraft:iron_ingot", "minecraft:iron_ingot", "minecraft:iron_ingot"],
+  "secondary_input": ["sporenexus:mineral_quartz","sporenexus:mineral_quartz","sporenexus:mineral_quartz","sporenexus:mineral_quartz"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:iron_resource_mushroom"
+  }
+}

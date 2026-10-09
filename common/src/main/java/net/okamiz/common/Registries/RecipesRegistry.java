@@ -7,8 +7,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipe;
-
-import java.lang.reflect.Type;
+import net.okamiz.common.recipe.spore_nexus_craft.SporeNexusCraftRecipe;
 
 public class RecipesRegistry {
 
@@ -24,6 +23,17 @@ public class RecipesRegistry {
                 @Override
                 public String toString(){
                     return "mycelian_core";
+                }
+            });
+
+
+    public static final RegistrySupplier<RecipeSerializer<SporeNexusCraftRecipe>> SPORE_NEXUS_CRAFT_RECIPE_SERIALIZER =
+            RECIPE_SERIALIZERS.register("spore_nexus_craft", () -> new RecipeSerializer<>(SporeNexusCraftRecipe.CODEC, SporeNexusCraftRecipe.STREAM_CODEC));
+    public static final RegistrySupplier<RecipeType<SporeNexusCraftRecipe>> SPORE_NEXUS_CRAFT_RECIPE_TYPE =
+            RECIPE_TYPES.register("spore_nexus_craft", () -> new RecipeType<SporeNexusCraftRecipe>(){
+                @Override
+                public String toString(){
+                    return "spore_nexus_craft";
                 }
             });
 }

@@ -1,4 +1,4 @@
-// 26.2	2026-10-09T12:59:59.6782746	Loot Tables
+// 26.2	2026-10-09T16:15:13.0430748	Loot Tables
 e8c6a26403177575adcac682b43fb5c1790168d5 data/sporenexus/loot_table/blocks/banded_agaric.json
 bdc3f7b74d92b461028cc7aa360ec55ac08fb53a data/sporenexus/loot_table/blocks/coal_resource_mushroom.json
 c4f4b3c515ffda5f52e2a1f993dbee3aefda54b1 data/sporenexus/loot_table/blocks/copper_resource_mushroom.json
@@ -14,3 +14,4 @@ e6046d38f14d9934f2ec142ef34823883cf2f145 data/sporenexus/loot_table/blocks/lapis
 d79c12bb4efb4141ca1fe6a32bf4e99172548b7f data/sporenexus/loot_table/blocks/netherite_resource_mushroom.json
 d8166eb9ddc58c05fb510014d2fb50ab119c0416 data/sporenexus/loot_table/blocks/quartz_resource_mushroom.json
 aad4efddf61a8b09825df7da7a3656e1bdae22a3 data/sporenexus/loot_table/blocks/redstone_resource_mushroom.json
+cad0440dbf075cb954b089b335b5fc8e3ab031f6 data/sporenexus/loot_table/blocks/spore_nexus_craft_block.json

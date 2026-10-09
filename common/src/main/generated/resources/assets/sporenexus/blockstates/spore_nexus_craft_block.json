@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "sporenexus:block/spore_nexus_craft_block"
+    }
+  }
+}
