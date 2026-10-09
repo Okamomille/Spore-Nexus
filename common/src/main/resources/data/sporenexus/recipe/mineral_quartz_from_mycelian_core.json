@@ -1,6 +1,6 @@
 {
   "type": "sporenexus:mycelian_core",
-  "mushroom_input": "minecraft:brown_mushroom",
+  "mushroom_input": "sporenexus:banded_agaric",
   "substract_input": "minecraft:gravel",
   "nutrients": ["minecraft:iron_ingot", "minecraft:quartz", "minecraft:iron_ingot"],
   "result": {

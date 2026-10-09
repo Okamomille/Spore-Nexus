@@ -10,6 +10,7 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.resources.model.sprite.Material;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
@@ -66,6 +67,12 @@ public class DatagenModelProvider extends ModelProvider {
         blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE.get());
         blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE_PROXY.get());
 
+
+
+        registerCrossBlockWithCustomItemTexture(blockModels, itemModels, BlocksRegistry.BANDED_AGARIC.get());
+        registerCrossBlockWithCustomItemTexture(blockModels, itemModels, BlocksRegistry.ETERNAL_LIGHT_MUSHROOM.get());
+
+
         /* MUSHROOMS */
         registerMushroom(blockModels, BlocksRegistry.COAL_RESOURCE_MUSHROOM.get(), "coal");
         registerMushroom(blockModels, BlocksRegistry.COPPER_RESOURCE_MUSHROOM.get(), "copper");
@@ -81,16 +88,42 @@ public class DatagenModelProvider extends ModelProvider {
     }
 
 
-    private static final TextureSlot STEM = TextureSlot.create("stem");
-    private static final TextureSlot CAP = TextureSlot.create("cap");
-
     private static Identifier id(String path) {
         return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, path);
     }
-
     private static Material tex(String path) {
         return new Material(id(path));
     }
+
+
+
+    private void registerCrossBlockWithCustomItemTexture(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block) {
+        Identifier blockId = BuiltInRegistries.BLOCK.getKey(block);
+
+        // BLOCK MODEL
+        TextureMapping mapping = new TextureMapping().put(TextureSlot.CROSS, tex("block/" + blockId.getPath()))
+                .put(TextureSlot.PARTICLE, tex("block/" + blockId.getPath()));
+
+        ModelTemplates.CROSS.create(block, mapping, blockModels.modelOutput);
+
+        // BLOCKSTATE
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, BlockModelGenerators.plainVariant(id("block/" + blockId.getPath()))));
+
+        // ITEM
+        itemModels.generateFlatItem(block.asItem(), ModelTemplates.FLAT_ITEM);
+    }
+
+
+
+
+
+
+
+
+
+    private static final TextureSlot STEM = TextureSlot.create("stem");
+    private static final TextureSlot CAP = TextureSlot.create("cap");
+
 
     private void registerMushroom(BlockModelGenerators blockModels, Block block, String ore) {
         var states = PropertyDispatch.initial(ResourceMushroomBlock.AGE);

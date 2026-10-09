@@ -1,10 +1,14 @@
 {
   "type": "sporenexus:mycelian_core",
-  "mushroom_input": "minecraft:brown_mushroom",
-  "substract_input": "minecraft:glowstone",
+  "mushroom_input": "sporenexus:eternal_light_mushroom",
+  "substract_input": "minecraft:moss_block",
   "nutrients": ["minecraft:glowstone_dust", "minecraft:glowstone_dust", "minecraft:string"],
   "result": {
     "count": 4,
     "id": "sporenexus:luminescent_fibers"
+  },
+  "secondary_output": {
+    "count": 1,
+    "id": "minecraft:coarse_dirt"
   }
 }

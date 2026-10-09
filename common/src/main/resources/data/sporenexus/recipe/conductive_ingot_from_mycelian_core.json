@@ -1,6 +1,6 @@
 {
   "type": "sporenexus:mycelian_core",
-  "mushroom_input": "minecraft:brown_mushroom",
+  "mushroom_input": "sporenexus:eternal_light_mushroom",
   "substract_input": "minecraft:mycelium",
   "nutrients": ["minecraft:copper_ingot", "minecraft:redstone", "minecraft:redstone"],
   "result": {
