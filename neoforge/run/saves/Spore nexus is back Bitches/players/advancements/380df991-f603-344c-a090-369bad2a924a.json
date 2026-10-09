@@ -7,6 +7,9 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
+      "minecraft:forest": "2026-10-09 13:05:55 +0200",
+      "minecraft:river": "2026-10-09 13:05:54 +0200",
+      "minecraft:dripstone_caves": "2026-10-09 13:06:06 +0200",
       "minecraft:plains": "2026-10-03 12:29:30 +0200"
     },
     "done": false
@@ -1022,6 +1025,30 @@
   "sporenexus:recipes/misc/quartz_resource_mushroom": {
     "criteria": {
       "has_mineral_fungus": "2026-10-08 13:10:27 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mossy_cobblestone_from_moss_block": {
+    "criteria": {
+      "has_moss_block": "2026-10-09 13:06:19 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/terracotta": {
+    "criteria": {
+      "has_clay_block": "2026-10-09 13:06:23 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/moss_carpet": {
+    "criteria": {
+      "has_moss_block": "2026-10-09 13:06:19 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mossy_stone_bricks_from_moss_block": {
+    "criteria": {
+      "has_moss_block": "2026-10-09 13:06:19 +0200"
     },
     "done": true
   },

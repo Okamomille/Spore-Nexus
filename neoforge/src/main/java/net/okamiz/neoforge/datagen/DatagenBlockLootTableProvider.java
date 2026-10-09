@@ -19,6 +19,12 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(BlocksRegistry.FUNGALSTEEL_BLOCK.get());
+
+
+        dropSelf(BlocksRegistry.BANDED_AGARIC.get());
+        dropSelf(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM.get());
+
+
         dropSelf(BlocksRegistry.COAL_RESOURCE_MUSHROOM.get());
         dropSelf(BlocksRegistry.COPPER_RESOURCE_MUSHROOM.get());
         dropSelf(BlocksRegistry.DIAMOND_RESOURCE_MUSHROOM.get());
@@ -30,6 +36,7 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(BlocksRegistry.NETHERITE_RESOURCE_MUSHROOM.get());
         dropSelf(BlocksRegistry.QUARTZ_RESOURCE_MUSHROOM.get());
         dropSelf(BlocksRegistry.REDSTONE_RESOURCE_MUSHROOM.get());
+
         dropSelf(BlocksRegistry.MYCELIAN_CORE.get());
     }
 

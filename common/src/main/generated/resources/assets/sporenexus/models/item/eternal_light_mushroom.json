@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "sporenexus:item/eternal_light_mushroom"
+  }
+}

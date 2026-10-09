@@ -11,16 +11,19 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.blocks.custom.CustomMushroomBlock;
 import net.okamiz.common.blocks.custom.MycelianCoreBlock;
 import net.okamiz.common.blocks.custom.MycelianCoreProxy;
 import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class BlocksRegistry {
 
@@ -29,7 +32,7 @@ public class BlocksRegistry {
     public static final RegistrySupplier<Block> FUNGALSTEEL_BLOCK = registerBlock("fungalsteel_block", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB );
 
-    /* BLOCK ENTITES */
+    /* BLOCK ENTITIES */
 
     public static final RegistrySupplier<Block> MYCELIAN_CORE = registerBlock("mycelian_core", MycelianCoreBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
@@ -38,6 +41,17 @@ public class BlocksRegistry {
     public static final RegistrySupplier<Block> MYCELIAN_CORE_PROXY = registerBlock("mycelian_core_proxy", MycelianCoreProxy::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
                     .noOcclusion().noLootTable(), null);
+
+
+    /* BASIC MUSHROOMS */
+
+    public static RegistrySupplier<Block> BANDED_AGARIC = registerBlock("banded_agaric", CustomMushroomBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).noOcclusion(), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static RegistrySupplier<Block> ETERNAL_LIGHT_MUSHROOM = registerBlock("eternal_light_mushroom", CustomMushroomBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).noOcclusion().lightLevel(state -> 5), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+
 
     /* RESOURCES MUSHROOMS */
 
