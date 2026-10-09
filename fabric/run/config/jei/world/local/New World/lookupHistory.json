@@ -1,6 +1,10 @@
 [
   {"version":1},
+  {"ingredient":{"id":"sporenexus:nexus_fungus"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:mineral_quartz"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:iron_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"sporenexus:iron_fragments"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"sporenexus:iron_resource_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:mineral_fungus"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:spore_nexus_craft_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:quartz_resource_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"},

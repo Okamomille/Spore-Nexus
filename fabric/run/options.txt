@@ -208,7 +208,7 @@ key_key.jei.nextCategory:key.keyboard.unknown
 key_key.jei.closeRecipeGui:key.keyboard.escape
 key_key.jei.copy.recipe.id:key.keyboard.unknown
 soundCategory_master:0.20447019867549668
-soundCategory_music:0.27816901408450706
+soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0

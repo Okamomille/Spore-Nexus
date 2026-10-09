@@ -20,7 +20,8 @@
     ],
     "client": [
       "net.okamiz.fabric.client.SporeNexusFabricClient"
-    ]
+    ],
+    "jei_mod_plugin": [ "net.okamiz.fabric.compats.jei.JEIPluginFabric" ]
   },
   "mixins": [
     "sporenexus.mixins.json"
