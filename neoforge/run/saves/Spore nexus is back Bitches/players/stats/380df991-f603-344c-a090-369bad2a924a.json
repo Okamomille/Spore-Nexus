@@ -14,6 +14,24 @@
       "minecraft:netherite_scrap": 1,
       "minecraft:redstone": 6
     },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 24,
+      "minecraft:time_since_rest": 119328,
+      "minecraft:walk_one_cm": 178784,
+      "minecraft:leave_game": 87,
+      "minecraft:walk_under_water_one_cm": 371,
+      "minecraft:play_time": 119328,
+      "minecraft:jump": 490,
+      "minecraft:time_since_death": 119328,
+      "minecraft:drop": 19,
+      "minecraft:open_enderchest": 2,
+      "minecraft:sprint_one_cm": 71525,
+      "minecraft:fall_one_cm": 4884,
+      "minecraft:total_world_time": 130506,
+      "minecraft:fly_one_cm": 202402,
+      "minecraft:crouch_one_cm": 2112,
+      "minecraft:sneak_time": 1049
+    },
     "minecraft:used": {
       "sporenexus:quartz_resource_mushroom": 5,
       "minecraft:netherrack": 1,
@@ -95,24 +113,6 @@
       "sporenexus:emerald_resource_mushroom": 1,
       "minecraft:soul_sand": 1,
       "sporenexus:mycelian_core": 21
-    },
-    "minecraft:custom": {
-      "minecraft:interact_with_crafting_table": 24,
-      "minecraft:time_since_rest": 108480,
-      "minecraft:walk_one_cm": 176146,
-      "minecraft:leave_game": 76,
-      "minecraft:walk_under_water_one_cm": 371,
-      "minecraft:play_time": 108480,
-      "minecraft:jump": 471,
-      "minecraft:time_since_death": 108480,
-      "minecraft:drop": 19,
-      "minecraft:open_enderchest": 2,
-      "minecraft:sprint_one_cm": 70348,
-      "minecraft:fall_one_cm": 4434,
-      "minecraft:total_world_time": 118368,
-      "minecraft:fly_one_cm": 201084,
-      "minecraft:crouch_one_cm": 2112,
-      "minecraft:sneak_time": 1046
     },
     "minecraft:picked_up": {
       "sporenexus:gold_resource_mushroom": 1,
