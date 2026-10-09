@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:gravel": 131
+    },
+    "minecraft:dropped": {
+      "minecraft:gravel": 127
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 266,
+      "minecraft:total_world_time": 274,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 266,
+      "minecraft:time_since_death": 266,
+      "minecraft:drop": 2
+    }
+  },
+  "DataVersion": 4903
+}

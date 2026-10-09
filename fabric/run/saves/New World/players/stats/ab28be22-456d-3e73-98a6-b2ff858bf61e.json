@@ -1,0 +1,39 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "sporenexus:spore_nexus_craft_block": 3,
+      "sporenexus:mycelian_core": 3,
+      "minecraft:netherite_pickaxe": 2
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 2125,
+      "minecraft:walk_one_cm": 2900,
+      "minecraft:total_world_time": 2140,
+      "minecraft:leave_game": 2,
+      "minecraft:sneak_time": 10,
+      "minecraft:play_time": 2125,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 2125,
+      "minecraft:drop": 31
+    },
+    "minecraft:dropped": {
+      "minecraft:iron_ingot": 7,
+      "minecraft:quartz": 1,
+      "sporenexus:mineral_fungus": 15,
+      "sporenexus:mineral_quartz": 8
+    },
+    "minecraft:mined": {
+      "sporenexus:spore_nexus_craft_block": 1,
+      "sporenexus:mycelian_core": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:quartz": 1,
+      "sporenexus:mineral_fungus": 13,
+      "sporenexus:spore_nexus_craft_block": 1,
+      "sporenexus:mycelian_core": 1,
+      "sporenexus:mineral_quartz": 7,
+      "minecraft:iron_ingot": 7
+    }
+  },
+  "DataVersion": 4903
+}

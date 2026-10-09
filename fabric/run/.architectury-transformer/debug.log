@@ -1,5 +1,5 @@
 [Architectury Transformer] Architectury Runtime 5.2.92
-[Architectury Transformer DEBUG] Closed File Systems for D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.3-dev.jar
+[Architectury Transformer DEBUG] Closed File Systems for D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar
 [Architectury Transformer DEBUG] Preparing tiny remapper prepared transformer: dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Provided 117 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\jojob\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
@@ -119,40 +119,171 @@
 [Architectury Transformer DEBUG]  - C:\Users\jojob\.gradle\caches\modules-2\files-2.1\net.fabricmc.fabric-api\fabric-serialization-api-v1\2.0.4+11a26f319e\ebf77996be79909f639a7352689d851385a9cd2b\fabric-serialization-api-v1-2.0.4+11a26f319e.jar
 [Architectury Transformer DEBUG]  - C:\Users\jojob\.gradle\caches\modules-2\files-2.1\net.fabricmc.fabric-api\fabric-sound-api-v1\2.0.5+11a26f319e\73e4e62924608e1d1581f192607857db096dafe7\fabric-sound-api-v1-2.0.5+11a26f319e.jar
 [Architectury Transformer DEBUG]  - C:\Users\jojob\.gradle\caches\modules-2\files-2.1\net.fabricmc.fabric-api\fabric-transitive-access-wideners-v1\8.1.4+67c847259e\e1e769f8e123395ab939d5d8da900e6a6ad53ab2\fabric-transitive-access-wideners-v1-8.1.4+67c847259e.jar
-[Architectury Transformer] Read classpath in 1.438 s
-[Architectury Transformer DEBUG] Closed File Systems for D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.3-dev.jar
-[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.3-dev.jar to C:\Users\jojob\AppData\Local\Temp\16649274602692973653.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@47db50c5
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@5c072e3f
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@4d1b0d2a
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@954b04f
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@149494d8
-[Architectury Transformer DEBUG] Transforming from D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.3-dev.jar to C:\Users\jojob\AppData\Local\Temp\16649274602692973653.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer] Read classpath in 1.528 s
+[Architectury Transformer DEBUG] Closed File Systems for D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar to C:\Users\jojob\AppData\Local\Temp\6744996764611137108.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@5fdcaa40
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@6dc17b83
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@5e0826e7
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@32eff876
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@8dbdac1
+[Architectury Transformer DEBUG] Transforming from D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar to C:\Users\jojob\AppData\Local\Temp\6744996764611137108.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/SporeNexus with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/BlockEntitiesRegistry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/BlocksRegistry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/CreativeTabsRegistry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/ItemsRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/MenusRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/MultiblockProxyBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/CustomMushroomBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/MycelianCoreBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/MycelianCoreProxy with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/ResourceMushroomBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/SporeNexusCraftBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftMenu with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipeInput with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /sporenexus.mixins.json is a mixin config.
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\jojob\AppData\Local\Temp\16649274602692973653.jar
-[Architectury Transformer] Listening at D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.3-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\jojob\AppData\Local\Temp\16649274602692973653.jar] contains packages: net.okamiz.common.Registries, net.okamiz
-[Architectury Transformer DEBUG] Closed File Systems for D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.3-dev.jar
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\jojob\AppData\Local\Temp\6744996764611137108.jar
+[Architectury Transformer] Listening at D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\jojob\AppData\Local\Temp\6744996764611137108.jar] contains packages: net.okamiz.common.blocks.entity.custom, net.okamiz.common.recipe.spore_nexus_craft, net.okamiz.common.blocks, net.okamiz.common.Registries, net.okamiz.common.blocks.custom, net.okamiz, net.okamiz.common.menus.custom, net.okamiz.common.recipe.mycelian_core
+[Architectury Transformer DEBUG] Closed File Systems for D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar
 [Architectury Transformer DEBUG] Classpath entry [D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\fabric\build\classes\java\main] contains packages: net.okamiz.fabric.client, net.okamiz.fabric
 [Architectury Transformer DEBUG] Classpath entry [D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\fabric\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from net/okamiz/SporeNexus.class to net/okamiz/SporeNexus.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/SporeNexus with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/SporeNexus in 735.6 μs
+[Architectury Transformer DEBUG] Transformed net/okamiz/SporeNexus in 1.423 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/BlocksRegistry.class to net/okamiz/common/Registries/BlocksRegistry.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/BlocksRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/BlocksRegistry in 927.9 μs
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/BlocksRegistry in 3.404 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/ResourceMushroomBlock.class to net/okamiz/common/blocks/custom/ResourceMushroomBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/ResourceMushroomBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/ResourceMushroomBlock in 1.674 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/CreativeTabsRegistry.class to net/okamiz/common/Registries/CreativeTabsRegistry.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/CreativeTabsRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/CreativeTabsRegistry in 505.3 μs
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/CreativeTabsRegistry in 884.5 μs
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/ItemsRegistry.class to net/okamiz/common/Registries/ItemsRegistry.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/ItemsRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/ItemsRegistry in 1.661 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/ItemsRegistry in 2.008 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/MycelianCoreBlock.class to net/okamiz/common/blocks/custom/MycelianCoreBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/MycelianCoreBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/MycelianCoreBlock in 2.320 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity.class to net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity in 1.940 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/MycelianCoreProxy.class to net/okamiz/common/blocks/custom/MycelianCoreProxy.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/MycelianCoreProxy with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/MycelianCoreProxy in 1.909 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/MultiblockProxyBlock.class to net/okamiz/common/blocks/MultiblockProxyBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/MultiblockProxyBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/MultiblockProxyBlock in 208.5 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/SporeNexusCraftBlock.class to net/okamiz/common/blocks/custom/SporeNexusCraftBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/SporeNexusCraftBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/SporeNexusCraftBlock in 2.348 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity.class to net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity in 1.821 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/CustomMushroomBlock.class to net/okamiz/common/blocks/custom/CustomMushroomBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/CustomMushroomBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/CustomMushroomBlock in 753.5 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/BlockEntitiesRegistry.class to net/okamiz/common/Registries/BlockEntitiesRegistry.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/BlockEntitiesRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/BlockEntitiesRegistry in 819.3 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1.class to net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1 in 760.6 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/MycelianCoreMenu.class to net/okamiz/common/menus/custom/MycelianCoreMenu.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu in 780.8 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1.class to net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1 in 480.5 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/SporeNexusCraftMenu.class to net/okamiz/common/menus/custom/SporeNexusCraftMenu.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftMenu with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/SporeNexusCraftMenu in 742.5 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/MenusRegistry.class to net/okamiz/common/Registries/MenusRegistry.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/MenusRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/MenusRegistry in 695.7 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/MycelianCoreMenu$1.class to net/okamiz/common/menus/custom/MycelianCoreMenu$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu$1 in 291.1 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/MycelianCoreMenu$2.class to net/okamiz/common/menus/custom/MycelianCoreMenu$2.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu$2 in 256.9 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/RecipesRegistry.class to net/okamiz/common/Registries/RecipesRegistry.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry in 1.005 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/RecipesRegistry$1.class to net/okamiz/common/Registries/RecipesRegistry$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry$1 in 681.2 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/RecipesRegistry$2.class to net/okamiz/common/Registries/RecipesRegistry$2.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry$2 in 553.9 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe.class to net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe in 1.955 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe.class to net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe in 1.182 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/MycelianCoreScreen.class to net/okamiz/common/menus/custom/MycelianCoreScreen.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreScreen in 562.8 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/SporeNexusCraftScreen.class to net/okamiz/common/menus/custom/SporeNexusCraftScreen.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/SporeNexusCraftScreen in 438.7 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2.class to net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2 in 1.190 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2.class to net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2 in 350.1 μs
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput.class to net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput in 944.8 μs

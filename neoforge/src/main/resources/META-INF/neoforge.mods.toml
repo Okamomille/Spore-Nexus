@@ -11,7 +11,7 @@ authors = "Okamiz"
 description = '''
 This is an example description! Tell everyone what your mod is about!
 '''
-#logoFile = ""
+iconFile = "icon.png"
 
 [[dependencies.sporenexus]]
 modId = "neoforge"

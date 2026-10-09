@@ -3,6 +3,7 @@
   "tab.sporenexus": "Spore Nexus",
 
  "gui.sporenexus.mycelian_core": "Mycelian Core",
+ "gui.sporenexus.spore_nexus_craft": "Spore Nexus Altar",
 
 
   "item.sporenexus.fungalsteel_ingot": "Fungalsteel Ingot",
@@ -38,7 +39,9 @@
 
   "block.sporenexus.fungalsteel_block": "Fungalsteel Block",
 
+  "block.sporenexus.spore_nexus": "Spore Nexus Altar",
   "block.sporenexus.mycelian_core": "Mycelian Core",
+  "block.sporenexus.spore_nexus_craft_block": "Spore Nexus Altar",
 
   "block.sporenexus.banded_agaric": "Banded Agaric",
   "block.sporenexus.eternal_light_mushroom": "Eternal Light Mushroom",

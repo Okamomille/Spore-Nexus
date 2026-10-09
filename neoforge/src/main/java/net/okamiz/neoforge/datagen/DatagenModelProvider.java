@@ -67,6 +67,7 @@ public class DatagenModelProvider extends ModelProvider {
         blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE.get());
         blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE_PROXY.get());
 
+        blockModels.createNonTemplateModelBlock(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get());
 
 
         registerCrossBlockWithCustomItemTexture(blockModels, itemModels, BlocksRegistry.BANDED_AGARIC.get());

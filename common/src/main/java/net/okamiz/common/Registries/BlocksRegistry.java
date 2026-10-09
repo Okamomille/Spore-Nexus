@@ -16,10 +16,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.blocks.custom.CustomMushroomBlock;
-import net.okamiz.common.blocks.custom.MycelianCoreBlock;
-import net.okamiz.common.blocks.custom.MycelianCoreProxy;
-import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
+import net.okamiz.common.blocks.custom.*;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -42,6 +39,10 @@ public class BlocksRegistry {
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
                     .noOcclusion().noLootTable(), null);
 
+
+    public static final RegistrySupplier<Block> SPORE_NEXUS_CRAFT_BLOCK = registerBlock("spore_nexus_craft_block", SporeNexusCraftBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
+                    .noOcclusion(), CreativeTabsRegistry.SPORENEXUS_TAB);
 
     /* BASIC MUSHROOMS */
 

@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "minecraft:dropped": {
+      "minecraft:iron_ingot": 4,
+      "minecraft:quartz": 72,
+      "sporenexus:mineral_fungus": 5,
+      "sporenexus:mineral_quartz": 15,
+      "minecraft:gravel": 20
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1535,
+      "minecraft:walk_one_cm": 249,
+      "minecraft:total_world_time": 1541,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 1535,
+      "minecraft:time_since_death": 1535,
+      "minecraft:drop": 53
+    },
+    "minecraft:picked_up": {
+      "minecraft:quartz": 72,
+      "sporenexus:mineral_fungus": 7,
+      "minecraft:gravel": 20,
+      "sporenexus:mineral_quartz": 16,
+      "minecraft:iron_ingot": 4
+    }
+  },
+  "DataVersion": 4903
+}

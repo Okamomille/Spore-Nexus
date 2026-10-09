@@ -1,4 +1,4 @@
-// 26.2	2026-10-09T12:59:59.6792832	Model Definitions - sporenexus
+// 26.2	2026-10-09T16:15:13.0440764	Model Definitions - sporenexus
 97a66ea65035c0f2af7279dcfeb8d687dc7356cf assets/sporenexus/blockstates/banded_agaric.json
 d227d1ad553c14d1b78760b2577c4d08a8e9dde6 assets/sporenexus/blockstates/coal_resource_mushroom.json
 9a548313d2640a0e98135f0c2191ade89f2fc9f7 assets/sporenexus/blockstates/copper_resource_mushroom.json
@@ -15,6 +15,7 @@ c3c86045d8b196dcd29f9c10a0ff6ab6f1bd769f assets/sporenexus/blockstates/iron_reso
 e42565a0b19e53a92ca505a2872df41df46c5c64 assets/sporenexus/blockstates/netherite_resource_mushroom.json
 e61fdf98e226d8a3664d1b6ee95b6a3980b47189 assets/sporenexus/blockstates/quartz_resource_mushroom.json
 1555301cacb82a45adb1ddbdf97e6b6f313fdc93 assets/sporenexus/blockstates/redstone_resource_mushroom.json
+65897181889bc4a2703f5c01357d4a1145573e4e assets/sporenexus/blockstates/spore_nexus_craft_block.json
 048ddebc33f7f1d5d9127f451825ac7f29eaceda assets/sporenexus/items/banded_agaric.json
 68aad108593dd8170de87d29692ca92d1240d6c8 assets/sporenexus/items/coal_fragments.json
 0b6744fd0ee89ca7dadff39f9e8c122d399ffa3d assets/sporenexus/items/coal_resource_mushroom.json
@@ -51,6 +52,7 @@ b3a15897b4148fecb8b6a1d5d15401db0c320eea assets/sporenexus/items/netherite_resou
 064e04a4d3432d8171571ad9f9d5804e3c630fb3 assets/sporenexus/items/quartz_resource_mushroom.json
 ad980b33dd5157132adb0d48b5e13150bff438b1 assets/sporenexus/items/redstone_fragments.json
 17109efa57d1d6f0c4d51cfab731bb9af5d32fbf assets/sporenexus/items/redstone_resource_mushroom.json
+fbc66f11b96172c317417771efedb8567cffd38c assets/sporenexus/items/spore_nexus_craft_block.json
 4d3fd73094e0e6e7bd8457364e8be8d6d00f47e4 assets/sporenexus/models/block/banded_agaric.json
 56931fcbc453cef3225720011839349330be72f2 assets/sporenexus/models/block/coal_resource_mushroom_stage_0.json
 d31c0c7e0934ad1a4de7fca09ce2fb8d11942acf assets/sporenexus/models/block/coal_resource_mushroom_stage_1.json
