@@ -1,0 +1,10 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"sporenexus:mineral_quartz"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"sporenexus:mineral_fungus"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"sporenexus:spore_nexus_craft_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"sporenexus:quartz_resource_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:flint"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"sporenexus:mycelian_core"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"sporenexus:fungalsteel_block"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]
