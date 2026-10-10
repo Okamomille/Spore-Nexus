@@ -1,5 +1,6 @@
 [
   {"version":1},
+  {"ingredient":{"id":"sporenexus:coal_resource_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:fertilized_mycelium"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:fungal_mycelium"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:crystallized_fungus"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -10,7 +11,6 @@
   {"ingredient":{"id":"sporenexus:fungalsteel_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:redstone_resource_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:copper_resource_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sporenexus:coal_resource_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:eternal_light_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:banded_agaric"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sporenexus:mycelian_core"},"type":"item_stack","bookmarkType":"INGREDIENT"},

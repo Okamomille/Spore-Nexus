@@ -77,5 +77,13 @@
   "block.sporenexus.lapis_lazuli_resource_mushroom": "Lapis Lazuli Resource Mushroom",
   "block.sporenexus.netherite_resource_mushroom": "Netherite Resource Mushroom",
   "block.sporenexus.quartz_resource_mushroom": "Quartz Resource Mushroom",
-  "block.sporenexus.redstone_resource_mushroom": "Redstone Resource Mushroom"
+  "block.sporenexus.redstone_resource_mushroom": "Redstone Resource Mushroom",
+
+
+
+
+
+
+ "tooltip.block.sporenexus.fertilized_mycelium": "x1.25 Mushroom Growth Speed",
+ "tooltip.block.sporenexus.fungal_mycelium": "x1.50 Mushroom Growth Speed"
 }
