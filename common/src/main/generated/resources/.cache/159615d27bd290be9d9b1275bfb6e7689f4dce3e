@@ -1,4 +1,4 @@
-// 26.2	2026-10-10T14:37:39.4916606	Spore Nexus Recipes
+// 26.2	2026-10-10T17:56:30.3723015	Spore Nexus Recipes
 3f79915a4ed07d0c777e0e4f8a701f8e9cd07fe2 data/minecraft/advancement/recipes/misc/fungalsteel_from_powder.json
 b961c0ec64f052fcfe293eb5023d85bce1a2e2d0 data/minecraft/advancement/recipes/misc/mycelium_from_spores.json
 bb640e45c4dab12b8aeba4f788bc9e66751140b9 data/minecraft/recipe/fungalsteel_from_powder.json
@@ -11,6 +11,7 @@ ee1a7c896ddffaacdc6fcbc81c0543fdb6e2863a data/sporenexus/advancement/recipes/mis
 2d99221c9ccd5be16eb71290766404d0852e0abc data/sporenexus/advancement/recipes/misc/fungalsteel_from_fragments.json
 dfa76f992bcdc5b36af705863b12c1bf66ec0957 data/sporenexus/advancement/recipes/misc/fungalsteel_ingot.json
 1e065e00819a66b43dc850b124acd1395c21d6c0 data/sporenexus/advancement/recipes/misc/gold_from_fragments.json
+53420eee67eeb59a4edcc46345e4328b226ccd2a data/sporenexus/advancement/recipes/misc/great_fungus.json
 5f29c8cee43cc93805a940cfd601ab8eb6188288 data/sporenexus/advancement/recipes/misc/iron_from_fragments.json
 73aa1d9fa7a0ca31d0e2ff4f3a391b683cb3d108 data/sporenexus/advancement/recipes/misc/lapis_lazuli_from_fragments.json
 cca1e0b9ac1f3cb177bb09aa32c852e2115b1d5c data/sporenexus/advancement/recipes/misc/mushroom_spores.json
@@ -28,6 +29,7 @@ d2f41405b3c180070ce7f48fa373ec6a2739992f data/sporenexus/recipe/fungalsteel_bloc
 464bcb5677c8a71d8290a3c41508270d1d630a32 data/sporenexus/recipe/fungalsteel_from_fragments.json
 0ffa5ce9ca144226b1a1c3b852948a3473cae986 data/sporenexus/recipe/fungalsteel_ingot.json
 819496b80d1de488824e266db2544a1558eb32b4 data/sporenexus/recipe/gold_from_fragments.json
+0ef73217a20650bd18b29dc5c391caac67ac1e85 data/sporenexus/recipe/great_fungus.json
 137677367255377761e8791ec6b78aafb9c9c372 data/sporenexus/recipe/iron_from_fragments.json
 d25ad9974b73fe11b23095fe1e7f5b37c5c7a5c0 data/sporenexus/recipe/lapis_lazuli_from_fragments.json
 7a735548f9b385249d857266745685babd163e34 data/sporenexus/recipe/mushroom_spores.json
