@@ -1016,18 +1016,6 @@
     },
     "done": true
   },
-  "sporenexus:recipes/misc/iron_resource_mushroom": {
-    "criteria": {
-      "has_mineral_fungus": "2026-10-08 13:10:27 +0200"
-    },
-    "done": true
-  },
-  "sporenexus:recipes/misc/quartz_resource_mushroom": {
-    "criteria": {
-      "has_mineral_fungus": "2026-10-08 13:10:27 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/mossy_cobblestone_from_moss_block": {
     "criteria": {
       "has_moss_block": "2026-10-09 13:06:19 +0200"
@@ -1055,6 +1043,12 @@
   "minecraft:recipes/decorations/smoker": {
     "criteria": {
       "has_furnace": "2026-10-09 17:09:05 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone": {
+    "criteria": {
+      "has_redstone_block": "2026-10-09 22:31:21 +0200"
     },
     "done": true
   },

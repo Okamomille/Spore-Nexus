@@ -36,6 +36,10 @@ public class ItemsRegistry {
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
     public static final RegistrySupplier<Item> MINERAL_FUNGUS = registerItem("mineral_fungus", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> CONDUCTIVE_FUNGUS = registerItem("conductive_fungus", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+
 
     /* ESSENCES */
 

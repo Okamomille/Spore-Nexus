@@ -1,36 +1,19 @@
 {
   "stats": {
     "minecraft:crafted": {
-      "sporenexus:fungalsteel_ingot": 10,
-      "minecraft:diamond": 2,
-      "minecraft:lapis_lazuli": 1,
       "minecraft:iron_ingot": 2,
       "minecraft:copper_ingot": 1,
       "minecraft:quartz": 1,
       "minecraft:gold_ingot": 1,
+      "sporenexus:fungalsteel_ingot": 10,
+      "minecraft:diamond": 2,
+      "minecraft:lapis_lazuli": 1,
       "minecraft:coal": 1,
       "sporenexus:nexus_fungus": 14,
       "sporenexus:fungalsteel_block": 1,
+      "minecraft:redstone_block": 1,
       "minecraft:netherite_scrap": 1,
       "minecraft:redstone": 6
-    },
-    "minecraft:custom": {
-      "minecraft:interact_with_crafting_table": 24,
-      "minecraft:time_since_rest": 119328,
-      "minecraft:walk_one_cm": 178784,
-      "minecraft:leave_game": 87,
-      "minecraft:walk_under_water_one_cm": 371,
-      "minecraft:play_time": 119328,
-      "minecraft:jump": 490,
-      "minecraft:time_since_death": 119328,
-      "minecraft:drop": 19,
-      "minecraft:open_enderchest": 2,
-      "minecraft:sprint_one_cm": 71525,
-      "minecraft:fall_one_cm": 4884,
-      "minecraft:total_world_time": 130506,
-      "minecraft:fly_one_cm": 202402,
-      "minecraft:crouch_one_cm": 2112,
-      "minecraft:sneak_time": 1049
     },
     "minecraft:used": {
       "sporenexus:quartz_resource_mushroom": 5,
@@ -45,6 +28,7 @@
       "minecraft:wheat_seeds": 1,
       "minecraft:stone_hoe": 26,
       "minecraft:glow_berries": 8,
+      "minecraft:verdant_froglight": 2,
       "minecraft:soul_sand": 1,
       "minecraft:mycelium": 40,
       "minecraft:water_bucket": 9,
@@ -69,26 +53,16 @@
       "sporenexus:banded_agaric": 20,
       "sporenexus:copper_resource_mushroom": 3,
       "minecraft:cyan_terracotta": 16,
-      "minecraft:redstone_torch": 31,
+      "minecraft:redstone_torch": 36,
       "minecraft:ender_chest": 1,
       "minecraft:crafting_table": 2,
       "minecraft:nether_wart": 5,
       "sporenexus:spore_nexus_craft_block": 7,
       "sporenexus:mycelian_core": 87,
       "minecraft:moss_block": 41,
-      "sporenexus:eternal_light_mushroom": 20,
+      "sporenexus:eternal_light_mushroom": 22,
       "minecraft:stone_pickaxe": 11,
       "sporenexus:fungalsteel_resource_mushroom": 6
-    },
-    "minecraft:dropped": {
-      "minecraft:mycelium": 1,
-      "sporenexus:mycelian_core": 1,
-      "minecraft:netherite_pickaxe": 2,
-      "sporenexus:fungalsteel_ingot": 5,
-      "sporenexus:mineral_quartz": 1,
-      "sporenexus:infernal_essence": 3,
-      "sporenexus:ethereal_essence": 3,
-      "sporenexus:fungal_essence": 3
     },
     "minecraft:mined": {
       "sporenexus:banded_agaric": 5,
@@ -113,6 +87,16 @@
       "sporenexus:emerald_resource_mushroom": 1,
       "minecraft:soul_sand": 1,
       "sporenexus:mycelian_core": 21
+    },
+    "minecraft:dropped": {
+      "minecraft:mycelium": 1,
+      "sporenexus:mycelian_core": 1,
+      "minecraft:netherite_pickaxe": 2,
+      "sporenexus:fungalsteel_ingot": 5,
+      "sporenexus:mineral_quartz": 1,
+      "sporenexus:infernal_essence": 3,
+      "sporenexus:ethereal_essence": 3,
+      "sporenexus:fungal_essence": 3
     },
     "minecraft:picked_up": {
       "sporenexus:gold_resource_mushroom": 1,
@@ -157,6 +141,24 @@
       "sporenexus:copper_fragments": 12,
       "sporenexus:ethereal_essence": 3,
       "sporenexus:lapis_lazuli_fragments": 13
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 28,
+      "minecraft:time_since_rest": 131364,
+      "minecraft:walk_one_cm": 184755,
+      "minecraft:leave_game": 90,
+      "minecraft:walk_under_water_one_cm": 371,
+      "minecraft:play_time": 131364,
+      "minecraft:jump": 523,
+      "minecraft:time_since_death": 131364,
+      "minecraft:drop": 19,
+      "minecraft:open_enderchest": 2,
+      "minecraft:sprint_one_cm": 78383,
+      "minecraft:fall_one_cm": 4884,
+      "minecraft:total_world_time": 143454,
+      "minecraft:fly_one_cm": 233469,
+      "minecraft:crouch_one_cm": 2166,
+      "minecraft:sneak_time": 1091
     }
   },
   "DataVersion": 4903
