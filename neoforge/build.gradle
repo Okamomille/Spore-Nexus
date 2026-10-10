@@ -21,7 +21,17 @@ loom {
                 '--output', project(':common').file('src/main/generated/resources/').getAbsolutePath(),
                '--existing', project(':common').file('src/main/resources/').getAbsolutePath()
         }
+
+
     }
+}
+
+tasks.register('cleanGenerated', Delete) {
+    delete project(':common').file('src/main/generated/resources')
+}
+
+tasks.matching { it.name == 'runData' }.configureEach {
+    dependsOn 'cleanGenerated'
 }
 
 configurations {

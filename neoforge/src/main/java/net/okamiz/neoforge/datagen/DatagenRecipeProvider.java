@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
 import net.okamiz.common.Registries.BlocksRegistry;
 import net.okamiz.common.Registries.ItemsRegistry;
+import net.okamiz.common.Registries.TagsRegistry;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -44,19 +45,10 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .pattern("XXX")
                 .pattern("XXX")
                 .pattern("XXX")
-                .define('X', Items.BROWN_MUSHROOM)
-                .unlockedBy("has_brown_mushroom", has(Items.BROWN_MUSHROOM))
+                .define('X', TagsRegistry.MUSHROOMS)
+                .unlockedBy("has_mushroom", has(TagsRegistry.MUSHROOMS))
                 .group("fungus")
-                .save(output, "sporenexus:nexus_fungus_from_brown");
-
-        shaped(RecipeCategory.MISC, ItemsRegistry.NEXUS_FUNGUS.get())
-                .pattern("XXX")
-                .pattern("XXX")
-                .pattern("XXX")
-                .define('X', Items.RED_MUSHROOM)
-                .unlockedBy("has_red_mushroom", has(Items.RED_MUSHROOM))
-                .group("fungus")
-                .save(output, "sporenexus:nexus_fungus_from_red");
+                .save(output, "sporenexus:nexus_fungus_from_mushrooms");
 
 
         shaped(RecipeCategory.MISC, BlocksRegistry.FUNGALSTEEL_BLOCK.get())
@@ -72,6 +64,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_fungalsteel_block", has(BlocksRegistry.FUNGALSTEEL_BLOCK.get()))
                 .group("fungalsteel")
                 .save(output);
+
 
 
 
