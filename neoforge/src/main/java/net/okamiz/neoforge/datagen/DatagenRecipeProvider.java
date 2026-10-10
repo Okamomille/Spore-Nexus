@@ -94,6 +94,16 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output, "mycelium_from_spores");
 
 
+        shaped(RecipeCategory.MISC, ItemsRegistry.GREAT_FUNGUS.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.FUNGAL_ESSENCE.get())
+                .define('O', ItemsRegistry.NEXUS_FUNGUS.get())
+                .unlockedBy("has_nexus_fungus", has(ItemsRegistry.NEXUS_FUNGUS.get()))
+                .save(output);
+
+
         shaped(RecipeCategory.MISC, BlocksRegistry.FUNGALSTEEL_BLOCK.get())
                 .pattern("XX")
                 .pattern("XX")

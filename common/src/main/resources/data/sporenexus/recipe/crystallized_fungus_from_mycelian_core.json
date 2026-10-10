@@ -1,6 +1,6 @@
 {
   "type": "sporenexus:mycelian_core",
-  "mushroom_input": "sporenexus:nexus_fungus",
+  "mushroom_input": "sporenexus:great_fungus",
   "substract_input": "minecraft:calcite",
   "nutrients": ["minecraft:diamond", "minecraft:amethyst_shard", "sporenexus:mineral_quartz"],
   "result": {

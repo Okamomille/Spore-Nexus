@@ -41,6 +41,10 @@ public class DatagenModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ItemsRegistry.REINFORCED_FUNGAL_TISSUE.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(ItemsRegistry.NEXUS_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.GREAT_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.INFERNAL_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.ETHEREAL_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
+
         itemModels.generateFlatItem(ItemsRegistry.MINERAL_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ItemsRegistry.CONDUCTIVE_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ItemsRegistry.CRYSTALLIZED_FUNGUS.get(), ModelTemplates.FLAT_ITEM);

@@ -1,6 +1,8 @@
-// 26.2	2026-10-10T13:32:29.4095399	Spore Nexus Recipes
+// 26.2	2026-10-10T14:37:39.4916606	Spore Nexus Recipes
 3f79915a4ed07d0c777e0e4f8a701f8e9cd07fe2 data/minecraft/advancement/recipes/misc/fungalsteel_from_powder.json
+b961c0ec64f052fcfe293eb5023d85bce1a2e2d0 data/minecraft/advancement/recipes/misc/mycelium_from_spores.json
 bb640e45c4dab12b8aeba4f788bc9e66751140b9 data/minecraft/recipe/fungalsteel_from_powder.json
+3eff46ba077aee85daeb758d3e865c47a4ca2cce data/minecraft/recipe/mycelium_from_spores.json
 7d81d3b6c064a3cd222a7ecfe15af3248b1de507 data/sporenexus/advancement/recipes/misc/coal_from_fragments.json
 3fdde5caee35ae02d1b2dd66d5d10ae74860827e data/sporenexus/advancement/recipes/misc/copper_from_fragments.json
 ee1a7c896ddffaacdc6fcbc81c0543fdb6e2863a data/sporenexus/advancement/recipes/misc/diamond_from_fragments.json
