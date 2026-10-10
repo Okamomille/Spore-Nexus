@@ -38,7 +38,8 @@ public class ResourceMushroomBlock extends CropBlock {
     public Supplier<Item> drop;
     public Supplier<Item> secondaryDrop;
 
-    private int GROWTH_CHANCE = 15; //1/15 per randomTick
+    private static int GROWTH_TICKS = 2400;      // GROWS TICKS PER AGE (*3 to have full time) (2400 ticks = 2 min)
+    private static int BLOCKED_RETRY_TICKS = 100; // LIGHT CHECK RETRY TICKS
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
             Block.box(5.0, 0.0, 5.0, 11.0, 6.0, 11.0),
@@ -46,11 +47,11 @@ public class ResourceMushroomBlock extends CropBlock {
             Block.box(2.0, 0.0, 2.0, 14.0, 12.0, 14.0),
     };
 
-    public ResourceMushroomBlock(Properties properties, Supplier<Item> drop, Supplier<Item> secondaryDrop, int growthTime) {
+    public ResourceMushroomBlock(Properties properties, Supplier<Item> drop, Supplier<Item> secondaryDrop, int growthTicks) {
         super(properties);
         this.drop = drop;
         this.secondaryDrop = secondaryDrop;
-        this.GROWTH_CHANCE = growthTime;
+        GROWTH_TICKS = growthTicks;
     }
 
 
@@ -86,8 +87,8 @@ public class ResourceMushroomBlock extends CropBlock {
     }
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        if (context.getLevel().getRawBrightness(context.getClickedPos(), 0) > 7) {
-            return null; // renvoyer null refuse la pose
+        if (context.getLevel().getRawBrightness(context.getClickedPos(), 0) >= 8) {
+            return null;
         }
         return super.getStateForPlacement(context);
     }
@@ -102,6 +103,7 @@ public class ResourceMushroomBlock extends CropBlock {
 
         if (!level.isClientSide()) {
             resetAge(level, pos);
+            level.scheduleTick(pos, this, nextDelay(level, pos, level.getRandom()));
             level.playSound(null, pos, SoundEvents.GROWING_PLANT_CROP, SoundSource.BLOCKS, 1.0F, 1.0F);
             if (level instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ParticleTypes.HAPPY_VILLAGER, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
@@ -161,11 +163,54 @@ public class ResourceMushroomBlock extends CropBlock {
         level.setBlock(pos, this.defaultBlockState().setValue(AGE, 0), 3);
     }
 
+    protected int getGrowthDelay(Level level, BlockPos pos) {
+        return GROWTH_TICKS;   // CAN RETURN SMALLER VALUE FOR SPEED
+    }
 
+    private int nextDelay(Level level, BlockPos pos, RandomSource random) {
+        int base = getGrowthDelay(level, pos);
+        int jitter = Math.max(1, base / 5);                 // 10% of jitter
+        return base - jitter / 2 + random.nextInt(jitter);
+    }
+
+    @Override
+    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        super.onPlace(state, level, pos, oldState, movedByPiston);
+        if (!level.isClientSide() && getAge(state) < getMaxAge()) {
+            level.scheduleTick(pos, this, nextDelay(level, pos, level.getRandom()));
+        }
+    }
+
+    @Override
+    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        int age = getAge(state);
+        if (age >= getMaxAge()) {
+            return;
+        }
+        if (level.getRawBrightness(pos, 0) >= 8) {
+            // TOO MUCH LIGHT -> WAITING STATE
+            level.scheduleTick(pos, this, BLOCKED_RETRY_TICKS);
+            return;
+        }
+        age++;
+        level.setBlock(pos, getStateForAge(age), 2);
+        if (age < getMaxAge()) {
+            level.scheduleTick(pos, this, nextDelay(level, pos, random));
+        }
+    }
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.getRawBrightness(pos, 0) > 7) {
+        // SECURITY FOR OLD MUSHROOMS
+        if (getAge(state) < getMaxAge()) {
+            level.scheduleTick(pos, this, nextDelay(level, pos, random));
+        }
+    }
+
+    /*
+    @Override
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (level.getRawBrightness(pos, 0) >= 8) {
             return; // TOO MUCH LIGHT -> Mushroom stop growing and wait
         }
         int age = this.getAge(state);
@@ -174,8 +219,6 @@ public class ResourceMushroomBlock extends CropBlock {
         }
     }
 
+*/
 
-    protected int getGrowthChance(Level level, BlockPos pos){
-        return GROWTH_CHANCE;
-    }
 }
