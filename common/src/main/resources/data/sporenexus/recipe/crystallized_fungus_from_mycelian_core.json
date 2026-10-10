@@ -1,0 +1,14 @@
+{
+  "type": "sporenexus:mycelian_core",
+  "mushroom_input": "sporenexus:nexus_fungus",
+  "substract_input": "minecraft:calcite",
+  "nutrients": ["minecraft:diamond", "minecraft:amethyst_shard", "sporenexus:mineral_quartz"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:crystallized_fungus"
+  },
+  "secondary_output": {
+    "count": 1,
+    "id": "minecraft:stone"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "sporenexus:mycelian_core",
+  "mushroom_input": "sporenexus:nexus_fungus",
+  "substract_input": "minecraft:deepslate",
+  "nutrients": ["sporenexus:luminescent_fibers", "sporenexus:reinforced_fungal_tissue", "minecraft:gold_ingot"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:golden_fungus"
+  },
+  "secondary_output": {
+    "count": 1,
+    "id": "minecraft:cobbled_deepslate"
+  }
+}

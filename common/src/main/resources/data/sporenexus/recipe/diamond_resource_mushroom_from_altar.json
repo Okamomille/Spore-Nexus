@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:crystallized_fungus",
+  "resource_input": ["minecraft:diamond", "minecraft:diamond", "minecraft:diamond", "minecraft:diamond"],
+  "secondary_input": ["sporenexus:mineral_quartz","sporenexus:mineral_quartz","sporenexus:mineral_quartz","sporenexus:mineral_quartz"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:diamond_resource_mushroom"
+  }
+}

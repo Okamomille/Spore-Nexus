@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:golden_fungus",
+  "resource_input": ["minecraft:netherite_ingot", "minecraft:netherite_scrap", "minecraft:netherite_ingot", "minecraft:netherite_scrap"],
+  "secondary_input": ["minecraft:gold_ingot","minecraft:gold_ingot","sporenexus:reinforced_fungal_tissue","sporenexus:reinforced_fungal_tissue"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:netherite_resource_mushroom"
+  }
+}

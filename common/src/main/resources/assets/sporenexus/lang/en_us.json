@@ -7,15 +7,20 @@
 
 
   "item.sporenexus.fungalsteel_ingot": "Fungalsteel Ingot",
+  "item.sporenexus.fungal_powder": "Fungal Powder",
+  "item.sporenexus.mushroom_spores": "Mushroom Spores",
 
   "item.sporenexus.mineral_quartz": "Mineral Quartz",
   "item.sporenexus.luminescent_fibers": "Luminescent Fibers",
   "item.sporenexus.conductive_ingot": "Conductive Ingot",
+  "item.sporenexus.reinforced_fungal_tissue": "Reinforced Fungal Tissue",
 
 
   "item.sporenexus.nexus_fungus": "Nexus Fungus",
   "item.sporenexus.mineral_fungus": "Mineral Fungus",
   "item.sporenexus.conductive_fungus": "Conductive Fungus",
+  "item.sporenexus.crystallized_fungus": "Crystallized Fungus",
+  "item.sporenexus.golden_fungus": "Golden Fungus",
 
   "item.sporenexus.fungal_essence": "Fungal Essence",
   "item.sporenexus.infernal_essence": "Infernal Essence",
