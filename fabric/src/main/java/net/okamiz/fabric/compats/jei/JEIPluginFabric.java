@@ -2,10 +2,7 @@ package net.okamiz.fabric.compats.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.registration.IGuiHandlerRegistration;
-import mezz.jei.api.registration.IRecipeCatalystRegistration;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.*;
 import net.fabricmc.fabric.api.client.recipe.v1.sync.ClientRecipeSynchronizedEvent;
 import net.fabricmc.fabric.api.recipe.v1.sync.SynchronizedRecipes;
 import net.fabricmc.fabric.impl.recipe.sync.SynchronizedRecipesImpl;
@@ -17,8 +14,11 @@ import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.Registries.BlocksRegistry;
+import net.okamiz.common.Registries.MenusRegistry;
 import net.okamiz.common.Registries.RecipesRegistry;
+import net.okamiz.common.menus.custom.MycelianCoreMenu;
 import net.okamiz.common.menus.custom.MycelianCoreScreen;
+import net.okamiz.common.menus.custom.SporeNexusCraftMenu;
 import net.okamiz.common.menus.custom.SporeNexusCraftScreen;
 import net.okamiz.fabric.compats.jei.category.MycelianCoreRecipeCategory;
 import net.okamiz.fabric.compats.jei.category.SporeNexusCraftRecipeCategory;
@@ -66,5 +66,18 @@ public class JEIPluginFabric implements IModPlugin {
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addCraftingStation(JEIRecipesTypesFabric.MYCELIAN_CORE, new ItemStack(BlocksRegistry.MYCELIAN_CORE.get()));
         registration.addCraftingStation(JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT, new ItemStack(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get()));
+    }
+
+    @Override
+    public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+        registration.addRecipeTransferHandler(
+                MycelianCoreMenu.class, MenusRegistry.MYCELIAN_CORE_MENU.get(), JEIRecipesTypesFabric.MYCELIAN_CORE,
+                36, 5,
+                0, 36);
+
+        registration.addRecipeTransferHandler(
+                SporeNexusCraftMenu.class, MenusRegistry.SPORE_NEXUS_CRAFT_MENU.get(), JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT,
+                36, 9,
+                0, 36);
     }
 }

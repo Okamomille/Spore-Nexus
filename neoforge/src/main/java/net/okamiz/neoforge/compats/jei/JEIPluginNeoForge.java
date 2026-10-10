@@ -3,10 +3,7 @@ package net.okamiz.neoforge.compats.jei;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.types.IRecipeType;
-import mezz.jei.api.registration.IGuiHandlerRegistration;
-import mezz.jei.api.registration.IRecipeCatalystRegistration;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.*;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
@@ -17,8 +14,11 @@ import net.neoforged.neoforge.client.event.RecipesReceivedEvent;
 import net.neoforged.neoforge.event.OnDatapackSyncEvent;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.Registries.BlocksRegistry;
+import net.okamiz.common.Registries.MenusRegistry;
 import net.okamiz.common.Registries.RecipesRegistry;
+import net.okamiz.common.menus.custom.MycelianCoreMenu;
 import net.okamiz.common.menus.custom.MycelianCoreScreen;
+import net.okamiz.common.menus.custom.SporeNexusCraftMenu;
 import net.okamiz.common.menus.custom.SporeNexusCraftScreen;
 import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipe;
 import net.okamiz.common.recipe.spore_nexus_craft.SporeNexusCraftRecipe;
@@ -95,4 +95,20 @@ public class JEIPluginNeoForge implements IModPlugin {
             syncedRecipes = event.getRecipeMap();
         }
     }
+
+
+    @Override
+    public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+        registration.addRecipeTransferHandler(
+                MycelianCoreMenu.class, MenusRegistry.MYCELIAN_CORE_MENU.get(), MYCELIAN_CORE,
+                36, 5,
+                0, 36);
+
+        registration.addRecipeTransferHandler(
+                SporeNexusCraftMenu.class, MenusRegistry.SPORE_NEXUS_CRAFT_MENU.get(), SPORE_NEXUS_CRAFT,
+                36, 9,
+                0, 36);
+    }
+
+
 }
