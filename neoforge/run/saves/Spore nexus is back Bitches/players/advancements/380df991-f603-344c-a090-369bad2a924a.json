@@ -974,5 +974,71 @@
     },
     "done": true
   },
+  "sporenexus:recipes/misc/redstone_from_fragments": {
+    "criteria": {
+      "has_redstone_fragments": "2026-10-10 17:27:58 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/lapis_lazuli_from_fragments": {
+    "criteria": {
+      "has_lapis_lazuli_fragments": "2026-10-10 17:28:02 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/fungalsteel_from_fragments": {
+    "criteria": {
+      "has_fungalsteel_fragments": "2026-10-10 17:28:02 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/emerald_from_fragments": {
+    "criteria": {
+      "has_emerald_fragments": "2026-10-10 17:28:02 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/netherite_from_fragments": {
+    "criteria": {
+      "has_netherite_fragments": "2026-10-10 17:28:03 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/quartz_from_fragments": {
+    "criteria": {
+      "has_quartz_fragments": "2026-10-10 17:28:03 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/diamond_from_fragments": {
+    "criteria": {
+      "has_diamond_fragments": "2026-10-10 17:28:03 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/gold_from_fragments": {
+    "criteria": {
+      "has_gold_fragments": "2026-10-10 17:28:04 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/coal_from_fragments": {
+    "criteria": {
+      "has_coal_fragments": "2026-10-10 17:28:04 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/iron_from_fragments": {
+    "criteria": {
+      "has_iron_fragments": "2026-10-10 17:28:04 +0200"
+    },
+    "done": true
+  },
+  "sporenexus:recipes/misc/copper_from_fragments": {
+    "criteria": {
+      "has_copper_fragments": "2026-10-10 17:28:04 +0200"
+    },
+    "done": true
+  },
   "DataVersion": 4903
 }

@@ -40,8 +40,8 @@ public class ResourceMushroomBlock extends CropBlock {
     public Supplier<Item> drop;
     public Supplier<Item> secondaryDrop;
 
-    private static int GROWTH_TICKS = 2400;      // GROWS TICKS PER AGE (*3 to have full time) (2400 ticks = 2 min)
-    private static int BLOCKED_RETRY_TICKS = 100; // LIGHT CHECK RETRY TICKS
+    private final int growthTicks;      // GROWS TICKS PER AGE (*3 to have full time) (2400 ticks = 2 min)
+    private int BLOCKED_RETRY_TICKS = 100; // LIGHT CHECK RETRY TICKS
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
             Block.box(5.0, 0.0, 5.0, 11.0, 6.0, 11.0),
@@ -53,7 +53,7 @@ public class ResourceMushroomBlock extends CropBlock {
         super(properties);
         this.drop = drop;
         this.secondaryDrop = secondaryDrop;
-        GROWTH_TICKS = growthTicks;
+        this.growthTicks = growthTicks;
     }
 
 
@@ -152,7 +152,7 @@ public class ResourceMushroomBlock extends CropBlock {
     }
 
     protected int getGrowthDelay(Level level, BlockPos pos) {
-        return GROWTH_TICKS;   // CAN RETURN SMALLER VALUE FOR SPEED
+        return growthTicks;   // CAN RETURN SMALLER VALUE FOR SPEED
     }
 
     private int nextDelay(Level level, BlockPos pos, RandomSource random) {
@@ -205,9 +205,8 @@ public class ResourceMushroomBlock extends CropBlock {
         if (drop != null) {
             list.add(new HarvestDrop(drop, 1, 3, 100));                                   // fragments
         }
-        list.add(new HarvestDrop(() -> ItemsRegistry.FUNGAL_ESSENCE.get(), 1, 1, 45));    // essence
         if (secondaryDrop != null) {
-            list.add(new HarvestDrop(secondaryDrop, 1, 1, 33));                           // secondary
+            list.add(new HarvestDrop(secondaryDrop, 1, 1, 45));                           // secondary
         }
         return list;
     }

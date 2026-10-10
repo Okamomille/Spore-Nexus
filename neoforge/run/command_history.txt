@@ -29,3 +29,22 @@
 /effect give @s minecraft:night_vision infinite 255 true
 /locate biome minecraft:lush_caves
 /tp @s -578 42 311
+/gamerule random_tick_speed
+/gamerule random_tick_speed 3
+/gamerule random_tick_speed 399
+/tick sprint 3000
+/tick sprint 9000
+/tick rate
+/tick rate 20
+/tick rate 60
+/tick rate 200
+/tick rate 600
+/tick rate 6000
+/tick rate 20
+/tick sprint 3000
+/tick sprint 1d
+/tick sprint stop
+/tick sprint 3000
+/tick rate 40
+/tick rate 20
+/tick sprint stop
