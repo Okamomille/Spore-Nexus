@@ -1,4 +1,11 @@
 {
+ "jei.sporenexus.mushroom_harvest": "Mushroom Harvest",
+ "jei.sporenexus.drop_chance": "%s%% Drop chance",
+ "jei.sporenexus.drop_amount": "Drop amount: %s-%s",
+
+
+
+
 
   "tab.sporenexus": "Spore Nexus",
 

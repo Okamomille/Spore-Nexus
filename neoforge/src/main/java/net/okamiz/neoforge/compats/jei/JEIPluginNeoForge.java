@@ -4,6 +4,7 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.registration.*;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
@@ -16,6 +17,9 @@ import net.okamiz.SporeNexus;
 import net.okamiz.common.Registries.BlocksRegistry;
 import net.okamiz.common.Registries.MenusRegistry;
 import net.okamiz.common.Registries.RecipesRegistry;
+import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
+import net.okamiz.common.compats.jei.MushroomHarvest;
+import net.okamiz.common.compats.jei.MushroomHarvestCategory;
 import net.okamiz.common.menus.custom.MycelianCoreMenu;
 import net.okamiz.common.menus.custom.MycelianCoreScreen;
 import net.okamiz.common.menus.custom.SporeNexusCraftMenu;
@@ -44,12 +48,16 @@ public class JEIPluginNeoForge implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new MycelianCoreRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new SporeNexusCraftRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new MushroomHarvestCategory(registration.getJeiHelpers().getGuiHelper()));
+
     }
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         registration.addRecipes(MYCELIAN_CORE, this.getRecipes(syncedRecipes, RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get()));
         registration.addRecipes(SPORE_NEXUS_CRAFT, this.getRecipes(syncedRecipes, RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()));
+        registration.addRecipes(MushroomHarvestCategory.TYPE, BuiltInRegistries.BLOCK.stream().filter(b -> b instanceof ResourceMushroomBlock)
+                .map(b -> new MushroomHarvest(b, ((ResourceMushroomBlock) b).getHarvestDrops())).toList());
     }
 
     @Override

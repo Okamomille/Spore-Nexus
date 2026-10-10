@@ -6,6 +6,7 @@ import mezz.jei.api.registration.*;
 import net.fabricmc.fabric.api.client.recipe.v1.sync.ClientRecipeSynchronizedEvent;
 import net.fabricmc.fabric.api.recipe.v1.sync.SynchronizedRecipes;
 import net.fabricmc.fabric.impl.recipe.sync.SynchronizedRecipesImpl;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
@@ -16,6 +17,9 @@ import net.okamiz.SporeNexus;
 import net.okamiz.common.Registries.BlocksRegistry;
 import net.okamiz.common.Registries.MenusRegistry;
 import net.okamiz.common.Registries.RecipesRegistry;
+import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
+import net.okamiz.common.compats.jei.MushroomHarvest;
+import net.okamiz.common.compats.jei.MushroomHarvestCategory;
 import net.okamiz.common.menus.custom.MycelianCoreMenu;
 import net.okamiz.common.menus.custom.MycelianCoreScreen;
 import net.okamiz.common.menus.custom.SporeNexusCraftMenu;
@@ -48,12 +52,16 @@ public class JEIPluginFabric implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new MycelianCoreRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new SporeNexusCraftRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new MushroomHarvestCategory(registration.getJeiHelpers().getGuiHelper()));
+
     }
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         registration.addRecipes(JEIRecipesTypesFabric.MYCELIAN_CORE, this.getRecipes(recipeMap, RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get()));
         registration.addRecipes(JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT, this.getRecipes(recipeMap, RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()));
+        registration.addRecipes(MushroomHarvestCategory.TYPE, BuiltInRegistries.BLOCK.stream().filter(b -> b instanceof ResourceMushroomBlock)
+                .map(b -> new MushroomHarvest(b, ((ResourceMushroomBlock) b).getHarvestDrops())).toList());
     }
 
     @Override
@@ -66,6 +74,7 @@ public class JEIPluginFabric implements IModPlugin {
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addCraftingStation(JEIRecipesTypesFabric.MYCELIAN_CORE, new ItemStack(BlocksRegistry.MYCELIAN_CORE.get()));
         registration.addCraftingStation(JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT, new ItemStack(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get()));
+
     }
 
     @Override
