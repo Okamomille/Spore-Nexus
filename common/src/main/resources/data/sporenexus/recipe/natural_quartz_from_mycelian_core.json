@@ -1,0 +1,14 @@
+{
+  "type": "sporenexus:mycelian_core",
+  "mushroom_input": "sporenexus:banded_agaric",
+  "substract_input": "minecraft:diorite",
+  "nutrients": ["minecraft:iron_nugget", "minecraft:flint", "minecraft:calcite"],
+  "result": {
+    "count": 2,
+    "id": "minecraft:quartz"
+  },
+  "secondary_output": {
+    "count": 1,
+    "id": "minecraft:cobblestone"
+  }
+}
