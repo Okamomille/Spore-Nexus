@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fungal_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sporenexus:fungal_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:fungalsteel_from_powder"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fungal_powder"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:fungalsteel_from_powder"
+    ]
+  }
+}

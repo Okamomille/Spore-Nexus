@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:mineral_fungus",
+  "resource_input": ["minecraft:lapis_lazuli", "minecraft:lapis_lazuli", "minecraft:lapis_lazuli", "minecraft:lapis_lazuli"],
+  "secondary_input": ["sporenexus:luminescent_fibers","sporenexus:luminescent_fibers","sporenexus:luminescent_fibers","sporenexus:luminescent_fibers"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:lapis_lazuli_resource_mushroom"
+  }
+}

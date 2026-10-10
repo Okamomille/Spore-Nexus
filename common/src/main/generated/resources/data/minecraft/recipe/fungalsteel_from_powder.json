@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fungalsteel",
+  "key": {
+    "O": "minecraft:iron_ingot",
+    "X": "sporenexus:fungal_powder"
+  },
+  "pattern": [
+    " X ",
+    "XOX",
+    " X "
+  ],
+  "result": {
+    "id": "sporenexus:fungalsteel_ingot"
+  }
+}

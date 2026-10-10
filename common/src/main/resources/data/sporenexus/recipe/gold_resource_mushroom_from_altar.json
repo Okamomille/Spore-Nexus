@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:golden_fungus",
+  "resource_input": ["minecraft:gold_ingot", "minecraft:gold_ingot", "minecraft:gold_ingot", "minecraft:gold_ingot"],
+  "secondary_input": ["sporenexus:mineral_quartz","sporenexus:mineral_quartz","sporenexus:reinforced_fungal_tissue","sporenexus:reinforced_fungal_tissue"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:gold_resource_mushroom"
+  }
+}

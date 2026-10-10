@@ -1,4 +1,6 @@
-// 26.2	2026-10-10T10:44:54.5003491	Spore Nexus Recipes
+// 26.2	2026-10-10T11:46:01.1094046	Spore Nexus Recipes
+3f79915a4ed07d0c777e0e4f8a701f8e9cd07fe2 data/minecraft/advancement/recipes/misc/fungalsteel_from_powder.json
+bb640e45c4dab12b8aeba4f788bc9e66751140b9 data/minecraft/recipe/fungalsteel_from_powder.json
 7d81d3b6c064a3cd222a7ecfe15af3248b1de507 data/sporenexus/advancement/recipes/misc/coal_from_fragments.json
 3fdde5caee35ae02d1b2dd66d5d10ae74860827e data/sporenexus/advancement/recipes/misc/copper_from_fragments.json
 ee1a7c896ddffaacdc6fcbc81c0543fdb6e2863a data/sporenexus/advancement/recipes/misc/diamond_from_fragments.json
@@ -9,6 +11,7 @@ dfa76f992bcdc5b36af705863b12c1bf66ec0957 data/sporenexus/advancement/recipes/mis
 1e065e00819a66b43dc850b124acd1395c21d6c0 data/sporenexus/advancement/recipes/misc/gold_from_fragments.json
 5f29c8cee43cc93805a940cfd601ab8eb6188288 data/sporenexus/advancement/recipes/misc/iron_from_fragments.json
 73aa1d9fa7a0ca31d0e2ff4f3a391b683cb3d108 data/sporenexus/advancement/recipes/misc/lapis_lazuli_from_fragments.json
+cca1e0b9ac1f3cb177bb09aa32c852e2115b1d5c data/sporenexus/advancement/recipes/misc/mushroom_spores.json
 be31136d505b0aeb59af00a8dea0587012f72e0b data/sporenexus/advancement/recipes/misc/netherite_from_fragments.json
 b9714332ae352b3c4f4f73938715b2d0c9435dcf data/sporenexus/advancement/recipes/misc/nexus_fungus_from_mushrooms.json
 f2e480d3ffa900d432386e0737207ee696ed7627 data/sporenexus/advancement/recipes/misc/quartz_from_fragments.json
@@ -23,6 +26,7 @@ c36108b7ed7beaf131ea9c25f95eff887e05fffd data/sporenexus/recipe/fungalsteel_bloc
 819496b80d1de488824e266db2544a1558eb32b4 data/sporenexus/recipe/gold_from_fragments.json
 137677367255377761e8791ec6b78aafb9c9c372 data/sporenexus/recipe/iron_from_fragments.json
 d25ad9974b73fe11b23095fe1e7f5b37c5c7a5c0 data/sporenexus/recipe/lapis_lazuli_from_fragments.json
+7a735548f9b385249d857266745685babd163e34 data/sporenexus/recipe/mushroom_spores.json
 3ae98e40e36dbc5410531b8367167be2a598d50f data/sporenexus/recipe/netherite_from_fragments.json
 f645bc3ffd00982871d565d9ceb11264f944ed21 data/sporenexus/recipe/nexus_fungus_from_mushrooms.json
 233fe6163312c4f51b48ce8634aa04970d1a205b data/sporenexus/recipe/quartz_from_fragments.json

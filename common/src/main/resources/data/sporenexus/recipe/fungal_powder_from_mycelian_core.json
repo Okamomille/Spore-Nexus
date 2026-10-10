@@ -1,0 +1,14 @@
+{
+  "type": "sporenexus:mycelian_core",
+  "mushroom_input": "sporenexus:eternal_light_mushroom",
+  "substract_input": "minecraft:moss_block",
+  "nutrients": ["minecraft:glow_berries", "minecraft:bone_meal", "minecraft:bone_meal"],
+  "result": {
+    "count": 4,
+    "id": "sporenexus:fungal_powder"
+  },
+  "secondary_output": {
+    "count": 2,
+    "id": "sporenexus:fungal_powder"
+  }
+}

@@ -6,6 +6,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.okamiz.common.Registries.BlocksRegistry;
 import net.okamiz.common.Registries.ItemsRegistry;
 import net.okamiz.common.Registries.TagsRegistry;
@@ -51,6 +52,39 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output, "sporenexus:nexus_fungus_from_mushrooms");
 
 
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get())
+                .pattern("OOO")
+                .pattern(" X ")
+                .pattern("XBX")
+                .define('X', Items.IRON_INGOT)
+                .define('X', ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .define('B', BlocksRegistry.FUNGALSTEEL_BLOCK.get())
+                .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
+                .save(output);
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get())
+                .pattern("OSO")
+                .pattern(" M ")
+                .pattern("OSO")
+                .define('X', Items.IRON_INGOT)
+                .define('M', Blocks.MYCELIUM)
+                .define('S', ItemsRegistry.MUSHROOM_SPORES.get())
+                .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.MUSHROOM_SPORES.get()))
+                .save(output);
+
+
+        shaped(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.FUNGAL_POWDER.get())
+                .define('O', Items.IRON_INGOT)
+                .unlockedBy("has_fungal_powder", has(ItemsRegistry.FUNGAL_POWDER.get()))
+                .group("fungalsteel")
+                .save(output, "fungalsteel_from_powder");
+
+
         shaped(RecipeCategory.MISC, BlocksRegistry.FUNGALSTEEL_BLOCK.get())
                 .pattern("XXX")
                 .pattern("XXX")
@@ -65,7 +99,11 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fungalsteel")
                 .save(output);
 
-
+        shapeless(RecipeCategory.MISC, ItemsRegistry.MUSHROOM_SPORES.get(), 2)
+                .requires(TagsRegistry.MUSHROOMS)
+                .unlockedBy("has_mushroom", has(TagsRegistry.MUSHROOMS))
+                .group("mushroom_spores")
+                .save(output);
 
 
         shaped(RecipeCategory.MISC, Items.COAL)
