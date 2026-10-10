@@ -25,23 +25,20 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.okamiz.common.Registries.ItemsRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.function.Supplier;
 
-import static net.minecraft.core.dispenser.DefaultDispenseItemBehavior.spawnItem;
-
 public class ResourceMushroomBlock extends CropBlock {
-    public static final int MAX_AGE = 2;
-    public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 2);
+    public static final int SUB_STEPS = 3;
+    public static final int MAX_AGE = 3 * SUB_STEPS - 1;
+    public static final IntegerProperty AGE = IntegerProperty.create("age", 0, MAX_AGE);
     public Supplier<Item> drop;
     public Supplier<Item> secondaryDrop;
 
     private final int growthTicks;      // GROWS TICKS PER AGE (*3 to have full time) (2400 ticks = 2 min)
-    private int BLOCKED_RETRY_TICKS = 100; // LIGHT CHECK RETRY TICKS
+    private static final int BLOCKED_RETRY_TICKS = 100; // LIGHT CHECK RETRY TICKS
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
             Block.box(5.0, 0.0, 5.0, 11.0, 6.0, 11.0),
@@ -63,9 +60,17 @@ public class ResourceMushroomBlock extends CropBlock {
         return AGE;
     }
 
+    private int getStage(BlockState state) {
+        int age = getAge(state);
+        if (age == MAX_AGE) {
+            return 2;
+        }
+        return age < SUB_STEPS ? 0 : 1;
+    }
+
     @Override
     public int getMaxAge() {
-        return 2;
+        return MAX_AGE;
     }
 
     @Override
@@ -75,11 +80,11 @@ public class ResourceMushroomBlock extends CropBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE_BY_AGE[this.getAge(state)];
+        return SHAPE_BY_AGE[getStage(state)];
     }
     @Override
     protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE_BY_AGE[this.getAge(state)];
+        return SHAPE_BY_AGE[getStage(state)];
     }
 
 
@@ -97,7 +102,6 @@ public class ResourceMushroomBlock extends CropBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-
 
         if (state.getValue(AGE) != MAX_AGE) {
             return InteractionResult.PASS;
@@ -152,12 +156,37 @@ public class ResourceMushroomBlock extends CropBlock {
     }
 
     protected int getGrowthDelay(Level level, BlockPos pos) {
-        return growthTicks;   // CAN RETURN SMALLER VALUE FOR SPEED
+        double speed = 1.0;
+
+        /*
+        if (level.getBlockState(pos.below()).is(BlocksRegistry.RICH_SOIL.get())) {
+            speed *= 1.25;
+        }
+
+
+        if (hasAcceleratorNearby(level, pos)) {
+            speed *= 2.0;
+        }
+        */
+        return Math.max(1, (int) (growthTicks / speed));
+    }
+
+    private boolean hasAcceleratorNearby(Level level, BlockPos pos) {
+        int r = 3;
+        /*
+        for (BlockPos p : BlockPos.betweenClosed(pos.offset(-r, -r, -r), pos.offset(r, r, r))) {
+            if (level.getBlockState(p).is(BlocksRegistry.GROWTH_ACCELERATOR.get())) {
+                return true;
+            }
+        }
+
+         */
+        return false;
     }
 
     private int nextDelay(Level level, BlockPos pos, RandomSource random) {
-        int base = getGrowthDelay(level, pos);
-        int jitter = Math.max(1, base / 5);                 // 10% of jitter
+        int base = getGrowthDelay(level, pos) * 2 / MAX_AGE;
+        int jitter = Math.max(1, base / 5);
         return base - jitter / 2 + random.nextInt(jitter);
     }
 

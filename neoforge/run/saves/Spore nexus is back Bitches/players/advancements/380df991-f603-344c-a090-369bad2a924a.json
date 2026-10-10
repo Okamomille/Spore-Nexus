@@ -1040,5 +1040,11 @@
     },
     "done": true
   },
+  "sporenexus:recipes/misc/fungalsteel_ingot": {
+    "criteria": {
+      "has_fungalsteel_block": "2026-10-10 18:09:30 +0200"
+    },
+    "done": true
+  },
   "DataVersion": 4903
 }

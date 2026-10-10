@@ -187,7 +187,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_quartz_fragments", has(ItemsRegistry.QUARTZ_FRAGMENTS.get()))
                 .group("fragments_to_resource")
                 .save(output, "sporenexus:quartz_from_fragments");
-        shaped(RecipeCategory.MISC, Items.REDSTONE)
+        shaped(RecipeCategory.MISC, Items.REDSTONE, 4)
                 .pattern("XX")
                 .pattern("XX")
                 .define('X', ItemsRegistry.REDSTONE_FRAGMENTS.get())

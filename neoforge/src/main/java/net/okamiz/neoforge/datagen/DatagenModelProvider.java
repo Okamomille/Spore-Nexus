@@ -124,14 +124,6 @@ public class DatagenModelProvider extends ModelProvider {
         itemModels.generateFlatItem(block.asItem(), ModelTemplates.FLAT_ITEM);
     }
 
-
-
-
-
-
-
-
-
     private static final TextureSlot STEM = TextureSlot.create("stem");
     private static final TextureSlot CAP = TextureSlot.create("cap");
 
@@ -140,21 +132,23 @@ public class DatagenModelProvider extends ModelProvider {
         var states = PropertyDispatch.initial(ResourceMushroomBlock.AGE);
         Identifier[] models = new Identifier[3];
 
-        for (int age = 0; age < 3; age++) {
-
+        for (int stage = 0; stage < 3; stage++) {
             ModelTemplate template = new ModelTemplate(
-                    Optional.of(id("block/template/mushroom_stage_" + age)),
-                    Optional.of("_stage_" + age),
+                    Optional.of(id("block/template/mushroom_stage_" + stage)),
+                    Optional.of("_stage_" + stage),
                     STEM, CAP, TextureSlot.PARTICLE);
-
 
             TextureMapping mapping = new TextureMapping()
                     .put(STEM, tex("block/mushroom/stem"))
                     .put(CAP, tex("block/mushroom/" + ore + "_cap"))
                     .put(TextureSlot.PARTICLE, tex("block/mushroom/stem"));
 
-            models[age] = template.create(block, mapping, blockModels.modelOutput);
-            states.select(age, BlockModelGenerators.plainVariant(models[age]));
+            models[stage] = template.create(block, mapping, blockModels.modelOutput);
+        }
+
+        for (int age = 0; age <= ResourceMushroomBlock.MAX_AGE; age++) {
+            int stage = age < 3 ? 0 : age == ResourceMushroomBlock.MAX_AGE ? 2 : 1;
+            states.select(age, BlockModelGenerators.plainVariant(models[stage]));
         }
 
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(states));
