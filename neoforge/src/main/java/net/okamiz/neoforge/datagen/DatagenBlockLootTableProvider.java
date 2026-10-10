@@ -26,6 +26,13 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(BlocksRegistry.BANDED_AGARIC.get());
         dropSelf(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM.get());
 
+        add(BlocksRegistry.BANDED_AGARIC_STEM.get(),
+                createMushroomBlockDrop(BlocksRegistry.BANDED_AGARIC_STEM.get(), BlocksRegistry.BANDED_AGARIC.get().asItem()));
+        add(BlocksRegistry.BANDED_AGARIC_BLOCK.get(),
+                createMushroomBlockDrop(BlocksRegistry.BANDED_AGARIC_BLOCK.get(), BlocksRegistry.BANDED_AGARIC.get().asItem()));
+        add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get(),
+                createMushroomBlockDrop(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get(), BlocksRegistry.BANDED_AGARIC.get().asItem()));
+
 
         dropSelf(BlocksRegistry.COAL_RESOURCE_MUSHROOM.get());
         dropSelf(BlocksRegistry.COPPER_RESOURCE_MUSHROOM.get());

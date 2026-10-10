@@ -1,5 +1,8 @@
-// 26.2	2026-10-10T18:35:18.094073	Loot Tables
+// 26.2	2026-10-10T23:15:08.0679315	Loot Tables
 e8c6a26403177575adcac682b43fb5c1790168d5 data/sporenexus/loot_table/blocks/banded_agaric.json
+43f377f77b9dd989581c4caa4f44bcd6c4ff06f5 data/sporenexus/loot_table/blocks/banded_agaric_block.json
+21dd697200792a3c76c9ef17719d18eb952e60ed data/sporenexus/loot_table/blocks/banded_agaric_fluffy_stem.json
+daa66b300823c2f48e2043df8dde3970abe189d1 data/sporenexus/loot_table/blocks/banded_agaric_stem.json
 bdc3f7b74d92b461028cc7aa360ec55ac08fb53a data/sporenexus/loot_table/blocks/coal_resource_mushroom.json
 c4f4b3c515ffda5f52e2a1f993dbee3aefda54b1 data/sporenexus/loot_table/blocks/copper_resource_mushroom.json
 5202d0a262f3176770412c22142c48ca00adb6cd data/sporenexus/loot_table/blocks/diamond_resource_mushroom.json

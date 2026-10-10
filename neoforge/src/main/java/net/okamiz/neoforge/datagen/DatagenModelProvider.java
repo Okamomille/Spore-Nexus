@@ -3,17 +3,17 @@ package net.okamiz.neoforge.datagen;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 import net.okamiz.common.Registries.BlocksRegistry;
@@ -72,6 +72,13 @@ public class DatagenModelProvider extends ModelProvider {
 
 
         /* BLOCKS */
+
+        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_BLOCK.get());
+        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get());
+        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_STEM.get());
+
+
+
         blockModels.createTrivialCube(BlocksRegistry.FUNGALSTEEL_BLOCK.get());
 
         blockModels.createTrivialCube(BlocksRegistry.FERTILIZED_MYCELIUM.get());
@@ -156,5 +163,24 @@ public class DatagenModelProvider extends ModelProvider {
 
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(states));
         blockModels.registerSimpleItemModel(block, models[1]);
+    }
+
+
+    public void createCustomMushroomBlock(BlockModelGenerators blockModels, Block block) {
+        MultiVariant skin = blockModels.plainVariant(ModelTemplates.SINGLE_FACE.create(block, TextureMapping.defaultTexture(block), blockModels.modelOutput));
+        MultiVariant skinless = blockModels.plainVariant(id("block/banded_agaric_block_inside"));
+        blockModels.blockStateOutput.accept(MultiPartGenerator.multiPart(block).with(blockModels.condition().term(BlockStateProperties.NORTH, true), skin)
+                .with(blockModels.condition().term(BlockStateProperties.EAST, true), skin.with(blockModels.Y_ROT_90)
+                        .with(blockModels.UV_LOCK)).with(blockModels.condition().term(BlockStateProperties.SOUTH, true),
+                        skin.with(blockModels.Y_ROT_180).with(blockModels.UV_LOCK))
+                .with(blockModels.condition().term(BlockStateProperties.WEST, true),
+                        skin.with(blockModels.Y_ROT_270).with(blockModels.UV_LOCK)).with(blockModels.condition().term(BlockStateProperties.UP, true),
+                        skin.with(blockModels.X_ROT_270).with(blockModels.UV_LOCK)).with(blockModels.condition().term(BlockStateProperties.DOWN, true),
+                        skin.with(blockModels.X_ROT_90).with(blockModels.UV_LOCK)).with(blockModels.condition().term(BlockStateProperties.NORTH, false), skinless)
+                .with(blockModels.condition().term(BlockStateProperties.EAST, false), skinless.with(blockModels.Y_ROT_90)).with(blockModels.condition().term(BlockStateProperties.SOUTH, false),
+                        skinless.with(blockModels.Y_ROT_180)).with(blockModels.condition().term(BlockStateProperties.WEST, false), skinless.with(blockModels.Y_ROT_270)).with(blockModels.condition()
+                        .term(BlockStateProperties.UP, false), skinless.with(blockModels.X_ROT_270)).with(blockModels.condition().term(BlockStateProperties.DOWN, false),
+                        skinless.with(blockModels.X_ROT_90)));
+        blockModels.registerSimpleItemModel(block, TexturedModel.CUBE.createWithSuffix(block, "_inventory", blockModels.modelOutput));
     }
 }

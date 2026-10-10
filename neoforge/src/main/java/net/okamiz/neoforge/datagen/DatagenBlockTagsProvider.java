@@ -22,6 +22,13 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
                 .add(BlocksRegistry.MYCELIAN_CORE_PROXY.getKey())
                 .add(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.getKey());
 
+        tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.getKey())
+                .add(BlocksRegistry.BANDED_AGARIC_STEM.getKey())
+                .add(BlocksRegistry.BANDED_AGARIC_BLOCK.getKey())
+        ;
+
+
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(BlocksRegistry.COAL_RESOURCE_MUSHROOM.getKey())
                 .add(BlocksRegistry.COPPER_RESOURCE_MUSHROOM.getKey())

@@ -1,0 +1,6 @@
+{
+  "parent": "block/template_single_face",
+  "textures": {
+    "texture": "sporenexus:block/banded_agaric_block_inside"
+  }
+}
