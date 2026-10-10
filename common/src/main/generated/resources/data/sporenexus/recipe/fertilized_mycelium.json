@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "O": "minecraft:dirt",
+    "O": "minecraft:mycelium",
     "X": "sporenexus:mushroom_spores"
   },
   "pattern": [
@@ -10,6 +10,6 @@
     "XXX"
   ],
   "result": {
-    "id": "minecraft:mycelium"
+    "id": "sporenexus:fertilized_mycelium"
   }
 }

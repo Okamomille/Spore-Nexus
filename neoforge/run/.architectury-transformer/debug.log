@@ -98,370 +98,379 @@
 [Architectury Transformer DEBUG]  - C:\Users\jojob\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-kqueue\4.2.15.Final\4245380831515fb4eca18d32477a27fbb8f7b8f4\netty-transport-native-kqueue-4.2.15.Final-osx-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\jojob\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-kqueue\4.2.15.Final\8ea0ef3eb716d821332e4b4926825a4b7c1a6d38\netty-transport-native-kqueue-4.2.15.Final-osx-aarch_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\jojob\.gradle\caches\modules-2\files-2.1\mezz.jei\jei-26.2-common-api\30.39.0.233\3e4e4fcd2ba08e07ab26920b487f47439a51fd70\jei-26.2-common-api-30.39.0.233.jar
-[Architectury Transformer] Read classpath in 1.885 s
+[Architectury Transformer] Read classpath in 1.859 s
 [Architectury Transformer DEBUG] Closed File Systems for D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar
-[Architectury Transformer DEBUG] Transforming 6 transformer(s) from D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar to C:\Users\jojob\AppData\Local\Temp\16935394476484769304.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@45752059
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@34e9fd99
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@3c41ed1d
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeAnnotations@54d9d12d
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment@38425407
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeNeoForgeMod@43bc63a3
-[Architectury Transformer DEBUG] Transforming from D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar to C:\Users\jojob\AppData\Local\Temp\16935394476484769304.jar with 6 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Transforming 6 transformer(s) from D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar to C:\Users\jojob\AppData\Local\Temp\15002185817680233489.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@74e52ef6
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@6ed3ccb2
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@1a677343
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeAnnotations@15de0b3c
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment@489115ef
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeNeoForgeMod@3857f613
+[Architectury Transformer DEBUG] Transforming from D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar to C:\Users\jojob\AppData\Local\Temp\15002185817680233489.jar with 6 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/SporeNexus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/BlocksRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/ItemsRegistry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/BlockEntitiesRegistry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/ItemsRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/TagsRegistry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry$2 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/CreativeTabsRegistry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/MenusRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/CreativeTabsRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/TagsRegistry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/MultiblockProxyBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/ResourceMushroomBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/MycelianCoreBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/SporeNexusCraftBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/MycelianCoreProxy with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/CustomMushroomBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/ResourceMushroomBlock$HarvestDrop with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/CustomMushroomBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2 with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2 with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/compats/jei/MushroomHarvestCategory with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/compats/jei/MushroomHarvest with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftMenu with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$2 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftScreen with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftMenu$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipeInput with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/worldgen/ConfiguredFeatures with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/okamiz/common/worldgen/PlacedFeatures with maxs=true frames=true
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\jojob\AppData\Local\Temp\16935394476484769304.jar
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\jojob\AppData\Local\Temp\15002185817680233489.jar
 [Architectury Transformer] Listening at D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\jojob\AppData\Local\Temp\16935394476484769304.jar] contains packages: net.okamiz.common.blocks.entity.custom, net.okamiz.common.recipe.spore_nexus_craft, net.okamiz.common.blocks, net.okamiz.common.Registries, net.okamiz.common.worldgen, net.okamiz.common.blocks.custom, net.okamiz.common.compats.jei, net.okamiz, net.okamiz.common.menus.custom, net.okamiz.common.recipe.mycelian_core
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\jojob\AppData\Local\Temp\15002185817680233489.jar] contains packages: net.okamiz.common.blocks.entity.custom, net.okamiz.common.recipe.spore_nexus_craft, net.okamiz.common.blocks, net.okamiz.common.Registries, net.okamiz.common.worldgen, net.okamiz.common.blocks.custom, net.okamiz.common.compats.jei, net.okamiz, net.okamiz.common.menus.custom, net.okamiz.common.recipe.mycelian_core
 [Architectury Transformer DEBUG] Closed File Systems for D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\common\build\libs\sporenexus-common-1.0-26.2-dev.jar
 [Architectury Transformer DEBUG] Classpath entry [D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\build\classes\java\main] contains packages: net.okamiz.neoforge.compats.jei, net.okamiz.neoforge.worldgen, net.okamiz.neoforge.compats.jei.categories, net.okamiz.neoforge.datagen, net.okamiz.neoforge
 [Architectury Transformer DEBUG] Classpath entry [D:\MINECRAFT MODDING\spore_nexus-26.2-multiloader\neoforge\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from net/okamiz/SporeNexus.class to net/okamiz/SporeNexus.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping with Dirty Mappings...
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/SporeNexus with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/SporeNexus in 100.4 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/SporeNexus in 344.9 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/BlocksRegistry.class to net/okamiz/common/Registries/BlocksRegistry.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/BlocksRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/BlocksRegistry in 18.28 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/BlocksRegistry in 46.37 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/ResourceMushroomBlock.class to net/okamiz/common/blocks/custom/ResourceMushroomBlock.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/ResourceMushroomBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/ResourceMushroomBlock in 17.10 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/ResourceMushroomBlock in 44.46 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/CreativeTabsRegistry.class to net/okamiz/common/Registries/CreativeTabsRegistry.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/CreativeTabsRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/CreativeTabsRegistry in 11.19 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/CreativeTabsRegistry in 37.03 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/ItemsRegistry.class to net/okamiz/common/Registries/ItemsRegistry.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/ItemsRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/ItemsRegistry in 23.96 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/ItemsRegistry in 49.34 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/MycelianCoreBlock.class to net/okamiz/common/blocks/custom/MycelianCoreBlock.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/MycelianCoreBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/MycelianCoreBlock in 57.58 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/MycelianCoreBlock in 34.87 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity.class to net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity in 13.91 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity in 35.92 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/MycelianCoreProxy.class to net/okamiz/common/blocks/custom/MycelianCoreProxy.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/MycelianCoreProxy with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/MycelianCoreProxy in 9.783 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/MycelianCoreProxy in 26.85 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/MultiblockProxyBlock.class to net/okamiz/common/blocks/MultiblockProxyBlock.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/MultiblockProxyBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/MultiblockProxyBlock in 6.461 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/MultiblockProxyBlock in 20.52 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/SporeNexusCraftBlock.class to net/okamiz/common/blocks/custom/SporeNexusCraftBlock.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/SporeNexusCraftBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/SporeNexusCraftBlock in 6.719 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/SporeNexusCraftBlock in 29.81 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity.class to net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity in 5.637 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity in 37.65 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/CustomMushroomBlock.class to net/okamiz/common/blocks/custom/CustomMushroomBlock.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/CustomMushroomBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/CustomMushroomBlock in 4.970 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/CustomMushroomBlock in 31.79 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/BlockEntitiesRegistry.class to net/okamiz/common/Registries/BlockEntitiesRegistry.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/BlockEntitiesRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/BlockEntitiesRegistry in 6.404 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/BlockEntitiesRegistry in 19.71 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/MenusRegistry.class to net/okamiz/common/Registries/MenusRegistry.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/MenusRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/MenusRegistry in 5.255 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/MenusRegistry in 20.42 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/RecipesRegistry.class to net/okamiz/common/Registries/RecipesRegistry.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry in 3.785 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry in 8.742 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1.class to net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1 in 7.839 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$1 in 15.58 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/MycelianCoreMenu.class to net/okamiz/common/menus/custom/MycelianCoreMenu.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu in 7.742 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu in 17.42 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1.class to net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1 in 6.877 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$1 in 10.45 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/SporeNexusCraftMenu.class to net/okamiz/common/menus/custom/SporeNexusCraftMenu.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftMenu with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/SporeNexusCraftMenu in 6.667 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/SporeNexusCraftMenu in 5.767 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/MycelianCoreMenu$1.class to net/okamiz/common/menus/custom/MycelianCoreMenu$1.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu$1 in 8.576 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu$1 in 17.14 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/MycelianCoreMenu$2.class to net/okamiz/common/menus/custom/MycelianCoreMenu$2.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreMenu$2 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu$2 in 6.238 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreMenu$2 in 9.036 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/SporeNexusCraftMenu$1.class to net/okamiz/common/menus/custom/SporeNexusCraftMenu$1.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftMenu$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/SporeNexusCraftMenu$1 in 6.711 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/SporeNexusCraftMenu$1 in 10.41 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/RecipesRegistry$1.class to net/okamiz/common/Registries/RecipesRegistry$1.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry$1 in 7.440 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry$1 in 5.820 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/RecipesRegistry$2.class to net/okamiz/common/Registries/RecipesRegistry$2.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/RecipesRegistry$2 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry$2 in 5.870 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/RecipesRegistry$2 in 17.20 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe.class to net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe in 8.703 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipe in 10.25 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe.class to net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe in 6.443 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/spore_nexus_craft/SporeNexusCraftRecipe in 21.40 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/MycelianCoreScreen.class to net/okamiz/common/menus/custom/MycelianCoreScreen.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/MycelianCoreScreen with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreScreen in 4.370 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/MycelianCoreScreen in 7.906 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/menus/custom/SporeNexusCraftScreen.class to net/okamiz/common/menus/custom/SporeNexusCraftScreen.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/menus/custom/SporeNexusCraftScreen with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/SporeNexusCraftScreen in 3.455 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/menus/custom/SporeNexusCraftScreen in 6.990 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2.class to net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2 in 22.27 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/SporeNexusCraftBlockEntity$2 in 40.12 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2.class to net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2 in 25.29 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/entity/custom/MycelianCoreBlockEntity$2 in 27.63 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput.class to net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput in 10.51 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/recipe/mycelian_core/MycelianCoreRecipeInput in 14.26 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/compats/jei/MushroomHarvestCategory.class to net/okamiz/common/compats/jei/MushroomHarvestCategory.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/compats/jei/MushroomHarvestCategory with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/compats/jei/MushroomHarvestCategory in 14.83 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/compats/jei/MushroomHarvestCategory in 19.72 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/compats/jei/MushroomHarvest.class to net/okamiz/common/compats/jei/MushroomHarvest.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/compats/jei/MushroomHarvest with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/compats/jei/MushroomHarvest in 15.26 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/compats/jei/MushroomHarvest in 20.33 ms
+[Architectury Transformer DEBUG] Transforming from net/okamiz/common/Registries/TagsRegistry.class to net/okamiz/common/Registries/TagsRegistry.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/okamiz/common/Registries/TagsRegistry with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/Registries/TagsRegistry in 22.56 ms
 [Architectury Transformer DEBUG] Transforming from net/okamiz/common/blocks/custom/ResourceMushroomBlock$HarvestDrop.class to net/okamiz/common/blocks/custom/ResourceMushroomBlock$HarvestDrop.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000009e06f210@815b41f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000000002906f210@2cd76f31
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/okamiz/common/blocks/custom/ResourceMushroomBlock$HarvestDrop with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/ResourceMushroomBlock$HarvestDrop in 8.301 ms
+[Architectury Transformer DEBUG] Transformed net/okamiz/common/blocks/custom/ResourceMushroomBlock$HarvestDrop in 20.55 ms

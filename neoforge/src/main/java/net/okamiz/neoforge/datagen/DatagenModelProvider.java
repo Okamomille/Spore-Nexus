@@ -74,6 +74,9 @@ public class DatagenModelProvider extends ModelProvider {
         /* BLOCKS */
         blockModels.createTrivialCube(BlocksRegistry.FUNGALSTEEL_BLOCK.get());
 
+        blockModels.createTrivialCube(BlocksRegistry.FERTILIZED_MYCELIUM.get());
+        blockModels.createTrivialCube(BlocksRegistry.FUNGAL_MYCELIUM.get());
+
         blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE.get());
         blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE_PROXY.get());
 

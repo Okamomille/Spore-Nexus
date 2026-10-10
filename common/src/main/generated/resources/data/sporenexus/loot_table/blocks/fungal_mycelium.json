@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "sporenexus:fungal_mycelium"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "sporenexus:blocks/fungal_mycelium"
+}

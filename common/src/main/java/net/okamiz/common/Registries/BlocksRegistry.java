@@ -29,6 +29,19 @@ public class BlocksRegistry {
     public static final RegistrySupplier<Block> FUNGALSTEEL_BLOCK = registerBlock("fungalsteel_block", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB );
 
+
+
+    public static final RegistrySupplier<Block> FERTILIZED_MYCELIUM = registerBlock("fertilized_mycelium", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB );
+    public static final RegistrySupplier<Block> FUNGAL_MYCELIUM = registerBlock("fungal_mycelium", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB );
+
+
+
+
+
+
+
     /* BLOCK ENTITIES */
 
     public static final RegistrySupplier<Block> MYCELIAN_CORE = registerBlock("mycelian_core", MycelianCoreBlock::new,
