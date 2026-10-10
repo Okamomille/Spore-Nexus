@@ -26,3 +26,6 @@
 /fill 7 74 2 7 77 8 air
 /gamerule random_tick_speed 9
 /setblock 19 74 8 minecraft:furnace
+/effect give @s minecraft:night_vision infinite 255 true
+/locate biome minecraft:lush_caves
+/tp @s -578 42 311

@@ -1,0 +1,3 @@
+/effect give @s minecraft:night_vision infinite 255 true
+/locate biome minecraft:lush_caves
+/tp @s 29 -12 -362

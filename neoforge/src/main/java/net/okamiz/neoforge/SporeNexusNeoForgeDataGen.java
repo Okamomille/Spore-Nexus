@@ -9,10 +9,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.okamiz.SporeNexus;
-import net.okamiz.neoforge.datagen.DatagenBlockLootTableProvider;
-import net.okamiz.neoforge.datagen.DatagenBlockTagsProvider;
-import net.okamiz.neoforge.datagen.DatagenModelProvider;
-import net.okamiz.neoforge.datagen.DatagenRecipeProvider;
+import net.okamiz.neoforge.datagen.*;
 
 
 import java.util.Collections;
@@ -27,6 +24,8 @@ public class SporeNexusNeoForgeDataGen {
 
         var lookupProvider = event.getLookupProvider();
 
+
+
         generator.addProvider(true, new DatagenModelProvider(packOutput));
         generator.addProvider(true, new DatagenBlockTagsProvider(packOutput, lookupProvider));
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
@@ -34,5 +33,6 @@ public class SporeNexusNeoForgeDataGen {
 
 
         generator.addProvider(true, new DatagenRecipeProvider.Runner(packOutput, lookupProvider));
+        generator.addProvider(true, new DatapackProvider(packOutput, lookupProvider));
     }
 }

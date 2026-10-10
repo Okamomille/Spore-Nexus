@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "sporenexus:fungalsteel_block",
+    "O": "minecraft:iron_ingot",
+    "X": "sporenexus:fungalsteel_ingot"
+  },
+  "pattern": [
+    "OOO",
+    " X ",
+    "XBX"
+  ],
+  "result": {
+    "id": "sporenexus:spore_nexus_craft_block"
+  }
+}
