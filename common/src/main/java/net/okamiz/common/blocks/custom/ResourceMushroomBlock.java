@@ -27,6 +27,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.okamiz.common.Registries.ItemsRegistry;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
 
@@ -110,11 +112,7 @@ public class ResourceMushroomBlock extends CropBlock {
                         5, 0.25, 0.25, 0.25, 0.0);
             }
 
-            int fragDropCount = level.getRandom().nextInt(3);
-            for (int i = 0; i <= fragDropCount; i++) {
-                dropFragments(level, pos);
-            }
-            drop(level, pos);
+            dropAll(level, pos);
         }
 
         return InteractionResult.SUCCESS;
@@ -133,25 +131,15 @@ public class ResourceMushroomBlock extends CropBlock {
     }
 
 
-    private void drop(Level level, BlockPos pos) {
+    private void dropAll(Level level, BlockPos pos) {
         RandomSource random = level.getRandom();
-
-        if (random.nextInt(2) == 0) {
-            spawnItem(level, pos, new ItemStack(ItemsRegistry.FUNGAL_ESSENCE.get()));
+        for (HarvestDrop drop : getHarvestDrops()) {
+            if (random.nextInt(100) < drop.chancePercent()) {
+                int count = drop.min() + random.nextInt(drop.max() - drop.min() + 1);
+                level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                        new ItemStack(drop.item().get(), count)));
+            }
         }
-        if (random.nextInt(3) == 0 && secondaryDrop != null) {
-            spawnItem(level, pos, new ItemStack(secondaryDrop.get()));
-        }
-    }
-
-    private void dropFragments(Level level, BlockPos pos) {
-        if (drop != null) {
-            spawnItem(level, pos, new ItemStack(drop.get()));
-        }
-    }
-
-    private void spawnItem(Level level, BlockPos pos, ItemStack stack) {
-        level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, stack));
     }
 
     @Override
@@ -207,18 +195,21 @@ public class ResourceMushroomBlock extends CropBlock {
         }
     }
 
-    /*
-    @Override
-    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.getRawBrightness(pos, 0) >= 8) {
-            return; // TOO MUCH LIGHT -> Mushroom stop growing and wait
-        }
-        int age = this.getAge(state);
-        if (age < this.getMaxAge() && random.nextInt(getGrowthChance(level, pos)) == 0) {
-            level.setBlock(pos, this.getStateForAge(age + 1), 2);
-        }
-    }
 
-*/
+
+
+    public record HarvestDrop(Supplier<Item> item, int min, int max, int chancePercent) {}
+
+    public List<HarvestDrop> getHarvestDrops() {
+        List<HarvestDrop> list = new ArrayList<>();
+        if (drop != null) {
+            list.add(new HarvestDrop(drop, 1, 3, 100));                                   // fragments
+        }
+        list.add(new HarvestDrop(() -> ItemsRegistry.FUNGAL_ESSENCE.get(), 1, 1, 45));    // essence
+        if (secondaryDrop != null) {
+            list.add(new HarvestDrop(secondaryDrop, 1, 1, 33));                           // secondary
+        }
+        return list;
+    }
 
 }
