@@ -67,7 +67,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .pattern("OSO")
                 .pattern(" M ")
                 .pattern("OSO")
-                .define('X', Items.IRON_INGOT)
+                .define('O', Items.IRON_INGOT)
                 .define('M', Blocks.MYCELIUM)
                 .define('S', ItemsRegistry.MUSHROOM_SPORES.get())
                 .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.MUSHROOM_SPORES.get()))
