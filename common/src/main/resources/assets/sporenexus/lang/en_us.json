@@ -56,6 +56,9 @@
 
   "block.sporenexus.fungalsteel_block": "Fungalsteel Block",
 
+  "block.sporenexus.fertilized_mycelium": "Fertilized Mycelium",
+  "block.sporenexus.fungal_mycelium": "Fungal Mycelium",
+
   "block.sporenexus.spore_nexus": "Spore Nexus Altar",
   "block.sporenexus.mycelian_core": "Mycelian Core",
   "block.sporenexus.spore_nexus_craft_block": "Spore Nexus Altar",

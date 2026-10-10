@@ -25,6 +25,8 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.okamiz.common.Registries.BlocksRegistry;
+import net.okamiz.common.Registries.TagsRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,7 +92,7 @@ public class ResourceMushroomBlock extends CropBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return state.is(Blocks.MYCELIUM);
+        return state.is(TagsRegistry.SPORE_SOILS);
     }
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -158,12 +160,16 @@ public class ResourceMushroomBlock extends CropBlock {
     protected int getGrowthDelay(Level level, BlockPos pos) {
         double speed = 1.0;
 
-        /*
-        if (level.getBlockState(pos.below()).is(BlocksRegistry.RICH_SOIL.get())) {
+
+        if (level.getBlockState(pos.below()).is(BlocksRegistry.FERTILIZED_MYCELIUM.get())) {
             speed *= 1.25;
+        }
+        if (level.getBlockState(pos.below()).is(BlocksRegistry.FUNGAL_MYCELIUM.get())) {
+            speed *= 1.5;
         }
 
 
+        /*
         if (hasAcceleratorNearby(level, pos)) {
             speed *= 2.0;
         }

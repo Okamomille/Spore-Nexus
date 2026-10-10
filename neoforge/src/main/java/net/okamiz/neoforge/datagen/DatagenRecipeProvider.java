@@ -84,14 +84,35 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fungalsteel")
                 .save(output, "fungalsteel_from_powder");
 
+
+
         shaped(RecipeCategory.MISC, Blocks.MYCELIUM)
+                .pattern("XXX")
+                .pattern("XOX")
+                .pattern("XXX")
+                .define('X', ItemsRegistry.MUSHROOM_SPORES.get())
+                .define('O', Blocks.DIRT)
+                .unlockedBy("has_mushroom_spores", has(ItemsRegistry.MUSHROOM_SPORES.get()))
+                .save(output, "mycelium_from_spores");
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.FERTILIZED_MYCELIUM.get())
                 .pattern("XXX")
                 .pattern("XOX")
                 .pattern("XXX")
                 .define('X', ItemsRegistry.MUSHROOM_SPORES.get())
                 .define('O', Blocks.MYCELIUM)
                 .unlockedBy("has_mushroom_spores", has(ItemsRegistry.MUSHROOM_SPORES.get()))
-                .save(output, "mycelium_from_spores");
+                .save(output);
+
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_MYCELIUM.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.FUNGAL_ESSENCE.get())
+                .define('O', BlocksRegistry.FERTILIZED_MYCELIUM.get())
+                .unlockedBy("has_fertilized_mycelium", has(BlocksRegistry.FERTILIZED_MYCELIUM.get()))
+                .save(output);
 
 
         shaped(RecipeCategory.MISC, ItemsRegistry.GREAT_FUNGUS.get())

@@ -19,6 +19,8 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(BlocksRegistry.FUNGALSTEEL_BLOCK.get());
+        dropSelf(BlocksRegistry.FERTILIZED_MYCELIUM.get());
+        dropSelf(BlocksRegistry.FUNGAL_MYCELIUM.get());
 
 
         dropSelf(BlocksRegistry.BANDED_AGARIC.get());
