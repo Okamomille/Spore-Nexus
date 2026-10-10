@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.DeferredSupplier;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.blocks.TooltipBlockItem;
 import net.okamiz.common.blocks.custom.*;
 
 import java.util.function.Function;
@@ -31,10 +33,13 @@ public class BlocksRegistry {
 
 
 
-    public static final RegistrySupplier<Block> FERTILIZED_MYCELIUM = registerBlock("fertilized_mycelium", Block::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB );
-    public static final RegistrySupplier<Block> FUNGAL_MYCELIUM = registerBlock("fungal_mycelium", Block::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB );
+    public static final RegistrySupplier<Block> FERTILIZED_MYCELIUM = registerBlockWithTooltip("fertilized_mycelium", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.fertilized_mycelium", TextColor.YELLOW);
+
+    public static final RegistrySupplier<Block> FUNGAL_MYCELIUM = registerBlockWithTooltip("fungal_mycelium", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.fungal_mycelium", TextColor.YELLOW);
 
 
 
@@ -136,6 +141,21 @@ public class BlocksRegistry {
         ItemsRegistry.ITEMS.register(name,
                 () -> new BlockItem(toReturn.get(),
                         new Item.Properties().setId(itemKey).arch$tab(creativeTab).useBlockDescriptionPrefix()));
+
+        return toReturn;
+    }
+
+    public static <T extends Block> RegistrySupplier<T> registerBlockWithTooltip(String name, Function<BlockBehaviour.Properties, T> factory,
+                                                                                 Supplier<BlockBehaviour.Properties> properties, DeferredSupplier<CreativeModeTab> creativeTab,
+                                                                                 String tooltip, TextColor color) {
+        ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id(name));
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id(name));
+        RegistrySupplier<T> toReturn = BLOCKS.register(name,
+                () -> factory.apply(properties.get().setId(blockKey)));
+
+        ItemsRegistry.ITEMS.register(name,
+                () -> new TooltipBlockItem(toReturn.get(),
+                        new Item.Properties().setId(itemKey).arch$tab(creativeTab).useBlockDescriptionPrefix(), tooltip, color));
 
         return toReturn;
     }
