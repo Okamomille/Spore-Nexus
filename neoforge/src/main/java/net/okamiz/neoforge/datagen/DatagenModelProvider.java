@@ -39,6 +39,7 @@ public class DatagenModelProvider extends ModelProvider {
 
         itemModels.generateFlatItem(ItemsRegistry.NEXUS_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ItemsRegistry.MINERAL_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.CONDUCTIVE_FUNGUS.get(), ModelTemplates.FLAT_ITEM);
 
         /* ESSENCES */
         itemModels.generateFlatItem(ItemsRegistry.FUNGAL_ESSENCE.get(), ModelTemplates.FLAT_ITEM);

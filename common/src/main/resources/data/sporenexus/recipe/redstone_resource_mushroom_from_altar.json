@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:conductive_fungus",
+  "resource_input": ["minecraft:redstone", "minecraft:redstone", "minecraft:redstone", "minecraft:redstone"],
+  "secondary_input": ["sporenexus:conductive_ingot","sporenexus:conductive_ingot","sporenexus:conductive_ingot","sporenexus:conductive_ingot"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:redstone_resource_mushroom"
+  }
+}

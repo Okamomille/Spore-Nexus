@@ -29,10 +29,10 @@ public class SporeNexusCraftRecipeCategory implements IRecipeCategory<RecipeHold
     private final IDrawable overlay;
 
     private final int width = 176;
-    private final int height = 128;
+    private final int height = 120;
 
     private final int xOffset = 24;
-    private final int yOffset = 5;
+    private final int yOffset = 9;
 
 
     public SporeNexusCraftRecipeCategory(IGuiHelper helper) {

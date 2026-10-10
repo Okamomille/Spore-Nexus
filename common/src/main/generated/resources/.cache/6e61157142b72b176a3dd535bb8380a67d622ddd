@@ -1,4 +1,4 @@
-// 26.2	2026-10-09T16:15:13.0440764	Model Definitions - sporenexus
+// 26.2	2026-10-09T22:28:20.6693195	Model Definitions - sporenexus
 97a66ea65035c0f2af7279dcfeb8d687dc7356cf assets/sporenexus/blockstates/banded_agaric.json
 d227d1ad553c14d1b78760b2577c4d08a8e9dde6 assets/sporenexus/blockstates/coal_resource_mushroom.json
 9a548313d2640a0e98135f0c2191ade89f2fc9f7 assets/sporenexus/blockstates/copper_resource_mushroom.json
@@ -19,6 +19,7 @@ e61fdf98e226d8a3664d1b6ee95b6a3980b47189 assets/sporenexus/blockstates/quartz_re
 048ddebc33f7f1d5d9127f451825ac7f29eaceda assets/sporenexus/items/banded_agaric.json
 68aad108593dd8170de87d29692ca92d1240d6c8 assets/sporenexus/items/coal_fragments.json
 0b6744fd0ee89ca7dadff39f9e8c122d399ffa3d assets/sporenexus/items/coal_resource_mushroom.json
+395dba8bce2beaf7b14dece864f8b942bdd8609f assets/sporenexus/items/conductive_fungus.json
 dbfeb7ec4e4ad4bdd1e152285d3711bf391c7d58 assets/sporenexus/items/conductive_ingot.json
 a0198368030c99c0387289e0d880d82bebd3b036 assets/sporenexus/items/copper_fragments.json
 37668284347aa87a9ca76bc9d41c2a1792d3892a assets/sporenexus/items/copper_resource_mushroom.json
@@ -91,6 +92,7 @@ db4641899b1c031e3c334c5c978eca29d1a8c1b8 assets/sporenexus/models/block/redstone
 11d420086121d52e63f57fd64226be2295e8fcdf assets/sporenexus/models/block/redstone_resource_mushroom_stage_2.json
 914d37528e1bf79ec0a652f08d61af0427dc7fb0 assets/sporenexus/models/item/banded_agaric.json
 b1a400ae75c0d9e499c7c305265339e38cae0352 assets/sporenexus/models/item/coal_fragments.json
+437238a63e18b3475806128a8c091a259c7941da assets/sporenexus/models/item/conductive_fungus.json
 ab99e5e78709e1cd9310f3d608c24c68af8d37be assets/sporenexus/models/item/conductive_ingot.json
 c6078c2acd9a53e199bf71ee945412bea38cc2ff assets/sporenexus/models/item/copper_fragments.json
 5f77781d3ea78f9ce3239faee1b059758ad80aab assets/sporenexus/models/item/diamond_fragments.json
