@@ -84,16 +84,24 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fungalsteel")
                 .save(output, "fungalsteel_from_powder");
 
+        shaped(RecipeCategory.MISC, Blocks.MYCELIUM)
+                .pattern("XXX")
+                .pattern("XOX")
+                .pattern("XXX")
+                .define('X', ItemsRegistry.MUSHROOM_SPORES.get())
+                .define('O', Blocks.MYCELIUM)
+                .unlockedBy("has_mushroom_spores", has(ItemsRegistry.MUSHROOM_SPORES.get()))
+                .save(output, "mycelium_from_spores");
+
 
         shaped(RecipeCategory.MISC, BlocksRegistry.FUNGALSTEEL_BLOCK.get())
-                .pattern("XXX")
-                .pattern("XXX")
-                .pattern("XXX")
+                .pattern("XX")
+                .pattern("XX")
                 .define('X', ItemsRegistry.FUNGALSTEEL_INGOT.get())
                 .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
                 .group("fungalsteel")
                 .save(output);
-        shapeless(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get(), 9)
+        shapeless(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get(), 4)
                 .requires(BlocksRegistry.FUNGALSTEEL_BLOCK.get())
                 .unlockedBy("has_fungalsteel_block", has(BlocksRegistry.FUNGALSTEEL_BLOCK.get()))
                 .group("fungalsteel")

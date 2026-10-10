@@ -2,7 +2,7 @@
   "type": "sporenexus:spore_nexus_craft",
   "mushroom_input": "sporenexus:nexus_fungus",
   "resource_input": ["minecraft:coal", "minecraft:coal", "minecraft:coal", "minecraft:coal"],
-  "secondary_input": ["sporenexus:charcoal","sporenexus:charcoal","sporenexus:reinforced_fungal_tissue","sporenexus:reinforced_fungal_tissue"],
+  "secondary_input": ["minecraft:charcoal","minecraft:charcoal","sporenexus:reinforced_fungal_tissue","sporenexus:reinforced_fungal_tissue"],
   "result": {
     "count": 1,
     "id": "sporenexus:coal_resource_mushroom"

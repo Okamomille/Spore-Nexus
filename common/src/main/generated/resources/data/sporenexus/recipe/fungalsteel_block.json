@@ -5,9 +5,8 @@
     "X": "sporenexus:fungalsteel_ingot"
   },
   "pattern": [
-    "XXX",
-    "XXX",
-    "XXX"
+    "XX",
+    "XX"
   ],
   "result": {
     "id": "sporenexus:fungalsteel_block"
