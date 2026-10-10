@@ -3,6 +3,7 @@ package net.okamiz.fabric;
 import net.fabricmc.api.ModInitializer;
 
 import net.okamiz.SporeNexus;
+import net.okamiz.fabric.worldgen.BiomeModifiersFabric;
 
 public final class SporeNexusFabric implements ModInitializer {
     @Override
@@ -14,6 +15,7 @@ public final class SporeNexusFabric implements ModInitializer {
         // Run our common setup.
         SporeNexus.init();
 
+        BiomeModifiersFabric.generateModWorldGen();
 
     }
 }

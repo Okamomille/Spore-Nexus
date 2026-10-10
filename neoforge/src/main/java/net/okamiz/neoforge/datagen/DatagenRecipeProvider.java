@@ -57,13 +57,13 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .pattern("OOO")
                 .pattern(" X ")
                 .pattern("XBX")
-                .define('X', Items.IRON_INGOT)
+                .define('O', Items.IRON_INGOT)
                 .define('X', ItemsRegistry.FUNGALSTEEL_INGOT.get())
                 .define('B', BlocksRegistry.FUNGALSTEEL_BLOCK.get())
                 .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get())
+        shaped(RecipeCategory.MISC, BlocksRegistry.MYCELIAN_CORE.get())
                 .pattern("OSO")
                 .pattern(" M ")
                 .pattern("OSO")
