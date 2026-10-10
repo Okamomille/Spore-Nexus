@@ -71,14 +71,20 @@ public class SporeNexusCraftRecipeCategory implements IRecipeCategory<RecipeHold
 
         int[][] positions = {{29-xOffset, 61-yOffset},{80-xOffset, 10-yOffset},{131-xOffset, 61-yOffset}, {80-xOffset, 112-yOffset}};
         var resources = recipe.value().resourceInputs();
-        for (int i = 0; i < Math.min(resources.size(), positions.length); i++) {
-            builder.addSlot(RecipeIngredientRole.INPUT, positions[i][0], positions[i][1]).add(resources.get(i));
+        for (int i = 0; i < positions.length; i++) {
+            var slot = builder.addSlot(RecipeIngredientRole.INPUT, positions[i][0], positions[i][1]);
+            if (i < resources.size()) {
+                slot.add(resources.get(i));
+            }
         }
 
         int[][] secondaryPositions = {{44-xOffset, 97-yOffset},{116-xOffset, 25-yOffset}, {44-xOffset, 25-yOffset}, {116-xOffset, 97-yOffset}};
         var secondary = recipe.value().secondaryInputs();
-        for (int i = 0; i < Math.min(secondary.size(), secondaryPositions.length); i++) {
-            builder.addSlot(RecipeIngredientRole.INPUT, secondaryPositions[i][0], secondaryPositions[i][1]).add(secondary.get(i));
+        for (int i = 0; i < secondaryPositions.length; i++) {
+            var slot = builder.addSlot(RecipeIngredientRole.INPUT, secondaryPositions[i][0], secondaryPositions[i][1]);
+            if (i < secondary.size()) {
+                slot.add(secondary.get(i));
+            }
         }
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 176-xOffset, 60-yOffset).add(recipe.value().output());

@@ -71,8 +71,11 @@ public class MycelianCoreRecipeCategory implements IRecipeCategory<RecipeHolder<
 
         int[][] positions = {{14-xOffset, 23-yOffset}, {14-xOffset, 47-yOffset}, {34-xOffset, 36-yOffset}};
         var nutrients = recipe.value().nutrientInputs();
-        for (int i = 0; i < Math.min(nutrients.size(), positions.length); i++) {
-            builder.addSlot(RecipeIngredientRole.INPUT, positions[i][0], positions[i][1]).add(nutrients.get(i));
+        for (int i = 0; i < positions.length; i++) {
+            var slot = builder.addSlot(RecipeIngredientRole.INPUT, positions[i][0], positions[i][1]);
+            if (i < nutrients.size()) {
+                slot.add(nutrients.get(i));
+            }
         }
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 134-xOffset, 22-yOffset).add(recipe.value().output());
