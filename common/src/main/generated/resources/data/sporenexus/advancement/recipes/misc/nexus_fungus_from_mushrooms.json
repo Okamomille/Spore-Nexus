@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_brown_mushroom": {
+    "has_mushroom": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:brown_mushroom"
+            "items": "#sporenexus:mushrooms"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:nexus_fungus_from_brown"
+        "recipe": "sporenexus:nexus_fungus_from_mushrooms"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_brown_mushroom"
+      "has_mushroom"
     ]
   ],
   "rewards": {
     "recipes": [
-      "sporenexus:nexus_fungus_from_brown"
+      "sporenexus:nexus_fungus_from_mushrooms"
     ]
   }
 }
