@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.okamiz.common.Registries.BlocksRegistry;
 import net.okamiz.common.Registries.MenusRegistry;
+import net.okamiz.common.Registries.TagsRegistry;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
 
 public class SporeNexusCraftMenu extends AbstractContainerMenu {
@@ -34,6 +35,7 @@ public class SporeNexusCraftMenu extends AbstractContainerMenu {
 
         this.addSlot(new Slot(handler, 0, 108, 61){   // mushroom
             @Override public int getMaxStackSize() {return 1;}
+            @Override public boolean mayPlace(ItemStack stack) {return stack.is(TagsRegistry.FUNGUS);}
         });
 
         this.addSlot(new Slot(handler, 1, 57, 61));    // r1

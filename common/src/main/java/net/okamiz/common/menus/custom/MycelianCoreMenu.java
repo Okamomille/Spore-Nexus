@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.okamiz.common.Registries.BlocksRegistry;
 import net.okamiz.common.Registries.MenusRegistry;
+import net.okamiz.common.Registries.TagsRegistry;
 import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
 
 public class MycelianCoreMenu extends AbstractContainerMenu {
@@ -32,8 +33,13 @@ public class MycelianCoreMenu extends AbstractContainerMenu {
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.addSlot(new Slot(handler, 0, 68, 21));    // mushroom
-        this.addSlot(new Slot(handler, 1, 68, 51));    // substract
+        this.addSlot(new Slot(handler, 0, 68, 21){   // mushroom
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return stack.is(TagsRegistry.MUSHROOMS) || stack.is(TagsRegistry.FUNGUS);
+            }
+        });
+        this.addSlot(new Slot(handler, 1, 68, 51));    // substrat
         this.addSlot(new Slot(handler, 2, 14, 23));    // nutrient 1
         this.addSlot(new Slot(handler, 3, 14, 47));    // nutrient 2
         this.addSlot(new Slot(handler, 4, 34, 36));    // nutrient 3
