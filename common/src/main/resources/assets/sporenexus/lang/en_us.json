@@ -10,7 +10,9 @@
 
 
 
-  "tab.sporenexus": "Spore Nexus",
+ "tab.sporenexus": "Spore Nexus",
+ "tab.fragments": "Spore Nexus: Fragments",
+ "tab.mushrooms": "Spore Nexus: Mushrooms",
 
  "gui.sporenexus.mycelian_core": "Mycelian Core",
  "gui.sporenexus.spore_nexus_craft": "Spore Nexus Altar",
@@ -52,6 +54,20 @@
   "item.sporenexus.netherite_fragments": "Netherite Fragments",
   "item.sporenexus.quartz_fragments": "Quartz Fragments",
   "item.sporenexus.redstone_fragments": "Redstone Fragments",
+  "item.sporenexus.amethyst_fragments": "Amethyst Fragments",
+
+  "item.sporenexus.clay_fragments": "Clay Fragments",
+  "item.sporenexus.stone_fragments": "Stone Fragments",
+  "item.sporenexus.mossy_cobblestone_fragments": "Mossy Cobblestone Fragments",
+  "item.sporenexus.moss_fragments": "Moss Fragments",
+  "item.sporenexus.netherrack_fragments": "Netherrack Fragments",
+  "item.sporenexus.sand_fragments": "Sand Fragments",
+  "item.sporenexus.soul_sand_fragments": "Soul Sand Fragments",
+  "item.sporenexus.blackstone_fragments": "Blackstone Fragments",
+  "item.sporenexus.dirt_fragments": "Dirt Fragments",
+  "item.sporenexus.ice_fragments": "Ice Fragments",
+  "item.sporenexus.gravel_fragments": "Gravel Fragments",
+  "item.sporenexus.glowstone_fragments": "Glowstone Fragments",
 
 
 
@@ -89,7 +105,19 @@
   "block.sporenexus.netherite_resource_mushroom": "Netherite Resource Mushroom",
   "block.sporenexus.quartz_resource_mushroom": "Quartz Resource Mushroom",
   "block.sporenexus.redstone_resource_mushroom": "Redstone Resource Mushroom",
+  "block.sporenexus.amethyst_resource_mushroom": "Amethyst Resource Mushroom",
 
+ "block.sporenexus.clay_resource_mushroom": "Clay Resource Mushroom",
+ "block.sporenexus.stone_resource_mushroom": "Stone Resource Mushroom",
+ "block.sporenexus.moss_resource_mushroom": "Moss Resource Mushroom",
+ "block.sporenexus.netherrack_resource_mushroom": "Netherrack Resource Mushroom",
+ "block.sporenexus.sand_resource_mushroom": "Sand Resource Mushroom",
+ "block.sporenexus.soul_sand_resource_mushroom": "Soul Sand Resource Mushroom",
+ "block.sporenexus.blackstone_resource_mushroom": "Blackstone Resource Mushroom",
+ "block.sporenexus.dirt_resource_mushroom": "Dirt Resource Mushroom",
+ "block.sporenexus.ice_resource_mushroom": "Ice Resource Mushroom",
+ "block.sporenexus.gravel_resource_mushroom": "Gravel Resource Mushroom",
+ "block.sporenexus.glowstone_resource_mushroom": "Glowstone Resource Mushroom",
 
 
 

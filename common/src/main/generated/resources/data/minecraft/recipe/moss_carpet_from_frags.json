@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fragments_to_resource",
+  "key": {
+    "X": "sporenexus:moss_fragments"
+  },
+  "pattern": [
+    "XX"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:moss_carpet"
+  }
+}

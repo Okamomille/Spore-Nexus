@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_clay_fragments": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sporenexus:clay_fragments"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mud_from_frags"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_clay_fragments"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mud_from_frags"
+    ]
+  }
+}

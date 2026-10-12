@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fragments_to_resource",
+  "key": {
+    "O": "sporenexus:mossy_cobblestone_fragments",
+    "X": "sporenexus:stone_fragments"
+  },
+  "pattern": [
+    "XOX",
+    "XOX"
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:mossy_stone_bricks"
+  }
+}

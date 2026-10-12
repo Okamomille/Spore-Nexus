@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fragments_to_resource",
+  "key": {
+    "D": "sporenexus:dirt_fragments",
+    "X": "sporenexus:clay_fragments"
+  },
+  "pattern": [
+    "DX",
+    "XD"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:mud"
+  }
+}

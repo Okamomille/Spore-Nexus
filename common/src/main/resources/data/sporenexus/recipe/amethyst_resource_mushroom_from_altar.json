@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:nexus_fungus",
+  "resource_input": ["minecraft:amethyst_shard", "minecraft:amethyst_shard", "minecraft:amethyst_shard", "minecraft:amethyst_shard"],
+  "secondary_input": ["minecraft:calcite","minecraft:calcite","sporenexus:mineral_quartz","sporenexus:mineral_quartz"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:amethyst_resource_mushroom"
+  }
+}

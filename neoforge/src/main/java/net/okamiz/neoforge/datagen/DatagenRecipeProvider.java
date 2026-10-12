@@ -154,9 +154,70 @@ public class DatagenRecipeProvider extends RecipeProvider {
                     .pattern("XX")
                     .define('X', fragment)
                     .unlockedBy("has_" + type.itemName(), has(fragment))
+                    .group("fragments_to_resource")
                     .save(output, "sporenexus:" + type.name() + "_from_fragments");
         }
 
+
+        shaped(RecipeCategory.MISC, Items.MUD, 2)
+                .pattern("DX")
+                .pattern("XD")
+                .define('X', ItemsRegistry.fragment("clay").get())
+                .define('D', ItemsRegistry.fragment("dirt").get())
+                .unlockedBy("has_clay_fragments", has(ItemsRegistry.fragment("clay").get()))
+                .group("fragments_to_resource")
+                .save(output, "mud_from_frags");
+
+        shaped(RecipeCategory.MISC, Items.MOSS_CARPET, 2)
+                .pattern("XX")
+                .define('X', ItemsRegistry.fragment("moss").get())
+                .unlockedBy("has_moss_fragments", has(ItemsRegistry.fragment("moss").get()))
+                .group("fragments_to_resource")
+                .save(output, "moss_carpet_from_frags");
+
+        shaped(RecipeCategory.MISC, Items.COBBLESTONE, 2)
+                .pattern(" X ")
+                .pattern("X X")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.fragment("stone").get())
+                .unlockedBy("has_stone_fragments", has(ItemsRegistry.fragment("stone").get()))
+                .group("fragments_to_resource")
+                .save(output, "cobblestone_from_frags");
+
+        shaped(RecipeCategory.MISC, Items.STONE_BRICKS, 2)
+                .pattern("X X")
+                .pattern("X X")
+                .define('X', ItemsRegistry.fragment("stone").get())
+                .unlockedBy("has_stone_fragments", has(ItemsRegistry.fragment("stone").get()))
+                .group("fragments_to_resource")
+                .save(output, "stone_bricks_from_frags");
+
+        shaped(RecipeCategory.MISC, Items.MOSSY_STONE_BRICKS, 4)
+                .pattern("XOX")
+                .pattern("XOX")
+                .define('X', ItemsRegistry.fragment("stone").get())
+                .define('O', ItemsRegistry.fragment("mossy_cobblestone").get())
+                .unlockedBy("has_stone_fragments", has(ItemsRegistry.fragment("stone").get()))
+                .group("fragments_to_resource")
+                .save(output, "mossy_stone_bricks_from_frags");
+
+        shaped(RecipeCategory.MISC, Items.SOUL_SOIL, 2)
+                .pattern("X X")
+                .pattern("X X")
+                .define('X', ItemsRegistry.fragment("soul_sand").get())
+                .unlockedBy("has_soul_sand_fragments", has(ItemsRegistry.fragment("soul_sand").get()))
+                .group("fragments_to_resource")
+                .save(output, "soul_soil_from_frags");
+
+        shaped(RecipeCategory.MISC, Items.WATER_BUCKET, 1)
+                .pattern("X X")
+                .pattern(" I ")
+                .pattern("X X")
+                .define('X', ItemsRegistry.fragment("ice").get())
+                .define('I', Items.BUCKET)
+                .unlockedBy("has_ice_sand_fragments", has(ItemsRegistry.fragment("ice").get()))
+                .group("fragments_to_resource")
+                .save(output, "water_bucket_from_frags");
 
     }
 }

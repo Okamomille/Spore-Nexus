@@ -19,4 +19,14 @@ public class CreativeTabsRegistry {
                 builder.title(Component.translatable("tab.sporenexus"));
                 builder.icon(() -> new ItemStack(ItemsRegistry.FUNGALSTEEL_INGOT.get()));
             }));
+    public static final RegistrySupplier<CreativeModeTab> FRAGMENTS_TAB = TABS.register("fragments_tab", () ->
+            CreativeTabRegistry.create(builder -> {
+                builder.title(Component.translatable("tab.fragments"));
+                builder.icon(() -> new ItemStack(ItemsRegistry.fragment("amethyst").get()));
+            }));
+    public static final RegistrySupplier<CreativeModeTab> MUSHROOMS_TAB = TABS.register("mushrooms_tab", () ->
+            CreativeTabRegistry.create(builder -> {
+                builder.title(Component.translatable("tab.mushrooms"));
+                builder.icon(() -> new ItemStack(BlocksRegistry.RESOURCE_MUSHROOMS.get("redstone").get()));
+            }));
 }

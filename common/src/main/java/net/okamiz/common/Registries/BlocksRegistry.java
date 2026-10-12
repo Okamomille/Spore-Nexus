@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
 public class BlocksRegistry {
 
@@ -93,17 +92,34 @@ public class BlocksRegistry {
 
     /* RESOURCES MUSHROOMS */
     public static final List<ResourceMushroomType> RESOURCE_MUSHROOM_TYPES = List.of(
-            new ResourceMushroomType("coal",  ItemsRegistry.fragment("coal"),   ItemsRegistry.FUNGAL_ESSENCE, 1200),
-            new ResourceMushroomType("copper",ItemsRegistry.fragment("copper"), ItemsRegistry.FUNGAL_ESSENCE, 1800),
-            new ResourceMushroomType("iron",   ItemsRegistry.fragment("iron"),   ItemsRegistry.FUNGAL_ESSENCE, 2600),
-            new ResourceMushroomType("fungalsteel",   ItemsRegistry.fragment("fungalsteel"),   ItemsRegistry.FUNGAL_ESSENCE, 2600),
-            new ResourceMushroomType("quartz",   ItemsRegistry.fragment("quartz"),   ItemsRegistry.FUNGAL_ESSENCE, 1800),
-            new ResourceMushroomType("lapis_lazuli",   ItemsRegistry.fragment("lapis_lazuli"),   ItemsRegistry.FUNGAL_ESSENCE, 1800),
-            new ResourceMushroomType("redstone",   ItemsRegistry.fragment("redstone"),   ItemsRegistry.FUNGAL_ESSENCE, 1800),
-            new ResourceMushroomType("gold",   ItemsRegistry.fragment("gold"),   ItemsRegistry.FUNGAL_ESSENCE, 2600),
-            new ResourceMushroomType("diamond",   ItemsRegistry.fragment("diamond"),   ItemsRegistry.FUNGAL_ESSENCE, 4000),
-            new ResourceMushroomType("emerald",   ItemsRegistry.fragment("emerald"),   ItemsRegistry.FUNGAL_ESSENCE, 4000),
-            new ResourceMushroomType("netherite",   ItemsRegistry.fragment("netherite"),   ItemsRegistry.FUNGAL_ESSENCE, 6000)
+            /* ORES */
+            new ResourceMushroomType("coal",  ItemsRegistry.fragment("coal"),   ItemsRegistry.FUNGAL_ESSENCE, null, 1200),
+            new ResourceMushroomType("copper",ItemsRegistry.fragment("copper"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("iron",   ItemsRegistry.fragment("iron"),   ItemsRegistry.FUNGAL_ESSENCE, null, 2600),
+            new ResourceMushroomType("fungalsteel",   ItemsRegistry.fragment("fungalsteel"),   ItemsRegistry.FUNGAL_ESSENCE, null, 2600),
+            new ResourceMushroomType("quartz",   ItemsRegistry.fragment("quartz"),   ItemsRegistry.FUNGAL_ESSENCE,null, 1800),
+            new ResourceMushroomType("amethyst",   ItemsRegistry.fragment("amethyst"),   ItemsRegistry.FUNGAL_ESSENCE,null, 1800),
+            new ResourceMushroomType("lapis_lazuli",   ItemsRegistry.fragment("lapis_lazuli"),   ItemsRegistry.FUNGAL_ESSENCE,null, 1800),
+            new ResourceMushroomType("redstone",   ItemsRegistry.fragment("redstone"),   ItemsRegistry.FUNGAL_ESSENCE,null, 1800),
+            new ResourceMushroomType("gold",   ItemsRegistry.fragment("gold"),   ItemsRegistry.FUNGAL_ESSENCE,null, 2600),
+            new ResourceMushroomType("diamond",   ItemsRegistry.fragment("diamond"),   ItemsRegistry.FUNGAL_ESSENCE,null, 4000),
+            new ResourceMushroomType("emerald",   ItemsRegistry.fragment("emerald"),   ItemsRegistry.FUNGAL_ESSENCE,null, 4000),
+            new ResourceMushroomType("netherite",   ItemsRegistry.fragment("netherite"),   ItemsRegistry.FUNGAL_ESSENCE,null, 6000),
+
+
+            /* BLOCKS */
+            new ResourceMushroomType("ice",ItemsRegistry.fragment("ice"), ItemsRegistry.FUNGAL_ESSENCE, null, 2000),
+            new ResourceMushroomType("dirt",ItemsRegistry.fragment("dirt"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("sand",ItemsRegistry.fragment("sand"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("clay",ItemsRegistry.fragment("clay"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("gravel",ItemsRegistry.fragment("gravel"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("stone",ItemsRegistry.fragment("stone"), ItemsRegistry.FUNGAL_ESSENCE,
+                    ItemsRegistry.fragment("mossy_cobblestone"), 1800),
+            new ResourceMushroomType("moss",ItemsRegistry.fragment("moss"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("blackstone",ItemsRegistry.fragment("blackstone"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("netherrack",ItemsRegistry.fragment("netherrack"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("soul_sand",ItemsRegistry.fragment("soul_sand"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("glowstone",ItemsRegistry.fragment("glowstone"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800)
     );
 
 
@@ -152,8 +168,8 @@ public class BlocksRegistry {
     private static Map<String, RegistrySupplier<Block>> registerResourceMushrooms() {
         Map<String, RegistrySupplier<Block>> map = new LinkedHashMap<>();
         for (ResourceMushroomType type : RESOURCE_MUSHROOM_TYPES) {
-            map.put(type.ore(), registerBlock(type.blockName(), props -> new ResourceMushroomBlock(props, type.drop(), type.secondaryDrop(), type.growthTicks()),
-                    () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB));
+            map.put(type.ore(), registerBlock(type.blockName(), props -> new ResourceMushroomBlock(props, type.drop(), type.essenceDrop(), type.extraDrop(),type.growthTicks()),
+                    () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.MUSHROOMS_TAB));
         }
         return map;
     }

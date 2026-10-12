@@ -33,7 +33,7 @@ public class MushroomHarvestCategory implements IRecipeCategory<MushroomHarvest>
     public MushroomHarvestCategory(IGuiHelper helper) {
         this.background = helper.createBlankDrawable(WIDTH, HEIGHT);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
-                new ItemStack(BlocksRegistry.RESOURCE_MUSHROOMS.get("coal").get()));
+                new ItemStack(BlocksRegistry.RESOURCE_MUSHROOMS.get("redstone").get()));
     }
 
     @Override public IRecipeType<MushroomHarvest> getRecipeType() { return TYPE; }

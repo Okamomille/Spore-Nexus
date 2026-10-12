@@ -17,7 +17,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -37,7 +36,8 @@ public class ResourceMushroomBlock extends CropBlock {
     public static final int MAX_AGE = 3 * SUB_STEPS - 1;
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, MAX_AGE);
     public Supplier<Item> drop;
-    public Supplier<Item> secondaryDrop;
+    public Supplier<Item> essenceDrop;
+    public Supplier<Item> extraDrop;
 
     private final int growthTicks;      // GROWS TICKS PER AGE (*3 to have full time) (2400 ticks = 2 min)
     private static final int BLOCKED_RETRY_TICKS = 100; // LIGHT CHECK RETRY TICKS
@@ -48,11 +48,12 @@ public class ResourceMushroomBlock extends CropBlock {
             Block.box(2.0, 0.0, 2.0, 14.0, 12.0, 14.0),
     };
 
-    public ResourceMushroomBlock(Properties properties, Supplier<Item> drop, Supplier<Item> secondaryDrop, int growthTicks) {
+    public ResourceMushroomBlock(Properties properties, Supplier<Item> drop, Supplier<Item> essenceDrop, Supplier<Item> extraDrop, int growthTicks) {
         super(properties);
         this.drop = drop;
-        this.secondaryDrop = secondaryDrop;
+        this.essenceDrop = essenceDrop;
         this.growthTicks = growthTicks;
+        this.extraDrop = extraDrop;
     }
 
 
@@ -249,8 +250,11 @@ public class ResourceMushroomBlock extends CropBlock {
         if (drop != null) {
             list.add(new HarvestDrop(drop, 1, 3, 100));                                   // fragments
         }
-        if (secondaryDrop != null) {
-            list.add(new HarvestDrop(secondaryDrop, 1, 1, 45));                           // secondary
+        if (essenceDrop != null) {
+            list.add(new HarvestDrop(essenceDrop, 1, 2, 45));                           // essence
+        }
+        if (extraDrop != null) {
+            list.add(new HarvestDrop(extraDrop, 1, 1, 15));                           // extra
         }
         return list;
     }

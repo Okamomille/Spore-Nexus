@@ -7,14 +7,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 import net.okamiz.common.records.FragmentType;
-import net.okamiz.common.records.ResourceMushroomType;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -96,7 +90,24 @@ public class ItemsRegistry {
             new FragmentType("lapis_lazuli", () -> Items.LAPIS_LAZULI,                  4),
             new FragmentType("netherite",    () -> Items.NETHERITE_INGOT,               1),
             new FragmentType("quartz",       () -> Items.QUARTZ,                        1),
-            new FragmentType("redstone",     () -> Items.REDSTONE,                      4)
+            new FragmentType("redstone",     () -> Items.REDSTONE,                      4),
+            new FragmentType("amethyst",     () -> Items.AMETHYST_SHARD,                      4),
+
+
+            /* BLOCKS */
+
+            new FragmentType("ice",     () -> Items.ICE,                      2),
+            new FragmentType("dirt",     () -> Items.DIRT,                      2),
+            new FragmentType("sand",     () -> Items.SAND,                      2),
+            new FragmentType("clay",     () -> Items.CLAY,                      2),
+            new FragmentType("gravel",     () -> Items.GRAVEL,                      2),
+            new FragmentType("stone",     () -> Items.STONE,                      2),
+            new FragmentType("mossy_cobblestone",     () -> Items.MOSSY_COBBLESTONE,                      2),
+            new FragmentType("moss",     () -> Items.MOSS_BLOCK,                      4),
+            new FragmentType("blackstone",     () -> Items.BLACKSTONE,                      2),
+            new FragmentType("netherrack",     () -> Items.NETHERRACK,                      2),
+            new FragmentType("soul_sand",     () -> Items.SOUL_SAND,                      2),
+            new FragmentType("glowstone",     () -> Items.GLOWSTONE,                      2)
     );
 
 
@@ -120,7 +131,7 @@ public class ItemsRegistry {
     private static Map<String, RegistrySupplier<Item>> registerFragments() {
         Map<String, RegistrySupplier<Item>> map = new LinkedHashMap<>();
         for (FragmentType type : FRAGMENT_TYPES) {
-            map.put(type.name(), registerItem(type.itemName(), Item::new, () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB)));
+            map.put(type.name(), registerItem(type.itemName(), Item::new, () -> new Item.Properties().arch$tab(CreativeTabsRegistry.FRAGMENTS_TAB)));
         }
         return map;
     }
