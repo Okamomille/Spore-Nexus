@@ -1,4 +1,4 @@
-// 26.2	2026-10-10T23:15:08.0679315	Loot Tables
+// 26.2	2026-10-12T15:29:42.8759473	Loot Tables
 e8c6a26403177575adcac682b43fb5c1790168d5 data/sporenexus/loot_table/blocks/banded_agaric.json
 43f377f77b9dd989581c4caa4f44bcd6c4ff06f5 data/sporenexus/loot_table/blocks/banded_agaric_block.json
 21dd697200792a3c76c9ef17719d18eb952e60ed data/sporenexus/loot_table/blocks/banded_agaric_fluffy_stem.json
@@ -8,6 +8,8 @@ c4f4b3c515ffda5f52e2a1f993dbee3aefda54b1 data/sporenexus/loot_table/blocks/coppe
 5202d0a262f3176770412c22142c48ca00adb6cd data/sporenexus/loot_table/blocks/diamond_resource_mushroom.json
 3442710bfdf3e52e7fe8ae206edc36d4e09cfec9 data/sporenexus/loot_table/blocks/emerald_resource_mushroom.json
 b49350853c5a2701b28b9eed8b7c79a40ce2674d data/sporenexus/loot_table/blocks/eternal_light_mushroom.json
+3d49625454a5a555e2b8ba424fef33aca33d9570 data/sporenexus/loot_table/blocks/eternal_light_mushroom_block.json
+77e6097d66219f5f28ed9ab5103acbd1ce48db0a data/sporenexus/loot_table/blocks/eternal_light_mushroom_stem.json
 bc114f614383eb81c2ea2a5695b24feaf1c038e8 data/sporenexus/loot_table/blocks/fertilized_mycelium.json
 1ede44679d512fe0333cea6b6bae7a62d8cc922a data/sporenexus/loot_table/blocks/fungalsteel_block.json
 f163b315f9217cdcb722bcf5a6f7ce77a47665b1 data/sporenexus/loot_table/blocks/fungalsteel_resource_mushroom.json

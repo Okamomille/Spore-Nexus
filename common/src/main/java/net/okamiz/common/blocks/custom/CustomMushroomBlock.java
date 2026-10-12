@@ -4,38 +4,37 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.VegetationBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.okamiz.SporeNexus;
 
-import java.util.Optional;
+import java.util.*;
 
 public class CustomMushroomBlock extends VegetationBlock implements BonemealableBlock {
 
     private static final VoxelShape SHAPE = Block.column((double)11.0F, (double)0.0F, (double)11.0F);
 
-    private Identifier giantId = Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "giant_banded_agaric");
+    private final List<Identifier> giantIds;
 
-    public CustomMushroomBlock(Properties properties, String id) {
+    public CustomMushroomBlock(Properties properties, String... ids) {
         super(properties);
+        this.giantIds = Arrays.stream(ids).map(id -> Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, id)).toList();
+    }
 
-        giantId = Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, id);
+    @Override
+    protected boolean mayPlaceOn(final BlockState state, final BlockGetter level, final BlockPos pos) {
+        return state.isSolidRender();
     }
 
     @Override
@@ -55,23 +54,34 @@ public class CustomMushroomBlock extends VegetationBlock implements Bonemealable
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        Optional<StructureTemplate> optional = level.getStructureManager().get(giantId);
+        List<Identifier> candidates = new ArrayList<>(giantIds);
+        Collections.shuffle(candidates, new Random(random.nextLong()));
+
+        for (Identifier id : candidates) {
+            if (tryGrow(level, random, pos, id)) {
+                return;
+            }
+        }
+    }
+
+    private boolean tryGrow(ServerLevel level, RandomSource random, BlockPos pos, Identifier id) {
+        Optional<StructureTemplate> optional = level.getStructureManager().get(id);
         if (optional.isEmpty()) {
-            return;
+            return false;
         }
         StructureTemplate template = optional.get();
         Vec3i size = template.getSize();
-
         BlockPos origin = pos.offset(-size.getX() / 2, 0, -size.getZ() / 2);
 
         for (BlockPos p : BlockPos.betweenClosed(origin, origin.offset(size.getX() - 1, size.getY() - 1, size.getZ() - 1))) {
             if (!p.equals(pos) && !level.getBlockState(p).canBeReplaced()) {
-                return;
+                return false;
             }
         }
 
         level.removeBlock(pos, false);
         template.placeInWorld(level, origin, origin, new StructurePlaceSettings(), random, 2);
+        return true;
     }
 
     @Override

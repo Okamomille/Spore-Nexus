@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "sporenexus:block/eternal_light_mushroom_block"
+  }
+}

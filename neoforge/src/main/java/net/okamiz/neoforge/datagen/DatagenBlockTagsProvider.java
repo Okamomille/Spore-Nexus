@@ -26,20 +26,21 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
                 .add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.getKey())
                 .add(BlocksRegistry.BANDED_AGARIC_STEM.getKey())
                 .add(BlocksRegistry.BANDED_AGARIC_BLOCK.getKey())
+                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.getKey())
+                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.getKey())
         ;
 
+        BlocksRegistry.RESOURCE_MUSHROOMS.values().forEach(block ->tag(BlockTags.MINEABLE_WITH_HOE).add(block.getKey()));
 
         tag(BlockTags.MINEABLE_WITH_HOE)
-                .add(BlocksRegistry.COAL_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.COPPER_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.DIAMOND_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.EMERALD_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.FUNGALSTEEL_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.LAPIS_LAZULI_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.IRON_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.GOLD_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.QUARTZ_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.REDSTONE_RESOURCE_MUSHROOM.getKey())
-                .add(BlocksRegistry.NETHERITE_RESOURCE_MUSHROOM.getKey());
+                .add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.getKey())
+                .add(BlocksRegistry.BANDED_AGARIC_STEM.getKey())
+                .add(BlocksRegistry.BANDED_AGARIC_BLOCK.getKey())
+                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.getKey())
+                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.getKey())
+
+                ;
+
+
     }
 }

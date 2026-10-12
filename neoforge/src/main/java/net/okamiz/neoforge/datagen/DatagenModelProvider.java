@@ -56,28 +56,17 @@ public class DatagenModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ItemsRegistry.ETHEREAL_ESSENCE.get(), ModelTemplates.FLAT_ITEM);
 
         /* FRAGMENTS */
-        /* ORES */
-        itemModels.generateFlatItem(ItemsRegistry.COAL_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.COPPER_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.DIAMOND_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.EMERALD_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.GOLD_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.IRON_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.LAPIS_LAZULI_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.NETHERITE_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.QUARTZ_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemsRegistry.REDSTONE_FRAGMENTS.get(), ModelTemplates.FLAT_ITEM);
-
+        ItemsRegistry.FRAGMENTS.values().forEach(item -> itemModels.generateFlatItem(item.get(), ModelTemplates.FLAT_ITEM));
 
 
         /* BLOCKS */
 
-        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_BLOCK.get());
-        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get());
-        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_STEM.get());
+        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_BLOCK.get(),"banded_agaric");
+        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get(),"banded_agaric");
+        createCustomMushroomBlock(blockModels, BlocksRegistry.BANDED_AGARIC_STEM.get(),"banded_agaric");
 
-
+        createCustomMushroomBlock(blockModels, BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.get(),"eternal_light_mushroom");
+        createCustomMushroomBlock(blockModels, BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.get(),"eternal_light_mushroom");
 
         blockModels.createTrivialCube(BlocksRegistry.FUNGALSTEEL_BLOCK.get());
 
@@ -95,17 +84,7 @@ public class DatagenModelProvider extends ModelProvider {
 
 
         /* MUSHROOMS */
-        registerMushroom(blockModels, BlocksRegistry.COAL_RESOURCE_MUSHROOM.get(), "coal");
-        registerMushroom(blockModels, BlocksRegistry.COPPER_RESOURCE_MUSHROOM.get(), "copper");
-        registerMushroom(blockModels, BlocksRegistry.DIAMOND_RESOURCE_MUSHROOM.get(), "diamond");
-        registerMushroom(blockModels, BlocksRegistry.EMERALD_RESOURCE_MUSHROOM.get(), "emerald");
-        registerMushroom(blockModels, BlocksRegistry.FUNGALSTEEL_RESOURCE_MUSHROOM.get(), "fungalsteel");
-        registerMushroom(blockModels, BlocksRegistry.IRON_RESOURCE_MUSHROOM.get(), "iron");
-        registerMushroom(blockModels, BlocksRegistry.GOLD_RESOURCE_MUSHROOM.get(), "gold");
-        registerMushroom(blockModels, BlocksRegistry.LAPIS_LAZULI_RESOURCE_MUSHROOM.get(), "lapis_lazuli");
-        registerMushroom(blockModels, BlocksRegistry.NETHERITE_RESOURCE_MUSHROOM.get(), "netherite");
-        registerMushroom(blockModels, BlocksRegistry.QUARTZ_RESOURCE_MUSHROOM.get(), "quartz");
-        registerMushroom(blockModels, BlocksRegistry.REDSTONE_RESOURCE_MUSHROOM.get(), "redstone");
+        BlocksRegistry.RESOURCE_MUSHROOMS.forEach((ore, block) -> registerMushroom(blockModels, block.get(), ore));
     }
 
 
@@ -166,9 +145,9 @@ public class DatagenModelProvider extends ModelProvider {
     }
 
 
-    public void createCustomMushroomBlock(BlockModelGenerators blockModels, Block block) {
+    public void createCustomMushroomBlock(BlockModelGenerators blockModels, Block block, String id) {
         MultiVariant skin = blockModels.plainVariant(ModelTemplates.SINGLE_FACE.create(block, TextureMapping.defaultTexture(block), blockModels.modelOutput));
-        MultiVariant skinless = blockModels.plainVariant(id("block/banded_agaric_block_inside"));
+        MultiVariant skinless = blockModels.plainVariant(id("block/"+id+"_block_inside"));
         blockModels.blockStateOutput.accept(MultiPartGenerator.multiPart(block).with(blockModels.condition().term(BlockStateProperties.NORTH, true), skin)
                 .with(blockModels.condition().term(BlockStateProperties.EAST, true), skin.with(blockModels.Y_ROT_90)
                         .with(blockModels.UV_LOCK)).with(blockModels.condition().term(BlockStateProperties.SOUTH, true),

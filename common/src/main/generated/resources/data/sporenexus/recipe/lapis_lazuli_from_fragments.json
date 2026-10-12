@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "fragments_to_resource",
   "key": {
     "X": "sporenexus:lapis_lazuli_fragments"
   },
@@ -9,6 +8,7 @@
     "XX"
   ],
   "result": {
+    "count": 4,
     "id": "minecraft:lapis_lazuli"
   }
 }

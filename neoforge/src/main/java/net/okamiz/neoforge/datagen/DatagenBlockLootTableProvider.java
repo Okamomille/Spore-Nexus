@@ -33,18 +33,12 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
         add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get(),
                 createMushroomBlockDrop(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get(), BlocksRegistry.BANDED_AGARIC.get().asItem()));
 
+        add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.get(),
+                createMushroomBlockDrop(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.get(), BlocksRegistry.ETERNAL_LIGHT_MUSHROOM.get().asItem()));
+        add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.get(),
+                createMushroomBlockDrop(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.get(), BlocksRegistry.ETERNAL_LIGHT_MUSHROOM.get().asItem()));
 
-        dropSelf(BlocksRegistry.COAL_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.COPPER_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.DIAMOND_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.EMERALD_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.FUNGALSTEEL_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.LAPIS_LAZULI_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.IRON_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.GOLD_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.NETHERITE_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.QUARTZ_RESOURCE_MUSHROOM.get());
-        dropSelf(BlocksRegistry.REDSTONE_RESOURCE_MUSHROOM.get());
+        BlocksRegistry.RESOURCE_MUSHROOMS.values().forEach(block -> dropSelf(block.get()));
 
         dropSelf(BlocksRegistry.MYCELIAN_CORE.get());
         dropSelf(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get());

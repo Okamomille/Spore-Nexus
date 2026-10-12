@@ -1,3 +1,4 @@
-// 26.2	2026-10-10T11:46:01.1114283	Tags for minecraft:block mod id sporenexus
-859b4a6ffa5c57ff1c8c6a49a2764e86ff07ad5f data/minecraft/tags/block/mineable/hoe.json
+// 26.2	2026-10-12T16:25:33.6233674	Tags for minecraft:block mod id sporenexus
+f0c511780dfcd8ca0d636cb3131dae5477937323 data/minecraft/tags/block/mineable/axe.json
+480d305556e39bf4c7a47344b698ae1ba35cdaaa data/minecraft/tags/block/mineable/hoe.json
 c6d36f54afda25cebce500776b739990ddfa8b6e data/minecraft/tags/block/mineable/pickaxe.json

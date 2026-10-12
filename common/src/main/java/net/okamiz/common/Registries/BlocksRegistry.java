@@ -16,7 +16,11 @@ import net.minecraft.world.level.material.PushReaction;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.blocks.TooltipBlockItem;
 import net.okamiz.common.blocks.custom.*;
+import net.okamiz.common.records.ResourceMushroomType;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
@@ -38,14 +42,25 @@ public class BlocksRegistry {
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
             "tooltip.block.sporenexus.fungal_mycelium", TextColor.YELLOW);
 
+
+    /* GIANT MUSHROM BLOCKS */
+
     public static final RegistrySupplier<Block> BANDED_AGARIC_STEM = registerBlock("banded_agaric_stem", HugeMushroomBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM), CreativeTabsRegistry.SPORENEXUS_TAB);
+
     public static final RegistrySupplier<Block> BANDED_AGARIC_FLUFFY_STEM = registerBlock("banded_agaric_fluffy_stem", HugeMushroomBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM), CreativeTabsRegistry.SPORENEXUS_TAB);
+
     public static final RegistrySupplier<Block> BANDED_AGARIC_BLOCK = registerBlock("banded_agaric_block", HugeMushroomBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+
+
+    public static final RegistrySupplier<Block> ETERNAL_LIGHT_MUSHROOM_STEM = registerBlock("eternal_light_mushroom_stem", HugeMushroomBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM).noOcclusion().lightLevel(state -> 13), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+    public static final RegistrySupplier<Block> ETERNAL_LIGHT_MUSHROOM_BLOCK = registerBlock("eternal_light_mushroom_block", HugeMushroomBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-
 
 
 
@@ -67,64 +82,29 @@ public class BlocksRegistry {
     /* BASIC MUSHROOMS */
 
     public static RegistrySupplier<Block> BANDED_AGARIC = registerBlock("banded_agaric",
-            props -> new CustomMushroomBlock(props, "giant_banded_agaric"),
+            props -> new CustomMushroomBlock(props, "giant_banded_agaric","giant_banded_agaric_2"),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).noOcclusion(), CreativeTabsRegistry.SPORENEXUS_TAB);
 
     public static RegistrySupplier<Block> ETERNAL_LIGHT_MUSHROOM = registerBlock("eternal_light_mushroom",
-            props -> new CustomMushroomBlock(props, "giant_eternal_light_mushroom"),
+            props -> new CustomMushroomBlock(props, "giant_eternal_light_mushroom_1","giant_eternal_light_mushroom_2","giant_eternal_light_mushroom_3"),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).noOcclusion().lightLevel(state -> 5), CreativeTabsRegistry.SPORENEXUS_TAB);
 
 
 
     /* RESOURCES MUSHROOMS */
-
-
-    public static final RegistrySupplier<Block> COAL_RESOURCE_MUSHROOM = registerBlock("coal_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.COAL_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 1200),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> COPPER_RESOURCE_MUSHROOM = registerBlock("copper_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.COPPER_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 1800),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> DIAMOND_RESOURCE_MUSHROOM = registerBlock("diamond_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.DIAMOND_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 4000),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> EMERALD_RESOURCE_MUSHROOM = registerBlock("emerald_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.EMERALD_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 4000),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> FUNGALSTEEL_RESOURCE_MUSHROOM = registerBlock("fungalsteel_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.FUNGALSTEEL_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 2600),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> GOLD_RESOURCE_MUSHROOM = registerBlock("gold_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.GOLD_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 2600),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> IRON_RESOURCE_MUSHROOM = registerBlock("iron_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.IRON_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 2600),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> LAPIS_LAZULI_RESOURCE_MUSHROOM = registerBlock("lapis_lazuli_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.LAPIS_LAZULI_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 2200),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> NETHERITE_RESOURCE_MUSHROOM = registerBlock("netherite_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.NETHERITE_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 6000),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> QUARTZ_RESOURCE_MUSHROOM = registerBlock("quartz_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.QUARTZ_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 1800),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-    public static final RegistrySupplier<Block> REDSTONE_RESOURCE_MUSHROOM = registerBlock("redstone_resource_mushroom",
-            props -> new ResourceMushroomBlock(props, ItemsRegistry.REDSTONE_FRAGMENTS, ItemsRegistry.FUNGAL_ESSENCE, 1800),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
-
-
-
+    public static final List<ResourceMushroomType> RESOURCE_MUSHROOM_TYPES = List.of(
+            new ResourceMushroomType("coal",  ItemsRegistry.fragment("coal"),   ItemsRegistry.FUNGAL_ESSENCE, 1200),
+            new ResourceMushroomType("copper",ItemsRegistry.fragment("copper"), ItemsRegistry.FUNGAL_ESSENCE, 1800),
+            new ResourceMushroomType("iron",   ItemsRegistry.fragment("iron"),   ItemsRegistry.FUNGAL_ESSENCE, 2600),
+            new ResourceMushroomType("fungalsteel",   ItemsRegistry.fragment("fungalsteel"),   ItemsRegistry.FUNGAL_ESSENCE, 2600),
+            new ResourceMushroomType("quartz",   ItemsRegistry.fragment("quartz"),   ItemsRegistry.FUNGAL_ESSENCE, 1800),
+            new ResourceMushroomType("lapis_lazuli",   ItemsRegistry.fragment("lapis_lazuli"),   ItemsRegistry.FUNGAL_ESSENCE, 1800),
+            new ResourceMushroomType("redstone",   ItemsRegistry.fragment("redstone"),   ItemsRegistry.FUNGAL_ESSENCE, 1800),
+            new ResourceMushroomType("gold",   ItemsRegistry.fragment("gold"),   ItemsRegistry.FUNGAL_ESSENCE, 2600),
+            new ResourceMushroomType("diamond",   ItemsRegistry.fragment("diamond"),   ItemsRegistry.FUNGAL_ESSENCE, 4000),
+            new ResourceMushroomType("emerald",   ItemsRegistry.fragment("emerald"),   ItemsRegistry.FUNGAL_ESSENCE, 4000),
+            new ResourceMushroomType("netherite",   ItemsRegistry.fragment("netherite"),   ItemsRegistry.FUNGAL_ESSENCE, 6000)
+    );
 
 
 
@@ -164,4 +144,17 @@ public class BlocksRegistry {
         return toReturn;
     }
 
+
+
+
+    public static final Map<String, RegistrySupplier<Block>> RESOURCE_MUSHROOMS = registerResourceMushrooms();
+
+    private static Map<String, RegistrySupplier<Block>> registerResourceMushrooms() {
+        Map<String, RegistrySupplier<Block>> map = new LinkedHashMap<>();
+        for (ResourceMushroomType type : RESOURCE_MUSHROOM_TYPES) {
+            map.put(type.ore(), registerBlock(type.blockName(), props -> new ResourceMushroomBlock(props, type.drop(), type.secondaryDrop(), type.growthTicks()),
+                    () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB));
+        }
+        return map;
+    }
 }

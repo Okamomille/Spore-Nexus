@@ -13,7 +13,6 @@
   "tab.sporenexus": "Spore Nexus",
 
  "gui.sporenexus.mycelian_core": "Mycelian Core",
- "gui.sporenexus.mycelian_core_proxy": "Mycelian Core",
  "gui.sporenexus.spore_nexus_craft": "Spore Nexus Altar",
 
 
@@ -62,6 +61,9 @@
   "block.sporenexus.banded_agaric_fluffy_stem": "Banded Agaric Fluffy Stem",
   "block.sporenexus.banded_agaric_block": "Banded Agaric Block",
 
+ "block.sporenexus.eternal_light_mushroom_stem": "Eternal Light Mushroom Stem",
+ "block.sporenexus.eternal_light_mushroom_block": "Eternal Light Mushroom Block",
+
   "block.sporenexus.fungalsteel_block": "Fungalsteel Block",
 
   "block.sporenexus.fertilized_mycelium": "Fertilized Mycelium",
@@ -69,6 +71,7 @@
 
   "block.sporenexus.spore_nexus": "Spore Nexus Altar",
   "block.sporenexus.mycelian_core": "Mycelian Core",
+  "block.sporenexus.mycelian_core_proxy": "Mycelian Core",
   "block.sporenexus.spore_nexus_craft_block": "Spore Nexus Altar",
 
   "block.sporenexus.banded_agaric": "Banded Agaric",
