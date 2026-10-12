@@ -41,6 +41,8 @@ subprojects {
             name = "ModMaven"
             url = "https://modmaven.dev"
         }
+
+        maven { url = "https://api.modrinth.com/maven" }
     }
 
     dependencies {

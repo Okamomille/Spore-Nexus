@@ -230,6 +230,15 @@ public class ResourceMushroomBlock extends CropBlock {
         }
     }
 
+    public int getEstimatedRemainingTicks(Level level, BlockPos pos, BlockState state) {
+        int stepsLeft = MAX_AGE - getAge(state);
+        int perStep = getGrowthDelay(level, pos) * 2 / MAX_AGE;
+        return stepsLeft * perStep;
+    }
+
+    public boolean isBlockedByLight(Level level, BlockPos pos) {
+        return level.getRawBrightness(pos, 0) >= 8;
+    }
 
 
 

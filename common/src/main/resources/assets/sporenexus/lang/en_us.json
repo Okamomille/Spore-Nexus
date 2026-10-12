@@ -3,13 +3,17 @@
  "jei.sporenexus.drop_chance": "%s%% Drop chance",
  "jei.sporenexus.drop_amount": "Drop amount: %s-%s",
 
-
+ "config.jade.plugin_sporenexus.mushroom_growth": "Mushroom Growth",
+ "jade.sporenexus.mature": "Ready to harvest",
+ "jade.sporenexus.too_bright": "Too bright to grow!",
+ "jade.sporenexus.growing_time": "Ready in ~%s",
 
 
 
   "tab.sporenexus": "Spore Nexus",
 
  "gui.sporenexus.mycelian_core": "Mycelian Core",
+ "gui.sporenexus.mycelian_core_proxy": "Mycelian Core",
  "gui.sporenexus.spore_nexus_craft": "Spore Nexus Altar",
 
 
