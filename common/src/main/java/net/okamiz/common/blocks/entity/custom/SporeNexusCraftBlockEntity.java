@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
@@ -40,6 +41,7 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
         public void setChanged(){
             super.setChanged();
             SporeNexusCraftBlockEntity.this.setChanged();
+            updateBlock();
         }
     };
 
@@ -88,6 +90,13 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
         return new SporeNexusCraftMenu(containerId, inventory, this, this.inventory, this.data);
     }
 
+
+    private void updateBlock(){
+        if (level != null && !level.isClientSide()) {
+            level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+        }
+    }
+
     @Override
     protected void saveAdditional(ValueOutput output) {
         super.saveAdditional(output);
@@ -117,6 +126,7 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
 
     public void drops() {
         if (this.level != null) {
+            updateBlock();
             Containers.dropContents(this.level, this.worldPosition, inventory);
         }
     }
@@ -172,6 +182,7 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
 
         inventory.setItem(MUSHROOM_SLOT, result);
         setChanged();
+        updateBlock();
     }
 
     private Optional<RecipeHolder<SporeNexusCraftRecipe>> getCurrentRecipe() {
@@ -200,12 +211,11 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
 
     @Override
     public @Nullable Packet<ClientGamePacketListener> getUpdatePacket() {
-        return super.getUpdatePacket();
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        return super.getUpdateTag(registries);
+        return saveWithoutMetadata(registries);
     }
-
 }

@@ -11,6 +11,7 @@ public class TagsRegistry {
 
     public static final TagKey<Item> MUSHROOMS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "mushrooms"));
     public static final TagKey<Item> FUNGUS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "fungus"));
+    public static final TagKey<Item> SUBSTRATS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "substrats"));
     public static final TagKey<Block> SPORE_SOILS = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "spore_soils"));
 
 

@@ -5,6 +5,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -39,7 +40,12 @@ public class MycelianCoreMenu extends AbstractContainerMenu {
                 return stack.is(TagsRegistry.MUSHROOMS) || stack.is(TagsRegistry.FUNGUS);
             }
         });
-        this.addSlot(new Slot(handler, 1, 68, 51));    // substrat
+        this.addSlot(new Slot(handler, 1, 68, 51) {   // substrat
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return stack.is(TagsRegistry.SUBSTRATS);
+            }
+        });
         this.addSlot(new Slot(handler, 2, 14, 23));    // nutrient 1
         this.addSlot(new Slot(handler, 3, 14, 47));    // nutrient 2
         this.addSlot(new Slot(handler, 4, 34, 36));    // nutrient 3

@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
@@ -36,11 +37,14 @@ import org.jspecify.annotations.Nullable;
 import java.util.Optional;
 
 public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider {
-    public final SimpleContainer inventory = new SimpleContainer(7){
+    public final SimpleContainer inventory = new SimpleContainer(7) {
         @Override
-        public void setChanged(){
+        public void setChanged() {
             super.setChanged();
             MycelianCoreBlockEntity.this.setChanged();
+            if (level != null && !level.isClientSide()) {
+                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+            }
         }
     };
 
@@ -123,8 +127,9 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
 
 
     public void drops() {
-        if (this.level != null) {
+        if (this.level != null && !level.isClientSide()) {
             Containers.dropContents(this.level, this.worldPosition, inventory);
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
         }
     }
 
@@ -163,6 +168,10 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
         ItemStack result = recipe.assemble(input);
         insertIntoSlot(OUTPUT_SLOT, result);
         recipe.assembleSecondary().ifPresent(secondary -> insertIntoSlot(SECONDARY_OUTPUT_SLOT, secondary));
+
+        if (level != null) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        }
 
         setChanged();
     }
@@ -236,12 +245,12 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
 
     @Override
     public @Nullable Packet<ClientGamePacketListener> getUpdatePacket() {
-        return super.getUpdatePacket();
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        return super.getUpdateTag(registries);
+        return saveWithoutMetadata(registries);
     }
 
 }

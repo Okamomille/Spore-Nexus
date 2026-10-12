@@ -3,8 +3,12 @@ package net.okamiz.fabric.client;
 import dev.architectury.registry.client.gui.MenuScreenRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.recipe.v1.sync.RecipeSynchronization;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.okamiz.common.Registries.BlockEntitiesRegistry;
 import net.okamiz.common.Registries.MenusRegistry;
 import net.okamiz.common.Registries.RecipesRegistry;
+import net.okamiz.common.blocks.renderer.MycelianCoreBlockEntityRenderer;
+import net.okamiz.common.blocks.renderer.SporeNexusCraftBlockEntityRenderer;
 import net.okamiz.common.menus.custom.MycelianCoreScreen;
 import net.okamiz.common.menus.custom.SporeNexusCraftScreen;
 
@@ -13,6 +17,7 @@ public final class SporeNexusFabricClient implements ClientModInitializer {
     public void onInitializeClient() {
         registerScreens();
         registerJEIRecipeTypes();
+        registerBER();
     }
 
     private void registerJEIRecipeTypes() {
@@ -26,4 +31,8 @@ public final class SporeNexusFabricClient implements ClientModInitializer {
     }
 
 
+    private void registerBER(){
+        BlockEntityRenderers.register(BlockEntitiesRegistry.MYCELIAN_CORE_BE.get(), MycelianCoreBlockEntityRenderer::new);
+        BlockEntityRenderers.register(BlockEntitiesRegistry.SPORE_NEXUS_CRAFT_BE.get(), SporeNexusCraftBlockEntityRenderer::new);
+    }
 }
