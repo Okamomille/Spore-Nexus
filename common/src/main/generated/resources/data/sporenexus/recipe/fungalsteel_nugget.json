@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "fungalsteel",
+  "ingredients": [
+    "sporenexus:fungalsteel_ingot"
+  ],
+  "result": {
+    "count": 9,
+    "id": "sporenexus:fungalsteel_nugget"
+  }
+}

@@ -19,8 +19,19 @@
 
 
   "item.sporenexus.fungalsteel_ingot": "Fungalsteel Ingot",
+  "item.sporenexus.fungalsteel_nugget": "Fungalsteel Nugget",
   "item.sporenexus.fungal_powder": "Fungal Powder",
   "item.sporenexus.mushroom_spores": "Mushroom Spores",
+
+ "item.sporenexus.fungalsteel_sword": "Fungalsteel Sword",
+ "item.sporenexus.fungalsteel_spear": "Fungalsteel Spear",
+ "item.sporenexus.fungalsteel_pickaxe": "Fungalsteel Pickaxe",
+ "item.sporenexus.fungalsteel_axe": "Fungalsteel Axe",
+ "item.sporenexus.fungalsteel_shovel": "Fungalsteel Shovel",
+ "item.sporenexus.fungalsteel_hoe": "Fungalsteel Hoe",
+
+
+
 
   "item.sporenexus.mineral_quartz": "Mineral Quartz",
   "item.sporenexus.luminescent_fibers": "Luminescent Fibers",

@@ -14,6 +14,7 @@ import net.okamiz.common.Registries.TagsRegistry;
 import net.okamiz.common.records.FragmentType;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public class DatagenRecipeProvider extends RecipeProvider {
 
@@ -86,6 +87,8 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fungalsteel")
                 .save(output, "fungalsteel_from_powder");
 
+        createToolsRecipe(ItemsRegistry.FUNGALSTEEL_INGOT.get(),Items.IRON_BARS,ItemsRegistry.FUNGALSTEEL_PICKAXE.get(),ItemsRegistry.FUNGALSTEEL_SWORD.get(),
+                ItemsRegistry.FUNGALSTEEL_AXE.get(), ItemsRegistry.FUNGALSTEEL_SHOVEL.get(), ItemsRegistry.FUNGALSTEEL_HOE.get(), ItemsRegistry.FUNGALSTEEL_SPEAR.get());
 
 
         shaped(RecipeCategory.MISC, Blocks.MYCELIUM)
@@ -134,9 +137,25 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
                 .group("fungalsteel")
                 .save(output);
+
         shapeless(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get(), 4)
                 .requires(BlocksRegistry.FUNGALSTEEL_BLOCK.get())
                 .unlockedBy("has_fungalsteel_block", has(BlocksRegistry.FUNGALSTEEL_BLOCK.get()))
+                .group("fungalsteel")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .pattern("XXX")
+                .pattern("XXX")
+                .pattern("XXX")
+                .define('X', ItemsRegistry.FUNGALSTEEL_NUGGET.get())
+                .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
+                .group("fungalsteel")
+                .save(output, "fungalsteel_ingot_from_nuggets");
+
+        shapeless(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_NUGGET.get(), 9)
+                .requires(ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
                 .group("fungalsteel")
                 .save(output);
 
@@ -219,5 +238,81 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fragments_to_resource")
                 .save(output, "water_bucket_from_frags");
 
+    }
+    private void createToolsRecipe(Item ingredient, Item stick, Item pickaxe, Item sword, Item axe, Item shovel, Item hoe, Item spear){
+
+        shaped(RecipeCategory.MISC, pickaxe, 1)
+                .pattern("XXX")
+                .pattern(" I ")
+                .pattern(" I ")
+                .define('X', ingredient)
+                .define('I', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .group("tools")
+                .save(output);
+        shaped(RecipeCategory.MISC, sword, 1)
+                .pattern("X")
+                .pattern("X")
+                .pattern("I")
+                .define('X', ingredient)
+                .define('I', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .group("tools")
+                .save(output);
+        shaped(RecipeCategory.MISC, shovel, 1)
+                .pattern("X")
+                .pattern("I")
+                .pattern("I")
+                .define('X', ingredient)
+                .define('I', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .group("tools")
+                .save(output);
+        shaped(RecipeCategory.MISC, axe, 1)
+                .pattern("XX")
+                .pattern("XI")
+                .pattern(" I")
+                .define('X', ingredient)
+                .define('I', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .group("tools")
+                .save(output, getItemName(axe)+"_left");
+        shaped(RecipeCategory.MISC, axe, 1)
+                .pattern("XX")
+                .pattern("IX")
+                .pattern("I ")
+                .define('X', ingredient)
+                .define('I', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .group("tools")
+                .save(output, getItemName(axe)+"_right");
+
+        shaped(RecipeCategory.MISC, hoe, 1)
+                .pattern("XX")
+                .pattern("I ")
+                .pattern("I ")
+                .define('X', ingredient)
+                .define('I', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .group("tools")
+                .save(output, getItemName(hoe)+"_right");
+        shaped(RecipeCategory.MISC, hoe, 1)
+                .pattern("XX")
+                .pattern(" I")
+                .pattern(" I")
+                .define('X', ingredient)
+                .define('I', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .group("tools")
+                .save(output, getItemName(hoe)+"_left");
+        shaped(RecipeCategory.MISC, spear, 1)
+                .pattern("  X")
+                .pattern(" I ")
+                .pattern("I  ")
+                .define('X', ingredient)
+                .define('I', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .group("tools")
+                .save(output);
     }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tools",
+  "key": {
+    "I": "minecraft:iron_bars",
+    "X": "sporenexus:fungalsteel_ingot"
+  },
+  "pattern": [
+    "X",
+    "I",
+    "I"
+  ],
+  "result": {
+    "id": "sporenexus:fungalsteel_shovel"
+  }
+}

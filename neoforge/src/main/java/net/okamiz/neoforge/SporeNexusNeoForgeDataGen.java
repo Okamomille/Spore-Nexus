@@ -28,6 +28,7 @@ public class SporeNexusNeoForgeDataGen {
 
         generator.addProvider(true, new DatagenModelProvider(packOutput));
         generator.addProvider(true, new DatagenBlockTagsProvider(packOutput, lookupProvider));
+        generator.addProvider(true, new DatagenItemsTagsProvider(packOutput, lookupProvider));
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(DatagenBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 

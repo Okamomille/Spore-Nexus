@@ -32,8 +32,19 @@ public class DatagenModelProvider extends ModelProvider {
 
         /* ITEMS */
         itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+
         itemModels.generateFlatItem(ItemsRegistry.FUNGAL_POWDER.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ItemsRegistry.MUSHROOM_SPORES.get(), ModelTemplates.FLAT_ITEM);
+
+
+        itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateSpear(ItemsRegistry.FUNGALSTEEL_SPEAR.get());
+        itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ItemsRegistry.FUNGALSTEEL_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
 
         itemModels.generateFlatItem(ItemsRegistry.LUMINESCENT_FIBERS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ItemsRegistry.MINERAL_QUARTZ.get(), ModelTemplates.FLAT_ITEM);

@@ -2,10 +2,12 @@ package net.okamiz.neoforge.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.Registries.BlocksRegistry;
+import net.okamiz.common.Registries.TagsRegistry;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -39,7 +41,16 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
                 .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.getKey())
                 .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.getKey())
 
-                ;
+        ;
+
+        //tag(TagsRegistry.NEEDS_FUNGALSTEEL_TOOL)
+               // .remove(TagsRegistry.);
+
+
+        tag(TagsRegistry.INCORRECT_FUNGALSTEEL_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+               // .remove(TagsRegistry.NEEDS_FUNGALSTEEL_TOOL)
+         ;
 
 
     }

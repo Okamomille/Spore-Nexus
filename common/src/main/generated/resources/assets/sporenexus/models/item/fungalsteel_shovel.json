@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "sporenexus:item/fungalsteel_shovel"
+  }
+}

@@ -5,8 +5,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.records.FragmentType;
 
@@ -22,11 +21,37 @@ public class ItemsRegistry {
 
     public static final RegistrySupplier<Item> FUNGALSTEEL_INGOT = registerItem("fungalsteel_ingot", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> FUNGALSTEEL_NUGGET = registerItem("fungalsteel_nugget", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
     public static final RegistrySupplier<Item> FUNGAL_POWDER = registerItem("fungal_powder", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
     public static final RegistrySupplier<Item> MUSHROOM_SPORES = registerItem("mushroom_spores", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+
+    public static final RegistrySupplier<Item> FUNGALSTEEL_SWORD = registerItem("fungalsteel_sword", Item::new,
+            () -> new Item.Properties().sword(ToolTiersRegistry.FUNGALSTEEL, 3, -2.4f)
+                    .arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> FUNGALSTEEL_PICKAXE = registerItem("fungalsteel_pickaxe", Item::new,
+            () -> new Item.Properties().pickaxe(ToolTiersRegistry.FUNGALSTEEL, 1, -2.8f)
+                    .arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> FUNGALSTEEL_AXE = registerItem("fungalsteel_axe",
+            props -> new AxeItem(ToolTiersRegistry.FUNGALSTEEL, 6.0f, -3.2f, props),
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> FUNGALSTEEL_SHOVEL = registerItem("fungalsteel_shovel",
+            props -> new ShovelItem(ToolTiersRegistry.FUNGALSTEEL, 1.5f, -3.0f, props),
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> FUNGALSTEEL_HOE = registerItem("fungalsteel_hoe",
+            props -> new HoeItem(ToolTiersRegistry.FUNGALSTEEL, 0f, -3.0f, props),
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+    public static final RegistrySupplier<Item> FUNGALSTEEL_SPEAR = registerItem("fungalsteel_spear", Item::new,
+            () -> new Item.Properties().spear(ToolTiersRegistry.FUNGALSTEEL, 0.95f,0.7f,0.7f,3.5f,
+                            13f,8.5f,5.1f,13.37f,4.67f)
+                    .arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+
+
 
 
 
