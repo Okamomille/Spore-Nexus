@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_stone_fragments": {
+    "has_fungalsteel_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "sporenexus:stone_fragments"
+            "items": "sporenexus:fungalsteel_ingot"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cobblestone_from_frags"
+        "recipe": "sporenexus:fungalsteel_hoe_right"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_stone_fragments"
+      "has_fungalsteel_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cobblestone_from_frags"
+      "sporenexus:fungalsteel_hoe_right"
     ]
   }
 }

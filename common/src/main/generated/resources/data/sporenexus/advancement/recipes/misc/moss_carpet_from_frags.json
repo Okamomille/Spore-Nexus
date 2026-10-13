@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_clay_fragments": {
+    "has_moss_fragments": {
       "conditions": {
         "items": [
           {
-            "items": "sporenexus:clay_fragments"
+            "items": "sporenexus:moss_fragments"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mud_from_frags"
+        "recipe": "sporenexus:moss_carpet_from_frags"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_clay_fragments"
+      "has_moss_fragments"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mud_from_frags"
+      "sporenexus:moss_carpet_from_frags"
     ]
   }
 }

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_fungal_powder": {
+    "has_fungalsteel_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "sporenexus:fungal_powder"
+            "items": "sporenexus:fungalsteel_ingot"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:fungalsteel_from_powder"
+        "recipe": "sporenexus:fungalsteel_axe_right"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_fungal_powder"
+      "has_fungalsteel_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:fungalsteel_from_powder"
+      "sporenexus:fungalsteel_axe_right"
     ]
   }
 }

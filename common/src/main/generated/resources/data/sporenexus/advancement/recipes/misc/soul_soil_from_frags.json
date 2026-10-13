@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_fungalsteel_ingot": {
+    "has_soul_sand_fragments": {
       "conditions": {
         "items": [
           {
-            "items": "sporenexus:fungalsteel_ingot"
+            "items": "sporenexus:soul_sand_fragments"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:fungalsteel_hoe_left"
+        "recipe": "sporenexus:soul_soil_from_frags"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_fungalsteel_ingot"
+      "has_soul_sand_fragments"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:fungalsteel_hoe_left"
+      "sporenexus:soul_soil_from_frags"
     ]
   }
 }

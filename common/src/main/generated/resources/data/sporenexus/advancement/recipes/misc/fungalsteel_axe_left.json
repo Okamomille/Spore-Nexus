@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mushroom_spores": {
+    "has_fungalsteel_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "sporenexus:mushroom_spores"
+            "items": "sporenexus:fungalsteel_ingot"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mycelium_from_spores"
+        "recipe": "sporenexus:fungalsteel_axe_left"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_mushroom_spores"
+      "has_fungalsteel_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mycelium_from_spores"
+      "sporenexus:fungalsteel_axe_left"
     ]
   }
 }

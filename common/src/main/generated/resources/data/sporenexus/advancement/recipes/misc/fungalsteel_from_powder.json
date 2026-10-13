@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_moss_fragments": {
+    "has_fungal_powder": {
       "conditions": {
         "items": [
           {
-            "items": "sporenexus:moss_fragments"
+            "items": "sporenexus:fungal_powder"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:moss_carpet_from_frags"
+        "recipe": "sporenexus:fungalsteel_from_powder"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_moss_fragments"
+      "has_fungal_powder"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:moss_carpet_from_frags"
+      "sporenexus:fungalsteel_from_powder"
     ]
   }
 }

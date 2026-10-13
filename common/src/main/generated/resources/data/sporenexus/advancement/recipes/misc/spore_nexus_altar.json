@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:fungalsteel_axe_right"
+        "recipe": "sporenexus:spore_nexus_altar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:fungalsteel_axe_right"
+      "sporenexus:spore_nexus_altar"
     ]
   }
 }

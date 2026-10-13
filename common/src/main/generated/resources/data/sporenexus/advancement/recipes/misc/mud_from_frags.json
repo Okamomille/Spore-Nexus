@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ice_sand_fragments": {
+    "has_clay_fragments": {
       "conditions": {
         "items": [
           {
-            "items": "sporenexus:ice_fragments"
+            "items": "sporenexus:clay_fragments"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:water_bucket_from_frags"
+        "recipe": "sporenexus:mud_from_frags"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ice_sand_fragments"
+      "has_clay_fragments"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:water_bucket_from_frags"
+      "sporenexus:mud_from_frags"
     ]
   }
 }
