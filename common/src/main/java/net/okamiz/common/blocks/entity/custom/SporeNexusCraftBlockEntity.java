@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipe;
 import net.okamiz.common.registries.BlockEntitiesRegistry;
 import net.okamiz.common.registries.RecipesRegistry;
 import net.okamiz.common.menus.custom.SporeNexusCraftMenu;
@@ -36,10 +37,14 @@ import java.util.List;
 import java.util.Optional;
 
 public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvider {
+    private boolean recipeDirty = true;
+    private Optional<RecipeHolder<SporeNexusCraftRecipe>> cachedRecipe = Optional.empty();
+
     public final SimpleContainer inventory = new SimpleContainer(9){
         @Override
         public void setChanged(){
             super.setChanged();
+            SporeNexusCraftBlockEntity.this.recipeDirty = true;
             SporeNexusCraftBlockEntity.this.setChanged();
             updateBlock();
         }
@@ -181,14 +186,18 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
         }
 
         inventory.setItem(MUSHROOM_SLOT, result);
-        setChanged();
+        inventory.setChanged();
         updateBlock();
     }
 
     private Optional<RecipeHolder<SporeNexusCraftRecipe>> getCurrentRecipe() {
-        assert level != null;
-        return ((ServerLevel) level).recipeAccess()
-                .getRecipeFor(RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get(), createRecipeInput(), level);
+        if(recipeDirty){
+            assert level != null;
+            cachedRecipe = ((ServerLevel) level).recipeAccess().getRecipeFor(RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get(), createRecipeInput(), level);
+            recipeDirty = false;
+        }
+
+        return cachedRecipe;
     }
 
 

@@ -34,10 +34,15 @@ import org.jspecify.annotations.Nullable;
 import java.util.Optional;
 
 public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider {
+
+    private boolean recipeDirty = true;
+    private Optional<RecipeHolder<MycelianCoreRecipe>> cachedRecipe = Optional.empty();
+
     public final SimpleContainer inventory = new SimpleContainer(7) {
         @Override
         public void setChanged() {
             super.setChanged();
+            MycelianCoreBlockEntity.this.recipeDirty = true;
             MycelianCoreBlockEntity.this.setChanged();
             if (level != null && !level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
@@ -73,8 +78,8 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
             @Override
             public void set(int dataId, int value){
                 switch (dataId){
-                    case 0: MycelianCoreBlockEntity.this.progress = value;
-                    case 1: MycelianCoreBlockEntity.this.maxProgress = value;
+                    case 0 -> MycelianCoreBlockEntity.this.progress = value;
+                    case 1 -> MycelianCoreBlockEntity.this.maxProgress = value;
                 }
             }
 
@@ -166,11 +171,7 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
         insertIntoSlot(OUTPUT_SLOT, result);
         recipe.assembleSecondary().ifPresent(secondary -> insertIntoSlot(SECONDARY_OUTPUT_SLOT, secondary));
 
-        if (level != null) {
-            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
-        }
-
-        setChanged();
+        inventory.setChanged();
     }
 
     private void insertIntoSlot(int slot, ItemStack stack) {
@@ -207,8 +208,13 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private Optional<RecipeHolder<MycelianCoreRecipe>> getCurrentRecipe() {
-        return ((ServerLevel) level).recipeAccess()
-                .getRecipeFor(RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get(), createRecipeInput(), level);
+        if(recipeDirty){
+            assert level != null;
+            cachedRecipe = ((ServerLevel) level).recipeAccess().getRecipeFor(RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get(), createRecipeInput(), level);
+            recipeDirty = false;
+        }
+
+        return cachedRecipe;
     }
 
     private boolean canInsertItemIntoOutputSlot(int SLOT, ItemStack output) {
