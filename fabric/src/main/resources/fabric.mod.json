@@ -3,15 +3,16 @@
   "id": "sporenexus",
   "version": "${version}",
   "name": "Spore Nexus",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Spore Nexus is an innovative mod that introduces a resource-gathering system inspired by the world of mushrooms.\nThis mod encourages players to explore and create unique machines to gather resources in creative ways.",
   "authors": [
     "Okamiz"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/Okamomille/Spore-Nexus",
+    "sources": "https://github.com/Okamomille/Spore-Nexus",
+    "issues": "https://github.com/Okamomille/Spore-Nexus/issues"
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/sporenexus/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -39,7 +40,7 @@
     "fabric-api": "*"
   },
   "suggests": {
-    "jei_mod_plugin": "*",
+    "jei": "*",
     "jade": "*"
   }
 }
