@@ -24,8 +24,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.okamiz.common.Registries.BlocksRegistry;
-import net.okamiz.common.Registries.TagsRegistry;
+import net.okamiz.common.registries.TagsRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -160,10 +159,9 @@ public class ResourceMushroomBlock extends CropBlock {
 
     public double getSoilMultiplier(Level level, BlockPos pos) {
         BlockState below = level.getBlockState(pos.below());
-        if (below.is(BlocksRegistry.FERTILIZED_MYCELIUM.get())) return 1.25;
-        if (below.is(BlocksRegistry.FUNGAL_MYCELIUM.get()))     return 1.5;
-        if (below.is(BlocksRegistry.INFERNAL_MYCELIUM.get()))   return 1.75;
-        if (below.is(BlocksRegistry.ETHEREAL_MYCELIUM.get()))   return 2.0;
+        if (below.getBlock() instanceof SporeSoilBlock sporeSoilBlock) {
+            return sporeSoilBlock.getSpeedMultiplier();
+        }
         return 1.0;
     }
 

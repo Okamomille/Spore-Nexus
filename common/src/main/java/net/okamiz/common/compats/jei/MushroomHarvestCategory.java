@@ -15,7 +15,7 @@ import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.Registries.BlocksRegistry;
+import net.okamiz.common.registries.BlocksRegistry;
 import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 import org.jetbrains.annotations.Nullable;
 

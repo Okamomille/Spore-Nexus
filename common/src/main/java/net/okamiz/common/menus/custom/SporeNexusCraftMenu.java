@@ -8,9 +8,9 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.okamiz.common.Registries.BlocksRegistry;
-import net.okamiz.common.Registries.MenusRegistry;
-import net.okamiz.common.Registries.TagsRegistry;
+import net.okamiz.common.registries.BlocksRegistry;
+import net.okamiz.common.registries.MenusRegistry;
+import net.okamiz.common.registries.TagsRegistry;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
 
 public class SporeNexusCraftMenu extends AbstractContainerMenu {

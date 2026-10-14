@@ -15,7 +15,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.Registries.BlocksRegistry;
+import net.okamiz.common.registries.BlocksRegistry;
 import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipe;
 import net.okamiz.neoforge.compats.jei.JEIPluginNeoForge;
 

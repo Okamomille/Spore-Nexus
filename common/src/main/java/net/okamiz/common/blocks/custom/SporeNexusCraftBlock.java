@@ -20,7 +20,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.okamiz.common.Registries.BlockEntitiesRegistry;
+import net.okamiz.common.registries.BlockEntitiesRegistry;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
 import org.jspecify.annotations.Nullable;
 

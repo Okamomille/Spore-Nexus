@@ -2,14 +2,11 @@ package net.okamiz.neoforge.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.Registries.BlocksRegistry;
-import net.okamiz.common.Registries.ItemsRegistry;
-import net.okamiz.common.Registries.TagsRegistry;
+import net.okamiz.common.registries.ItemsRegistry;
+import net.okamiz.common.registries.TagsRegistry;
 
 import java.util.concurrent.CompletableFuture;
 

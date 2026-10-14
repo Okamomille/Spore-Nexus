@@ -1,4 +1,4 @@
-package net.okamiz.common.Registries;
+package net.okamiz.common.registries;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.DeferredSupplier;
@@ -33,19 +33,23 @@ public class BlocksRegistry {
 
 
 
-    public static final RegistrySupplier<Block> FERTILIZED_MYCELIUM = registerBlockWithTooltip("fertilized_mycelium", Block::new,
+    public static final RegistrySupplier<Block> FERTILIZED_MYCELIUM = registerBlockWithTooltip("fertilized_mycelium",
+            props -> new SporeSoilBlock(props, 1.25f),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
             "tooltip.block.sporenexus.fertilized_mycelium", TextColor.YELLOW);
 
-    public static final RegistrySupplier<Block> FUNGAL_MYCELIUM = registerBlockWithTooltip("fungal_mycelium", Block::new,
+    public static final RegistrySupplier<Block> FUNGAL_MYCELIUM = registerBlockWithTooltip("fungal_mycelium",
+            props -> new SporeSoilBlock(props, 1.5f),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
             "tooltip.block.sporenexus.fungal_mycelium", TextColor.YELLOW);
 
-    public static final RegistrySupplier<Block> INFERNAL_MYCELIUM = registerBlockWithTooltip("infernal_mycelium", Block::new,
+    public static final RegistrySupplier<Block> INFERNAL_MYCELIUM = registerBlockWithTooltip("infernal_mycelium",
+            props -> new SporeSoilBlock(props, 1.75f),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
             "tooltip.block.sporenexus.infernal_mycelium", TextColor.YELLOW);
 
-    public static final RegistrySupplier<Block> ETHEREAL_MYCELIUM = registerBlockWithTooltip("ethereal_mycelium", Block::new,
+    public static final RegistrySupplier<Block> ETHEREAL_MYCELIUM = registerBlockWithTooltip("ethereal_mycelium",
+            props -> new SporeSoilBlock(props, 2f),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
             "tooltip.block.sporenexus.ethereal_mycelium", TextColor.YELLOW);
 

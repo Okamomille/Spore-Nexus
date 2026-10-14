@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.okamiz.common.Registries.RecipesRegistry;
+import net.okamiz.common.registries.RecipesRegistry;
 
 import java.util.List;
 import java.util.Optional;
