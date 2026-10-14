@@ -38,14 +38,14 @@ public class SporeNexusCraftMenu extends AbstractContainerMenu {
             @Override public boolean mayPlace(ItemStack stack) {return stack.is(TagsRegistry.FUNGUS);}
         });
 
-        this.addSlot(new Slot(handler, 1, 57, 61));    // r1
-        this.addSlot(new Slot(handler, 2, 108, 10));    // r2
-        this.addSlot(new Slot(handler, 3, 159, 61));    // r3
-        this.addSlot(new Slot(handler, 4, 108, 112));    // r4
-        this.addSlot(new Slot(handler, 5, 72, 97));    // rs1
-        this.addSlot(new Slot(handler, 6, 72, 25));    // rs2
-        this.addSlot(new Slot(handler, 7, 144, 25));    // rs3
-        this.addSlot(new Slot(handler, 8, 144, 97));    // rs4
+        this.addSlot(new Slot(handler, 1, 57, 61){@Override public int getMaxStackSize() {return 1;}});    // r1
+        this.addSlot(new Slot(handler, 2, 108, 10){@Override public int getMaxStackSize() {return 1;}});    // r2
+        this.addSlot(new Slot(handler, 3, 159, 61){@Override public int getMaxStackSize() {return 1;}});    // r3
+        this.addSlot(new Slot(handler, 4, 108, 112){@Override public int getMaxStackSize() {return 1;}});    // r4
+        this.addSlot(new Slot(handler, 5, 72, 97){@Override public int getMaxStackSize() {return 1;}});    // rs1
+        this.addSlot(new Slot(handler, 6, 72, 25){@Override public int getMaxStackSize() {return 1;}});    // rs2
+        this.addSlot(new Slot(handler, 7, 144, 25){@Override public int getMaxStackSize() {return 1;}});    // rs3
+        this.addSlot(new Slot(handler, 8, 144, 97){@Override public int getMaxStackSize() {return 1;}});    // rs4
 
         addDataSlots(data);
     }

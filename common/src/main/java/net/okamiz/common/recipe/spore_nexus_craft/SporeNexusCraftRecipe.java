@@ -11,6 +11,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.okamiz.common.modded_registries.RecipesRegistry;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,43 +38,42 @@ public record SporeNexusCraftRecipe(Ingredient mushroomInputItem, List<Ingredien
 
 
     private static final int MUSHROOM_SLOT = 0;
-    private static final int RESOURCE_START = 1;
-    private static final int RESOURCE_COUNT = 4;
-    private static final int SECONDARY_START = 5;
-    private static final int SECONDARY_COUNT = 4;
-
-    public Optional<int[]> findResourceSlots(SporeNexusCraftRecipeInput input) {
-        return findSlots(resourceInputs, input, RESOURCE_START, RESOURCE_COUNT);
-    }
-
-    public Optional<int[]> findSecondarySlots(SporeNexusCraftRecipeInput input) {
-        return findSlots(secondaryInputs, input, SECONDARY_START, SECONDARY_COUNT);
-    }
 
     /** SEND SLOT INDEX FOR EACH INGREDIENT. */
     private static Optional<int[]> findSlots(List<Ingredient> ingredients, SporeNexusCraftRecipeInput input,
                                              int start, int count) {
         int[] assignment = new int[ingredients.size()];
-        return assign(0, ingredients, input, start, count, assignment, new boolean[count])
+        int[] remaining = new int[count];
+        for (int i = 0; i < count; i++) {
+            remaining[i] = input.getItem(start + i).getCount();
+        }
+        return assign(0, ingredients, input, start, count, assignment, remaining)
                 ? Optional.of(assignment) : Optional.empty();
     }
 
     private static boolean assign(int index, List<Ingredient> ingredients, SporeNexusCraftRecipeInput input,
-                                  int start, int count, int[] assignment, boolean[] used) {
+                                  int start, int count, int[] assignment, int[] remaining) {
         if (index == ingredients.size()) {
             return true;
         }
         for (int i = 0; i < count; i++) {
-            if (!used[i] && ingredients.get(index).test(input.getItem(start + i))) {
-                used[i] = true;
+            if (remaining[i] > 0 && ingredients.get(index).test(input.getItem(start + i))) {
+                remaining[i]--;
                 assignment[index] = start + i;
-                if (assign(index + 1, ingredients, input, start, count, assignment, used)) {
+                if (assign(index + 1, ingredients, input, start, count, assignment, remaining)) {
                     return true;
                 }
-                used[i] = false;
+                remaining[i]++;
             }
         }
         return false;
+    }
+
+    /** Slot index for each ingredient (resources then secondaries), or empty. */
+    public Optional<int[]> findIngredientSlots(SporeNexusCraftRecipeInput input) {
+        List<Ingredient> all = new ArrayList<>(resourceInputs);
+        all.addAll(secondaryInputs);
+        return findSlots(all, input, 1, 8);
     }
 
     @Override
@@ -82,8 +82,7 @@ public record SporeNexusCraftRecipe(Ingredient mushroomInputItem, List<Ingredien
             return false;
         }
         return mushroomInputItem.test(input.getItem(MUSHROOM_SLOT))
-                && findResourceSlots(input).isPresent()
-                && findSecondarySlots(input).isPresent();
+                && findIngredientSlots(input).isPresent();
     }
 
     @Override

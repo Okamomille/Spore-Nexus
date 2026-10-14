@@ -5,6 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.modded_registries.ItemsRegistry;
 import net.okamiz.common.modded_registries.TagsRegistry;
 
@@ -17,7 +18,6 @@ public class DatagenItemsTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-
 
         tag(TagsRegistry.FUNGALSTEEL_REPAIRABLE)
                 .add(ItemsRegistry.FUNGALSTEEL_INGOT.getKey())

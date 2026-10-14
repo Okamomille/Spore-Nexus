@@ -1,6 +1,7 @@
 package net.okamiz.common.blocks.entity.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -9,10 +10,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.Containers;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -27,13 +25,14 @@ import net.minecraft.world.level.storage.ValueOutput;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.modded_registries.RecipesRegistry;
 import net.okamiz.common.menus.custom.MycelianCoreMenu;
+import net.okamiz.common.modded_registries.TagsRegistry;
 import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipe;
 import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipeInput;
 import org.jspecify.annotations.Nullable;
 
 import java.util.Optional;
 
-public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider {
+public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider, WorldlyContainer {
 
     private boolean recipeDirty = true;
     private Optional<RecipeHolder<MycelianCoreRecipe>> cachedRecipe = Optional.empty();
@@ -256,4 +255,43 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
         return saveWithoutMetadata(registries);
     }
 
+    @Override
+    public int[] getSlotsForFace(Direction direction) {
+
+        return switch (direction) {
+            case DOWN -> new int[]{5, 6};
+            default -> new int[]{0, 1, 2, 3, 4};
+        };
+    }
+
+    @Override
+    public boolean canPlaceItemThroughFace(int slot, ItemStack itemStack, @Nullable Direction direction) {
+        return slot < 5 && canPlaceItem(slot, itemStack);
+    }
+    @Override
+    public boolean canPlaceItem(int slot, ItemStack itemStack){
+        return switch (slot) {
+            case 0 -> itemStack.is(TagsRegistry.FUNGUS) ||  itemStack.is(TagsRegistry.MUSHROOMS);
+            case 1 -> itemStack.is(TagsRegistry.SUBSTRATS);
+            case 5, 6 -> false;
+            default -> true;
+        };
+    }
+    @Override
+    public boolean canTakeItemThroughFace(int slot, ItemStack itemStack, Direction direction) {
+        return slot >= 5;
+    }
+    @Override public int getContainerSize() { return inventory.getContainerSize(); }
+    @Override public boolean isEmpty() { return inventory.isEmpty(); }
+    @Override public ItemStack getItem(int slot) { return inventory.getItem(slot); }
+    @Override public ItemStack removeItem(int slot, int count) { return inventory.removeItem(slot, count); }
+    @Override public ItemStack removeItemNoUpdate(int slot) { return inventory.removeItemNoUpdate(slot); }
+    @Override public void setItem(int slot, ItemStack stack) { inventory.setItem(slot, stack); }
+
+    @Override
+    public boolean stillValid(Player player) {
+        return Container.stillValidBlockEntity(this, player);
+    }
+
+    @Override public void clearContent() { inventory.clearContent(); }
 }

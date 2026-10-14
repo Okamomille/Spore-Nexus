@@ -39,21 +39,26 @@ public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substr
     /** send slot index for nutrients(0-2) used, or empty. */
     public Optional<int[]> findNutrientSlots(MycelianCoreRecipeInput input) {
         int[] assignment = new int[nutrientInputs.size()];
-        return assign(0, input, assignment, new boolean[3]) ? Optional.of(assignment) : Optional.empty();
+        int[] remaining = {
+                input.getItem(2).getCount(),
+                input.getItem(3).getCount(),
+                input.getItem(4).getCount()
+        };
+        return assign(0, input, assignment, remaining) ? Optional.of(assignment) : Optional.empty();
     }
 
-    private boolean assign(int index, MycelianCoreRecipeInput input, int[] assignment, boolean[] used) {
+    private boolean assign(int index, MycelianCoreRecipeInput input, int[] assignment, int[] remaining) {
         if (index == nutrientInputs.size()) {
             return true;
         }
         for (int slot = 0; slot < 3; slot++) {
-            if (!used[slot] && nutrientInputs.get(index).test(input.getItem(2 + slot))) {
-                used[slot] = true;
+            if (remaining[slot] > 0 && nutrientInputs.get(index).test(input.getItem(2 + slot))) {
+                remaining[slot]--;
                 assignment[index] = slot;
-                if (assign(index + 1, input, assignment, used)) {
+                if (assign(index + 1, input, assignment, remaining)) {
                     return true;
                 }
-                used[slot] = false;
+                remaining[slot]++;
             }
         }
         return false;

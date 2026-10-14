@@ -1,6 +1,7 @@
 package net.okamiz.common.blocks.entity.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -9,10 +10,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.Containers;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -27,6 +25,7 @@ import net.minecraft.world.level.storage.ValueOutput;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.modded_registries.RecipesRegistry;
 import net.okamiz.common.menus.custom.SporeNexusCraftMenu;
+import net.okamiz.common.modded_registries.TagsRegistry;
 import net.okamiz.common.recipe.spore_nexus_craft.SporeNexusCraftRecipe;
 import net.okamiz.common.recipe.spore_nexus_craft.SporeNexusCraftRecipeInput;
 import org.jspecify.annotations.Nullable;
@@ -35,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvider {
+public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvider, WorldlyContainer {
     private boolean recipeDirty = true;
     private Optional<RecipeHolder<SporeNexusCraftRecipe>> cachedRecipe = Optional.empty();
 
@@ -169,18 +168,14 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
         SporeNexusCraftRecipe recipe = holder.get().value();
         SporeNexusCraftRecipeInput input = createRecipeInput();
 
-        Optional<int[]> resourceSlots = recipe.findResourceSlots(input);
-        Optional<int[]> secondarySlots = recipe.findSecondarySlots(input);
-        if (resourceSlots.isEmpty() || secondarySlots.isEmpty()) {
+        Optional<int[]> slots = recipe.findIngredientSlots(input);
+        if (slots.isEmpty()) {
             return;
         }
 
         ItemStack result = recipe.assemble(input);
 
-        for (int slot : resourceSlots.get()) {
-            inventory.getItem(slot).shrink(1);
-        }
-        for (int slot : secondarySlots.get()) {
+        for (int slot : slots.get()) {
             inventory.getItem(slot).shrink(1);
         }
 
@@ -223,7 +218,41 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
     }
 
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        return saveWithoutMetadata(registries);
+    public int[] getSlotsForFace(Direction direction) {
+        return switch (direction) {
+            case DOWN -> new int[]{0};
+            default -> new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8};
+        };
     }
+
+    @Override
+    public boolean canPlaceItemThroughFace(int slot, ItemStack itemStack, @Nullable Direction direction) {
+        return direction != Direction.DOWN && canPlaceItem(slot, itemStack);
+    }
+
+    @Override
+    public boolean canPlaceItem(int slot, ItemStack itemStack) {
+        if (slot == 0) {
+            return inventory.getItem(0).isEmpty() && itemStack.is(TagsRegistry.FUNGUS);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean canTakeItemThroughFace(int slot, ItemStack itemStack, Direction direction) {
+        return slot == 0 && !itemStack.is(TagsRegistry.FUNGUS);
+    }
+    @Override public int getContainerSize() { return inventory.getContainerSize(); }
+    @Override public boolean isEmpty() { return inventory.isEmpty(); }
+    @Override public ItemStack getItem(int slot) { return inventory.getItem(slot); }
+    @Override public ItemStack removeItem(int slot, int count) { return inventory.removeItem(slot, count); }
+    @Override public ItemStack removeItemNoUpdate(int slot) { return inventory.removeItemNoUpdate(slot); }
+    @Override public void setItem(int slot, ItemStack stack) { inventory.setItem(slot, stack); }
+
+    @Override
+    public boolean stillValid(Player player) {
+        return Container.stillValidBlockEntity(this, player);
+    }
+
+    @Override public void clearContent() { inventory.clearContent(); }
 }

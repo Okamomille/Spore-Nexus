@@ -17,6 +17,8 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(BlocksRegistry.FUNGALSTEEL_BLOCK.getKey())
                 .add(BlocksRegistry.MYCELIAN_CORE.getKey())

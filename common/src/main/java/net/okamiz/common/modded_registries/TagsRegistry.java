@@ -13,6 +13,7 @@ public class TagsRegistry {
     public static final TagKey<Item> FUNGUS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "fungus"));
     public static final TagKey<Item> SUBSTRATS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "substrats"));
     public static final TagKey<Block> SPORE_SOILS = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "spore_soils"));
+    public static final TagKey<Item> RESOURCE_MUSHROOMS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "resource_mushrooms"));
 
     public static final TagKey<Item> FUNGALSTEEL_REPAIRABLE = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "fungalsteel_repairable"));
