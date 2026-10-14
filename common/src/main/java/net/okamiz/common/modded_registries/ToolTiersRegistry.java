@@ -1,4 +1,4 @@
-package net.okamiz.common.registries;
+package net.okamiz.common.modded_registries;
 
 import net.minecraft.world.item.ToolMaterial;
 

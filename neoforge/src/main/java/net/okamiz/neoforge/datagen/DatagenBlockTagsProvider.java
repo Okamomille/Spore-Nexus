@@ -5,8 +5,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.registries.BlocksRegistry;
-import net.okamiz.common.registries.TagsRegistry;
+import net.okamiz.common.modded_registries.BlocksRegistry;
+import net.okamiz.common.modded_registries.TagsRegistry;
 
 import java.util.concurrent.CompletableFuture;
 

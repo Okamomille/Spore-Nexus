@@ -1,6 +1,6 @@
 package net.okamiz;
 
-import net.okamiz.common.registries.*;
+import net.okamiz.common.modded_registries.*;
 import net.okamiz.common.blocks.TooltipBlockItem;
 
 public final class SporeNexus {

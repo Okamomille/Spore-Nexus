@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.registries.BlocksRegistry;
+import net.okamiz.common.modded_registries.BlocksRegistry;
 
 public class ConfiguredFeatures {
 

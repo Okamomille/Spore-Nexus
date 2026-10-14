@@ -1,4 +1,4 @@
-package net.okamiz.common.registries;
+package net.okamiz.common.modded_registries;
 
 import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.DeferredRegister;

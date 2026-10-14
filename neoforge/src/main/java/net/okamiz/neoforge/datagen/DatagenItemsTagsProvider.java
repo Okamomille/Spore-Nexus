@@ -5,8 +5,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.registries.ItemsRegistry;
-import net.okamiz.common.registries.TagsRegistry;
+import net.okamiz.common.modded_registries.ItemsRegistry;
+import net.okamiz.common.modded_registries.TagsRegistry;
 
 import java.util.concurrent.CompletableFuture;
 

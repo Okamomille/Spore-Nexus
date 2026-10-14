@@ -16,8 +16,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
-import net.okamiz.common.registries.BlocksRegistry;
-import net.okamiz.common.registries.ItemsRegistry;
+import net.okamiz.common.modded_registries.BlocksRegistry;
+import net.okamiz.common.modded_registries.ItemsRegistry;
 
 import java.util.Optional;
 

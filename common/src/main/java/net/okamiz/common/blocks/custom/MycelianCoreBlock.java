@@ -22,8 +22,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.okamiz.common.registries.BlockEntitiesRegistry;
-import net.okamiz.common.registries.BlocksRegistry;
+import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
+import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
 import org.jspecify.annotations.Nullable;
 

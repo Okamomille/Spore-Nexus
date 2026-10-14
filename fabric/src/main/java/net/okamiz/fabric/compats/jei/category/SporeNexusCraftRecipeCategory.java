@@ -15,7 +15,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.okamiz.SporeNexus;
-import net.okamiz.common.registries.BlocksRegistry;
+import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.recipe.spore_nexus_craft.SporeNexusCraftRecipe;
 import net.okamiz.fabric.compats.jei.JEIRecipesTypesFabric;
 import org.jetbrains.annotations.Nullable;

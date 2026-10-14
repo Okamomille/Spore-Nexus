@@ -8,9 +8,9 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
-import net.okamiz.common.registries.BlocksRegistry;
-import net.okamiz.common.registries.ItemsRegistry;
-import net.okamiz.common.registries.TagsRegistry;
+import net.okamiz.common.modded_registries.BlocksRegistry;
+import net.okamiz.common.modded_registries.ItemsRegistry;
+import net.okamiz.common.modded_registries.TagsRegistry;
 import net.okamiz.common.records.FragmentType;
 
 import java.util.concurrent.CompletableFuture;
