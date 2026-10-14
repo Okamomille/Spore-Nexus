@@ -7,7 +7,15 @@
  "jade.sporenexus.mature": "Ready to harvest",
  "jade.sporenexus.too_bright": "Too bright to grow!",
  "jade.sporenexus.growing_time": "Ready in ~%s",
+ "jade.sporenexus.soil_bonus": "Soil: %s (x%s)",
+ "jade.sporenexus.accelerator_bonus": "Growth Accelerator: %s (x%s)",
+ "jade.sporenexus.total_speed": "Total growth speed: x%s",
 
+ "jade.sporenexus.accelerator_range": "Range: %sx%sx%s",
+ "jade.sporenexus.accelerator_active": "Active",
+ "jade.sporenexus.accelerator_no_mushroom": "Inactive: No mushroom in range",
+ "jade.sporenexus.accelerator_overridden": "Inactive: Another accelerator is already active here",
+ "config.jade.plugin_sporenexus.growth_accelerator": "Growth accelerator",
 
 
  "tab.sporenexus": "Spore Nexus",
@@ -95,11 +103,18 @@
 
   "block.sporenexus.fertilized_mycelium": "Fertilized Mycelium",
   "block.sporenexus.fungal_mycelium": "Fungal Mycelium",
+  "block.sporenexus.infernal_mycelium": "Infernal Mycelium",
+  "block.sporenexus.ethereal_mycelium": "Ethereal Mycelium",
 
   "block.sporenexus.spore_nexus": "Spore Nexus Altar",
   "block.sporenexus.mycelian_core": "Mycelian Core",
   "block.sporenexus.mycelian_core_proxy": "Mycelian Core",
   "block.sporenexus.spore_nexus_craft_block": "Spore Nexus Altar",
+
+  "block.sporenexus.growth_accelerator": "Growth Accelerator",
+  "block.sporenexus.fungal_growth_accelerator": "Fungal Growth Accelerator",
+  "block.sporenexus.infernal_growth_accelerator": "Infernal Growth Accelerator",
+  "block.sporenexus.ethereal_growth_accelerator": "Ethereal Growth Accelerator",
 
   "block.sporenexus.banded_agaric": "Banded Agaric",
   "block.sporenexus.eternal_light_mushroom": "Eternal Light Mushroom",
@@ -135,5 +150,12 @@
 
 
  "tooltip.block.sporenexus.fertilized_mycelium": "x1.25 Mushroom Growth Speed",
- "tooltip.block.sporenexus.fungal_mycelium": "x1.50 Mushroom Growth Speed"
+ "tooltip.block.sporenexus.fungal_mycelium": "x1.50 Mushroom Growth Speed",
+ "tooltip.block.sporenexus.infernal_mycelium": "x1.75 Mushroom Growth Speed",
+ "tooltip.block.sporenexus.ethereal_mycelium": "x2 Mushroom Growth Speed",
+
+ "tooltip.block.sporenexus.growth_accelerator": "x1.25 Growth speed for mushroom in a 3x3 area.",
+ "tooltip.block.sporenexus.fungal_growth_accelerator": "x1.5 Growth speed for mushroom in a 5x5 area.",
+ "tooltip.block.sporenexus.infernal_growth_accelerator": "x1.75 Growth speed for mushroom in a 7x7 area.",
+ "tooltip.block.sporenexus.ethereal_growth_accelerator": "x2 Growth speed for mushroom in a 9x9 area."
 }

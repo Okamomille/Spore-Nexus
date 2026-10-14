@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "essence",
+  "key": {
+    "O": "minecraft:chorus_fruit",
+    "X": "sporenexus:infernal_essence"
+  },
+  "pattern": [
+    " X ",
+    "XOX",
+    " X "
+  ],
+  "result": {
+    "id": "sporenexus:ethereal_essence"
+  }
+}

@@ -75,10 +75,10 @@ public class ItemsRegistry {
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
     public static final RegistrySupplier<Item> INFERNAL_FUNGUS = registerItem("infernal_fungus", Item::new,
-            () -> new Item.Properties()/*.arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB)*/);
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
     public static final RegistrySupplier<Item> ETHEREAL_FUNGUS = registerItem("ethereal_fungus", Item::new,
-            () -> new Item.Properties()/*.arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB)*/);
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
     public static final RegistrySupplier<Item> MINERAL_FUNGUS = registerItem("mineral_fungus", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
@@ -96,9 +96,9 @@ public class ItemsRegistry {
     public static final RegistrySupplier<Item> FUNGAL_ESSENCE = registerItem("fungal_essence", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
     public static final RegistrySupplier<Item> INFERNAL_ESSENCE = registerItem("infernal_essence", Item::new,
-            () -> new Item.Properties()/*.arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB)*/);
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
     public static final RegistrySupplier<Item> ETHEREAL_ESSENCE = registerItem("ethereal_essence", Item::new,
-            () -> new Item.Properties()/*.arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB)*/);
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
     /* FRAGMENTS */
 

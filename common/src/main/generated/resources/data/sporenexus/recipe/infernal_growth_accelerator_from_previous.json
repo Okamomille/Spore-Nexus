@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "growth_accelerators",
+  "key": {
+    "O": "sporenexus:fungal_growth_accelerator",
+    "X": "sporenexus:infernal_essence"
+  },
+  "pattern": [
+    " X ",
+    "XOX",
+    " X "
+  ],
+  "result": {
+    "id": "sporenexus:infernal_growth_accelerator"
+  }
+}

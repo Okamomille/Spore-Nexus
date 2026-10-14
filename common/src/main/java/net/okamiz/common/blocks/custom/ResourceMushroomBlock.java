@@ -158,37 +158,26 @@ public class ResourceMushroomBlock extends CropBlock {
         level.setBlock(pos, this.defaultBlockState().setValue(AGE, 0), 3);
     }
 
-    protected int getGrowthDelay(Level level, BlockPos pos) {
-        double speed = 1.0;
-
-
-        if (level.getBlockState(pos.below()).is(BlocksRegistry.FERTILIZED_MYCELIUM.get())) {
-            speed *= 1.25;
-        }
-        if (level.getBlockState(pos.below()).is(BlocksRegistry.FUNGAL_MYCELIUM.get())) {
-            speed *= 1.5;
-        }
-
-
-        /*
-        if (hasAcceleratorNearby(level, pos)) {
-            speed *= 2.0;
-        }
-        */
-        return Math.max(1, (int) (growthTicks / speed));
+    public double getSoilMultiplier(Level level, BlockPos pos) {
+        BlockState below = level.getBlockState(pos.below());
+        if (below.is(BlocksRegistry.FERTILIZED_MYCELIUM.get())) return 1.25;
+        if (below.is(BlocksRegistry.FUNGAL_MYCELIUM.get()))     return 1.5;
+        if (below.is(BlocksRegistry.INFERNAL_MYCELIUM.get()))   return 1.75;
+        if (below.is(BlocksRegistry.ETHEREAL_MYCELIUM.get()))   return 2.0;
+        return 1.0;
     }
 
-    private boolean hasAcceleratorNearby(Level level, BlockPos pos) {
-        int r = 3;
-        /*
-        for (BlockPos p : BlockPos.betweenClosed(pos.offset(-r, -r, -r), pos.offset(r, r, r))) {
-            if (level.getBlockState(p).is(BlocksRegistry.GROWTH_ACCELERATOR.get())) {
-                return true;
-            }
+    public double getTotalSpeed(Level level, BlockPos pos) {
+        double speed = getSoilMultiplier(level, pos);
+        GrowthAcceleratorBlock.Best best = GrowthAcceleratorBlock.findBestFor(level, pos);
+        if (best != null) {
+            speed *= best.block().getSpeedMultiplier();
         }
+        return speed;
+    }
 
-         */
-        return false;
+    protected int getGrowthDelay(Level level, BlockPos pos) {
+        return Math.max(1, (int) (growthTicks / getTotalSpeed(level, pos)));
     }
 
     private int nextDelay(Level level, BlockPos pos, RandomSource random) {

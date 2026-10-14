@@ -21,6 +21,8 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(BlocksRegistry.FUNGALSTEEL_BLOCK.get());
         dropSelf(BlocksRegistry.FERTILIZED_MYCELIUM.get());
         dropSelf(BlocksRegistry.FUNGAL_MYCELIUM.get());
+        dropSelf(BlocksRegistry.INFERNAL_MYCELIUM.get());
+        dropSelf(BlocksRegistry.ETHEREAL_MYCELIUM.get());
 
 
         dropSelf(BlocksRegistry.BANDED_AGARIC.get());
@@ -42,6 +44,10 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(BlocksRegistry.MYCELIAN_CORE.get());
         dropSelf(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get());
+        dropSelf(BlocksRegistry.GROWTH_ACCELERATOR.get());
+        dropSelf(BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get());
+        dropSelf(BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get());
+        dropSelf(BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get());
     }
 
     @Override

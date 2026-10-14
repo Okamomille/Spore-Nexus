@@ -41,6 +41,14 @@ public class BlocksRegistry {
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
             "tooltip.block.sporenexus.fungal_mycelium", TextColor.YELLOW);
 
+    public static final RegistrySupplier<Block> INFERNAL_MYCELIUM = registerBlockWithTooltip("infernal_mycelium", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.infernal_mycelium", TextColor.YELLOW);
+
+    public static final RegistrySupplier<Block> ETHEREAL_MYCELIUM = registerBlockWithTooltip("ethereal_mycelium", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.ethereal_mycelium", TextColor.YELLOW);
+
 
     /* GIANT MUSHROM BLOCKS */
 
@@ -61,8 +69,6 @@ public class BlocksRegistry {
     public static final RegistrySupplier<Block> ETERNAL_LIGHT_MUSHROOM_BLOCK = registerBlock("eternal_light_mushroom_block", HugeMushroomBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB);
 
-
-
     /* BLOCK ENTITIES */
 
     public static final RegistrySupplier<Block> MYCELIAN_CORE = registerBlock("mycelian_core", MycelianCoreBlock::new,
@@ -77,6 +83,31 @@ public class BlocksRegistry {
     public static final RegistrySupplier<Block> SPORE_NEXUS_CRAFT_BLOCK = registerBlock("spore_nexus_craft_block", SporeNexusCraftBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
                     .noOcclusion(), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+
+    /* MACHINES */
+
+    public static final RegistrySupplier<Block> GROWTH_ACCELERATOR = registerBlockWithTooltip("growth_accelerator",
+            props -> new GrowthAcceleratorBlock(props, 1.25f, 1),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.growth_accelerator",TextColor.YELLOW);
+
+    public static final RegistrySupplier<Block> FUNGAL_GROWTH_ACCELERATOR = registerBlockWithTooltip("fungal_growth_accelerator",
+            props -> new GrowthAcceleratorBlock(props, 1.5f, 2),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.fungal_growth_accelerator",TextColor.YELLOW);
+
+    public static final RegistrySupplier<Block> INFERNAL_GROWTH_ACCELERATOR = registerBlockWithTooltip("infernal_growth_accelerator",
+            props -> new GrowthAcceleratorBlock(props, 1.75f, 3),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.infernal_growth_accelerator",TextColor.YELLOW);
+
+    public static final RegistrySupplier<Block> ETHEREAL_GROWTH_ACCELERATOR = registerBlockWithTooltip("ethereal_growth_accelerator",
+            props -> new GrowthAcceleratorBlock(props, 2, 4),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.ethereal_growth_accelerator",TextColor.YELLOW);
+
+
 
     /* BASIC MUSHROOMS */
 

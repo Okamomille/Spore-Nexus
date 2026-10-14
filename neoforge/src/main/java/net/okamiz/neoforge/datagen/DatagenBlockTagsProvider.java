@@ -22,7 +22,12 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
                 .add(BlocksRegistry.FUNGALSTEEL_BLOCK.getKey())
                 .add(BlocksRegistry.MYCELIAN_CORE.getKey())
                 .add(BlocksRegistry.MYCELIAN_CORE_PROXY.getKey())
-                .add(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.getKey());
+                .add(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.getKey())
+                .add(BlocksRegistry.GROWTH_ACCELERATOR.getKey())
+                .add(BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.getKey())
+                .add(BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.getKey())
+                .add(BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.getKey())
+        ;
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.getKey())
@@ -42,6 +47,15 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
                 .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.getKey())
 
         ;
+
+        tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(BlocksRegistry.FERTILIZED_MYCELIUM.getKey())
+                .add(BlocksRegistry.FUNGAL_MYCELIUM.getKey())
+                .add(BlocksRegistry.INFERNAL_MYCELIUM.getKey())
+                .add(BlocksRegistry.ETHEREAL_MYCELIUM.getKey())
+        ;
+
+
 
         //tag(TagsRegistry.NEEDS_FUNGALSTEEL_TOOL)
                // .remove(TagsRegistry.);

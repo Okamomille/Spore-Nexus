@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "sporenexus:block/infernal_growth_accelerator_bottom",
+    "side": "sporenexus:block/infernal_growth_accelerator_side",
+    "top": "sporenexus:block/infernal_growth_accelerator_top"
+  }
+}

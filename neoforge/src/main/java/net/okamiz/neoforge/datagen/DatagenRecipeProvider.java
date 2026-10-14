@@ -87,6 +87,107 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fungalsteel")
                 .save(output, "sporenexus:fungalsteel_from_powder");
 
+        shaped(RecipeCategory.MISC, ItemsRegistry.INFERNAL_ESSENCE.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.FUNGAL_ESSENCE.get())
+                .define('O', Items.BLAZE_POWDER)
+                .unlockedBy("has_fungal_essence", has(ItemsRegistry.FUNGAL_ESSENCE.get()))
+                .group("essence")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, ItemsRegistry.ETHEREAL_ESSENCE.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.INFERNAL_ESSENCE.get())
+                .define('O', Items.CHORUS_FRUIT)
+                .unlockedBy("has_infernal_essence", has(ItemsRegistry.INFERNAL_ESSENCE.get()))
+                .group("essence")
+                .save(output);
+
+
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.GROWTH_ACCELERATOR.get())
+                .pattern("AXA")
+                .pattern("BFB")
+                .pattern("AXA")
+                .define('F', BlocksRegistry.FERTILIZED_MYCELIUM.get())
+                .define('X', BlocksRegistry.FUNGALSTEEL_BLOCK.get())
+                .define('A', ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .define('B', Items.IRON_BARS)
+                .unlockedBy("has_fertilized_mycelium", has(BlocksRegistry.FERTILIZED_MYCELIUM.get()))
+                .group("growth_accelerators")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get())
+                .pattern("AXA")
+                .pattern("BFB")
+                .pattern("AXA")
+                .define('F', BlocksRegistry.FUNGAL_MYCELIUM.get())
+                .define('X', BlocksRegistry.FUNGALSTEEL_BLOCK.get())
+                .define('A', ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .define('B', Items.IRON_BARS)
+                .unlockedBy("has_fungal_mycelium", has(BlocksRegistry.FUNGAL_MYCELIUM.get()))
+                .group("growth_accelerators")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.FUNGAL_ESSENCE.get())
+                .define('O', BlocksRegistry.GROWTH_ACCELERATOR.get())
+                .unlockedBy("has_fungal_essence", has(ItemsRegistry.FUNGAL_ESSENCE.get()))
+                .group("growth_accelerators")
+                .save(output, "sporenexus:fungal_growth_accelerator_from_previous");
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get())
+                .pattern("AXA")
+                .pattern("BFB")
+                .pattern("AXA")
+                .define('F', BlocksRegistry.INFERNAL_MYCELIUM.get())
+                .define('X', BlocksRegistry.FUNGALSTEEL_BLOCK.get())
+                .define('A', ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .define('B', Items.IRON_BARS)
+                .unlockedBy("has_infernal_mycelium", has(BlocksRegistry.INFERNAL_MYCELIUM.get()))
+                .group("growth_accelerators")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.INFERNAL_ESSENCE.get())
+                .define('O', BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get())
+                .unlockedBy("has_infernal_essence", has(ItemsRegistry.INFERNAL_ESSENCE.get()))
+                .group("growth_accelerators")
+                .save(output, "sporenexus:infernal_growth_accelerator_from_previous");
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get())
+                .pattern("AXA")
+                .pattern("BFB")
+                .pattern("AXA")
+                .define('F', BlocksRegistry.ETHEREAL_MYCELIUM.get())
+                .define('X', BlocksRegistry.FUNGALSTEEL_BLOCK.get())
+                .define('A', ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .define('B', Items.IRON_BARS)
+                .unlockedBy("has_ethereal_mycelium", has(BlocksRegistry.ETHEREAL_MYCELIUM.get()))
+                .group("growth_accelerators")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.ETHEREAL_ESSENCE.get())
+                .define('O', BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get())
+                .unlockedBy("has_ethereal_essence", has(ItemsRegistry.ETHEREAL_ESSENCE.get()))
+                .group("growth_accelerators")
+                .save(output, "sporenexus:ethereal_growth_accelerator_from_previous");
+
+
         createToolsRecipe(ItemsRegistry.FUNGALSTEEL_INGOT.get(),Items.IRON_BARS,ItemsRegistry.FUNGALSTEEL_PICKAXE.get(),ItemsRegistry.FUNGALSTEEL_SWORD.get(),
                 ItemsRegistry.FUNGALSTEEL_AXE.get(), ItemsRegistry.FUNGALSTEEL_SHOVEL.get(), ItemsRegistry.FUNGALSTEEL_HOE.get(), ItemsRegistry.FUNGALSTEEL_SPEAR.get());
 
@@ -109,7 +210,6 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_mushroom_spores", has(ItemsRegistry.MUSHROOM_SPORES.get()))
                 .save(output);
 
-
         shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_MYCELIUM.get())
                 .pattern(" X ")
                 .pattern("XOX")
@@ -117,6 +217,24 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .define('X', ItemsRegistry.FUNGAL_ESSENCE.get())
                 .define('O', BlocksRegistry.FERTILIZED_MYCELIUM.get())
                 .unlockedBy("has_fertilized_mycelium", has(BlocksRegistry.FERTILIZED_MYCELIUM.get()))
+                .save(output);
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_MYCELIUM.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.INFERNAL_ESSENCE.get())
+                .define('O', BlocksRegistry.FUNGAL_MYCELIUM.get())
+                .unlockedBy("has_fungal_mycelium", has(BlocksRegistry.FUNGAL_MYCELIUM.get()))
+                .save(output);
+
+        shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_MYCELIUM.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.ETHEREAL_ESSENCE.get())
+                .define('O', BlocksRegistry.INFERNAL_MYCELIUM.get())
+                .unlockedBy("has_infernal_mycelium", has(BlocksRegistry.INFERNAL_MYCELIUM.get()))
                 .save(output);
 
 
@@ -127,6 +245,22 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .define('X', ItemsRegistry.FUNGAL_ESSENCE.get())
                 .define('O', ItemsRegistry.NEXUS_FUNGUS.get())
                 .unlockedBy("has_nexus_fungus", has(ItemsRegistry.NEXUS_FUNGUS.get()))
+                .save(output);
+        shaped(RecipeCategory.MISC, ItemsRegistry.INFERNAL_FUNGUS.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.INFERNAL_ESSENCE.get())
+                .define('O', ItemsRegistry.GREAT_FUNGUS.get())
+                .unlockedBy("has_great_fungus", has(ItemsRegistry.GREAT_FUNGUS.get()))
+                .save(output);
+        shaped(RecipeCategory.MISC, ItemsRegistry.ETHEREAL_FUNGUS.get())
+                .pattern(" X ")
+                .pattern("XOX")
+                .pattern(" X ")
+                .define('X', ItemsRegistry.ETHEREAL_ESSENCE.get())
+                .define('O', ItemsRegistry.INFERNAL_FUNGUS.get())
+                .unlockedBy("has_infernal_fungus", has(ItemsRegistry.INFERNAL_FUNGUS.get()))
                 .save(output);
 
 

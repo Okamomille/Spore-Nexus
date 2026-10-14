@@ -83,11 +83,18 @@ public class DatagenModelProvider extends ModelProvider {
 
         blockModels.createTrivialCube(BlocksRegistry.FERTILIZED_MYCELIUM.get());
         blockModels.createTrivialCube(BlocksRegistry.FUNGAL_MYCELIUM.get());
+        blockModels.createTrivialCube(BlocksRegistry.INFERNAL_MYCELIUM.get());
+        blockModels.createTrivialCube(BlocksRegistry.ETHEREAL_MYCELIUM.get());
 
         blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE.get());
         blockModels.createNonTemplateHorizontalBlock(BlocksRegistry.MYCELIAN_CORE_PROXY.get());
 
         blockModels.createNonTemplateModelBlock(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get());
+
+        blockModels.createTrivialBlock(BlocksRegistry.GROWTH_ACCELERATOR.get(), TexturedModel.CUBE_TOP_BOTTOM);
+        blockModels.createTrivialBlock(BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get(), TexturedModel.CUBE_TOP_BOTTOM);
+        blockModels.createTrivialBlock(BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get(), TexturedModel.CUBE_TOP_BOTTOM);
+        blockModels.createTrivialBlock(BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get(), TexturedModel.CUBE_TOP_BOTTOM);
 
 
         registerCrossBlockWithCustomItemTexture(blockModels, itemModels, BlocksRegistry.BANDED_AGARIC.get());
