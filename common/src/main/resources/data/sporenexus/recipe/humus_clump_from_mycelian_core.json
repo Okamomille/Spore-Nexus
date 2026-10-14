@@ -1,0 +1,14 @@
+{
+  "type": "sporenexus:mycelian_core",
+  "mushroom_input": "minecraft:brown_mushroom",
+  "substract_input": "minecraft:moss_block",
+  "nutrients": ["minecraft:bone_meal", "minecraft:dirt", "minecraft:rotten_flesh"],
+  "result": {
+    "count": 3,
+    "id": "sporenexus:humus_clump"
+  },
+  "secondary_output": {
+    "count": 1,
+    "id": "minecraft:coarse_dirt"
+  }
+}

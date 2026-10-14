@@ -139,7 +139,7 @@ public class BlocksRegistry {
             new ResourceMushroomType("gold",   ItemsRegistry.fragment("gold"),   ItemsRegistry.FUNGAL_ESSENCE,null, 2600),
             new ResourceMushroomType("diamond",   ItemsRegistry.fragment("diamond"),   ItemsRegistry.FUNGAL_ESSENCE,null, 4000),
             new ResourceMushroomType("emerald",   ItemsRegistry.fragment("emerald"),   ItemsRegistry.FUNGAL_ESSENCE,null, 4000),
-            new ResourceMushroomType("netherite",   ItemsRegistry.fragment("netherite"),   ItemsRegistry.FUNGAL_ESSENCE,null, 6000),
+            new ResourceMushroomType("netherite",   ItemsRegistry.fragment("netherite"),   ItemsRegistry.INFERNAL_ESSENCE,null, 6000),
 
 
             /* BLOCKS */
@@ -151,10 +151,10 @@ public class BlocksRegistry {
             new ResourceMushroomType("stone",ItemsRegistry.fragment("stone"), ItemsRegistry.FUNGAL_ESSENCE,
                     ItemsRegistry.fragment("mossy_cobblestone"), 1800),
             new ResourceMushroomType("moss",ItemsRegistry.fragment("moss"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
-            new ResourceMushroomType("blackstone",ItemsRegistry.fragment("blackstone"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
-            new ResourceMushroomType("netherrack",ItemsRegistry.fragment("netherrack"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
-            new ResourceMushroomType("soul_sand",ItemsRegistry.fragment("soul_sand"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
-            new ResourceMushroomType("glowstone",ItemsRegistry.fragment("glowstone"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800)
+            new ResourceMushroomType("blackstone",ItemsRegistry.fragment("blackstone"), ItemsRegistry.INFERNAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("netherrack",ItemsRegistry.fragment("netherrack"), ItemsRegistry.INFERNAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("soul_sand",ItemsRegistry.fragment("soul_sand"), ItemsRegistry.INFERNAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("glowstone",ItemsRegistry.fragment("glowstone"), ItemsRegistry.INFERNAL_ESSENCE, null, 1800)
     );
 
 

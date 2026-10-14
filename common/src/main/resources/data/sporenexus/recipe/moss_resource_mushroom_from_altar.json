@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:great_fungus",
+  "resource_input": ["minecraft:moss_block", "minecraft:moss_block", "minecraft:moss_block", "minecraft:moss_block"],
+  "secondary_input": ["sporenexus:humus_clump","minecraft:glow_berries","sporenexus:humus_clump","minecraft:glow_berries"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:moss_resource_mushroom"
+  }
+}

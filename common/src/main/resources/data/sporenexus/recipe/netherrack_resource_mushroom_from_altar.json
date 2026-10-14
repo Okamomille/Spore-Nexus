@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:infernal_fungus",
+  "resource_input": ["minecraft:netherrack", "minecraft:netherrack", "minecraft:netherrack", "minecraft:netherrack"],
+  "secondary_input": ["sporenexus:ember_spores","minecraft:nether_wart","sporenexus:ember_spores","minecraft:nether_wart"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:netherrack_resource_mushroom"
+  }
+}

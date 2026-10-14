@@ -26,9 +26,6 @@ public class ItemsRegistry {
     public static final RegistrySupplier<Item> FUNGAL_POWDER = registerItem("fungal_powder", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
-    public static final RegistrySupplier<Item> MUSHROOM_SPORES = registerItem("mushroom_spores", Item::new,
-            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
-
 
     public static final RegistrySupplier<Item> FUNGALSTEEL_SWORD = registerItem("fungalsteel_sword", Item::new,
             () -> new Item.Properties().sword(ToolTiersRegistry.FUNGALSTEEL, 3, -2.4f)
@@ -54,6 +51,17 @@ public class ItemsRegistry {
 
 
 
+    public static final RegistrySupplier<Item> MUSHROOM_SPORES = registerItem("mushroom_spores", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+    public static final RegistrySupplier<Item> EMBER_SPORES = registerItem("ember_spores", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+    public static final RegistrySupplier<Item> HUMUS_CLUMP = registerItem("humus_clump", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
+
+    public static final RegistrySupplier<Item> PRISMATIC_DUST = registerItem("prismatic_dust", Item::new,
+            () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
     public static final RegistrySupplier<Item> MINERAL_QUARTZ = registerItem("mineral_quartz", Item::new,
             () -> new Item.Properties().arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));

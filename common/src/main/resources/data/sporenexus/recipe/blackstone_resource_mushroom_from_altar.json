@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:infernal_fungus",
+  "resource_input": ["minecraft:blackstone", "minecraft:blackstone", "minecraft:blackstone", "minecraft:blackstone"],
+  "secondary_input": ["sporenexus:ember_spores","sporenexus:reinforced_fungal_tissue","sporenexus:ember_spores","sporenexus:reinforced_fungal_tissue"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:blackstone_resource_mushroom"
+  }
+}

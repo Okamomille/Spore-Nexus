@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:great_fungus",
+  "resource_input": ["minecraft:ice", "minecraft:ice", "minecraft:ice", "minecraft:ice"],
+  "secondary_input": ["sporenexus:humus_clump","minecraft:snow_ball","sporenexus:humus_clump","minecraft:snow_ball"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:ice_resource_mushroom"
+  }
+}

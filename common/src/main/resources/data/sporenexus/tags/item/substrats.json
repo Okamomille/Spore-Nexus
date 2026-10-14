@@ -6,6 +6,7 @@
     "minecraft:redstone_block",
     "minecraft:deepslate",
     "minecraft:calcite",
-    "minecraft:diorite"
+    "minecraft:diorite",
+    "minecraft:netherrack"
   ]
 }

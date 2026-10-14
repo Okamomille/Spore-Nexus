@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:infernal_fungus",
+  "resource_input": ["minecraft:glowstone", "minecraft:glowstone", "minecraft:glowstone", "minecraft:glowstone"],
+  "secondary_input": ["sporenexus:ember_spores","sporenexus:luminescent_fibers","sporenexus:ember_spores","sporenexus:luminescent_fibers"],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:glowstone_resource_mushroom"
+  }
+}
