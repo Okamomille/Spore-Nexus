@@ -109,16 +109,10 @@ public class ResourceMushroomBlock extends CropBlock {
             return InteractionResult.PASS;
         }
 
-        if (!level.isClientSide()) {
-            resetAge(level, pos);
-            level.scheduleTick(pos, this, nextDelay(level, pos, level.getRandom()));
-            level.playSound(null, pos, SoundEvents.GROWING_PLANT_CROP, SoundSource.BLOCKS, 1.0F, 1.0F);
-            if (level instanceof ServerLevel serverLevel) {
-                serverLevel.sendParticles(ParticleTypes.HAPPY_VILLAGER, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
-                        5, 0.25, 0.25, 0.25, 0.0);
+        if (level instanceof ServerLevel serverLevel) {
+            for (ItemStack stack : harvest(serverLevel, pos)) {
+                level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, stack));
             }
-
-            dropAll(level, pos);
         }
 
         return InteractionResult.SUCCESS;
@@ -136,16 +130,25 @@ public class ResourceMushroomBlock extends CropBlock {
         return false;
     }
 
+    /** Reset the mushroom and return what it gave. Server side only. */
+    public List<ItemStack> harvest(ServerLevel level, BlockPos pos) {
+        resetAge(level, pos);
+        level.scheduleTick(pos, this, nextDelay(level, pos, level.getRandom()));
+        level.playSound(null, pos, SoundEvents.GROWING_PLANT_CROP, SoundSource.BLOCKS, 1.0F, 1.0F);
+        level.sendParticles(ParticleTypes.HAPPY_VILLAGER, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                5, 0.25, 0.25, 0.25, 0.0);
+        return rollDrops(level.getRandom());
+    }
 
-    private void dropAll(Level level, BlockPos pos) {
-        RandomSource random = level.getRandom();
+    public List<ItemStack> rollDrops(RandomSource random) {
+        List<ItemStack> result = new ArrayList<>();
         for (HarvestDrop drop : getHarvestDrops()) {
             if (random.nextInt(100) < drop.chancePercent()) {
                 int count = drop.min() + random.nextInt(drop.max() - drop.min() + 1);
-                level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
-                        new ItemStack(drop.item().get(), count)));
+                result.add(new ItemStack(drop.item().get(), count));
             }
         }
+        return result;
     }
 
     @Override
