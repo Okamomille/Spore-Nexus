@@ -204,7 +204,9 @@ public class ResourceMushroomBlock extends CropBlock {
     private void tryMutate(ServerLevel level, BlockPos pos, RandomSource random) {
         for (BlockPos other : BlockPos.betweenClosed(pos.offset(-MUTATION_RADIUS, 0, -MUTATION_RADIUS),
                 pos.offset(MUTATION_RADIUS, 0, MUTATION_RADIUS))) {
-            if (other.equals(pos)) continue;
+            if (other.equals(pos) || !level.isLoaded(other)) {
+                continue;
+            }
 
             BlockState otherState = level.getBlockState(other);
             if (!(otherState.getBlock() instanceof ResourceMushroomBlock otherMushroom) || otherMushroom.getAge(otherState) < otherMushroom.getMaxAge()) {
@@ -223,7 +225,7 @@ public class ResourceMushroomBlock extends CropBlock {
                 continue;
             }
 
-            BlockPos spot = findMutationSpot(level, pos, other);
+            BlockPos spot = findMutationSpot(level, pos, other, true);
             if (spot == null){
                 continue;
             }
@@ -240,7 +242,7 @@ public class ResourceMushroomBlock extends CropBlock {
         }
     }
 
-    private @Nullable BlockPos findMutationSpot(ServerLevel level, BlockPos a, BlockPos b) {
+    private @Nullable BlockPos findMutationSpot(ServerLevel level, BlockPos a, BlockPos b, boolean checkLight) {
         for (BlockPos q : BlockPos.betweenClosed(a.offset(-1, 0, -1), a.offset(1, 0, 1))) {
             if (q.equals(a) || q.equals(b)){
                 continue;
@@ -254,7 +256,7 @@ public class ResourceMushroomBlock extends CropBlock {
             if (!level.getBlockState(q.below()).is(TagsRegistry.SPORE_SOILS)){
                 continue;
             }
-            if (level.getRawBrightness(q, 0) > 1){
+            if (checkLight && level.getRawBrightness(q, 0) > 1) {
                 continue;
             }
             return q.immutable();
