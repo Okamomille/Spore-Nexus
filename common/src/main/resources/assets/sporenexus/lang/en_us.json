@@ -14,6 +14,10 @@
  "jade.sporenexus.accelerator_bonus": "Growth Accelerator: %s (x%s)",
  "jade.sporenexus.total_speed": "Total growth speed: x%s",
 
+ "jade.sporenexus.mutation_ready": "Can mutate into %s (%s%%)",
+ "jade.sporenexus.mutation_too_bright": "Mutation to %s blocked: too bright",
+ "jade.sporenexus.mutation_no_space": "Mutation to %s blocked: no free spore soil",
+
  "jade.sporenexus.accelerator_range": "Range: %sx%sx%s",
  "jade.sporenexus.accelerator_active": "Active",
  "jade.sporenexus.accelerator_no_mushroom": "Inactive: No mushroom in range",

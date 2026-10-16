@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.okamiz.common.compats.jade.ClientMutationRecipes;
 import net.okamiz.common.modded_registries.RecipesRegistry;
 import net.okamiz.common.modded_registries.TagsRegistry;
 import net.okamiz.common.recipe.mushroom_mutation.MushroomMutationRecipe;
@@ -52,6 +53,11 @@ public class ResourceMushroomBlock extends CropBlock {
             Block.box(4.0, 0.0, 4.0, 12.0, 8.0, 12.0),
             Block.box(2.0, 0.0, 2.0, 14.0, 12.0, 14.0),
     };
+
+    public enum MutationStatus { NONE, READY, TOO_BRIGHT, NO_SPACE }
+    public record MutationInfo(MutationStatus status, @Nullable Block result, float chance) {
+        public static final MutationInfo NONE = new MutationInfo(MutationStatus.NONE, null, 0f);
+    }
 
     public ResourceMushroomBlock(Properties properties, Supplier<Item> drop, Supplier<Item> essenceDrop, Supplier<Item> extraDrop, int growthTicks) {
         super(properties);
@@ -201,6 +207,41 @@ public class ResourceMushroomBlock extends CropBlock {
         }
     }
 
+    public MutationInfo getMutationInfo(Level level, BlockPos pos) {
+        MutationInfo best = MutationInfo.NONE;
+        for (BlockPos other : BlockPos.betweenClosed(pos.offset(-MUTATION_RADIUS, 0, -MUTATION_RADIUS),
+                pos.offset(MUTATION_RADIUS, 0, MUTATION_RADIUS))) {
+            if (other.equals(pos) || !level.hasChunkAt(other)) {
+                continue;
+            }
+            if (!(level.getBlockState(other).getBlock() instanceof ResourceMushroomBlock otherMushroom)) {
+                continue;
+            }
+
+            MushroomMutationRecipeInput input = new MushroomMutationRecipeInput(new ItemStack(this), new ItemStack(otherMushroom));
+            var recipe = ClientMutationRecipes.find(input, level);
+            if (recipe.isEmpty()) {
+                continue;
+            }
+            if (!(recipe.get().output().create().getItem() instanceof BlockItem blockItem)) {
+                continue;
+            }
+
+            MutationStatus status;
+            if (findMutationSpot(level, pos, other, true) != null) {
+                status = MutationStatus.READY;
+            } else if (findMutationSpot(level, pos, other, false) != null) {
+                status = MutationStatus.TOO_BRIGHT;
+            } else {
+                status = MutationStatus.NO_SPACE;
+            }
+            if (best.status() == MutationStatus.NONE || status.ordinal() < best.status().ordinal()) {
+                best = new MutationInfo(status, blockItem.getBlock(), recipe.get().chance());
+            }
+        }
+        return best;
+    }
+
     private void tryMutate(ServerLevel level, BlockPos pos, RandomSource random) {
         for (BlockPos other : BlockPos.betweenClosed(pos.offset(-MUTATION_RADIUS, 0, -MUTATION_RADIUS),
                 pos.offset(MUTATION_RADIUS, 0, MUTATION_RADIUS))) {
@@ -242,7 +283,7 @@ public class ResourceMushroomBlock extends CropBlock {
         }
     }
 
-    private @Nullable BlockPos findMutationSpot(ServerLevel level, BlockPos a, BlockPos b, boolean checkLight) {
+    private @Nullable BlockPos findMutationSpot(LevelReader level, BlockPos a, BlockPos b, boolean checkLight) {
         for (BlockPos q : BlockPos.betweenClosed(a.offset(-1, 0, -1), a.offset(1, 0, 1))) {
             if (q.equals(a) || q.equals(b)){
                 continue;

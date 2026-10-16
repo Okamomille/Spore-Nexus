@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.okamiz.SporeNexus;
@@ -56,6 +57,18 @@ public class MushroomGrowthProvider implements IBlockComponentProvider {
         if (soil > 1.0 || accelerator != null) {
             tooltip.add(Component.translatable("jade.sporenexus.total_speed",
                     format(mushroom.getTotalSpeed(level, pos))).withColor(0x55FF55));
+        }
+
+        ResourceMushroomBlock.MutationInfo info = mushroom.getMutationInfo(level, pos);
+        if (info.status() != ResourceMushroomBlock.MutationStatus.NONE && info.result() != null) {
+            Component name = info.result().getName();
+            int percent = Math.round(info.chance() * 100);
+            switch (info.status()) {
+                case READY -> tooltip.add(Component.translatable("jade.sporenexus.mutation_ready", name, percent).withColor(0x55FF55));
+                case TOO_BRIGHT -> tooltip.add(Component.translatable("jade.sporenexus.mutation_too_bright", name).withColor(0xFFAA00));
+                case NO_SPACE -> tooltip.add(Component.translatable("jade.sporenexus.mutation_no_space", name).withColor(0xFFAA00));
+                default -> {}
+            }
         }
     }
 

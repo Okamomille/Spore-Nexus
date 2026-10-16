@@ -2,8 +2,11 @@ package net.okamiz.fabric.client;
 
 import dev.architectury.registry.client.gui.MenuScreenRegistry;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.recipe.v1.sync.ClientRecipeSynchronizedEvent;
 import net.fabricmc.fabric.api.recipe.v1.sync.RecipeSynchronization;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.okamiz.common.compats.jade.ClientMutationRecipes;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.modded_registries.MenusRegistry;
 import net.okamiz.common.modded_registries.RecipesRegistry;
@@ -18,6 +21,7 @@ public final class SporeNexusFabricClient implements ClientModInitializer {
         registerScreens();
         registerJEIRecipeTypes();
         registerBER();
+        jadeRecipesSync();
     }
 
     private void registerJEIRecipeTypes() {
@@ -35,5 +39,10 @@ public final class SporeNexusFabricClient implements ClientModInitializer {
     private void registerBER(){
         BlockEntityRenderers.register(BlockEntitiesRegistry.MYCELIAN_CORE_BE.get(), MycelianCoreBlockEntityRenderer::new);
         BlockEntityRenderers.register(BlockEntitiesRegistry.SPORE_NEXUS_CRAFT_BE.get(), SporeNexusCraftBlockEntityRenderer::new);
+    }
+
+    private void jadeRecipesSync(){
+        ClientRecipeSynchronizedEvent.EVENT.register((client, recipes) -> ClientMutationRecipes
+                .set(recipes.getAllOfType(RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get()).stream().map(RecipeHolder::value).toList()));
     }
 }
