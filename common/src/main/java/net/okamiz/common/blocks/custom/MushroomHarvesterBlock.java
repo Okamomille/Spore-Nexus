@@ -70,8 +70,8 @@ public class MushroomHarvesterBlock extends BaseEntityBlock {
 
     /** True if this harvester is the one allowed to harvest this mushroom. */
     public boolean isOwnerOf(Level level, BlockPos myPos, BlockPos mushroomPos) {
-        BlockPos min = mushroomPos.offset(-MAX_RADIUS, 0, -MAX_RADIUS);
-        BlockPos max = mushroomPos.offset(MAX_RADIUS, 0, MAX_RADIUS);
+        BlockPos min = mushroomPos.offset(-MAX_RADIUS, -1, -MAX_RADIUS);
+        BlockPos max = mushroomPos.offset(MAX_RADIUS, 1, MAX_RADIUS);
         if (!GrowthAcceleratorBlock.areChunksLoaded(level, min, max)) {
             return false;
         }
