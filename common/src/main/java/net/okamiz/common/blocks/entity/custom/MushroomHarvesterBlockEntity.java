@@ -85,7 +85,7 @@ public class MushroomHarvesterBlockEntity extends BlockEntity implements MenuPro
             return;
         }
         int radius = harvester.getRadius();
-        for (BlockPos scanned : BlockPos.betweenClosed(center.offset(-radius, 0, -radius), center.offset(radius, 0, radius))) {
+        for (BlockPos scanned : BlockPos.betweenClosed(center.offset(-radius, -1, -radius), center.offset(radius, 1, radius))) {
             if (!hasFreeSlot()) {
                 return;
             }

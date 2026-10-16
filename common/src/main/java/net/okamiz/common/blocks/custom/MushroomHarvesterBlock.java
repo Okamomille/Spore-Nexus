@@ -19,7 +19,7 @@ import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import org.jetbrains.annotations.Nullable;
 
 public class MushroomHarvesterBlock extends BaseEntityBlock {
-    public static final int MAX_RADIUS = 5;
+    public static final int MAX_RADIUS = 4;
     public static final MapCodec<MushroomHarvesterBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             propertiesCodec(),
             Codec.INT.fieldOf("radius").forGetter(MushroomHarvesterBlock::getRadius)
@@ -65,7 +65,7 @@ public class MushroomHarvesterBlock extends BaseEntityBlock {
     }
 
     private boolean covers(BlockPos self, BlockPos target) {
-        return Math.abs(self.getX() - target.getX()) <= radius && Math.abs(self.getZ() - target.getZ()) <= radius;
+        return Math.abs(self.getX() - target.getX()) <= radius && Math.abs(self.getZ() - target.getZ()) <= radius && Math.abs(self.getY() - target.getY()) <= 1;
     }
 
     /** True if this harvester is the one allowed to harvest this mushroom. */
@@ -74,12 +74,6 @@ public class MushroomHarvesterBlock extends BaseEntityBlock {
         BlockPos max = mushroomPos.offset(MAX_RADIUS, 0, MAX_RADIUS);
         if (!GrowthAcceleratorBlock.areChunksLoaded(level, min, max)) {
             return false;
-        }
-        for (BlockPos p : BlockPos.betweenClosed(min, max)) {
-            if (!p.equals(myPos) && level.getBlockState(p).getBlock() instanceof MushroomHarvesterBlock other
-                    && other.covers(p, mushroomPos) && isBetter(other.radius, p, radius, myPos)) {
-                return false;
-            }
         }
         for (BlockPos p : BlockPos.betweenClosed(min, max)) {
             if (!p.equals(myPos) && level.getBlockState(p).getBlock() instanceof MushroomHarvesterBlock other
