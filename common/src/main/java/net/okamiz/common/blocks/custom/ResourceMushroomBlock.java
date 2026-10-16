@@ -96,7 +96,7 @@ public class ResourceMushroomBlock extends CropBlock {
     }
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        if (context.getLevel().getRawBrightness(context.getClickedPos(), 0) >= 8) {
+        if (isBlockedByLight(context.getLevel(), context.getClickedPos())) {
             return null;
         }
         return super.getStateForPlacement(context);
@@ -201,7 +201,7 @@ public class ResourceMushroomBlock extends CropBlock {
         if (age >= getMaxAge()) {
             return;
         }
-        if (level.getRawBrightness(pos, 0) >= 8) {
+        if (isBlockedByLight(level, pos)) {
             // TOO MUCH LIGHT -> WAITING STATE
             level.scheduleTick(pos, this, BLOCKED_RETRY_TICKS);
             return;
@@ -228,7 +228,7 @@ public class ResourceMushroomBlock extends CropBlock {
     }
 
     public boolean isBlockedByLight(Level level, BlockPos pos) {
-        return level.getRawBrightness(pos, 0) >= 8;
+        return level.getRawBrightness(pos, 0) >= 11;
     }
 
 
