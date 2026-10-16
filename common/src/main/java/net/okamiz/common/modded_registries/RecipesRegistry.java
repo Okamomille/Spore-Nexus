@@ -6,6 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.recipe.mushroom_mutation.MushroomMutationRecipe;
 import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipe;
 import net.okamiz.common.recipe.spore_nexus_craft.SporeNexusCraftRecipe;
 
@@ -23,8 +24,7 @@ public class RecipesRegistry {
                 @Override
                 public String toString(){
                     return "mycelian_core";
-                }
-            });
+                }});
 
 
     public static final RegistrySupplier<RecipeSerializer<SporeNexusCraftRecipe>> SPORE_NEXUS_CRAFT_RECIPE_SERIALIZER =
@@ -34,6 +34,14 @@ public class RecipesRegistry {
                 @Override
                 public String toString(){
                     return "spore_nexus_craft";
-                }
-            });
+                }});
+
+    public static final RegistrySupplier<RecipeSerializer<MushroomMutationRecipe>> MUSHROOM_MUTATION_RECIPE_SERIALIZER =
+            RECIPE_SERIALIZERS.register("mushroom_mutation", () -> new RecipeSerializer<>(MushroomMutationRecipe.CODEC, MushroomMutationRecipe.STREAM_CODEC));
+    public static final RegistrySupplier<RecipeType<MushroomMutationRecipe>> MUSHROOM_MUTATION_RECIPE_TYPE =
+            RECIPE_TYPES.register("mushroom_mutation", () -> new RecipeType<MushroomMutationRecipe>(){
+                @Override
+                public String toString(){
+                    return "mushroom_mutation";
+                }});
 }

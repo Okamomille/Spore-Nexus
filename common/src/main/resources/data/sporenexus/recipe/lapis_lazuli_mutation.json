@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mushroom_mutation",
+  "parent_a": "sporenexus:ice_resource_mushroom",
+  "parent_b": "sporenexus:quartz_resource_mushroom",
+  "result": {
+    "count": 1,
+    "id": "sporenexus:lapis_lazuli_resource_mushroom"
+  },
+  "chance": 0.04
+}

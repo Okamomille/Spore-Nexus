@@ -9,6 +9,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -24,7 +25,11 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.okamiz.common.modded_registries.RecipesRegistry;
 import net.okamiz.common.modded_registries.TagsRegistry;
+import net.okamiz.common.recipe.mushroom_mutation.MushroomMutationRecipe;
+import net.okamiz.common.recipe.mushroom_mutation.MushroomMutationRecipeInput;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +42,7 @@ public class ResourceMushroomBlock extends CropBlock {
     public Supplier<Item> drop;
     public Supplier<Item> essenceDrop;
     public Supplier<Item> extraDrop;
+    private static final int MUTATION_RADIUS = 2;
 
     private final int growthTicks;      // GROWS TICKS PER AGE (*3 to have full time) (2400 ticks = 2 min)
     private static final int BLOCKED_RETRY_TICKS = 100; // LIGHT CHECK RETRY TICKS
@@ -195,6 +201,67 @@ public class ResourceMushroomBlock extends CropBlock {
         }
     }
 
+    private void tryMutate(ServerLevel level, BlockPos pos, RandomSource random) {
+        for (BlockPos other : BlockPos.betweenClosed(pos.offset(-MUTATION_RADIUS, 0, -MUTATION_RADIUS),
+                pos.offset(MUTATION_RADIUS, 0, MUTATION_RADIUS))) {
+            if (other.equals(pos)) continue;
+
+            BlockState otherState = level.getBlockState(other);
+            if (!(otherState.getBlock() instanceof ResourceMushroomBlock otherMushroom) || otherMushroom.getAge(otherState) < otherMushroom.getMaxAge()) {
+                continue;
+            }
+
+            MushroomMutationRecipeInput input = new MushroomMutationRecipeInput(new ItemStack(this), new ItemStack(otherMushroom));
+            var holder = level.recipeAccess().getRecipeFor(RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get(), input, level);
+            if (holder.isEmpty()){
+                continue;
+            }
+
+            MushroomMutationRecipe recipe = holder.get().value();
+            ItemStack result = recipe.assemble(input);
+            if (!(result.getItem() instanceof BlockItem blockItem)){
+                continue;
+            }
+
+            BlockPos spot = findMutationSpot(level, pos, other);
+            if (spot == null){
+                continue;
+            }
+
+            if (random.nextFloat() >= recipe.chance()){
+                continue;
+            }
+
+            level.setBlock(spot, blockItem.getBlock().defaultBlockState(), 3);
+            level.sendParticles(ParticleTypes.MYCELIUM, spot.getX() + 0.5, spot.getY() + 0.4, spot.getZ() + 0.5,
+                    12, 0.3, 0.2, 0.3, 0.0);
+
+            return;
+        }
+    }
+
+    private @Nullable BlockPos findMutationSpot(ServerLevel level, BlockPos a, BlockPos b) {
+        for (BlockPos q : BlockPos.betweenClosed(a.offset(-1, 0, -1), a.offset(1, 0, 1))) {
+            if (q.equals(a) || q.equals(b)){
+                continue;
+            }
+            if (Math.abs(q.getX() - b.getX()) > 1 || Math.abs(q.getZ() - b.getZ()) > 1){
+                continue;
+            }
+            if (!level.getBlockState(q).isAir()){
+                continue;
+            }
+            if (!level.getBlockState(q.below()).is(TagsRegistry.SPORE_SOILS)){
+                continue;
+            }
+            if (level.getRawBrightness(q, 0) > 1){
+                continue;
+            }
+            return q.immutable();
+        }
+        return null;
+    }
+
     @Override
     protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         int age = getAge(state);
@@ -210,6 +277,8 @@ public class ResourceMushroomBlock extends CropBlock {
         level.setBlock(pos, getStateForAge(age), 2);
         if (age < getMaxAge()) {
             level.scheduleTick(pos, this, nextDelay(level, pos, random));
+        } else {
+            tryMutate(level, pos, random);
         }
     }
 

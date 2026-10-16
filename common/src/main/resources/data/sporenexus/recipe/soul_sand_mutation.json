@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mushroom_mutation",
+  "parent_a": "sporenexus:sand_resource_mushroom",
+  "parent_b": "sporenexus:netherrack_resource_mushroom",
+  "result": {
+    "count": 1,
+    "id": "sporenexus:soul_sand_resource_mushroom"
+  },
+  "chance": 0.06
+}

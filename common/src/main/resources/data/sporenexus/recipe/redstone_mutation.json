@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mushroom_mutation",
+  "parent_a": "sporenexus:copper_resource_mushroom",
+  "parent_b": "sporenexus:glowstone_resource_mushroom",
+  "result": {
+    "count": 1,
+    "id": "sporenexus:redstone_resource_mushroom"
+  },
+  "chance": 0.04
+}
