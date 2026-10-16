@@ -18,6 +18,13 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+        tag(BlockTags.OVERRIDES_MUSHROOM_LIGHT_REQUIREMENT)
+                .add(BlocksRegistry.FERTILIZED_MYCELIUM.getKey())
+                .add(BlocksRegistry.FUNGAL_MYCELIUM.getKey())
+                .add(BlocksRegistry.INFERNAL_MYCELIUM.getKey())
+                .add(BlocksRegistry.ETHEREAL_MYCELIUM.getKey())
+        ;
+
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(BlocksRegistry.FUNGALSTEEL_BLOCK.getKey())

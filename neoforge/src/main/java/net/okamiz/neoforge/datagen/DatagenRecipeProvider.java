@@ -107,6 +107,45 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output);
 
 
+        shaped(RecipeCategory.MISC, BlocksRegistry.MUSHROOM_HARVESTER.get())
+                .pattern("XXX")
+                .pattern("EOE")
+                .pattern("XVX")
+                .define('E', Blocks.IRON_BARS)
+                .define('X', ItemsRegistry.FUNGALSTEEL_INGOT.get())
+                .define('O', Items.CHEST)
+                .define('V', Items.HOPPER)
+                .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
+                .group("mushroom_harvesters")
+                .save(output);
+        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_HARVESTER.get())
+                .pattern(" X ")
+                .pattern("XEX")
+                .pattern(" X ")
+                .define('E', BlocksRegistry.MUSHROOM_HARVESTER.get())
+                .define('X', ItemsRegistry.FUNGAL_ESSENCE.get())
+                .unlockedBy("has_fungal_essence", has(ItemsRegistry.FUNGAL_ESSENCE.get()))
+                .group("mushroom_harvesters")
+                .save(output);
+        shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_HARVESTER.get())
+                .pattern(" X ")
+                .pattern("XEX")
+                .pattern(" X ")
+                .define('E', BlocksRegistry.FUNGAL_HARVESTER.get())
+                .define('X', ItemsRegistry.INFERNAL_ESSENCE.get())
+                .unlockedBy("has_infernal_essence", has(ItemsRegistry.INFERNAL_ESSENCE.get()))
+                .group("mushroom_harvesters")
+                .save(output);
+        shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_HARVESTER.get())
+                .pattern(" X ")
+                .pattern("XEX")
+                .pattern(" X ")
+                .define('E', BlocksRegistry.INFERNAL_HARVESTER.get())
+                .define('X', ItemsRegistry.ETHEREAL_ESSENCE.get())
+                .unlockedBy("has_ethereal_essence", has(ItemsRegistry.ETHEREAL_ESSENCE.get()))
+                .group("mushroom_harvesters")
+                .save(output);
+
 
         shaped(RecipeCategory.MISC, BlocksRegistry.GROWTH_ACCELERATOR.get())
                 .pattern("AXA")

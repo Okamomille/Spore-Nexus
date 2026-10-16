@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "mushroom_harvesters",
+  "key": {
+    "E": "sporenexus:infernal_harvester",
+    "X": "sporenexus:ethereal_essence"
+  },
+  "pattern": [
+    " X ",
+    "XEX",
+    " X "
+  ],
+  "result": {
+    "id": "sporenexus:ethereal_harvester"
+  }
+}

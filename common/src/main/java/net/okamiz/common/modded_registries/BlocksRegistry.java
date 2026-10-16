@@ -54,6 +54,10 @@ public class BlocksRegistry {
             "tooltip.block.sporenexus.ethereal_mycelium", TextColor.YELLOW);
 
 
+    public static final RegistrySupplier<Block> FUNGAL_LIGHT = registerBlock("fungal_light", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SHROOMLIGHT).lightLevel(state -> 11), CreativeTabsRegistry.SPORENEXUS_TAB);
+
+
     /* GIANT MUSHROM BLOCKS */
 
     public static final RegistrySupplier<Block> BANDED_AGARIC_STEM = registerBlock("banded_agaric_stem", HugeMushroomBlock::new,

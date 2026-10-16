@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "mushroom_harvesters",
+  "key": {
+    "E": "minecraft:iron_bars",
+    "O": "minecraft:chest",
+    "V": "minecraft:hopper",
+    "X": "sporenexus:fungalsteel_ingot"
+  },
+  "pattern": [
+    "XXX",
+    "EOE",
+    "XVX"
+  ],
+  "result": {
+    "id": "sporenexus:mushroom_harvester"
+  }
+}
