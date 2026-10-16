@@ -44,6 +44,10 @@ public class DatagenBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(BlocksRegistry.MYCELIAN_CORE.get());
         dropSelf(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get());
+        dropSelf(BlocksRegistry.MUSHROOM_HARVESTER.get());
+        dropSelf(BlocksRegistry.FUNGAL_HARVESTER.get());
+        dropSelf(BlocksRegistry.INFERNAL_HARVESTER.get());
+        dropSelf(BlocksRegistry.ETHEREAL_HARVESTER.get());
         dropSelf(BlocksRegistry.GROWTH_ACCELERATOR.get());
         dropSelf(BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get());
         dropSelf(BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get());

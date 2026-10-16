@@ -28,6 +28,10 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
                 .add(BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.getKey())
                 .add(BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.getKey())
                 .add(BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.getKey())
+                .add(BlocksRegistry.MUSHROOM_HARVESTER.getKey())
+                .add(BlocksRegistry.FUNGAL_HARVESTER.getKey())
+                .add(BlocksRegistry.INFERNAL_HARVESTER.getKey())
+                .add(BlocksRegistry.ETHEREAL_HARVESTER.getKey())
         ;
 
         tag(BlockTags.MINEABLE_WITH_AXE)

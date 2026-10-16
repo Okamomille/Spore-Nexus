@@ -7,6 +7,10 @@
     "sporenexus:growth_accelerator",
     "sporenexus:fungal_growth_accelerator",
     "sporenexus:infernal_growth_accelerator",
-    "sporenexus:ethereal_growth_accelerator"
+    "sporenexus:ethereal_growth_accelerator",
+    "sporenexus:mushroom_harvester",
+    "sporenexus:fungal_harvester",
+    "sporenexus:infernal_harvester",
+    "sporenexus:ethereal_harvester"
   ]
 }

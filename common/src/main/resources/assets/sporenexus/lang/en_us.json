@@ -112,6 +112,10 @@
   "block.sporenexus.spore_nexus": "Spore Nexus Altar",
   "block.sporenexus.mycelian_core": "Mycelian Core",
   "block.sporenexus.mycelian_core_proxy": "Mycelian Core",
+ "block.sporenexus.mushroom_harvester": "Mushroom Harvester",
+ "block.sporenexus.fungal_harvester": "Fungal Harvester",
+ "block.sporenexus.infernal_harvester": "Infernal Harvester",
+ "block.sporenexus.ethereal_harvester": "Ethereal Harvester",
   "block.sporenexus.spore_nexus_craft_block": "Spore Nexus Altar",
 
   "block.sporenexus.growth_accelerator": "Growth Accelerator",
@@ -160,5 +164,9 @@
  "tooltip.block.sporenexus.growth_accelerator": "x1.25 Growth speed for mushroom in a 3x3 area.",
  "tooltip.block.sporenexus.fungal_growth_accelerator": "x1.5 Growth speed for mushroom in a 5x5 area.",
  "tooltip.block.sporenexus.infernal_growth_accelerator": "x1.75 Growth speed for mushroom in a 7x7 area.",
- "tooltip.block.sporenexus.ethereal_growth_accelerator": "x2 Growth speed for mushroom in a 9x9 area."
+ "tooltip.block.sporenexus.ethereal_growth_accelerator": "x2 Growth speed for mushroom in a 9x9 area.",
+ "tooltip.block.sporenexus.mushroom_harvester": "Auto Harvest mushrooms in a 3x1x3 area.",
+ "tooltip.block.sporenexus.fungal_harvester": "Auto Harvest mushrooms in a 5x1x5 area.",
+ "tooltip.block.sporenexus.infernal_harvester": "Auto Harvest mushrooms in a 7x1x7 area.",
+ "tooltip.block.sporenexus.ethereal_harvester": "Auto Harvest mushrooms in a 9x1x9 area."
 }

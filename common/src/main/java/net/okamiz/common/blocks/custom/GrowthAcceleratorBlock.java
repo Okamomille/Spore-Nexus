@@ -66,7 +66,8 @@ public class GrowthAcceleratorBlock extends Block {
         }
         return best;
     }
-    private static boolean areChunksLoaded(Level level, BlockPos min, BlockPos max) {
+
+    static boolean areChunksLoaded(Level level, BlockPos min, BlockPos max) {
         for (int cx = min.getX() >> 4; cx <= max.getX() >> 4; cx++) {
             for (int cz = min.getZ() >> 4; cz <= max.getZ() >> 4; cz++) {
                 if (!level.hasChunk(cx, cz)) {

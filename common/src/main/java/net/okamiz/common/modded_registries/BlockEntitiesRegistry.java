@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.blocks.entity.custom.MushroomHarvesterBlockEntity;
 import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
 
@@ -20,4 +21,8 @@ public class BlockEntitiesRegistry {
 
     public static final Supplier<BlockEntityType<SporeNexusCraftBlockEntity>> SPORE_NEXUS_CRAFT_BE = BLOCK_ENTITIES.register("spore_nexus_craft_be",
             () -> new BlockEntityType<>(SporeNexusCraftBlockEntity::new, Set.of(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get())));
+
+    public static final Supplier<BlockEntityType<MushroomHarvesterBlockEntity>> MUSHROOM_HARVESTER_BE = BLOCK_ENTITIES.register("mushroom_harvester_be",
+            () -> new BlockEntityType<>(MushroomHarvesterBlockEntity::new, Set.of(BlocksRegistry.MUSHROOM_HARVESTER.get(),BlocksRegistry.FUNGAL_HARVESTER.get(),
+                    BlocksRegistry.INFERNAL_HARVESTER.get(),BlocksRegistry.ETHEREAL_HARVESTER.get())));
 }

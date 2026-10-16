@@ -89,6 +89,29 @@ public class BlocksRegistry {
                     .noOcclusion(), CreativeTabsRegistry.SPORENEXUS_TAB);
 
 
+
+    public static final RegistrySupplier<Block> MUSHROOM_HARVESTER = registerBlockWithTooltip("mushroom_harvester",
+            props -> new MushroomHarvesterBlock(props, 1),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.mushroom_harvester", TextColor.YELLOW);
+
+    public static final RegistrySupplier<Block> FUNGAL_HARVESTER = registerBlockWithTooltip("fungal_harvester",
+            props -> new MushroomHarvesterBlock(props, 2),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.fungal_harvester", TextColor.YELLOW);
+
+    public static final RegistrySupplier<Block> INFERNAL_HARVESTER = registerBlockWithTooltip("infernal_harvester",
+            props -> new MushroomHarvesterBlock(props, 3),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.infernal_harvester", TextColor.YELLOW);
+
+    public static final RegistrySupplier<Block> ETHEREAL_HARVESTER = registerBlockWithTooltip("ethereal_harvester",
+            props -> new MushroomHarvesterBlock(props, 4),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB,
+            "tooltip.block.sporenexus.ethereal_harvester", TextColor.YELLOW);
+
+
+
     /* MACHINES */
 
     public static final RegistrySupplier<Block> GROWTH_ACCELERATOR = registerBlockWithTooltip("growth_accelerator",

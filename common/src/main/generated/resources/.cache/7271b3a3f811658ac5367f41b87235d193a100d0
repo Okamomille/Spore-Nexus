@@ -1,6 +1,6 @@
-// 26.2	2026-10-14T17:43:12.0209201	Tags for minecraft:block mod id sporenexus
+// 26.2	2026-10-16T14:53:44.1098901	Tags for minecraft:block mod id sporenexus
 f0c511780dfcd8ca0d636cb3131dae5477937323 data/minecraft/tags/block/mineable/axe.json
 19975080d4a8d9fd340917447cc0b73c6fc5cb37 data/minecraft/tags/block/mineable/hoe.json
-31e28da18f17090a99803b3ec339d9a003d36380 data/minecraft/tags/block/mineable/pickaxe.json
+51080aacb4ccc5c501fd853e09d28f00c6925def data/minecraft/tags/block/mineable/pickaxe.json
 1185c099ac2835c56f9c117b7e064e4def08bcb7 data/minecraft/tags/block/mineable/shovel.json
 950a086f855d118e00d3fc9697663c7721c42db1 data/sporenexus/tags/block/incorrect_fungalsteel_tool.json

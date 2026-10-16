@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "sporenexus:block/fungal_harvester_bottom",
+    "side": "sporenexus:block/fungal_harvester_side",
+    "top": "sporenexus:block/fungal_harvester_top"
+  }
+}
