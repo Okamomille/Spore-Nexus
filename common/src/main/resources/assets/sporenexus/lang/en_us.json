@@ -2,6 +2,9 @@
  "jei.sporenexus.mushroom_harvest": "Mushroom Harvest",
  "jei.sporenexus.drop_chance": "%s%% Drop chance",
  "jei.sporenexus.drop_amount": "Drop amount: %s-%s",
+ "jei.sporenexus.mushroom_mutation": "Mushroom Mutation",
+ "jei.sporenexus.mutation_chance": "%s%% Mutation chance",
+ "jei.sporenexus.mutation_conditions": "Both parents mature, free spore soil next to both, total darkness",
 
  "config.jade.plugin_sporenexus.mushroom_growth": "Mushroom Growth",
  "jade.sporenexus.mature": "Ready to harvest",

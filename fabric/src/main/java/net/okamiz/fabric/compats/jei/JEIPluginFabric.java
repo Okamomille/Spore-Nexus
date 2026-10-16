@@ -14,6 +14,8 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.compats.jei.MushroomMutation;
+import net.okamiz.common.compats.jei.category.MushroomMutationCategory;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.modded_registries.MenusRegistry;
 import net.okamiz.common.modded_registries.RecipesRegistry;
@@ -53,6 +55,7 @@ public class JEIPluginFabric implements IModPlugin {
         registration.addRecipeCategories(new MycelianCoreRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new SporeNexusCraftRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new MushroomHarvestCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new MushroomMutationCategory(registration.getJeiHelpers().getGuiHelper()));
 
     }
 
@@ -62,6 +65,8 @@ public class JEIPluginFabric implements IModPlugin {
         registration.addRecipes(JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT, this.getRecipes(recipeMap, RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()));
         registration.addRecipes(MushroomHarvestCategory.TYPE, BuiltInRegistries.BLOCK.stream().filter(b -> b instanceof ResourceMushroomBlock)
                 .map(b -> new MushroomHarvest(b, ((ResourceMushroomBlock) b).getHarvestDrops())).toList());
+        registration.addRecipes(MushroomMutationCategory.TYPE, this.getRecipes(recipeMap, RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get())
+                        .stream().map(holder -> MushroomMutation.from(holder.value())).toList());
     }
 
     @Override

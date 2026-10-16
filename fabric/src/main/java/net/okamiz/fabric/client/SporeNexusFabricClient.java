@@ -23,6 +23,7 @@ public final class SporeNexusFabricClient implements ClientModInitializer {
     private void registerJEIRecipeTypes() {
         RecipeSynchronization.synchronizeRecipeSerializer(RecipesRegistry.MYCELIAN_CORE_RECIPE_SERIALIZER.get());
         RecipeSynchronization.synchronizeRecipeSerializer(RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_SERIALIZER.get());
+        RecipeSynchronization.synchronizeRecipeSerializer(RecipesRegistry.MUSHROOM_MUTATION_RECIPE_SERIALIZER.get());
     }
 
     private void registerScreens() {

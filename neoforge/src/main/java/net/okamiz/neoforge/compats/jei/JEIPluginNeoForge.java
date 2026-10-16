@@ -14,6 +14,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RecipesReceivedEvent;
 import net.neoforged.neoforge.event.OnDatapackSyncEvent;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.compats.jei.MushroomMutation;
+import net.okamiz.common.compats.jei.category.MushroomMutationCategory;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.modded_registries.MenusRegistry;
 import net.okamiz.common.modded_registries.RecipesRegistry;
@@ -49,6 +51,7 @@ public class JEIPluginNeoForge implements IModPlugin {
         registration.addRecipeCategories(new MycelianCoreRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new SporeNexusCraftRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new MushroomHarvestCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new MushroomMutationCategory(registration.getJeiHelpers().getGuiHelper()));
 
     }
 
@@ -58,6 +61,8 @@ public class JEIPluginNeoForge implements IModPlugin {
         registration.addRecipes(SPORE_NEXUS_CRAFT, this.getRecipes(syncedRecipes, RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()));
         registration.addRecipes(MushroomHarvestCategory.TYPE, BuiltInRegistries.BLOCK.stream().filter(b -> b instanceof ResourceMushroomBlock)
                 .map(b -> new MushroomHarvest(b, ((ResourceMushroomBlock) b).getHarvestDrops())).toList());
+        registration.addRecipes(MushroomMutationCategory.TYPE, this.getRecipes(syncedRecipes, RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get())
+                        .stream().map(h -> MushroomMutation.from(h.value())).toList());
     }
 
     @Override
@@ -91,7 +96,8 @@ public class JEIPluginNeoForge implements IModPlugin {
         public static void onDatapackSync(OnDatapackSyncEvent event) {
             event.sendRecipes(
                     RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get(),
-                    RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()
+                    RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get(),
+                    RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get()
             );
         }
     }
