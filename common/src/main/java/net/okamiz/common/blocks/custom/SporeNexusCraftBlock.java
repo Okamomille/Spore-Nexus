@@ -20,6 +20,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
 import org.jspecify.annotations.Nullable;
@@ -64,13 +65,12 @@ public class SporeNexusCraftBlock extends BaseEntityBlock {
 
 
     @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
-        if (blockEntity instanceof SporeNexusCraftBlockEntity sporeNexusCraftBlockEntity) {
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+        if (level.getBlockEntity(pos) instanceof SporeNexusCraftBlockEntity sporeNexusCraftBlockEntity) {
             sporeNexusCraftBlockEntity.drops();
         }
-        super.playerDestroy(level, player, pos, state, blockEntity, destroyedWith);
+        return super.playerWillDestroy(level, pos, state, player);
     }
-
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {

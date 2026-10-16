@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.okamiz.common.blocks.entity.custom.MushroomHarvesterBlockEntity;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
@@ -132,14 +133,15 @@ public class MycelianCoreBlock extends BaseEntityBlock {
         }
     }
 
+
+
     @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
-        if (blockEntity instanceof MycelianCoreBlockEntity mycelianCoreBlockEntity) {
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+        if (level.getBlockEntity(pos) instanceof MycelianCoreBlockEntity mycelianCoreBlockEntity) {
             mycelianCoreBlockEntity.drops();
         }
         removeProxyBlock(level, pos);
-
-        super.playerDestroy(level, player, pos, state, blockEntity, destroyedWith);
+        return super.playerWillDestroy(level, pos, state, player);
     }
 
 
