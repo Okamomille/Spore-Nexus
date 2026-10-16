@@ -77,18 +77,12 @@ public class MycelianCoreBlock extends BaseEntityBlock {
         if (!level.isClientSide()) {
             BlockPos proxyPos = pos.above();
 
-            System.out.println("========== MYCELIAN CORE ==========");
-            System.out.println("CORE  : " + pos);
-            System.out.println("PROXY : " + proxyPos);
-            System.out.println("BLOCK AT PROXY BEFORE : " + level.getBlockState(proxyPos));
-
             level.setBlock(proxyPos,
                     BlocksRegistry.MYCELIAN_CORE_PROXY.get()
                             .defaultBlockState()
                             .setValue(MycelianCoreProxy.FACING, state.getValue(FACING)),
                     3);
 
-            System.out.println("BLOCK AT PROXY AFTER  : " + level.getBlockState(proxyPos));
         }
     }
 
