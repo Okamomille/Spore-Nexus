@@ -128,9 +128,10 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
 
 
     public void drops() {
-        if (this.level != null) {
-            updateBlock();
+        if (this.level != null && !level.isClientSide()) {
             Containers.dropContents(this.level, this.worldPosition, inventory);
+            inventory.clearContent();
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
         }
     }
 

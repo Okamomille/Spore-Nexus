@@ -130,6 +130,7 @@ public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider
     public void drops() {
         if (this.level != null && !level.isClientSide()) {
             Containers.dropContents(this.level, this.worldPosition, inventory);
+            inventory.clearContent();
             level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
         }
     }
