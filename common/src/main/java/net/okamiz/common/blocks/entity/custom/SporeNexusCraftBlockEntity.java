@@ -114,6 +114,11 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
     }
 
     @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        return saveWithoutMetadata(registries);
+    }
+
+    @Override
     protected void loadAdditional(ValueInput input) {
         super.loadAdditional(input);
         progress = input.getIntOr("spore_nexus_craft:progress", 0);
