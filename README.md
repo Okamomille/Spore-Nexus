@@ -27,12 +27,12 @@ let them mutate into new ones, and build machines to harvest and process everyth
 You can add resource mushrooms (block, fragments, textures, names, recipes and mutations)
 just by editing `config/sporenexus/custom_mushrooms.json`.
 
-See the guide: **[Custom mushrooms (dev wiki)](LINK_TO_DEV_WIKI)**.
+See the guide: **[Custom mushrooms (dev wiki)](https://github.com/Okamomille/Spore-Nexus/wiki/Modpack-&-custom-integration)**.
 
 ## Links
 
 - [Wiki](https://github.com/Okamomille/Spore-Nexus/wiki)
 - [Modpack authors guide](https://github.com/Okamomille/Spore-Nexus/wiki/Modpack-&-custom-integration)
-- [Issues and suggestions](https://github.com/Okamomille/Spore-Nexus-new/issues)
+- [Issues and suggestions](https://github.com/Okamomille/Spore-Nexus/issues)
 - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/spore-nexus) 
 - [Modrinth](https://modrinth.com/mod/spore-nexus)
