@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_end_stone_fragments": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sporenexus:end_stone_fragments"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sporenexus:end_stone_from_fragments"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_end_stone_fragments"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sporenexus:end_stone_from_fragments"
+    ]
+  }
+}

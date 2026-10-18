@@ -114,6 +114,7 @@ public class ItemsRegistry {
 
     public static final List<FragmentType> FRAGMENT_TYPES = List.of(
             /* ORES */
+            new FragmentType("flint",         () -> Items.FLINT,                          1),
             new FragmentType("coal",         () -> Items.COAL,                          1),
             new FragmentType("copper",       () -> Items.COPPER_INGOT,                  1),
             new FragmentType("diamond",      () -> Items.DIAMOND,                       1),
@@ -141,7 +142,16 @@ public class ItemsRegistry {
             new FragmentType("blackstone",     () -> Items.BLACKSTONE,                      2),
             new FragmentType("netherrack",     () -> Items.NETHERRACK,                      2),
             new FragmentType("soul_sand",     () -> Items.SOUL_SAND,                      2),
-            new FragmentType("glowstone",     () -> Items.GLOWSTONE,                      2)
+            new FragmentType("glowstone",     () -> Items.GLOWSTONE,                      2),
+            new FragmentType("deepslate",     () -> Items.DEEPSLATE,                      2),
+            new FragmentType("tuff",     () -> Items.TUFF,                      2),
+            new FragmentType("magma",     () -> Items.MAGMA_BLOCK,                      2),
+            new FragmentType("calcite",     () -> Items.CALCITE,                      2),
+            new FragmentType("basalt",     () -> Items.BASALT,                      2),
+            new FragmentType("obsidian",     () -> Items.OBSIDIAN,                      2),
+            new FragmentType("sculk",     () -> Items.SCULK,                      2),
+            new FragmentType("echo_shard",     () -> Items.ECHO_SHARD,                      2),
+            new FragmentType("end_stone",     () -> Items.END_STONE,                      2)
     );
 
     public static final List<CustomMushroomDefinition> CUSTOM_MUSHROOMS = acceptedCustomMushrooms();

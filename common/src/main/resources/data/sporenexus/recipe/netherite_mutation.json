@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mushroom_mutation",
+  "parent_a": "sporenexus:diamond_resource_mushroom",
+  "parent_b": "sporenexus:magma_resource_mushroom",
+  "result": {
+    "count": 1,
+    "id": "sporenexus:netherite_resource_mushroom"
+  },
+  "chance": 0.02
+}

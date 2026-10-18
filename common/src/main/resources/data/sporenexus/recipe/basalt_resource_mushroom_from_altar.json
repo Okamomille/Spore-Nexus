@@ -1,0 +1,20 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:infernal_fungus",
+  "resource_input": [
+    "minecraft:basalt",
+    "minecraft:basalt",
+    "minecraft:basalt",
+    "minecraft:basalt"
+  ],
+  "secondary_input": [
+    "sporenexus:ember_spores",
+    "minecraft:blackstone",
+    "sporenexus:ember_spores",
+    "minecraft:blackstone"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:basalt_resource_mushroom"
+  }
+}

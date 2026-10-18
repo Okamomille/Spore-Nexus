@@ -160,6 +160,7 @@ public class BlocksRegistry {
     /* RESOURCES MUSHROOMS */
     public static final List<ResourceMushroomType> BUILT_IN_RESOURCE_MUSHROOM_TYPES = List.of(
             /* ORES */
+            new ResourceMushroomType("flint",  ItemsRegistry.fragment("flint"),   ItemsRegistry.FUNGAL_ESSENCE, null, 1200),
             new ResourceMushroomType("coal",  ItemsRegistry.fragment("coal"),   ItemsRegistry.FUNGAL_ESSENCE, null, 1200),
             new ResourceMushroomType("copper",ItemsRegistry.fragment("copper"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
             new ResourceMushroomType("iron",   ItemsRegistry.fragment("iron"),   ItemsRegistry.FUNGAL_ESSENCE, null, 2600),
@@ -186,7 +187,16 @@ public class BlocksRegistry {
             new ResourceMushroomType("blackstone",ItemsRegistry.fragment("blackstone"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.INFERNAL_ESSENCE, 1800),
             new ResourceMushroomType("netherrack",ItemsRegistry.fragment("netherrack"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.INFERNAL_ESSENCE, 1800),
             new ResourceMushroomType("soul_sand",ItemsRegistry.fragment("soul_sand"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.INFERNAL_ESSENCE, 1800),
-            new ResourceMushroomType("glowstone",ItemsRegistry.fragment("glowstone"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.INFERNAL_ESSENCE, 1800)
+            new ResourceMushroomType("glowstone",ItemsRegistry.fragment("glowstone"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.INFERNAL_ESSENCE, 1800),
+            new ResourceMushroomType("deepslate",ItemsRegistry.fragment("deepslate"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("tuff",ItemsRegistry.fragment("tuff"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
+            new ResourceMushroomType("magma",ItemsRegistry.fragment("magma"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.INFERNAL_ESSENCE, 1800),
+            new ResourceMushroomType("calcite",ItemsRegistry.fragment("calcite"), ItemsRegistry.FUNGAL_ESSENCE, null, 2600),
+            new ResourceMushroomType("basalt",ItemsRegistry.fragment("basalt"), ItemsRegistry.FUNGAL_ESSENCE, null, 2600),
+            new ResourceMushroomType("obsidian",ItemsRegistry.fragment("obsidian"), ItemsRegistry.FUNGAL_ESSENCE, null, 2600),
+            new ResourceMushroomType("sculk",ItemsRegistry.fragment("sculk"), ItemsRegistry.FUNGAL_ESSENCE, null, 3200),
+            new ResourceMushroomType("echo_shard",ItemsRegistry.fragment("echo_shard"), ItemsRegistry.FUNGAL_ESSENCE, null, 4200),
+            new ResourceMushroomType("end_stone",ItemsRegistry.fragment("end_stone"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.ETHEREAL_ESSENCE, 3200)
     );
     public static final List<ResourceMushroomType> RESOURCE_MUSHROOM_TYPES = withCustomMushrooms();
 

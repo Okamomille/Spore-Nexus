@@ -1,0 +1,20 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:crystallized_fungus",
+  "resource_input": [
+    "minecraft:sculk",
+    "minecraft:sculk",
+    "minecraft:sculk",
+    "minecraft:sculk"
+  ],
+  "secondary_input": [
+    "minecraft:soul_sand",
+    "sporenexus:prismatic_dust",
+    "minecraft:soul_sand",
+    "sporenexus:prismatic_dust"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:sculk_resource_mushroom"
+  }
+}

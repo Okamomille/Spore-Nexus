@@ -1,0 +1,20 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:nexus_fungus",
+  "resource_input": [
+    "minecraft:flint",
+    "minecraft:flint",
+    "minecraft:flint",
+    "minecraft:flint"
+  ],
+  "secondary_input": [
+    "sporenexus:humus_clump",
+    "minecraft:gravel",
+    "sporenexus:humus_clump",
+    "minecraft:gravel"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:flint_resource_mushroom"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:crystallized_fungus",
+  "resource_input": [
+    "minecraft:echo_shard",
+    "minecraft:echo_shard",
+    "minecraft:echo_shard",
+    "minecraft:echo_shard"
+  ],
+  "secondary_input": [
+    "sporenexus:prismatic_dust",
+    "minecraft:amethyst_shard",
+    "sporenexus:prismatic_dust",
+    "minecraft:amethyst_shard"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:echo_shard_resource_mushroom"
+  }
+}

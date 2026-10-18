@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mushroom_mutation",
+  "parent_a": "sporenexus:stone_resource_mushroom",
+  "parent_b": "sporenexus:coal_resource_mushroom",
+  "result": {
+    "count": 1,
+    "id": "sporenexus:deepslate_resource_mushroom"
+  },
+  "chance": 0.08
+}

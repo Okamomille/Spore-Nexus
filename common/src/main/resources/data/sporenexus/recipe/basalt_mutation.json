@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mushroom_mutation",
+  "parent_a": "sporenexus:blackstone_resource_mushroom",
+  "parent_b": "sporenexus:gravel_resource_mushroom",
+  "result": {
+    "count": 1,
+    "id": "sporenexus:basalt_resource_mushroom"
+  },
+  "chance": 0.06
+}

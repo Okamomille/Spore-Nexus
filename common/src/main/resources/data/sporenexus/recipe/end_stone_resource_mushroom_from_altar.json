@@ -1,0 +1,20 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:crystallized_fungus",
+  "resource_input": [
+    "minecraft:end_stone",
+    "minecraft:end_stone",
+    "minecraft:end_stone",
+    "minecraft:end_stone"
+  ],
+  "secondary_input": [
+    "sporenexus:prismatic_dust",
+    "sporenexus:reinforced_fungal_tissue",
+    "sporenexus:prismatic_dust",
+    "sporenexus:reinforced_fungal_tissue"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:end_stone_resource_mushroom"
+  }
+}

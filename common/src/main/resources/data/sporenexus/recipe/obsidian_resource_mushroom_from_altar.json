@@ -1,0 +1,20 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:infernal_fungus",
+  "resource_input": [
+    "minecraft:obsidian",
+    "minecraft:obsidian",
+    "minecraft:obsidian",
+    "minecraft:obsidian"
+  ],
+  "secondary_input": [
+    "sporenexus:ember_spores",
+    "sporenexus:reinforced_fungal_tissue",
+    "sporenexus:ember_spores",
+    "sporenexus:reinforced_fungal_tissue"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:obsidian_resource_mushroom"
+  }
+}

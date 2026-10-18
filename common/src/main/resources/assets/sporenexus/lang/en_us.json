@@ -4,7 +4,7 @@
  "jei.sporenexus.drop_amount": "Drop amount: %s-%s",
  "jei.sporenexus.mushroom_mutation": "Mushroom Mutation",
  "jei.sporenexus.mutation_chance": "%s%% Mutation chance",
- "jei.sporenexus.mutation_conditions": "Both parents mature, free spore soil next to both, total darkness",
+ "jei.sporenexus.mutation_conditions": "Both parents mature, free spore soil next to both, < 7 light level",
 
  "config.jade.plugin_sporenexus.mushroom_growth": "Mushroom Growth",
  "jade.sporenexus.mature": "Ready to harvest",
@@ -78,6 +78,7 @@
   "item.sporenexus.ethereal_essence": "Ethereal Essence",
 
 
+  "item.sporenexus.flint_fragments": "Flint Fragments",
   "item.sporenexus.coal_fragments": "Coal Fragments",
   "item.sporenexus.copper_fragments": "Copper Fragments",
   "item.sporenexus.diamond_fragments": "Diamond Fragments",
@@ -103,6 +104,15 @@
   "item.sporenexus.ice_fragments": "Ice Fragments",
   "item.sporenexus.gravel_fragments": "Gravel Fragments",
   "item.sporenexus.glowstone_fragments": "Glowstone Fragments",
+  "item.sporenexus.deepslate_fragments": "Deepslate Fragments",
+  "item.sporenexus.tuff_fragments": "Tuff Fragments",
+  "item.sporenexus.magma_fragments": "Magma Fragments",
+  "item.sporenexus.calcite_fragments": "Calcite Fragments",
+  "item.sporenexus.basalt_fragments": "Basalt Fragments",
+  "item.sporenexus.obsidian_fragments": "Obsidian Fragments",
+  "item.sporenexus.sculk_fragments": "Sculk Fragments",
+  "item.sporenexus.echo_shard_fragments": "Echo Shard Fragments",
+  "item.sporenexus.end_stone_fragments": "End Stone Fragments",
 
 
 
@@ -142,6 +152,7 @@
   "block.sporenexus.eternal_light_mushroom": "Eternal Light Mushroom",
 
 
+  "block.sporenexus.flint_resource_mushroom": "Flint Resource Mushroom",
   "block.sporenexus.coal_resource_mushroom": "Coal Resource Mushroom",
   "block.sporenexus.copper_resource_mushroom": "Copper Resource Mushroom",
   "block.sporenexus.diamond_resource_mushroom": "Diamond Resource Mushroom",
@@ -166,7 +177,15 @@
  "block.sporenexus.ice_resource_mushroom": "Ice Resource Mushroom",
  "block.sporenexus.gravel_resource_mushroom": "Gravel Resource Mushroom",
  "block.sporenexus.glowstone_resource_mushroom": "Glowstone Resource Mushroom",
-
+ "block.sporenexus.deepslate_resource_mushroom": "Deepslate Resource Mushroom",
+ "block.sporenexus.tuff_resource_mushroom": "Tuff Resource Mushroom",
+ "block.sporenexus.magma_resource_mushroom": "Magma Resource Mushroom",
+ "block.sporenexus.calcite_resource_mushroom": "Calcite Resource Mushroom",
+ "block.sporenexus.basalt_resource_mushroom": "Basalt Resource Mushroom",
+ "block.sporenexus.obsidian_resource_mushroom": "Obsidian Resource Mushroom",
+ "block.sporenexus.sculk_resource_mushroom": "Sculk Resource Mushroom",
+ "block.sporenexus.echo_shard_resource_mushroom": "Echo Shard Resource Mushroom",
+ "block.sporenexus.end_stone_resource_mushroom": "End Stone Resource Mushroom",
 
 
 

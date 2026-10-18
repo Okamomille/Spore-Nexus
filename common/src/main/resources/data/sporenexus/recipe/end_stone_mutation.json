@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mushroom_mutation",
+  "parent_a": "sporenexus:obsidian_resource_mushroom",
+  "parent_b": "sporenexus:sand_resource_mushroom",
+  "result": {
+    "count": 1,
+    "id": "sporenexus:end_stone_resource_mushroom"
+  },
+  "chance": 0.03
+}

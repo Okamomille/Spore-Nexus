@@ -1,0 +1,20 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:mineral_fungus",
+  "resource_input": [
+    "minecraft:calcite",
+    "minecraft:calcite",
+    "minecraft:calcite",
+    "minecraft:calcite"
+  ],
+  "secondary_input": [
+    "sporenexus:mineral_quartz",
+    "minecraft:bone_meal",
+    "sporenexus:mineral_quartz",
+    "minecraft:bone_meal"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:calcite_resource_mushroom"
+  }
+}

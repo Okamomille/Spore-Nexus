@@ -1,0 +1,10 @@
+{
+  "type": "sporenexus:mushroom_mutation",
+  "parent_a": "sporenexus:sculk_resource_mushroom",
+  "parent_b": "sporenexus:amethyst_resource_mushroom",
+  "result": {
+    "count": 1,
+    "id": "sporenexus:echo_shard_resource_mushroom"
+  },
+  "chance": 0.03
+}

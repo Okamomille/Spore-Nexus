@@ -1,0 +1,20 @@
+{
+  "type": "sporenexus:spore_nexus_craft",
+  "mushroom_input": "sporenexus:mineral_fungus",
+  "resource_input": [
+    "minecraft:deepslate",
+    "minecraft:deepslate",
+    "minecraft:deepslate",
+    "minecraft:deepslate"
+  ],
+  "secondary_input": [
+    "minecraft:coal",
+    "sporenexus:reinforced_fungal_tissue",
+    "minecraft:coal",
+    "sporenexus:reinforced_fungal_tissue"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sporenexus:deepslate_resource_mushroom"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flint_fragments": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sporenexus:flint_fragments"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sporenexus:flint_from_fragments"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flint_fragments"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sporenexus:flint_from_fragments"
+    ]
+  }
+}
