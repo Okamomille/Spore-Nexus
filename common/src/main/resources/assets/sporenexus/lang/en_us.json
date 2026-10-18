@@ -24,6 +24,12 @@
  "jade.sporenexus.accelerator_overridden": "Inactive: Another accelerator is already active here",
  "config.jade.plugin_sporenexus.growth_accelerator": "Growth accelerator",
 
+ "jade.sporenexus.harvester_range": "Range: %sx%sx%s",
+ "jade.sporenexus.harvester_storage": "Storage: %s/%s",
+ "jade.sporenexus.harvester_full": "Inventory full: harvesting paused",
+ "jade.sporenexus.harvester_next_scan": "Next scan in %ss",
+ "config.jade.plugin_sporenexus.mushroom_harvester": "Mushroom harvester",
+
 
  "tab.sporenexus": "Spore Nexus",
  "tab.fragments": "Spore Nexus: Fragments",

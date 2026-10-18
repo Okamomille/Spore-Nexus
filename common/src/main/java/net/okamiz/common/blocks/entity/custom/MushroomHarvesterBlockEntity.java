@@ -42,6 +42,18 @@ public class MushroomHarvesterBlockEntity extends BlockEntity implements MenuPro
         super(BlockEntitiesRegistry.MUSHROOM_HARVESTER_BE.get(), pos, state);
     }
 
+    public int getCooldown() {
+        return cooldown;
+    }
+
+    public int getUsedSlots() {
+        int used = 0;
+        for (int i = 0; i < inventory.getContainerSize(); i++) {
+            if (!inventory.getItem(i).isEmpty()) used++;
+        }
+        return used;
+    }
+
     @Override
     public Component getDisplayName() {
         return Component.translatable("block.sporenexus.mushroom_harvester");
