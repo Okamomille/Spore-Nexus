@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -157,10 +158,19 @@ public class ResourceMushroomBlock extends CropBlock {
         for (HarvestDrop drop : getHarvestDrops()) {
             if (random.nextInt(100) < drop.chancePercent()) {
                 int count = drop.min() + random.nextInt(drop.max() - drop.min() + 1);
-                result.add(new ItemStack(drop.item().get(), count));
+                ItemStack stack = new ItemStack(drop.item().get(), count);
+                if (!stack.isEmpty()) {
+                    result.add(stack);
+                }
             }
         }
         return result;
+    }
+
+    @Override
+    protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+        List<ItemStack> drops = super.getDrops(state, params);
+        return drops.isEmpty() ? List.of(new ItemStack(this)) : drops;
     }
 
     @Override
@@ -211,7 +221,7 @@ public class ResourceMushroomBlock extends CropBlock {
         MutationInfo best = MutationInfo.NONE;
         for (BlockPos other : BlockPos.betweenClosed(pos.offset(-MUTATION_RADIUS, 0, -MUTATION_RADIUS),
                 pos.offset(MUTATION_RADIUS, 0, MUTATION_RADIUS))) {
-            if (other.equals(pos) || !level.hasChunkAt(other)) {
+            if (other.equals(pos) || !level.hasChunk(other.getX(), other.getZ())) {
                 continue;
             }
             if (!(level.getBlockState(other).getBlock() instanceof ResourceMushroomBlock otherMushroom)) {
@@ -297,7 +307,7 @@ public class ResourceMushroomBlock extends CropBlock {
             if (!level.getBlockState(q.below()).is(TagsRegistry.SPORE_SOILS)){
                 continue;
             }
-            if (checkLight && level.getRawBrightness(q, 0) > 1) {
+            if (checkLight && level.getRawBrightness(q, 0) > 7) {
                 continue;
             }
             return q.immutable();

@@ -3,6 +3,7 @@ package net.okamiz.common.modded_registries;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.DeferredSupplier;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
@@ -10,14 +11,18 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.blocks.TooltipBlockItem;
 import net.okamiz.common.blocks.custom.*;
+import net.okamiz.common.records.CustomMushroomDefinition;
 import net.okamiz.common.records.ResourceMushroomType;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -153,7 +158,7 @@ public class BlocksRegistry {
 
 
     /* RESOURCES MUSHROOMS */
-    public static final List<ResourceMushroomType> RESOURCE_MUSHROOM_TYPES = List.of(
+    public static final List<ResourceMushroomType> BUILT_IN_RESOURCE_MUSHROOM_TYPES = List.of(
             /* ORES */
             new ResourceMushroomType("coal",  ItemsRegistry.fragment("coal"),   ItemsRegistry.FUNGAL_ESSENCE, null, 1200),
             new ResourceMushroomType("copper",ItemsRegistry.fragment("copper"), ItemsRegistry.FUNGAL_ESSENCE, null, 1800),
@@ -183,6 +188,26 @@ public class BlocksRegistry {
             new ResourceMushroomType("soul_sand",ItemsRegistry.fragment("soul_sand"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.INFERNAL_ESSENCE, 1800),
             new ResourceMushroomType("glowstone",ItemsRegistry.fragment("glowstone"), ItemsRegistry.FUNGAL_ESSENCE, ItemsRegistry.INFERNAL_ESSENCE, 1800)
     );
+    public static final List<ResourceMushroomType> RESOURCE_MUSHROOM_TYPES = withCustomMushrooms();
+
+    private static List<ResourceMushroomType> withCustomMushrooms() {
+        List<ResourceMushroomType> all = new ArrayList<>(BUILT_IN_RESOURCE_MUSHROOM_TYPES);
+        for (CustomMushroomDefinition def : ItemsRegistry.CUSTOM_MUSHROOMS) {
+            all.add(new ResourceMushroomType(def.id(), ItemsRegistry.fragment(def.id()),
+                    def.essence() != null ? lazyItem(def.essence()) : (Supplier<Item>) ItemsRegistry.FUNGAL_ESSENCE, lazyItem(def.extraDrop()), def.growthTicks()));
+        }
+        return all;
+    }
+
+    private static @Nullable Supplier<Item> lazyItem(@Nullable Identifier id) {
+        if (id == null) {
+            return null;
+        }
+        return () -> BuiltInRegistries.ITEM.getOptional(id).orElseGet(() -> {
+            SporeNexus.LOGGER.error("Custom mushroom refers to unknown item '{}'", id);
+            return Items.AIR;
+        });
+    }
 
 
 
@@ -235,4 +260,5 @@ public class BlocksRegistry {
         }
         return map;
     }
+
 }

@@ -7,13 +7,14 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.okamiz.SporeNexus;
+import net.okamiz.common.config.CustomMushroomLoader;
+import net.okamiz.common.records.CustomMushroomDefinition;
 import net.okamiz.common.records.FragmentType;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class ItemsRegistry {
 
@@ -143,6 +144,21 @@ public class ItemsRegistry {
             new FragmentType("glowstone",     () -> Items.GLOWSTONE,                      2)
     );
 
+    public static final List<CustomMushroomDefinition> CUSTOM_MUSHROOMS = acceptedCustomMushrooms();
+
+    private static List<CustomMushroomDefinition> acceptedCustomMushrooms() {
+        Set<String> builtIn = FRAGMENT_TYPES.stream().map(FragmentType::name).collect(Collectors.toSet());
+        List<CustomMushroomDefinition> accepted = new ArrayList<>();
+        for (CustomMushroomDefinition def : CustomMushroomLoader.load()) {
+            if (builtIn.contains(def.id())) {
+                SporeNexus.LOGGER.error("Custom mushroom '{}' clashes with a built-in one, ignoring it", def.id());
+                continue;
+            }
+            accepted.add(def);
+        }
+        return accepted;
+    }
+
 
     public static Identifier id(String name) {
         return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, name);
@@ -166,6 +182,11 @@ public class ItemsRegistry {
         for (FragmentType type : FRAGMENT_TYPES) {
             map.put(type.name(), registerItem(type.itemName(), Item::new, () -> new Item.Properties().arch$tab(CreativeTabsRegistry.FRAGMENTS_TAB)));
         }
+
+        for (CustomMushroomDefinition def : CUSTOM_MUSHROOMS) {
+            map.put(def.id(), registerItem(def.fragmentName(), Item::new, () -> new Item.Properties().arch$tab(CreativeTabsRegistry.FRAGMENTS_TAB)));
+        }
+
         return map;
     }
 
@@ -176,4 +197,8 @@ public class ItemsRegistry {
         }
         return fragment;
     }
+
+
+
+
 }
