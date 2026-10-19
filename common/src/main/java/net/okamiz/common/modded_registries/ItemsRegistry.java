@@ -123,7 +123,7 @@ public class ItemsRegistry {
             new FragmentType("gold",         () -> Items.GOLD_INGOT,                    1),
             new FragmentType("iron",         () -> Items.IRON_INGOT,                    1),
             new FragmentType("lapis_lazuli", () -> Items.LAPIS_LAZULI,                  4),
-            new FragmentType("netherite",    () -> Items.NETHERITE_INGOT,               1),
+            new FragmentType("netherite",    () -> Items.NETHERITE_SCRAP,               1),
             new FragmentType("quartz",       () -> Items.QUARTZ,                        1),
             new FragmentType("redstone",     () -> Items.REDSTONE,                      4),
             new FragmentType("amethyst",     () -> Items.AMETHYST_SHARD,                      4),

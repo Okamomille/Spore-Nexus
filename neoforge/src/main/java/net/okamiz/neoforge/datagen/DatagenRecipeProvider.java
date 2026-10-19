@@ -106,6 +106,15 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("essence")
                 .save(output);
 
+        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_LIGHT.get())
+                .pattern(" X ")
+                .pattern("XEX")
+                .pattern(" X ")
+                .define('E', Blocks.SHROOMLIGHT)
+                .define('X', ItemsRegistry.FUNGAL_ESSENCE.get())
+                .unlockedBy("has_fungal_essence", has(ItemsRegistry.FUNGAL_ESSENCE.get()))
+                .save(output);
+
 
         shaped(RecipeCategory.MISC, BlocksRegistry.MUSHROOM_HARVESTER.get())
                 .pattern("XXX")

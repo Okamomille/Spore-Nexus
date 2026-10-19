@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "E": "minecraft:shroomlight",
+    "X": "sporenexus:fungal_essence"
+  },
+  "pattern": [
+    " X ",
+    "XEX",
+    " X "
+  ],
+  "result": {
+    "id": "sporenexus:fungal_light"
+  }
+}
