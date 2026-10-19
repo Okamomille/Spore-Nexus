@@ -56,6 +56,10 @@ public record MushroomMutationRecipe(Ingredient parentA, Ingredient parentB, Ite
     @Override public RecipeType<? extends Recipe<MushroomMutationRecipeInput>> getType() {
         return RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get();
     }
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
 
     @Override public PlacementInfo placementInfo() { return PlacementInfo.NOT_PLACEABLE; }
     @Override public RecipeBookCategory recipeBookCategory() { return RecipeBookCategories.CRAFTING_MISC; }

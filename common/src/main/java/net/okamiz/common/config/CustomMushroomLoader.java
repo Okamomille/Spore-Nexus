@@ -9,6 +9,7 @@ import net.minecraft.resources.Identifier;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.records.AltarDefinition;
 import net.okamiz.common.records.CustomMushroomDefinition;
+import net.okamiz.common.records.IngredientRef;
 import net.okamiz.common.records.MutationDefinition;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,6 +39,10 @@ public final class CustomMushroomLoader {
     }
 
     private static List<CustomMushroomDefinition> read() {
+        if (Boolean.getBoolean("sporenexus.datagen")) {
+            SporeNexus.LOGGER.info("Datagen run: custom mushrooms from the config are ignored");
+            return List.of();
+        }
         Path file = Platform.getConfigFolder().resolve("sporenexus").resolve("custom_mushrooms.json");
         try {
             if (Files.notExists(file)) {
@@ -115,9 +120,9 @@ public final class CustomMushroomLoader {
         AltarDefinition altar = null;
         if (json.has("altar") && json.get("altar").isJsonObject()) {
             JsonObject a = json.getAsJsonObject("altar");
-            Identifier mushroom = identifier(a, "mushroom_input");
-            List<Identifier> resources = identifierList(a, "resource_input");
-            List<Identifier> secondary = identifierList(a, "secondary_input");
+            IngredientRef mushroom = ingredient(a, "mushroom_input");
+            List<IngredientRef> resources = ingredientList(a, "resource_input");
+            List<IngredientRef> secondary = ingredientList(a, "secondary_input");
             if (mushroom == null || resources == null || secondary == null) {
                 SporeNexus.LOGGER.error("Custom mushroom '{}': invalid 'altar' section (needs mushroom_input, "
                         + "resource_input and secondary_input; each is either one item or a list of 1 or 4 items), altar recipe ignored", id);
@@ -168,14 +173,14 @@ public final class CustomMushroomLoader {
         return Identifier.tryParse(SporeNexus.MOD_ID + ":" + value + "_resource_mushroom");
     }
 
-    private static @Nullable List<Identifier> identifierList(JsonObject json, String key) {
+    private static @Nullable List<IngredientRef> ingredientList(JsonObject json, String key) {
         if (!json.has(key)) {
             return null;
         }
         JsonElement element = json.get(key);
-        List<Identifier> list = new ArrayList<>();
+        List<IngredientRef> list = new ArrayList<>();
         if (element.isJsonPrimitive()) {
-            Identifier single = Identifier.tryParse(element.getAsString());
+            IngredientRef single = IngredientRef.parse(element.getAsString());
             if (single == null) {
                 return null;
             }
@@ -188,7 +193,10 @@ public final class CustomMushroomLoader {
                 return null;
             }
             for (JsonElement item : array) {
-                Identifier parsed = Identifier.tryParse(item.getAsString());
+                if (!item.isJsonPrimitive()) {
+                    return null;
+                }
+                IngredientRef parsed = IngredientRef.parse(item.getAsString());
                 if (parsed == null) {
                     return null;
                 }
@@ -200,6 +208,11 @@ public final class CustomMushroomLoader {
             return list;
         }
         return null;
+    }
+
+    private static @Nullable IngredientRef ingredient(JsonObject json, String key) {
+        if (!json.has(key) || !json.get(key).isJsonPrimitive()) return null;
+        return IngredientRef.parse(json.get(key).getAsString());
     }
 
     private static @Nullable Identifier identifier(JsonObject json, String key) {

@@ -1,4 +1,4 @@
-// 26.2	2026-10-18T14:21:28.8813022	Loot Tables
+// 26.2	2026-10-19T11:35:41.1872387	Loot Tables
 6b52055266fda8b3e9406600736047dca3c467a5 data/sporenexus/loot_table/blocks/amethyst_resource_mushroom.json
 e8c6a26403177575adcac682b43fb5c1790168d5 data/sporenexus/loot_table/blocks/banded_agaric.json
 43f377f77b9dd989581c4caa4f44bcd6c4ff06f5 data/sporenexus/loot_table/blocks/banded_agaric_block.json
@@ -30,7 +30,6 @@ f163b315f9217cdcb722bcf5a6f7ce77a47665b1 data/sporenexus/loot_table/blocks/funga
 04a4d168d4d20162a03bb0b6d930126e4830cc11 data/sporenexus/loot_table/blocks/fungal_harvester.json
 b49fd1112c440a4666193db7030286dd50f994ff data/sporenexus/loot_table/blocks/fungal_light.json
 ba2e3414c64c0c39656aea428751710ef943e48b data/sporenexus/loot_table/blocks/fungal_mycelium.json
-850d64bc585c853e391493849acd06f9b4b9dcb0 data/sporenexus/loot_table/blocks/glass_resource_mushroom.json
 d5fd3b2d1e8ea48eb383c8283edbd7e5d17be938 data/sporenexus/loot_table/blocks/glowstone_resource_mushroom.json
 aba65818b9172ecfd8bf07b7930e104ef861b738 data/sporenexus/loot_table/blocks/gold_resource_mushroom.json
 7799bd97815e3af9532b8715e1037a55f075c678 data/sporenexus/loot_table/blocks/gravel_resource_mushroom.json
@@ -55,5 +54,4 @@ d4699069710aa3c391d1d9b51dd02117512593a3 data/sporenexus/loot_table/blocks/sand_
 1d5986c0378bd7f6c3ef71a4fdf3f002153a76f2 data/sporenexus/loot_table/blocks/soul_sand_resource_mushroom.json
 cad0440dbf075cb954b089b335b5fc8e3ab031f6 data/sporenexus/loot_table/blocks/spore_nexus_craft_block.json
 c2394da5d8467d68765e155923566371bd236619 data/sporenexus/loot_table/blocks/stone_resource_mushroom.json
-30a38daead1f991d0ccf0cb20558af77f1ef201d data/sporenexus/loot_table/blocks/tin_resource_mushroom.json
 642f0415b7c867ae588fc512e6574aa45ba32bf4 data/sporenexus/loot_table/blocks/tuff_resource_mushroom.json

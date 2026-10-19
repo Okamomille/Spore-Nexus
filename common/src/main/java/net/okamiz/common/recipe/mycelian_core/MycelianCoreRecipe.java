@@ -101,6 +101,10 @@ public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substr
     public RecipeType<? extends Recipe<MycelianCoreRecipeInput>> getType() {
         return RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get();
     }
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
 
     @Override
     public PlacementInfo placementInfo() {

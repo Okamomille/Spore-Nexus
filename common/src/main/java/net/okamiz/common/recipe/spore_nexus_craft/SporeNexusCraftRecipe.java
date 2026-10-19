@@ -109,6 +109,10 @@ public record SporeNexusCraftRecipe(Ingredient mushroomInputItem, List<Ingredien
     public RecipeType<? extends Recipe<SporeNexusCraftRecipeInput>> getType() {
         return RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get();
     }
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
 
     @Override
     public PlacementInfo placementInfo() {

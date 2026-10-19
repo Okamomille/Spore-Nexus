@@ -1,8 +1,0 @@
-{
-  "parent": "sporenexus:block/template/mushroom_stage_1",
-  "textures": {
-    "cap": "sporenexus:block/mushroom/tin_cap",
-    "particle": "sporenexus:block/mushroom/stem",
-    "stem": "sporenexus:block/mushroom/stem"
-  }
-}

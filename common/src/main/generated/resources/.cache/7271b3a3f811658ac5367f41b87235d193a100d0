@@ -1,6 +1,6 @@
-// 26.2	2026-10-18T14:21:28.8803386	Tags for minecraft:block mod id sporenexus
+// 26.2	2026-10-19T11:35:41.1872387	Tags for minecraft:block mod id sporenexus
 f0c511780dfcd8ca0d636cb3131dae5477937323 data/minecraft/tags/block/mineable/axe.json
-a2b363231ec733fd72fa4e0808941c0ba0175ec7 data/minecraft/tags/block/mineable/hoe.json
+1f880fdbc239682ee98fd2ae6ade673be9b15a67 data/minecraft/tags/block/mineable/hoe.json
 51080aacb4ccc5c501fd853e09d28f00c6925def data/minecraft/tags/block/mineable/pickaxe.json
 1185c099ac2835c56f9c117b7e064e4def08bcb7 data/minecraft/tags/block/mineable/shovel.json
 1185c099ac2835c56f9c117b7e064e4def08bcb7 data/minecraft/tags/block/overrides_mushroom_light_requirement.json

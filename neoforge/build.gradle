@@ -15,6 +15,7 @@ loom {
     runs {
         data {
             clientData()
+            property 'sporenexus.datagen', 'true'
 
             programArguments.addAll '--mod', "sporenexus",
                 '--all',

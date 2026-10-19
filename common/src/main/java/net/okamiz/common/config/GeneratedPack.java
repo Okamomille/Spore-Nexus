@@ -6,6 +6,7 @@ import net.okamiz.SporeNexus;
 import net.okamiz.common.modded_registries.ItemsRegistry;
 import net.okamiz.common.records.AltarDefinition;
 import net.okamiz.common.records.CustomMushroomDefinition;
+import net.okamiz.common.records.IngredientRef;
 import net.okamiz.common.records.MutationDefinition;
 
 import javax.imageio.ImageIO;
@@ -107,8 +108,8 @@ public final class GeneratedPack {
         }
     }
 
-    private static String jsonList(List<Identifier> ids) {
-        return ids.stream().map(id -> "\"" + id + "\"").collect(java.util.stream.Collectors.joining(", ", "[", "]"));
+    private static String jsonList(List<IngredientRef> refs) {
+        return refs.stream().map(ref -> "\"" + ref + "\"").collect(java.util.stream.Collectors.joining(", ", "[", "]"));
     }
 
     private static void generateMushroomAssets(Path resources, CustomMushroomDefinition def) throws IOException {
