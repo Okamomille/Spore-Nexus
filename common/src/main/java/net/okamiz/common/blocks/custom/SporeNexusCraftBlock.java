@@ -1,6 +1,5 @@
 package net.okamiz.common.blocks.custom;
 
-import com.mojang.serialization.MapCodec;
 import dev.architectury.registry.menu.MenuRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -20,14 +19,11 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
 import org.jspecify.annotations.Nullable;
 
 public class SporeNexusCraftBlock extends BaseEntityBlock {
-
-    public static final MapCodec<SporeNexusCraftBlock> CODEC = simpleCodec(SporeNexusCraftBlock::new);
 
     public static final VoxelShape SHAPE = (VoxelShape)Shapes.or(Block.column((double)14.0F, (double)0.0F, (double)8.0F),
             new VoxelShape[]{Block.column((double)10.0F, (double)8.0F, (double)12.0F), Block.column((double)16.0F, (double)12.0F, (double)16.0F)});
@@ -44,11 +40,6 @@ public class SporeNexusCraftBlock extends BaseEntityBlock {
     @Override
     protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
     }
 
     @Override
@@ -81,7 +72,7 @@ public class SporeNexusCraftBlock extends BaseEntityBlock {
     }
 
     public static void openMenu(ServerPlayer serverPlayer, SporeNexusCraftBlockEntity core, BlockPos pos){
-        MenuRegistry.openExtendedMenu(serverPlayer, core, buffer -> buffer.writeBlockPos(pos));
+        MenuRegistry.openExtendedMenu(serverPlayer, core);
     }
 
 

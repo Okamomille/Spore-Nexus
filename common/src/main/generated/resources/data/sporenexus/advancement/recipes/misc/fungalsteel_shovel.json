@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:fungalsteel_shovel"
+        "recipes": "sporenexus:fungalsteel_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

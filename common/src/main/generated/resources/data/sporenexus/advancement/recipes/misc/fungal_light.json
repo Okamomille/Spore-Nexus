@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:fungal_light"
+        "recipes": "sporenexus:fungal_light"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

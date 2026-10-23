@@ -10,6 +10,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.VegetationBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -42,30 +43,8 @@ public class CustomMushroomBlock extends VegetationBlock implements Bonemealable
         return SHAPE;
     }
 
-    @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
-        return true;
-    }
-
-    @Override
-    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
-        return random.nextFloat() < 0.4F;
-    }
-
-    @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        List<Identifier> candidates = new ArrayList<>(giantIds);
-        Collections.shuffle(candidates, new Random(random.nextLong()));
-
-        for (Identifier id : candidates) {
-            if (tryGrow(level, random, pos, id)) {
-                return;
-            }
-        }
-    }
-
     private boolean tryGrow(ServerLevel level, RandomSource random, BlockPos pos, Identifier id) {
-        Optional<StructureTemplate> optional = level.getStructureManager().get(id);
+        Optional<StructureTemplate> optional = level.getStructureTemplateManager().get(id);
         if (optional.isEmpty()) {
             return false;
         }
@@ -85,7 +64,24 @@ public class CustomMushroomBlock extends VegetationBlock implements Bonemealable
     }
 
     @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, BonemealSource source) {
+        return true;
+    }
+
+    @Override
+    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
+        return random.nextFloat() < 0.4F;
+    }
+
+    @Override
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
+        List<Identifier> candidates = new ArrayList<>(giantIds);
+        Collections.shuffle(candidates, new Random(random.nextLong()));
+
+        for (Identifier id : candidates) {
+            if (tryGrow(level, random, pos, id)) {
+                return;
+            }
+        }
     }
 }

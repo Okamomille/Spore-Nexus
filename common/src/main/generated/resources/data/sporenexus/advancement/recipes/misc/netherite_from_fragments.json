@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:netherite_from_fragments"
+        "recipes": "sporenexus:netherite_from_fragments"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

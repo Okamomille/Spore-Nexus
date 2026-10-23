@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:fungalsteel_from_powder"
+        "recipes": "sporenexus:fungalsteel_from_powder"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

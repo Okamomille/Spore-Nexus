@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:great_fungus"
+        "recipes": "sporenexus:great_fungus"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

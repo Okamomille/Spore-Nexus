@@ -31,10 +31,6 @@ public class MycelianCoreProxy extends Block implements MultiblockProxyBlock {
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
-    @Override
-    protected @NotNull MapCodec<? extends Block> codec() {
-        return simpleCodec(MycelianCoreProxy::new);
-    }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

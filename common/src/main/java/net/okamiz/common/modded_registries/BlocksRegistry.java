@@ -85,16 +85,16 @@ public class BlocksRegistry {
     /* BLOCK ENTITIES */
 
     public static final RegistrySupplier<Block> MYCELIAN_CORE = registerBlock("mycelian_core", MycelianCoreBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.IMMOVEABLE)
                     .noOcclusion(), CreativeTabsRegistry.SPORENEXUS_TAB);
 
     public static final RegistrySupplier<Block> MYCELIAN_CORE_PROXY = registerBlock("mycelian_core_proxy", MycelianCoreProxy::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.IMMOVEABLE)
                     .noOcclusion().noLootTable(), null);
 
 
     public static final RegistrySupplier<Block> SPORE_NEXUS_CRAFT_BLOCK = registerBlock("spore_nexus_craft_block", SporeNexusCraftBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK)
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL).pushReaction(PushReaction.IMMOVEABLE)
                     .noOcclusion(), CreativeTabsRegistry.SPORENEXUS_TAB);
 
 

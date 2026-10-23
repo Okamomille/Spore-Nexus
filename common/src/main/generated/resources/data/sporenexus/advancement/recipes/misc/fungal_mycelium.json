@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:fungal_mycelium"
+        "recipes": "sporenexus:fungal_mycelium"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -1,15 +1,19 @@
 package net.okamiz.common.blocks.entity.custom;
 
+import dev.architectury.registry.menu.ExtendedMenuDataProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -34,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvider, WorldlyContainer {
+public class SporeNexusCraftBlockEntity extends BlockEntity implements ExtendedMenuDataProvider<BlockPos>, WorldlyContainer {
     private boolean recipeDirty = true;
     private Optional<RecipeHolder<SporeNexusCraftRecipe>> cachedRecipe = Optional.empty();
 
@@ -91,6 +95,18 @@ public class SporeNexusCraftBlockEntity extends BlockEntity implements MenuProvi
     @Override
     public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory inventory, Player player) {
         return new SporeNexusCraftMenu(containerId, inventory, this, this.inventory, this.data);
+    }
+
+    /* MENU EXTRA DATA (Architectury) */
+
+    @Override
+    public BlockPos getExtraData(ServerPlayer player) {
+        return this.worldPosition;
+    }
+
+    @Override
+    public StreamCodec<? super RegistryFriendlyByteBuf, BlockPos> getExtraDataCodec() {
+        return BlockPos.STREAM_CODEC;
     }
 
 

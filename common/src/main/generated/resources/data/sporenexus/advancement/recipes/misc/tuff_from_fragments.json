@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:tuff_from_fragments"
+        "recipes": "sporenexus:tuff_from_fragments"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

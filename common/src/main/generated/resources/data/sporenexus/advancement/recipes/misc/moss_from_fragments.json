@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:moss_from_fragments"
+        "recipes": "sporenexus:moss_from_fragments"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

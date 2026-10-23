@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:infernal_fungus"
+        "recipes": "sporenexus:infernal_fungus"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

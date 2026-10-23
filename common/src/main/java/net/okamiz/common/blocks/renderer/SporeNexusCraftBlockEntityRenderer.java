@@ -14,6 +14,7 @@ import net.minecraft.util.Util;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.phys.Vec3;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
+import org.joml.Matrix4fc;
 import org.jspecify.annotations.Nullable;
 
 public class SporeNexusCraftBlockEntityRenderer implements BlockEntityRenderer<SporeNexusCraftBlockEntity, SporeNexusCraftBlockEntityRenderState> {
@@ -78,7 +79,7 @@ public class SporeNexusCraftBlockEntityRenderer implements BlockEntityRenderer<S
         poseStack.pushPose();
         poseStack.translate(x, y, z);
         poseStack.scale(scale, scale, scale);
-        poseStack.mulPose(Axis.YP.rotationDegrees(yRot));
+        poseStack.mulPose((Matrix4fc) Axis.YP.rotationDegrees(yRot));
         item.submit(poseStack, collector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
         poseStack.popPose();
     }

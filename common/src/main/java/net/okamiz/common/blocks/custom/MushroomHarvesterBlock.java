@@ -1,12 +1,8 @@
 package net.okamiz.common.blocks.custom;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -20,10 +16,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class MushroomHarvesterBlock extends BaseEntityBlock {
     public static final int MAX_RADIUS = 4;
-    public static final MapCodec<MushroomHarvesterBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-            propertiesCodec(),
-            Codec.INT.fieldOf("radius").forGetter(MushroomHarvesterBlock::getRadius)
-    ).apply(instance, MushroomHarvesterBlock::new));
 
     private final int radius;
 
@@ -94,8 +86,4 @@ public class MushroomHarvesterBlock extends BaseEntityBlock {
                 (level1, pos, state1, entity) -> entity.tick(level1, pos, state1));
     }
 
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:infernal_growth_accelerator_from_previous"
+        "recipes": "sporenexus:infernal_growth_accelerator_from_previous"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

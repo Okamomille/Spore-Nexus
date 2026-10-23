@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:infernal_mycelium"
+        "recipes": "sporenexus:infernal_mycelium"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

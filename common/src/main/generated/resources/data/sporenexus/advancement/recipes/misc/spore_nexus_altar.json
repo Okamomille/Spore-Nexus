@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:spore_nexus_altar"
+        "recipes": "sporenexus:spore_nexus_altar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

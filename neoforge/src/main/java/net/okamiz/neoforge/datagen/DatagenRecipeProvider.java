@@ -1,46 +1,24 @@
 package net.okamiz.neoforge.datagen;
 
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.Blocks;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.modded_registries.ItemsRegistry;
 import net.okamiz.common.modded_registries.TagsRegistry;
 import net.okamiz.common.records.FragmentType;
 
-import java.util.concurrent.CompletableFuture;
-
 public class DatagenRecipeProvider extends RecipeProvider {
 
-    public DatagenRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
-        super(registries, output);
+
+    public DatagenRecipeProvider(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
+        super(recipeOutput, advancementOutput);
     }
-
-    public static class Runner extends RecipeProvider.Runner{
-
-        public Runner(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries) {
-            super(packOutput, registries);
-        }
-
-        @Override
-        protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
-            return new DatagenRecipeProvider(provider, recipeOutput);
-        }
-
-        @Override
-        public String getName() {
-            return "Spore Nexus Recipes";
-        }
-    }
-
-
-
-
 
     @Override
     protected void buildRecipes() {

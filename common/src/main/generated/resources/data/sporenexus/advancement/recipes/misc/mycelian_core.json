@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:mycelian_core"
+        "recipes": "sporenexus:mycelian_core"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

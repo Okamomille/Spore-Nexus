@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:fungalsteel_spear"
+        "recipes": "sporenexus:fungalsteel_spear"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

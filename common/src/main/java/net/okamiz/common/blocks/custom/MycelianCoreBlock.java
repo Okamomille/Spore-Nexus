@@ -1,6 +1,5 @@
 package net.okamiz.common.blocks.custom;
 
-import com.mojang.serialization.MapCodec;
 import dev.architectury.registry.menu.MenuRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,7 +21,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.okamiz.common.blocks.entity.custom.MushroomHarvesterBlockEntity;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
@@ -35,19 +33,12 @@ public class MycelianCoreBlock extends BaseEntityBlock {
 
     public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 
-    public static final MapCodec<MycelianCoreBlock> CODEC = simpleCodec(MycelianCoreBlock::new);
     private static final Set<BlockPos> CLEANING_UP_MAINS = new HashSet<>();
 
     public MycelianCoreBlock(Properties properties) {
         super(properties);
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
-
 
     /* FACING */
 
@@ -154,8 +145,9 @@ public class MycelianCoreBlock extends BaseEntityBlock {
     }
 
     public static void openMenu(ServerPlayer serverPlayer, MycelianCoreBlockEntity core, BlockPos pos){
-        MenuRegistry.openExtendedMenu(serverPlayer, core, buffer -> buffer.writeBlockPos(pos));
+        MenuRegistry.openExtendedMenu(serverPlayer, core);
     }
+
 
 
     @Override

@@ -1,6 +1,6 @@
 package net.okamiz.common.menus.custom;
 
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -18,8 +18,8 @@ public class SporeNexusCraftMenu extends AbstractContainerMenu {
     private final Level level;
     private final ContainerData data;
 
-    public SporeNexusCraftMenu(int containerId, Inventory inv, FriendlyByteBuf extraData){
-        this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()),
+    public SporeNexusCraftMenu(int containerId, Inventory inv, BlockPos pos){
+        this(containerId, inv, inv.player.level().getBlockEntity(pos),
                 new SimpleContainer(9), new SimpleContainerData(9));
     }
 

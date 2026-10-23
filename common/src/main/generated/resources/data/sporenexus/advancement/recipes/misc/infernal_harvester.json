@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sporenexus:infernal_harvester"
+        "recipes": "sporenexus:infernal_harvester"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
