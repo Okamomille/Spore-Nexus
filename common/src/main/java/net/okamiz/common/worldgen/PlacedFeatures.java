@@ -26,14 +26,14 @@ public class PlacedFeatures {
 
         register(context, BANDED_AGARIC_PLACED_KEY,
                 configuredFeatures.getOrThrow(ConfiguredFeatures.BANDED_AGARIC_KEY),
-                List.of(CountPlacement.of(4), InSquarePlacement.spread(),
+                List.of(CountPlacement.of(2), InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-54), VerticalAnchor.absolute(50)),
                         EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12),
                         RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
 
         register(context, ETERNAL_LIGHT_MUSHROOM_PLACED_KEY,
                 configuredFeatures.getOrThrow(ConfiguredFeatures.ETERNAL_LIGHT_MUSHROOM_KEY),
-                List.of(CountPlacement.of(6), InSquarePlacement.spread(),
+                List.of(CountPlacement.of(4), InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-54), VerticalAnchor.absolute(50)),
                         EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12),
                         RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
