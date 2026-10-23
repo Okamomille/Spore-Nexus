@@ -15,7 +15,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public final class GeneratedPack {
 
@@ -81,8 +86,10 @@ public final class GeneratedPack {
     private static void generateMushroomData(Path data, CustomMushroomDefinition def) throws IOException {
         Path recipes = data.resolve("data/sporenexus/recipe");
 
+
         write(recipes.resolve(def.id() + "_from_fragments.json"),
-                "{ \"type\": \"minecraft:crafting_shaped\", \"group\": \"fragments_to_resource\","
+                "{ " + conditions(ITEM_REGISTRY, List.of(def.fragmentResult()))
+                        + "\"type\": \"minecraft:crafting_shaped\", \"group\": \"fragments_to_resource\","
                         + " \"key\": { \"X\": \"sporenexus:" + def.fragmentName() + "\" },"
                         + " \"pattern\": [\"XX\", \"XX\"],"
                         + " \"result\": { \"id\": \"" + def.fragmentResult() + "\", \"count\": " + def.fragmentCount() + " } }");
@@ -90,7 +97,8 @@ public final class GeneratedPack {
         AltarDefinition altar = def.altar();
         if (altar != null) {
             write(recipes.resolve(def.blockName() + "_from_altar.json"),
-                    "{ \"type\": \"sporenexus:spore_nexus_craft\","
+                    "{ " + conditions(ITEM_REGISTRY, altarItems(altar))
+                            + "\"type\": \"sporenexus:spore_nexus_craft\","
                             + " \"mushroom_input\": \"" + altar.mushroomInput() + "\","
                             + " \"resource_input\": " + jsonList(altar.resourceInputs()) + ","
                             + " \"secondary_input\": " + jsonList(altar.secondaryInputs()) + ","
@@ -100,12 +108,47 @@ public final class GeneratedPack {
         for (MutationDefinition mutation : def.mutations()) {
             index++;
             write(recipes.resolve(def.id() + "_mutation_" + index + ".json"),
-                    "{ \"type\": \"sporenexus:mushroom_mutation\","
+                    "{ " + conditions(BLOCK_REGISTRY, List.of(mutation.parentA(), mutation.parentB()))
+                            + "\"type\": \"sporenexus:mushroom_mutation\","
                             + " \"parent_a\": \"" + mutation.parentA() + "\","
                             + " \"parent_b\": \"" + mutation.parentB() + "\","
                             + " \"result\": { \"count\": 1, \"id\": \"sporenexus:" + def.blockName() + "\" },"
                             + " \"chance\": " + mutation.chance() + " }");
         }
+    }
+
+    private static final String ITEM_REGISTRY = "minecraft:item";
+    private static final String BLOCK_REGISTRY = "minecraft:block";
+
+
+    private static String conditions(String registry, Collection<Identifier> ids) {
+        Set<String> unique = new LinkedHashSet<>();
+        for (Identifier id : ids) {
+            if (id != null) unique.add(id.toString());
+        }
+        if (unique.isEmpty()) return "";
+
+        String neo = unique.stream()
+                .map(id -> "{ \"type\": \"neoforge:registered\", \"registry\": \"" + registry + "\", \"value\": \"" + id + "\" }")
+                .collect(Collectors.joining(", ", "[", "]"));
+        String fabricValues = unique.stream()
+                .map(id -> "\"" + id + "\"")
+                .collect(Collectors.joining(", ", "[", "]"));
+
+        return "\"neoforge:conditions\": " + neo + ", "
+                + "\"fabric:load_conditions\": [{ \"condition\": \"fabric:registry_contains\", \"registry\": \"" + registry + "\", \"values\": " + fabricValues + " }], ";
+    }
+
+    private static List<Identifier> altarItems(AltarDefinition altar) {
+        List<Identifier> items = new ArrayList<>();
+        addIfItem(items, altar.mushroomInput());
+        altar.resourceInputs().forEach(ref -> addIfItem(items, ref));
+        altar.secondaryInputs().forEach(ref -> addIfItem(items, ref));
+        return items;
+    }
+
+    private static void addIfItem(List<Identifier> out, IngredientRef ref) {
+        if (ref != null && !ref.tag()) out.add(ref.id());
     }
 
     private static String jsonList(List<IngredientRef> refs) {

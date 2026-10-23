@@ -72,7 +72,7 @@ public class MycelianCoreBlockEntityRenderer implements BlockEntityRenderer<Myce
         poseStack.pushPose();
         poseStack.translate(x, y, z);
         poseStack.scale(scale, scale, scale);
-        poseStack.mulPose((Matrix4fc) Axis.YP.rotationDegrees(yRot));
+        poseStack.rotateDegrees(Axis.YP, yRot);
         item.submit(poseStack, collector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
         poseStack.popPose();
     }
