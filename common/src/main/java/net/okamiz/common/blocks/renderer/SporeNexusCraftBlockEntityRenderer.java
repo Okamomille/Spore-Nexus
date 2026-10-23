@@ -14,7 +14,6 @@ import net.minecraft.util.Util;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.phys.Vec3;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
-import org.joml.Matrix4fc;
 import org.jspecify.annotations.Nullable;
 
 public class SporeNexusCraftBlockEntityRenderer implements BlockEntityRenderer<SporeNexusCraftBlockEntity, SporeNexusCraftBlockEntityRenderState> {
