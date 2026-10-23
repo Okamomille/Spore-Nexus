@@ -49,7 +49,7 @@ public class ItemsRegistry {
 
 
     public static final RegistrySupplier<Item> FUNGALSTEEL_HOE = registerItem("fungalsteel_hoe", Item::new,
-            () -> new Item.Properties().shovel(ToolTiersRegistry.FUNGALSTEEL, 0f, -3f)
+            () -> new Item.Properties().hoe(ToolTiersRegistry.FUNGALSTEEL, 0f, -3f)
                     .delayedComponent(DataComponents.BLOCK_TRANSFORMER, ctx -> ctx.getOrThrow(BlockTransformers.HOE))
                     .arch$tab(CreativeTabsRegistry.SPORENEXUS_TAB));
 
