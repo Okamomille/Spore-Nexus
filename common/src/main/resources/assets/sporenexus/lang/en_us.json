@@ -193,6 +193,9 @@
  "tooltip.block.sporenexus.infernal_mycelium": "x1.75 Mushroom Growth Speed",
  "tooltip.block.sporenexus.ethereal_mycelium": "x2 Mushroom Growth Speed",
 
+ "tooltip.sporenexus.hold_shift":"Press [SHIFT] for more infos.",
+ "tooltip.block.sporenexus.resource_mushroom.1": "Can only be planted on mycelium or Spore nexus soils.",
+ "tooltip.block.sporenexus.resource_mushroom.2": "Needs Light level below 11 to grow.",
  "tooltip.block.sporenexus.growth_accelerator": "x1.25 Growth speed for mushroom in a 3x3 area.",
  "tooltip.block.sporenexus.fungal_growth_accelerator": "x1.5 Growth speed for mushroom in a 5x5 area.",
  "tooltip.block.sporenexus.infernal_growth_accelerator": "x1.75 Growth speed for mushroom in a 7x7 area.",

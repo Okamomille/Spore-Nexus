@@ -38,25 +38,25 @@ public class BlocksRegistry {
 
 
 
-    public static final RegistrySupplier<Block> FERTILIZED_MYCELIUM = registerBlockWithTooltip("fertilized_mycelium",
+    public static final RegistrySupplier<Block> FERTILIZED_MYCELIUM = registerBlockWithTooltips("fertilized_mycelium",
             props -> new SporeSoilBlock(props, 1.25f),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.fertilized_mycelium", TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.fertilized_mycelium");
 
-    public static final RegistrySupplier<Block> FUNGAL_MYCELIUM = registerBlockWithTooltip("fungal_mycelium",
+    public static final RegistrySupplier<Block> FUNGAL_MYCELIUM = registerBlockWithTooltips("fungal_mycelium",
             props -> new SporeSoilBlock(props, 1.5f),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.fungal_mycelium", TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.fungal_mycelium");
 
-    public static final RegistrySupplier<Block> INFERNAL_MYCELIUM = registerBlockWithTooltip("infernal_mycelium",
+    public static final RegistrySupplier<Block> INFERNAL_MYCELIUM = registerBlockWithTooltips("infernal_mycelium",
             props -> new SporeSoilBlock(props, 1.75f),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.infernal_mycelium", TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.infernal_mycelium");
 
-    public static final RegistrySupplier<Block> ETHEREAL_MYCELIUM = registerBlockWithTooltip("ethereal_mycelium",
+    public static final RegistrySupplier<Block> ETHEREAL_MYCELIUM = registerBlockWithTooltips("ethereal_mycelium",
             props -> new SporeSoilBlock(props, 2f),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.MOSS), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.ethereal_mycelium", TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.ethereal_mycelium");
 
 
     public static final RegistrySupplier<Block> FUNGAL_LIGHT = registerBlock("fungal_light", Block::new,
@@ -99,49 +99,49 @@ public class BlocksRegistry {
 
 
 
-    public static final RegistrySupplier<Block> MUSHROOM_HARVESTER = registerBlockWithTooltip("mushroom_harvester",
+    public static final RegistrySupplier<Block> MUSHROOM_HARVESTER = registerBlockWithTooltips("mushroom_harvester",
             props -> new MushroomHarvesterBlock(props, 1),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.mushroom_harvester", TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.mushroom_harvester");
 
-    public static final RegistrySupplier<Block> FUNGAL_HARVESTER = registerBlockWithTooltip("fungal_harvester",
+    public static final RegistrySupplier<Block> FUNGAL_HARVESTER = registerBlockWithTooltips("fungal_harvester",
             props -> new MushroomHarvesterBlock(props, 2),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.fungal_harvester", TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.fungal_harvester");
 
-    public static final RegistrySupplier<Block> INFERNAL_HARVESTER = registerBlockWithTooltip("infernal_harvester",
+    public static final RegistrySupplier<Block> INFERNAL_HARVESTER = registerBlockWithTooltips("infernal_harvester",
             props -> new MushroomHarvesterBlock(props, 3),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.infernal_harvester", TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.infernal_harvester");
 
-    public static final RegistrySupplier<Block> ETHEREAL_HARVESTER = registerBlockWithTooltip("ethereal_harvester",
+    public static final RegistrySupplier<Block> ETHEREAL_HARVESTER = registerBlockWithTooltips("ethereal_harvester",
             props -> new MushroomHarvesterBlock(props, 4),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.METAL), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.ethereal_harvester", TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.ethereal_harvester");
 
 
 
     /* MACHINES */
 
-    public static final RegistrySupplier<Block> GROWTH_ACCELERATOR = registerBlockWithTooltip("growth_accelerator",
+    public static final RegistrySupplier<Block> GROWTH_ACCELERATOR = registerBlockWithTooltips("growth_accelerator",
             props -> new GrowthAcceleratorBlock(props, 1.25f, 1),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.growth_accelerator",TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.growth_accelerator");
 
-    public static final RegistrySupplier<Block> FUNGAL_GROWTH_ACCELERATOR = registerBlockWithTooltip("fungal_growth_accelerator",
+    public static final RegistrySupplier<Block> FUNGAL_GROWTH_ACCELERATOR = registerBlockWithTooltips("fungal_growth_accelerator",
             props -> new GrowthAcceleratorBlock(props, 1.5f, 2),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.fungal_growth_accelerator",TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.fungal_growth_accelerator");
 
-    public static final RegistrySupplier<Block> INFERNAL_GROWTH_ACCELERATOR = registerBlockWithTooltip("infernal_growth_accelerator",
+    public static final RegistrySupplier<Block> INFERNAL_GROWTH_ACCELERATOR = registerBlockWithTooltips("infernal_growth_accelerator",
             props -> new GrowthAcceleratorBlock(props, 1.75f, 3),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.infernal_growth_accelerator",TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.infernal_growth_accelerator");
 
-    public static final RegistrySupplier<Block> ETHEREAL_GROWTH_ACCELERATOR = registerBlockWithTooltip("ethereal_growth_accelerator",
+    public static final RegistrySupplier<Block> ETHEREAL_GROWTH_ACCELERATOR = registerBlockWithTooltips("ethereal_growth_accelerator",
             props -> new GrowthAcceleratorBlock(props, 2, 4),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), CreativeTabsRegistry.SPORENEXUS_TAB,
-            "tooltip.block.sporenexus.ethereal_growth_accelerator",TextColor.YELLOW);
+            TextColor.YELLOW, true, "tooltip.block.sporenexus.ethereal_growth_accelerator");
 
 
 
@@ -242,17 +242,15 @@ public class BlocksRegistry {
         return toReturn;
     }
 
-    public static <T extends Block> RegistrySupplier<T> registerBlockWithTooltip(String name, Function<BlockBehaviour.Properties, T> factory,
-                                                                                 Supplier<BlockBehaviour.Properties> properties, DeferredSupplier<CreativeModeTab> creativeTab,
-                                                                                 String tooltip, TextColor color) {
+    public static <T extends Block> RegistrySupplier<T> registerBlockWithTooltips(String name, Function<BlockBehaviour.Properties, T> factory,
+                                                                                  Supplier<BlockBehaviour.Properties> properties, DeferredSupplier<CreativeModeTab> creativeTab,
+                                                                                  TextColor color, boolean italic, String... tooltipKeys) {
         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id(name));
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id(name));
-        RegistrySupplier<T> toReturn = BLOCKS.register(name,
-                () -> factory.apply(properties.get().setId(blockKey)));
+        RegistrySupplier<T> toReturn = BLOCKS.register(name, () -> factory.apply(properties.get().setId(blockKey)));
 
-        ItemsRegistry.ITEMS.register(name,
-                () -> new TooltipBlockItem(toReturn.get(),
-                        new Item.Properties().setId(itemKey).arch$tab(creativeTab).useBlockDescriptionPrefix(), tooltip, color));
+        ItemsRegistry.ITEMS.register(name, () -> new TooltipBlockItem(toReturn.get(),
+                        new Item.Properties().setId(itemKey).arch$tab(creativeTab).useBlockDescriptionPrefix(), color, italic, tooltipKeys).requireShift());
 
         return toReturn;
     }
@@ -265,8 +263,10 @@ public class BlocksRegistry {
     private static Map<String, RegistrySupplier<Block>> registerResourceMushrooms() {
         Map<String, RegistrySupplier<Block>> map = new LinkedHashMap<>();
         for (ResourceMushroomType type : RESOURCE_MUSHROOM_TYPES) {
-            map.put(type.ore(), registerBlock(type.blockName(), props -> new ResourceMushroomBlock(props, type.drop(), type.essenceDrop(), type.extraDrop(),type.growthTicks()),
-                    () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.MUSHROOMS_TAB));
+            map.put(type.ore(), registerBlockWithTooltips(type.blockName(),
+                    props -> new ResourceMushroomBlock(props, type.drop(), type.essenceDrop(), type.extraDrop(), type.growthTicks()),
+                    () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).sound(SoundType.WART_BLOCK), CreativeTabsRegistry.MUSHROOMS_TAB, TextColor.GRAY, true,
+                    "tooltip.block.sporenexus.resource_mushroom.1", "tooltip.block.sporenexus.resource_mushroom.2"));
         }
         return map;
     }
