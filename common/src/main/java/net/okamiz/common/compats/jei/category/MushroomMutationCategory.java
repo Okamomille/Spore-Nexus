@@ -12,7 +12,7 @@ import mezz.jei.api.recipe.types.IRecipeType;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.okamiz.SporeNexus;
@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 public class MushroomMutationCategory implements IRecipeCategory<MushroomMutation> {
 
     public static final IRecipeType<MushroomMutation> TYPE = IRecipeType.create(
-            Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "mushroom_mutation"), MushroomMutation.class);
+            ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "mushroom_mutation"), MushroomMutation.class);
 
     private static final int WIDTH = 120;
     private static final int HEIGHT = 40;

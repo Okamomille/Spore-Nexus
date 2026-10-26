@@ -2,7 +2,7 @@ package net.okamiz.common.config;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.okamiz.SporeNexus;
@@ -48,14 +48,14 @@ public final class CustomMushroomValidator {
         }
     }
 
-    private static void checkItem(CustomMushroomDefinition def, String field, @Nullable Identifier id) {
+    private static void checkItem(CustomMushroomDefinition def, String field, @Nullable ResourceLocation id) {
         if (id != null && BuiltInRegistries.ITEM.getOptional(id).isEmpty()) {
             SporeNexus.LOGGER.error("Custom mushroom '{}': '{}' points to the item '{}' which does not exist "
                     + "(typo, or the mod is not installed?)", def.id(), field, id);
         }
     }
 
-    private static void checkBlock(CustomMushroomDefinition def, String field, Identifier id) {
+    private static void checkBlock(CustomMushroomDefinition def, String field, ResourceLocation id) {
         if (BuiltInRegistries.BLOCK.getOptional(id).isEmpty()) {
             SporeNexus.LOGGER.error("Custom mushroom '{}': '{}' points to the block '{}' which does not exist "
                     + "(typo, or the mod is not installed?)", def.id(), field, id);

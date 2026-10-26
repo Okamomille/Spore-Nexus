@@ -32,7 +32,7 @@ import net.okamiz.common.menus.custom.MycelianCoreMenu;
 import net.okamiz.common.modded_registries.TagsRegistry;
 import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipe;
 import net.okamiz.common.recipe.mycelian_core.MycelianCoreRecipeInput;
-import org.jspecify.annotations.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 

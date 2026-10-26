@@ -2,7 +2,7 @@ package net.okamiz.common.worldgen;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
@@ -24,6 +24,6 @@ public class ConfiguredFeatures {
 
 
     public static ResourceKey<Feature> registerKey(String name) {
-        return ResourceKey.create(Registries.FEATURE, Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, name));
+        return ResourceKey.create(Registries.FEATURE, ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, name));
     }
 }

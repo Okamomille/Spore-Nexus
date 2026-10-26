@@ -1,7 +1,7 @@
 package net.okamiz.common.compats.jade.providers;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.blocks.custom.GrowthAcceleratorBlock;
 import snownee.jade.api.BlockAccessor;
@@ -29,7 +29,7 @@ public class GrowthAcceleratorProvider implements IBlockComponentProvider {
     }
 
     @Override
-    public Identifier getUid() {
-        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "growth_accelerator");
+    public ResourceLocation getUid() {
+        return ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "growth_accelerator");
     }
 }

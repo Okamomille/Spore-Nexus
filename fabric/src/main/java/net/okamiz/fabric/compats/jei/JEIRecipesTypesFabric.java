@@ -1,7 +1,7 @@
 package net.okamiz.fabric.compats.jei;
 
 import mezz.jei.api.recipe.types.IRecipeType;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.okamiz.SporeNexus;
@@ -17,7 +17,7 @@ public class JEIRecipesTypesFabric {
     // From Occultism: https://github.com/klikli-dev/occultism/blob/version/26.1.2/src/main/java/com/klikli_dev/occultism/integration/jei/impl/JeiRecipeTypes.java
     // Under MIT-License
     public static <R extends Recipe<?>> IRecipeType<RecipeHolder<R>> create(String modid, String name, Class<? extends R> recipeClass) {
-        Identifier uid = Identifier.fromNamespaceAndPath(modid, name);
+        ResourceLocation uid = ResourceLocation.fromNamespaceAndPath(modid, name);
         @SuppressWarnings({"unchecked", "RedundantCast"})
         Class<? extends RecipeHolder<R>> holderClass = (Class<? extends RecipeHolder<R>>) (Object) RecipeHolder.class;
         return IRecipeType.create(uid, holderClass);

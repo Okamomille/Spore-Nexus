@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.client.recipe.v1.sync.ClientRecipeSynchronizedEve
 import net.fabricmc.fabric.api.recipe.v1.sync.SynchronizedRecipes;
 import net.fabricmc.fabric.impl.recipe.sync.SynchronizedRecipesImpl;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -34,8 +34,8 @@ import java.util.List;
 @JeiPlugin
 public class JEIPluginFabric implements IModPlugin {
     @Override
-    public Identifier getPluginUid() {
-        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "jei_plugin");
+    public ResourceLocation getPluginUid() {
+        return ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "jei_plugin");
     }
 
     public static SynchronizedRecipes recipeMap = SynchronizedRecipesImpl.EMPTY;

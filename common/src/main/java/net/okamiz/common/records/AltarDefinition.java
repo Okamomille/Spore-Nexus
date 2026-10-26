@@ -1,6 +1,6 @@
 package net.okamiz.common.records;
 
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.List;
 

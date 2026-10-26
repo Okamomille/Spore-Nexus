@@ -12,7 +12,7 @@ import mezz.jei.api.recipe.types.IRecipeType;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.modded_registries.BlocksRegistry;
@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 public class MushroomHarvestCategory implements IRecipeCategory<MushroomHarvest> {
 
     public static final IRecipeType<MushroomHarvest> TYPE = IRecipeType.create(
-            Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "textures/gui/mushroom/harvest_gui.png"), MushroomHarvest.class);
+            ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "textures/gui/mushroom/harvest_gui.png"), MushroomHarvest.class);
 
     private static final int WIDTH = 120;
     private static final int HEIGHT = 56;

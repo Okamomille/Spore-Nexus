@@ -24,7 +24,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
-import org.jspecify.annotations.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
 import java.util.Set;

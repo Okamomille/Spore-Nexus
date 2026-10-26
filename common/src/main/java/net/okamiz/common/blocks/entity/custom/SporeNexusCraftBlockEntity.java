@@ -32,7 +32,7 @@ import net.okamiz.common.menus.custom.SporeNexusCraftMenu;
 import net.okamiz.common.modded_registries.TagsRegistry;
 import net.okamiz.common.recipe.spore_nexus_craft.SporeNexusCraftRecipe;
 import net.okamiz.common.recipe.spore_nexus_craft.SporeNexusCraftRecipeInput;
-import org.jspecify.annotations.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,7 +6,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -209,7 +209,7 @@ public class BlocksRegistry {
         return all;
     }
 
-    private static @Nullable Supplier<Item> lazyItem(@Nullable Identifier id) {
+    private static @Nullable Supplier<Item> lazyItem(@Nullable ResourceLocation id) {
         if (id == null) {
             return null;
         }
@@ -222,8 +222,8 @@ public class BlocksRegistry {
 
 
 
-    private static Identifier id(String name) {
-        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, name);
+    private static ResourceLocation id(String name) {
+        return ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, name);
     }
 
     public static <T extends Block> RegistrySupplier<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> factory,

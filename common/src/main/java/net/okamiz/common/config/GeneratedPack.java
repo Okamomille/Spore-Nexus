@@ -1,7 +1,7 @@
 package net.okamiz.common.config;
 
 import dev.architectury.platform.Platform;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.modded_registries.ItemsRegistry;
 import net.okamiz.common.records.AltarDefinition;
@@ -121,9 +121,9 @@ public final class GeneratedPack {
     private static final String BLOCK_REGISTRY = "minecraft:block";
 
 
-    private static String conditions(String registry, Collection<Identifier> ids) {
+    private static String conditions(String registry, Collection<ResourceLocation> ids) {
         Set<String> unique = new LinkedHashSet<>();
-        for (Identifier id : ids) {
+        for (ResourceLocation id : ids) {
             if (id != null) unique.add(id.toString());
         }
         if (unique.isEmpty()) return "";
@@ -139,15 +139,15 @@ public final class GeneratedPack {
                 + "\"fabric:load_conditions\": [{ \"condition\": \"fabric:registry_contains\", \"registry\": \"" + registry + "\", \"values\": " + fabricValues + " }], ";
     }
 
-    private static List<Identifier> altarItems(AltarDefinition altar) {
-        List<Identifier> items = new ArrayList<>();
+    private static List<ResourceLocation> altarItems(AltarDefinition altar) {
+        List<ResourceLocation> items = new ArrayList<>();
         addIfItem(items, altar.mushroomInput());
         altar.resourceInputs().forEach(ref -> addIfItem(items, ref));
         altar.secondaryInputs().forEach(ref -> addIfItem(items, ref));
         return items;
     }
 
-    private static void addIfItem(List<Identifier> out, IngredientRef ref) {
+    private static void addIfItem(List<ResourceLocation> out, IngredientRef ref) {
         if (ref != null && !ref.tag()) out.add(ref.id());
     }
 

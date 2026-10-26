@@ -5,7 +5,7 @@ import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.registration.*;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.neoforged.api.distmarker.Dist;
@@ -41,8 +41,8 @@ public class JEIPluginNeoForge implements IModPlugin {
     public static final IRecipeType<RecipeHolder<SporeNexusCraftRecipe>> SPORE_NEXUS_CRAFT = createRecipeHolderType("spore_nexus_craft");
 
     @Override
-    public Identifier getPluginUid() {
-        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "jei_plugin");
+    public ResourceLocation getPluginUid() {
+        return ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "jei_plugin");
     }
 
 
@@ -87,7 +87,7 @@ public class JEIPluginNeoForge implements IModPlugin {
 
     @SuppressWarnings("unchecked")
     public static <T> IRecipeType<T> createRecipeHolderType(String path) {
-        return (IRecipeType<T>) IRecipeType.create(Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, path), RecipeHolder.class);
+        return (IRecipeType<T>) IRecipeType.create(ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, path), RecipeHolder.class);
     }
 
     @EventBusSubscriber(modid = SporeNexus.MOD_ID)

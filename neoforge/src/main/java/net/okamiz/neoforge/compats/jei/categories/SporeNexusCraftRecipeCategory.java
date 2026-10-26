@@ -11,7 +11,7 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.api.recipe.types.IRecipeType;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.okamiz.SporeNexus;
@@ -22,7 +22,7 @@ import net.okamiz.neoforge.compats.jei.JEIPluginNeoForge;
 import javax.annotation.Nullable;
 
 public class SporeNexusCraftRecipeCategory implements IRecipeCategory<RecipeHolder<SporeNexusCraftRecipe>> {
-    public static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID,
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID,
             "textures/gui/spore_nexus/spore_nexus_jei.png");
     private final IDrawable icon;
     private final IDrawable overlay;

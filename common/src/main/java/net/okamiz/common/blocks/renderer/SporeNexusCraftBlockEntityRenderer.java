@@ -10,11 +10,11 @@ import net.minecraft.client.renderer.item.ItemModelResolver;
 import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.util.Util;
+import net.minecraft.Util;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.phys.Vec3;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
-import org.jspecify.annotations.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class SporeNexusCraftBlockEntityRenderer implements BlockEntityRenderer<SporeNexusCraftBlockEntity, SporeNexusCraftBlockEntityRenderState> {
     private final ItemModelResolver itemModelResolver;

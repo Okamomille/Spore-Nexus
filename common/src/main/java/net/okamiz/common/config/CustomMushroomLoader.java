@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dev.architectury.platform.Platform;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.records.AltarDefinition;
 import net.okamiz.common.records.CustomMushroomDefinition;
@@ -93,7 +93,7 @@ public final class CustomMushroomLoader {
             SporeNexus.LOGGER.error("Custom mushroom has an invalid id '{}' (use a-z, 0-9 and _ only)", id);
             return null;
         }
-        Identifier result = identifier(json, "fragment_result");
+        ResourceLocation result = identifier(json, "fragment_result");
         if (result == null) {
             SporeNexus.LOGGER.error("Custom mushroom '{}': missing or invalid 'fragment_result'", id);
             return null;
@@ -140,8 +140,8 @@ public final class CustomMushroomLoader {
                     continue;
                 }
                 JsonObject m = element.getAsJsonObject();
-                Identifier a = mushroomReference(m, "parent_a");
-                Identifier b = mushroomReference(m, "parent_b");
+                ResourceLocation a = mushroomReference(m, "parent_a");
+                ResourceLocation b = mushroomReference(m, "parent_b");
                 double chance = m.has("chance") ? m.get("chance").getAsDouble() : 0.05;
                 if (a == null || b == null || chance <= 0 || chance > 1) {
                     SporeNexus.LOGGER.error("Custom mushroom '{}': mutation #{} is invalid (needs parent_a, parent_b "
@@ -156,7 +156,7 @@ public final class CustomMushroomLoader {
                 identifier(json, "essence"), identifier(json, "extra_drop"), altar, mutations);
     }
 
-    private static @Nullable Identifier mushroomReference(JsonObject json, String key) {
+    private static @Nullable ResourceLocation mushroomReference(JsonObject json, String key) {
         if (!json.has(key) || json.get(key).isJsonNull()) {
             return null;
         }
@@ -165,12 +165,12 @@ public final class CustomMushroomLoader {
             return null;
         }
         if (value.contains(":")) {
-            return Identifier.tryParse(value);
+            return ResourceLocation.tryParse(value);
         }
         if (!VALID_ID.matcher(value).matches()) {
             return null;
         }
-        return Identifier.tryParse(SporeNexus.MOD_ID + ":" + value + "_resource_mushroom");
+        return ResourceLocation.tryParse(SporeNexus.MOD_ID + ":" + value + "_resource_mushroom");
     }
 
     private static @Nullable List<IngredientRef> ingredientList(JsonObject json, String key) {
@@ -215,8 +215,8 @@ public final class CustomMushroomLoader {
         return IngredientRef.parse(json.get(key).getAsString());
     }
 
-    private static @Nullable Identifier identifier(JsonObject json, String key) {
+    private static @Nullable ResourceLocation identifier(JsonObject json, String key) {
         if (!json.has(key) || json.get(key).isJsonNull()) return null;
-        return Identifier.tryParse(json.get(key).getAsString());
+        return ResourceLocation.tryParse(json.get(key).getAsString());
     }
 }

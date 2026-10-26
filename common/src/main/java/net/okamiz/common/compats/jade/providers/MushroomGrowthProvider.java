@@ -3,7 +3,7 @@ package net.okamiz.common.compats.jade.providers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -77,7 +77,7 @@ public class MushroomGrowthProvider implements IBlockComponentProvider {
     }
 
     @Override
-    public Identifier getUid() {
-        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, "mushroom_growth");
+    public ResourceLocation getUid() {
+        return ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "mushroom_growth");
     }
 }

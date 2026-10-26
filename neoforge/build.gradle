@@ -14,13 +14,13 @@ loom {
 
     runs {
         data {
-            clientData()
+            data()
             property 'sporenexus.datagen', 'true'
 
             programArguments.addAll '--mod', "sporenexus",
-                '--all',
-                '--output', project(':common').file('src/main/generated/resources/').getAbsolutePath(),
-               '--existing', project(':common').file('src/main/resources/').getAbsolutePath()
+                    '--all',
+                    '--output', project(':common').file('src/main/generated/resources/').getAbsolutePath(),
+                    '--existing', project(':common').file('src/main/resources/').getAbsolutePath()
         }
 
 
@@ -61,17 +61,17 @@ dependencies {
     neoForge "net.neoforged:neoforge:$rootProject.neoforge_version"
 
     // Architectury API. This is optional, and you can comment it out if you don't need it.
-    implementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
+    modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
 
-    common(project(path: ':common')) { transitive = false }
+    common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
 
 
-    compileOnly "mezz.jei:jei-$rootProject.minecraft_version-neoforge-api:$rootProject.jei_version"
-    runtimeOnly "mezz.jei:jei-$rootProject.minecraft_version-neoforge:$rootProject.jei_version"
+    modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-neoforge-api:$rootProject.jei_version"
+    modRuntimeOnly "mezz.jei:jei-$rootProject.minecraft_version-neoforge:$rootProject.jei_version"
 
-    compileOnly "maven.modrinth:jade:${rootProject.jade_version}+neoforge"
-    runtimeOnly "maven.modrinth:jade:${rootProject.jade_version}+neoforge"
+    modCompileOnly "maven.modrinth:jade:${rootProject.jade_version}+neoforge"
+    modRuntimeOnly "maven.modrinth:jade:${rootProject.jade_version}+neoforge"
 }
 
 processResources {
@@ -82,26 +82,12 @@ processResources {
     }
 }
 
-// Minecraft is not obfuscated on this version, so there is no remapJar task.
-// The shaded jar is the mod jar that ships.
-jar {
-    archiveClassifier = 'dev'
-}
 
 shadowJar {
     configurations = [project.configurations.shadowBundle]
-    archiveClassifier = null
+    archiveClassifier = 'dev-shadow'
 }
 
-assemble.dependsOn shadowJar
-
-configurations {
-    apiElements {
-        outgoing.artifacts.clear()
-        outgoing.artifact(shadowJar)
-    }
-    runtimeElements {
-        outgoing.artifacts.clear()
-        outgoing.artifact(shadowJar)
-    }
+remapJar {
+    inputFile.set shadowJar.archiveFile
 }

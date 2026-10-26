@@ -3,7 +3,7 @@ package net.okamiz.common.blocks.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
@@ -26,11 +26,11 @@ public class CustomMushroomBlock extends VegetationBlock implements Bonemealable
 
     private static final VoxelShape SHAPE = Block.column((double)11.0F, (double)0.0F, (double)11.0F);
 
-    private final List<Identifier> giantIds;
+    private final List<ResourceLocation> giantIds;
 
     public CustomMushroomBlock(Properties properties, String... ids) {
         super(properties);
-        this.giantIds = Arrays.stream(ids).map(id -> Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, id)).toList();
+        this.giantIds = Arrays.stream(ids).map(id -> ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, id)).toList();
     }
 
     @Override
@@ -43,7 +43,7 @@ public class CustomMushroomBlock extends VegetationBlock implements Bonemealable
         return SHAPE;
     }
 
-    private boolean tryGrow(ServerLevel level, RandomSource random, BlockPos pos, Identifier id) {
+    private boolean tryGrow(ServerLevel level, RandomSource random, BlockPos pos, ResourceLocation id) {
         Optional<StructureTemplate> optional = level.getStructureTemplateManager().get(id);
         if (optional.isEmpty()) {
             return false;
@@ -75,10 +75,10 @@ public class CustomMushroomBlock extends VegetationBlock implements Bonemealable
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
-        List<Identifier> candidates = new ArrayList<>(giantIds);
+        List<ResourceLocation> candidates = new ArrayList<>(giantIds);
         Collections.shuffle(candidates, new Random(random.nextLong()));
 
-        for (Identifier id : candidates) {
+        for (ResourceLocation id : candidates) {
             if (tryGrow(level, random, pos, id)) {
                 return;
             }

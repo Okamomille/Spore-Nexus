@@ -11,7 +11,7 @@ import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.okamiz.SporeNexus;
@@ -116,8 +116,8 @@ public class DatagenModelProvider extends ModelProvider {
     }
 
 
-    private static Identifier id(String path) {
-        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, path);
+    private static ResourceLocation id(String path) {
+        return ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, path);
     }
     private static Material tex(String path) {
         return new Material(id(path));
@@ -126,7 +126,7 @@ public class DatagenModelProvider extends ModelProvider {
 
 
     private void registerCrossBlockWithCustomItemTexture(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block) {
-        Identifier blockId = BuiltInRegistries.BLOCK.getKey(block);
+        ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(block);
 
         // BLOCK MODEL
         TextureMapping mapping = new TextureMapping().put(TextureSlot.CROSS, tex("block/" + blockId.getPath()))
@@ -147,7 +147,7 @@ public class DatagenModelProvider extends ModelProvider {
 
     private void registerMushroom(BlockModelGenerators blockModels, Block block, String ore) {
         var states = PropertyDispatch.initial(ResourceMushroomBlock.AGE);
-        Identifier[] models = new Identifier[3];
+        ResourceLocation[] models = new ResourceLocation[3];
 
         for (int stage = 0; stage < 3; stage++) {
             ModelTemplate template = new ModelTemplate(

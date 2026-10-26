@@ -4,7 +4,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BlockTransformers;
@@ -180,8 +180,8 @@ public class ItemsRegistry {
     }
 
 
-    public static Identifier id(String name) {
-        return Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID, name);
+    public static ResourceLocation id(String name) {
+        return ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, name);
     }
 
     public static <T extends Item> RegistrySupplier<T> registerItem(

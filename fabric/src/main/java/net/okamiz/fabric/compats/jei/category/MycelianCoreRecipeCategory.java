@@ -11,7 +11,7 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.api.recipe.types.IRecipeType;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.okamiz.SporeNexus;
@@ -21,7 +21,7 @@ import net.okamiz.fabric.compats.jei.JEIRecipesTypesFabric;
 import org.jetbrains.annotations.Nullable;
 
 public class MycelianCoreRecipeCategory implements IRecipeCategory<RecipeHolder<MycelianCoreRecipe>> {
-    public static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(SporeNexus.MOD_ID,
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID,
             "textures/gui/mycelian_core/mycelian_core_gui.png");
     private final IDrawable icon;
     private final IDrawable overlay;

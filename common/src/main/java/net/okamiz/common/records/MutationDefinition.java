@@ -1,5 +1,5 @@
 package net.okamiz.common.records;
 
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
-public record MutationDefinition(Identifier parentA, Identifier parentB, double chance) {}
+public record MutationDefinition(ResourceLocation parentA, ResourceLocation parentB, double chance) {}

@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
-import org.jspecify.annotations.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class SporeNexusCraftBlock extends BaseEntityBlock {
 
