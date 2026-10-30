@@ -1,19 +1,15 @@
 package net.okamiz.common.blocks.entity.custom;
 
-import dev.architectury.registry.menu.ExtendedMenuDataProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -24,8 +20,6 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.ValueInput;
-import net.minecraft.world.level.storage.ValueOutput;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
 import net.okamiz.common.modded_registries.RecipesRegistry;
 import net.okamiz.common.menus.custom.MycelianCoreMenu;
@@ -36,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class MycelianCoreBlockEntity extends BlockEntity implements ExtendedMenuDataProvider<BlockPos>, WorldlyContainer {
+public class MycelianCoreBlockEntity extends BlockEntity implements MenuProvider, WorldlyContainer {
 
     private boolean recipeDirty = true;
     private Optional<RecipeHolder<MycelianCoreRecipe>> cachedRecipe = Optional.empty();
@@ -104,39 +98,28 @@ public class MycelianCoreBlockEntity extends BlockEntity implements ExtendedMenu
         return new MycelianCoreMenu(containerId, inventory, this, this.inventory, this.data);
     }
 
-    /* MENU EXTRA DATA (Architectury) */
 
     @Override
-    public BlockPos getExtraData(ServerPlayer player) {
-        return this.worldPosition;
-    }
-
-    @Override
-    public StreamCodec<? super RegistryFriendlyByteBuf, BlockPos> getExtraDataCodec() {
-        return BlockPos.STREAM_CODEC;
-    }
-
-    @Override
-    protected void saveAdditional(ValueOutput output) {
-        super.saveAdditional(output);
-        output.putInt("mycelian_core:progress", progress);
-        output.putInt("mycelian_core:max_progress", maxProgress);
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
+        tag.putInt("mycelian_core:progress", progress);
+        tag.putInt("mycelian_core:max_progress", maxProgress);
 
         NonNullList<ItemStack> list = NonNullList.withSize(inventory.getContainerSize(), ItemStack.EMPTY);
         for (int i = 0; i < list.size(); i++) {
             list.set(i, inventory.getItem(i));
         }
-        ContainerHelper.saveAllItems(output, list);
+        ContainerHelper.saveAllItems(tag, list, registries);
     }
 
     @Override
-    protected void loadAdditional(ValueInput input) {
-        super.loadAdditional(input);
-        progress = input.getIntOr("mycelian_core:progress", 0);
-        maxProgress = input.getIntOr("mycelian_core:max_progress", 72);
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
+        progress = tag.getInt("mycelian_core:progress");
+        maxProgress = tag.contains("mycelian_core:max_progress") ? tag.getInt("mycelian_core:max_progress") : 72;
 
         NonNullList<ItemStack> list = NonNullList.withSize(inventory.getContainerSize(), ItemStack.EMPTY);
-        ContainerHelper.loadAllItems(input, list);
+        ContainerHelper.loadAllItems(tag, list, registries);
         for (int i = 0; i < list.size(); i++) {
             inventory.setItem(i, list.get(i));
         }
@@ -226,7 +209,7 @@ public class MycelianCoreBlockEntity extends BlockEntity implements ExtendedMenu
     private Optional<RecipeHolder<MycelianCoreRecipe>> getCurrentRecipe() {
         if(recipeDirty){
             assert level != null;
-            cachedRecipe = ((ServerLevel) level).recipeAccess().getRecipeFor(RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get(), createRecipeInput(), level);
+            cachedRecipe = level.getRecipeManager().getRecipeFor(RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get(), createRecipeInput(), level);
             recipeDirty = false;
         }
 

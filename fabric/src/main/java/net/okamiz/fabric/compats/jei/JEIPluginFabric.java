@@ -3,9 +3,8 @@ package net.okamiz.fabric.compats.jei;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.*;
-import net.fabricmc.fabric.api.client.recipe.v1.sync.ClientRecipeSynchronizedEvent;
-import net.fabricmc.fabric.api.recipe.v1.sync.SynchronizedRecipes;
-import net.fabricmc.fabric.impl.recipe.sync.SynchronizedRecipesImpl;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -38,16 +37,12 @@ public class JEIPluginFabric implements IModPlugin {
         return ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "jei_plugin");
     }
 
-    public static SynchronizedRecipes recipeMap = SynchronizedRecipesImpl.EMPTY;
-    public JEIPluginFabric() {
-        ClientRecipeSynchronizedEvent.EVENT.register((client, recipes) -> recipeMap = recipes);
-    }
-
-    // From Occultism
-    // Under MIT License
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    private <I extends RecipeInput, T extends Recipe<I>> List<RecipeHolder<T>> getRecipes(SynchronizedRecipes recipeMap, RecipeType<T> type) {
-        return (List) recipeMap.getAllOfType(type);
+    private <I extends RecipeInput, T extends Recipe<I>> List<RecipeHolder<T>> getRecipes(RecipeType<T> type) {
+        ClientLevel level = Minecraft.getInstance().level;
+        if (level == null) {
+            return List.of();
+        }
+        return level.getRecipeManager().getAllRecipesFor(type);
     }
 
     @Override
@@ -61,11 +56,11 @@ public class JEIPluginFabric implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        registration.addRecipes(JEIRecipesTypesFabric.MYCELIAN_CORE, this.getRecipes(recipeMap, RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get()));
-        registration.addRecipes(JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT, this.getRecipes(recipeMap, RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()));
+        registration.addRecipes(JEIRecipesTypesFabric.MYCELIAN_CORE, this.getRecipes(RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get()));
+        registration.addRecipes(JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT, this.getRecipes(RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()));
         registration.addRecipes(MushroomHarvestCategory.TYPE, BuiltInRegistries.BLOCK.stream().filter(b -> b instanceof ResourceMushroomBlock)
                 .map(b -> new MushroomHarvest(b, ((ResourceMushroomBlock) b).getHarvestDrops())).toList());
-        registration.addRecipes(MushroomMutationCategory.TYPE, this.getRecipes(recipeMap, RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get())
+        registration.addRecipes(MushroomMutationCategory.TYPE, this.getRecipes(RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get())
                         .stream().map(holder -> MushroomMutation.from(holder.value())).toList());
     }
 
@@ -77,8 +72,8 @@ public class JEIPluginFabric implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addCraftingStation(JEIRecipesTypesFabric.MYCELIAN_CORE, new ItemStack(BlocksRegistry.MYCELIAN_CORE.get()));
-        registration.addCraftingStation(JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT, new ItemStack(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get()));
+        registration.addRecipeCatalyst(new ItemStack(BlocksRegistry.MYCELIAN_CORE.get()), JEIRecipesTypesFabric.MYCELIAN_CORE);
+        registration.addRecipeCatalyst(new ItemStack(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get()), JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT);
 
     }
 

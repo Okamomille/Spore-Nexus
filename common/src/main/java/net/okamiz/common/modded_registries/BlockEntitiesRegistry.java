@@ -8,8 +8,8 @@ import net.okamiz.common.blocks.entity.custom.MushroomHarvesterBlockEntity;
 import net.okamiz.common.blocks.entity.custom.MycelianCoreBlockEntity;
 import net.okamiz.common.blocks.entity.custom.SporeNexusCraftBlockEntity;
 
-import java.util.Set;
 import java.util.function.Supplier;
+
 
 public class BlockEntitiesRegistry {
 
@@ -17,12 +17,12 @@ public class BlockEntitiesRegistry {
 
 
     public static final Supplier<BlockEntityType<MycelianCoreBlockEntity>> MYCELIAN_CORE_BE = BLOCK_ENTITIES.register("mycelian_core_be",
-            () -> new BlockEntityType<>(MycelianCoreBlockEntity::new, Set.of(BlocksRegistry.MYCELIAN_CORE.get())));
+            () -> BlockEntityType.Builder.of(MycelianCoreBlockEntity::new, BlocksRegistry.MYCELIAN_CORE.get()).build(null));
 
     public static final Supplier<BlockEntityType<SporeNexusCraftBlockEntity>> SPORE_NEXUS_CRAFT_BE = BLOCK_ENTITIES.register("spore_nexus_craft_be",
-            () -> new BlockEntityType<>(SporeNexusCraftBlockEntity::new, Set.of(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get())));
+            () -> BlockEntityType.Builder.of(SporeNexusCraftBlockEntity::new, BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get()).build(null));
 
     public static final Supplier<BlockEntityType<MushroomHarvesterBlockEntity>> MUSHROOM_HARVESTER_BE = BLOCK_ENTITIES.register("mushroom_harvester_be",
-            () -> new BlockEntityType<>(MushroomHarvesterBlockEntity::new, Set.of(BlocksRegistry.MUSHROOM_HARVESTER.get(),BlocksRegistry.FUNGAL_HARVESTER.get(),
-                    BlocksRegistry.INFERNAL_HARVESTER.get(),BlocksRegistry.ETHEREAL_HARVESTER.get())));
+            () -> BlockEntityType.Builder.of(MushroomHarvesterBlockEntity::new, BlocksRegistry.MUSHROOM_HARVESTER.get(), BlocksRegistry.FUNGAL_HARVESTER.get(),
+                    BlocksRegistry.INFERNAL_HARVESTER.get(), BlocksRegistry.ETHEREAL_HARVESTER.get()).build(null));
 }

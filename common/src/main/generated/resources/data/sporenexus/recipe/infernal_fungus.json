@@ -1,8 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
-    "O": "sporenexus:great_fungus",
-    "X": "sporenexus:infernal_essence"
+    "O": {
+      "item": "sporenexus:great_fungus"
+    },
+    "X": {
+      "item": "sporenexus:infernal_essence"
+    }
   },
   "pattern": [
     " X ",
@@ -10,6 +15,7 @@
     " X "
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:infernal_fungus"
   }
 }

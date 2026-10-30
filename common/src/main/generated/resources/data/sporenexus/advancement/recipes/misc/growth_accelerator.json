@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:growth_accelerator"
+        "recipe": "sporenexus:growth_accelerator"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

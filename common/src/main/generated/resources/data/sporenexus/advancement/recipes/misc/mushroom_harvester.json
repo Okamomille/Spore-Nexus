@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:mushroom_harvester"
+        "recipe": "sporenexus:mushroom_harvester"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -4,24 +4,18 @@ import net.minecraft.world.level.Level;
 import net.okamiz.common.recipe.mushroom_mutation.MushroomMutationRecipe;
 import net.okamiz.common.recipe.mushroom_mutation.MushroomMutationRecipeInput;
 
-import java.util.List;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.okamiz.common.modded_registries.RecipesRegistry;
 import java.util.Optional;
 
+
 public final class ClientMutationRecipes {
-    private static List<MushroomMutationRecipe> recipes = List.of();
 
     private ClientMutationRecipes() {}
 
-    public static void set(List<MushroomMutationRecipe> list) {
-        recipes = List.copyOf(list);
-    }
-
     public static Optional<MushroomMutationRecipe> find(MushroomMutationRecipeInput input, Level level) {
-        for (MushroomMutationRecipe recipe : recipes) {
-            if (recipe.matches(input, level)) {
-                return Optional.of(recipe);
-            }
-        }
-        return Optional.empty();
+        return level.getRecipeManager()
+                .getRecipeFor(RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get(), input, level)
+                .map(RecipeHolder::value);
     }
 }

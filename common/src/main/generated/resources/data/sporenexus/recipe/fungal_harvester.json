@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "mushroom_harvesters",
   "key": {
-    "E": "sporenexus:mushroom_harvester",
-    "X": "sporenexus:fungal_essence"
+    "E": {
+      "item": "sporenexus:mushroom_harvester"
+    },
+    "X": {
+      "item": "sporenexus:fungal_essence"
+    }
   },
   "pattern": [
     " X ",
@@ -11,6 +16,7 @@
     " X "
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:fungal_harvester"
   }
 }

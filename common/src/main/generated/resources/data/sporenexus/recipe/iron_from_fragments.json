@@ -1,14 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "fragments_to_resource",
   "key": {
-    "X": "sporenexus:iron_fragments"
+    "X": {
+      "item": "sporenexus:iron_fragments"
+    }
   },
   "pattern": [
     "XX",
     "XX"
   ],
   "result": {
+    "count": 1,
     "id": "minecraft:iron_ingot"
   }
 }

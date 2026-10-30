@@ -26,15 +26,17 @@ public final class GeneratedPack {
 
     private GeneratedPack() {}
 
-    private static final int MIN_FORMAT = 88;
-    private static final int MAX_FORMAT = 107;
+
+    private static final int RESOURCE_FORMAT = 34;
+    private static final int DATA_FORMAT = 48;
 
     public static Path directory() {
         return Platform.getConfigFolder().resolve("sporenexus").resolve("generated_pack");
     }
 
     private static String mcmeta() {
-        return "{ \"pack\": { \"description\": \"Spore Nexus generated\", " + "\"min_format\": " + MIN_FORMAT + ", \"max_format\": " + MAX_FORMAT + " } }";
+        return "{ \"pack\": { \"description\": \"Spore Nexus generated\", \"pack_format\": " + DATA_FORMAT
+                + ", \"supported_formats\": [" + RESOURCE_FORMAT + ", " + DATA_FORMAT + "] } }";
     }
 
     public static Path texturesDirectory() {
@@ -88,16 +90,17 @@ public final class GeneratedPack {
 
 
         write(recipes.resolve(def.id() + "_from_fragments.json"),
-                "{ " + conditions(ITEM_REGISTRY, List.of(def.fragmentResult()))
+                "{ " + conditions(List.of(def.fragmentResult()))
                         + "\"type\": \"minecraft:crafting_shaped\", \"group\": \"fragments_to_resource\","
-                        + " \"key\": { \"X\": \"sporenexus:" + def.fragmentName() + "\" },"
+
+                        + " \"key\": { \"X\": { \"item\": \"sporenexus:" + def.fragmentName() + "\" } },"
                         + " \"pattern\": [\"XX\", \"XX\"],"
                         + " \"result\": { \"id\": \"" + def.fragmentResult() + "\", \"count\": " + def.fragmentCount() + " } }");
 
         AltarDefinition altar = def.altar();
         if (altar != null) {
             write(recipes.resolve(def.blockName() + "_from_altar.json"),
-                    "{ " + conditions(ITEM_REGISTRY, altarItems(altar))
+                    "{ " + conditions(altarItems(altar))
                             + "\"type\": \"sporenexus:spore_nexus_craft\","
                             + " \"mushroom_input\": \"" + altar.mushroomInput() + "\","
                             + " \"resource_input\": " + jsonList(altar.resourceInputs()) + ","
@@ -108,7 +111,7 @@ public final class GeneratedPack {
         for (MutationDefinition mutation : def.mutations()) {
             index++;
             write(recipes.resolve(def.id() + "_mutation_" + index + ".json"),
-                    "{ " + conditions(BLOCK_REGISTRY, List.of(mutation.parentA(), mutation.parentB()))
+                    "{ " + conditions(List.of(mutation.parentA(), mutation.parentB()))
                             + "\"type\": \"sporenexus:mushroom_mutation\","
                             + " \"parent_a\": \"" + mutation.parentA() + "\","
                             + " \"parent_b\": \"" + mutation.parentB() + "\","
@@ -117,11 +120,16 @@ public final class GeneratedPack {
         }
     }
 
-    private static final String ITEM_REGISTRY = "minecraft:item";
-    private static final String BLOCK_REGISTRY = "minecraft:block";
-
-
-    private static String conditions(String registry, Collection<ResourceLocation> ids) {
+    /**
+     * Load conditions for NeoForge AND Fabric (each loader ignores the other key): the recipe is only
+     * loaded when every listed item exists. Mutation parents are checked as items too, because the
+     * recipe matches them through their block item.
+     * Formats for 1.21.1:
+     *  - NeoForge: {"type": "neoforge:item_exists", "item": ...} (one per item)
+     *  - Fabric:   {"condition": "fabric:registry_contains", "registry": "minecraft:item", "values": [...]}
+     * Returns an empty string when there is nothing to check, otherwise both fields followed by a comma.
+     */
+    private static String conditions(Collection<ResourceLocation> ids) {
         Set<String> unique = new LinkedHashSet<>();
         for (ResourceLocation id : ids) {
             if (id != null) unique.add(id.toString());
@@ -129,14 +137,14 @@ public final class GeneratedPack {
         if (unique.isEmpty()) return "";
 
         String neo = unique.stream()
-                .map(id -> "{ \"type\": \"neoforge:registered\", \"registry\": \"" + registry + "\", \"value\": \"" + id + "\" }")
+                .map(id -> "{ \"type\": \"neoforge:item_exists\", \"item\": \"" + id + "\" }")
                 .collect(Collectors.joining(", ", "[", "]"));
         String fabricValues = unique.stream()
                 .map(id -> "\"" + id + "\"")
                 .collect(Collectors.joining(", ", "[", "]"));
 
         return "\"neoforge:conditions\": " + neo + ", "
-                + "\"fabric:load_conditions\": [{ \"condition\": \"fabric:registry_contains\", \"registry\": \"" + registry + "\", \"values\": " + fabricValues + " }], ";
+                + "\"fabric:load_conditions\": [{ \"condition\": \"fabric:registry_contains\", \"registry\": \"minecraft:item\", \"values\": " + fabricValues + " }], ";
     }
 
     private static List<ResourceLocation> altarItems(AltarDefinition altar) {
@@ -152,7 +160,7 @@ public final class GeneratedPack {
     }
 
     private static String jsonList(List<IngredientRef> refs) {
-        return refs.stream().map(ref -> "\"" + ref + "\"").collect(java.util.stream.Collectors.joining(", ", "[", "]"));
+        return refs.stream().map(ref -> "\"" + ref + "\"").collect(Collectors.joining(", ", "[", "]"));
     }
 
     private static void generateMushroomAssets(Path resources, CustomMushroomDefinition def) throws IOException {
@@ -181,12 +189,12 @@ public final class GeneratedPack {
                             + " \"particle\": \"sporenexus:block/mushroom/" + id + "_cap\" } }");
         }
 
-        write(resources.resolve("assets/sporenexus/items/" + block + ".json"), "{ \"model\": { \"type\": \"minecraft:model\", \"model\": \"sporenexus:block/" + block + "_stage_1\" } }");
+
+        write(resources.resolve("assets/sporenexus/models/item/" + block + ".json"),
+                "{ \"parent\": \"sporenexus:block/" + block + "_stage_1\" }");
 
         write(resources.resolve("assets/sporenexus/models/item/" + def.fragmentName() + ".json"),
                 "{ \"parent\": \"minecraft:item/generated\"," + " \"textures\": { \"layer0\": \"sporenexus:item/" + def.fragmentName() + "\" } }");
-        write(resources.resolve("assets/sporenexus/items/" + def.fragmentName() + ".json"),
-                "{ \"model\": { \"type\": \"minecraft:model\", \"model\": \"sporenexus:item/" + def.fragmentName() + "\" } }");
     }
 
     private static int parseColor(String hex) {

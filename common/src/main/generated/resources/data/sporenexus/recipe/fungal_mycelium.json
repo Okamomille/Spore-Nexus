@@ -1,8 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
-    "O": "sporenexus:fertilized_mycelium",
-    "X": "sporenexus:fungal_essence"
+    "O": {
+      "item": "sporenexus:fertilized_mycelium"
+    },
+    "X": {
+      "item": "sporenexus:fungal_essence"
+    }
   },
   "pattern": [
     " X ",
@@ -10,6 +15,7 @@
     " X "
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:fungal_mycelium"
   }
 }

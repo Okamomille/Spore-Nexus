@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:mossy_cobblestone_from_fragments"
+        "recipe": "sporenexus:mossy_cobblestone_from_fragments"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -37,7 +37,7 @@ side = "BOTH"
 [[dependencies.sporenexus]]
 modId = "jei"
 type = "optional"
-versionRange = "[19.57.0.451,)"
+versionRange = "[19.56.0.441,)"
 ordering = "AFTER"
 side = "BOTH"
 

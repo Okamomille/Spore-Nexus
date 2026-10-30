@@ -1,5 +1,6 @@
 package net.okamiz.common.blocks.custom;
 
+import com.mojang.serialization.MapCodec;
 import dev.architectury.registry.menu.MenuRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -25,11 +27,20 @@ import org.jetbrains.annotations.Nullable;
 
 public class SporeNexusCraftBlock extends BaseEntityBlock {
 
-    public static final VoxelShape SHAPE = (VoxelShape)Shapes.or(Block.column((double)14.0F, (double)0.0F, (double)8.0F),
-            new VoxelShape[]{Block.column((double)10.0F, (double)8.0F, (double)12.0F), Block.column((double)16.0F, (double)12.0F, (double)16.0F)});
+    public static final VoxelShape SHAPE = Shapes.or(
+            Block.box(1.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+            Block.box(3.0, 8.0, 3.0, 13.0, 12.0, 13.0),
+            Block.box(0.0, 12.0, 0.0, 16.0, 16.0, 16.0));
+
+    public static final MapCodec<SporeNexusCraftBlock> CODEC = simpleCodec(SporeNexusCraftBlock::new);
 
     public SporeNexusCraftBlock(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -47,6 +58,11 @@ public class SporeNexusCraftBlock extends BaseEntityBlock {
         super.setPlacedBy(level, pos, state, placer, stack);
     }
 
+
+    @Override
+    protected RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
+    }
 
     /*BLOCK ENTITY*/
     @Override
@@ -72,7 +88,7 @@ public class SporeNexusCraftBlock extends BaseEntityBlock {
     }
 
     public static void openMenu(ServerPlayer serverPlayer, SporeNexusCraftBlockEntity core, BlockPos pos){
-        MenuRegistry.openExtendedMenu(serverPlayer, core);
+        MenuRegistry.openExtendedMenu(serverPlayer, core, buffer -> buffer.writeBlockPos(pos));
     }
 
 

@@ -8,8 +8,8 @@ import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.api.recipe.types.IRecipeType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import mezz.jei.api.recipe.RecipeType;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -39,7 +39,7 @@ public class SporeNexusCraftRecipeCategory implements IRecipeCategory<RecipeHold
     }
 
     @Override
-    public IRecipeType<RecipeHolder<SporeNexusCraftRecipe>> getRecipeType() {
+    public RecipeType<RecipeHolder<SporeNexusCraftRecipe>> getRecipeType() {
         return JEIRecipesTypesFabric.SPORE_NEXUS_CRAFT;
     }
 
@@ -65,14 +65,14 @@ public class SporeNexusCraftRecipeCategory implements IRecipeCategory<RecipeHold
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, RecipeHolder<SporeNexusCraftRecipe> recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 80-xOffset, 61-yOffset).add(recipe.value().mushroomInputItem());
+        builder.addSlot(RecipeIngredientRole.INPUT, 80-xOffset, 61-yOffset).addIngredients(recipe.value().mushroomInputItem());
 
         int[][] positions = {{29-xOffset, 61-yOffset},{80-xOffset, 10-yOffset},{131-xOffset, 61-yOffset}, {80-xOffset, 112-yOffset}};
         var resources = recipe.value().resourceInputs();
         for (int i = 0; i < positions.length; i++) {
             var slot = builder.addSlot(RecipeIngredientRole.INPUT, positions[i][0], positions[i][1]);
             if (i < resources.size()) {
-                slot.add(resources.get(i));
+                slot.addIngredients(resources.get(i));
             }
         }
 
@@ -81,15 +81,15 @@ public class SporeNexusCraftRecipeCategory implements IRecipeCategory<RecipeHold
         for (int i = 0; i < secondaryPositions.length; i++) {
             var slot = builder.addSlot(RecipeIngredientRole.INPUT, secondaryPositions[i][0], secondaryPositions[i][1]);
             if (i < secondary.size()) {
-                slot.add(secondary.get(i));
+                slot.addIngredients(secondary.get(i));
             }
         }
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 176-xOffset, 60-yOffset).add(recipe.value().output());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 176-xOffset, 60-yOffset).addItemStack(recipe.value().output());
     }
 
     @Override
-    public void draw(RecipeHolder<SporeNexusCraftRecipe> recipe, IRecipeSlotsView recipeSlotsView, GuiGraphicsExtractor guiGraphics, double mouseX, double mouseY) {
+    public void draw(RecipeHolder<SporeNexusCraftRecipe> recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         this.overlay.draw(guiGraphics, 0, 0);
     }
 }

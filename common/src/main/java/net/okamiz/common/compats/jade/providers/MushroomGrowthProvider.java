@@ -2,7 +2,7 @@ package net.okamiz.common.compats.jade.providers;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextColor;
+import net.minecraft.ChatFormatting;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
@@ -31,16 +31,16 @@ public class MushroomGrowthProvider implements IBlockComponentProvider {
         BlockPos pos = accessor.getPosition();
 
         if (state.getValue(ResourceMushroomBlock.AGE) >= ResourceMushroomBlock.MAX_AGE) {
-            tooltip.add(Component.translatable("jade.sporenexus.mature").withColor(TextColor.YELLOW));
+            tooltip.add(Component.translatable("jade.sporenexus.mature").withStyle(ChatFormatting.YELLOW));
             return;
         }
 
         if (mushroom.isBlockedByLight(level, pos)) {
-            tooltip.add(Component.translatable("jade.sporenexus.too_bright").withColor(TextColor.RED));
+            tooltip.add(Component.translatable("jade.sporenexus.too_bright").withStyle(ChatFormatting.RED));
         } else {
             int seconds = mushroom.getEstimatedRemainingTicks(level, pos, state) / 20;
             tooltip.add(Component.translatable("jade.sporenexus.growing_time",
-                    String.format("%d:%02d", seconds / 60, seconds % 60)).withColor(TextColor.YELLOW));
+                    String.format("%d:%02d", seconds / 60, seconds % 60)).withStyle(ChatFormatting.YELLOW));
         }
 
         double soil = mushroom.getSoilMultiplier(level, pos);

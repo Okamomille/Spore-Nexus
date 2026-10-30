@@ -18,7 +18,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -139,7 +138,7 @@ public class ResourceMushroomBlock extends CropBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, BonemealSource source) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return false;
     }
 
@@ -233,7 +232,7 @@ public class ResourceMushroomBlock extends CropBlock {
             if (recipe.isEmpty()) {
                 continue;
             }
-            if (!(recipe.get().output().create().getItem() instanceof BlockItem blockItem)) {
+            if (!(recipe.get().output().getItem() instanceof BlockItem blockItem)) {
                 continue;
             }
 
@@ -265,13 +264,13 @@ public class ResourceMushroomBlock extends CropBlock {
             }
 
             MushroomMutationRecipeInput input = new MushroomMutationRecipeInput(new ItemStack(this), new ItemStack(otherMushroom));
-            var holder = level.recipeAccess().getRecipeFor(RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get(), input, level);
+            var holder = level.getRecipeManager().getRecipeFor(RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get(), input, level);
             if (holder.isEmpty()){
                 continue;
             }
 
             MushroomMutationRecipe recipe = holder.get().value();
-            ItemStack result = recipe.assemble(input);
+            ItemStack result = recipe.assemble(input, level.registryAccess());
             if (!(result.getItem() instanceof BlockItem blockItem)){
                 continue;
             }

@@ -2,17 +2,13 @@ package net.okamiz.neoforge.compats.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.registration.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.RecipesReceivedEvent;
-import net.neoforged.neoforge.event.OnDatapackSyncEvent;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.compats.jei.MushroomMutation;
 import net.okamiz.common.compats.jei.category.MushroomMutationCategory;
@@ -35,10 +31,11 @@ import java.util.List;
 
 @JeiPlugin
 public class JEIPluginNeoForge implements IModPlugin {
-    private static RecipeMap syncedRecipes = RecipeMap.EMPTY;
 
-    public static final IRecipeType<RecipeHolder<MycelianCoreRecipe>> MYCELIAN_CORE = createRecipeHolderType("mycelian_core");
-    public static final IRecipeType<RecipeHolder<SporeNexusCraftRecipe>> SPORE_NEXUS_CRAFT = createRecipeHolderType("spore_nexus_craft");
+    public static final mezz.jei.api.recipe.RecipeType<RecipeHolder<MycelianCoreRecipe>> MYCELIAN_CORE =
+            mezz.jei.api.recipe.RecipeType.createRecipeHolderType(ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "mycelian_core"));
+    public static final mezz.jei.api.recipe.RecipeType<RecipeHolder<SporeNexusCraftRecipe>> SPORE_NEXUS_CRAFT =
+            mezz.jei.api.recipe.RecipeType.createRecipeHolderType(ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "spore_nexus_craft"));
 
     @Override
     public ResourceLocation getPluginUid() {
@@ -57,11 +54,11 @@ public class JEIPluginNeoForge implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        registration.addRecipes(MYCELIAN_CORE, this.getRecipes(syncedRecipes, RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get()));
-        registration.addRecipes(SPORE_NEXUS_CRAFT, this.getRecipes(syncedRecipes, RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()));
+        registration.addRecipes(MYCELIAN_CORE, this.getRecipes(RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get()));
+        registration.addRecipes(SPORE_NEXUS_CRAFT, this.getRecipes(RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get()));
         registration.addRecipes(MushroomHarvestCategory.TYPE, BuiltInRegistries.BLOCK.stream().filter(b -> b instanceof ResourceMushroomBlock)
                 .map(b -> new MushroomHarvest(b, ((ResourceMushroomBlock) b).getHarvestDrops())).toList());
-        registration.addRecipes(MushroomMutationCategory.TYPE, this.getRecipes(syncedRecipes, RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get())
+        registration.addRecipes(MushroomMutationCategory.TYPE, this.getRecipes(RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get())
                         .stream().map(h -> MushroomMutation.from(h.value())).toList());
     }
 
@@ -73,41 +70,18 @@ public class JEIPluginNeoForge implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addCraftingStation(MYCELIAN_CORE, new ItemStack(BlocksRegistry.MYCELIAN_CORE.get()));
-        registration.addCraftingStation(SPORE_NEXUS_CRAFT, new ItemStack(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get()));
+        registration.addRecipeCatalyst(new ItemStack(BlocksRegistry.MYCELIAN_CORE.get()), MYCELIAN_CORE);
+        registration.addRecipeCatalyst(new ItemStack(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get()), SPORE_NEXUS_CRAFT);
     }
 
 
-    // From Occultism
-    // Under MIT License
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    private <I extends RecipeInput, T extends Recipe<I>> List<RecipeHolder<T>> getRecipes(RecipeMap recipeMap, RecipeType<T> type) {
-        return (List) recipeMap.byType(type);
-    }
 
-    @SuppressWarnings("unchecked")
-    public static <T> IRecipeType<T> createRecipeHolderType(String path) {
-        return (IRecipeType<T>) IRecipeType.create(ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, path), RecipeHolder.class);
-    }
-
-    @EventBusSubscriber(modid = SporeNexus.MOD_ID)
-    public static class ServerRecipeSync {
-        @SubscribeEvent
-        public static void onDatapackSync(OnDatapackSyncEvent event) {
-            event.sendRecipes(
-                    RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get(),
-                    RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get(),
-                    RecipesRegistry.MUSHROOM_MUTATION_RECIPE_TYPE.get()
-            );
+    private <I extends RecipeInput, T extends Recipe<I>> List<RecipeHolder<T>> getRecipes(RecipeType<T> type) {
+        ClientLevel level = Minecraft.getInstance().level;
+        if (level == null) {
+            return List.of();
         }
-    }
-
-    @EventBusSubscriber(modid = SporeNexus.MOD_ID, value = Dist.CLIENT)
-    public static class ClientRecipeSync {
-        @SubscribeEvent
-        public static void onRecipeReceived(RecipesReceivedEvent event) {
-            syncedRecipes = event.getRecipeMap();
-        }
+        return level.getRecipeManager().getAllRecipesFor(type);
     }
 
 

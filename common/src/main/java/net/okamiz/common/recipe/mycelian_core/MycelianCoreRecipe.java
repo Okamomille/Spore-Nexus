@@ -2,29 +2,30 @@ package net.okamiz.common.recipe.mycelian_core;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.okamiz.common.modded_registries.RecipesRegistry;
+import net.okamiz.common.recipe.RecipeCodecs;
 
 import java.util.List;
 import java.util.Optional;
 
 public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substractInputItem, List<Ingredient> nutrientInputs
-        , ItemStackTemplate output, Optional<ItemStackTemplate> secondaryOutput)
+        , ItemStack output, Optional<ItemStack> secondaryOutput)
         implements Recipe<MycelianCoreRecipeInput> {
 
     public static final MapCodec<MycelianCoreRecipe> CODEC = RecordCodecBuilder.mapCodec(instance ->
             instance.group(
-                    Ingredient.CODEC.fieldOf("mushroom_input").forGetter(MycelianCoreRecipe::mushroomInputItem),
-                    Ingredient.CODEC.fieldOf("substract_input").forGetter(MycelianCoreRecipe::substractInputItem),
-                    Ingredient.CODEC.listOf().optionalFieldOf("nutrients", List.of()).forGetter(MycelianCoreRecipe::nutrientInputs),
-                    ItemStackTemplate.CODEC.fieldOf("result").forGetter(MycelianCoreRecipe::output),
-                    ItemStackTemplate.CODEC.optionalFieldOf("secondary_output").forGetter(MycelianCoreRecipe::secondaryOutput)
+                    RecipeCodecs.INGREDIENT.fieldOf("mushroom_input").forGetter(MycelianCoreRecipe::mushroomInputItem),
+                    RecipeCodecs.INGREDIENT.fieldOf("substract_input").forGetter(MycelianCoreRecipe::substractInputItem),
+                    RecipeCodecs.INGREDIENT.listOf().optionalFieldOf("nutrients", List.of()).forGetter(MycelianCoreRecipe::nutrientInputs),
+                    ItemStack.CODEC.fieldOf("result").forGetter(MycelianCoreRecipe::output),
+                    ItemStack.CODEC.optionalFieldOf("secondary_output").forGetter(MycelianCoreRecipe::secondaryOutput)
             ).apply(instance, MycelianCoreRecipe::new));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, MycelianCoreRecipe> STREAM_CODEC =
@@ -32,8 +33,8 @@ public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substr
                     Ingredient.CONTENTS_STREAM_CODEC, MycelianCoreRecipe::mushroomInputItem,
                     Ingredient.CONTENTS_STREAM_CODEC, MycelianCoreRecipe::substractInputItem,
                     Ingredient.CONTENTS_STREAM_CODEC.apply(ByteBufCodecs.list()), MycelianCoreRecipe::nutrientInputs,
-                    ItemStackTemplate.STREAM_CODEC, MycelianCoreRecipe::output,
-                    ItemStackTemplate.STREAM_CODEC.apply(ByteBufCodecs::optional), MycelianCoreRecipe::secondaryOutput,
+                    ItemStack.STREAM_CODEC, MycelianCoreRecipe::output,
+                    ItemStack.STREAM_CODEC.apply(ByteBufCodecs::optional), MycelianCoreRecipe::secondaryOutput,
                     MycelianCoreRecipe::new);
 
     /** send slot index for nutrients(0-2) used, or empty. */
@@ -75,11 +76,27 @@ public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substr
     }
 
     @Override
-    public ItemStack assemble(MycelianCoreRecipeInput input) {
-        return output.create().copy();
+    public ItemStack assemble(MycelianCoreRecipeInput input, HolderLookup.Provider registries) {
+        return output.copy();
     }
+
+    /** Convenience overload, the registries are not needed to build the result. */
+    public ItemStack assemble(MycelianCoreRecipeInput input) {
+        return output.copy();
+    }
+
     public Optional<ItemStack> assembleSecondary() {
-        return secondaryOutput.map(ItemStackTemplate::create);
+        return secondaryOutput.map(ItemStack::copy);
+    }
+
+    @Override
+    public boolean canCraftInDimensions(int width, int height) {
+        return true;
+    }
+
+    @Override
+    public ItemStack getResultItem(HolderLookup.Provider registries) {
+        return output;
     }
 
     @Override
@@ -88,31 +105,21 @@ public record MycelianCoreRecipe(Ingredient mushroomInputItem, Ingredient substr
     }
 
     @Override
-    public String group() {
+    public String getGroup() {
         return "Mycelian Core";
     }
 
     @Override
-    public RecipeSerializer<? extends Recipe<MycelianCoreRecipeInput>> getSerializer() {
+    public RecipeSerializer<?> getSerializer() {
         return RecipesRegistry.MYCELIAN_CORE_RECIPE_SERIALIZER.get();
     }
 
     @Override
-    public RecipeType<? extends Recipe<MycelianCoreRecipeInput>> getType() {
+    public RecipeType<?> getType() {
         return RecipesRegistry.MYCELIAN_CORE_RECIPE_TYPE.get();
     }
     @Override
     public boolean isSpecial() {
         return true;
-    }
-
-    @Override
-    public PlacementInfo placementInfo() {
-        return PlacementInfo.NOT_PLACEABLE;
-    }
-
-    @Override
-    public RecipeBookCategory recipeBookCategory() {
-        return RecipeBookCategories.CRAFTING_MISC;
     }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:fertilized_mycelium"
+        "recipe": "sporenexus:fertilized_mycelium"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

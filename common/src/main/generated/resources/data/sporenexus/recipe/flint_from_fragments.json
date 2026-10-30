@@ -1,14 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "fragments_to_resource",
   "key": {
-    "X": "sporenexus:flint_fragments"
+    "X": {
+      "item": "sporenexus:flint_fragments"
+    }
   },
   "pattern": [
     "XX",
     "XX"
   ],
   "result": {
+    "count": 1,
     "id": "minecraft:flint"
   }
 }

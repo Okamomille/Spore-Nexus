@@ -1,8 +1,12 @@
 package net.okamiz.common.modded_registries;
 
+import com.mojang.serialization.MapCodec;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.okamiz.SporeNexus;
@@ -18,7 +22,7 @@ public class RecipesRegistry {
 
 
     public static final RegistrySupplier<RecipeSerializer<MycelianCoreRecipe>> MYCELIAN_CORE_RECIPE_SERIALIZER =
-            RECIPE_SERIALIZERS.register("mycelian_core", () -> new RecipeSerializer<>(MycelianCoreRecipe.CODEC, MycelianCoreRecipe.STREAM_CODEC));
+            RECIPE_SERIALIZERS.register("mycelian_core", () -> serializer(MycelianCoreRecipe.CODEC, MycelianCoreRecipe.STREAM_CODEC));
     public static final RegistrySupplier<RecipeType<MycelianCoreRecipe>> MYCELIAN_CORE_RECIPE_TYPE =
             RECIPE_TYPES.register("mycelian_core", () -> new RecipeType<MycelianCoreRecipe>(){
                 @Override
@@ -28,7 +32,7 @@ public class RecipesRegistry {
 
 
     public static final RegistrySupplier<RecipeSerializer<SporeNexusCraftRecipe>> SPORE_NEXUS_CRAFT_RECIPE_SERIALIZER =
-            RECIPE_SERIALIZERS.register("spore_nexus_craft", () -> new RecipeSerializer<>(SporeNexusCraftRecipe.CODEC, SporeNexusCraftRecipe.STREAM_CODEC));
+            RECIPE_SERIALIZERS.register("spore_nexus_craft", () -> serializer(SporeNexusCraftRecipe.CODEC, SporeNexusCraftRecipe.STREAM_CODEC));
     public static final RegistrySupplier<RecipeType<SporeNexusCraftRecipe>> SPORE_NEXUS_CRAFT_RECIPE_TYPE =
             RECIPE_TYPES.register("spore_nexus_craft", () -> new RecipeType<SporeNexusCraftRecipe>(){
                 @Override
@@ -37,11 +41,26 @@ public class RecipesRegistry {
                 }});
 
     public static final RegistrySupplier<RecipeSerializer<MushroomMutationRecipe>> MUSHROOM_MUTATION_RECIPE_SERIALIZER =
-            RECIPE_SERIALIZERS.register("mushroom_mutation", () -> new RecipeSerializer<>(MushroomMutationRecipe.CODEC, MushroomMutationRecipe.STREAM_CODEC));
+            RECIPE_SERIALIZERS.register("mushroom_mutation", () -> serializer(MushroomMutationRecipe.CODEC, MushroomMutationRecipe.STREAM_CODEC));
     public static final RegistrySupplier<RecipeType<MushroomMutationRecipe>> MUSHROOM_MUTATION_RECIPE_TYPE =
             RECIPE_TYPES.register("mushroom_mutation", () -> new RecipeType<MushroomMutationRecipe>(){
                 @Override
                 public String toString(){
                     return "mushroom_mutation";
                 }});
+
+
+    private static <T extends Recipe<?>> RecipeSerializer<T> serializer(MapCodec<T> codec, StreamCodec<RegistryFriendlyByteBuf, T> streamCodec) {
+        return new RecipeSerializer<>() {
+            @Override
+            public MapCodec<T> codec() {
+                return codec;
+            }
+
+            @Override
+            public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
+                return streamCodec;
+            }
+        };
+    }
 }

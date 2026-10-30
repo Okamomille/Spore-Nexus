@@ -1,6 +1,8 @@
 package net.okamiz.common.blocks.custom;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceLocation;
@@ -10,9 +12,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.VegetationBlock;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
@@ -22,20 +23,30 @@ import net.okamiz.SporeNexus;
 
 import java.util.*;
 
-public class CustomMushroomBlock extends VegetationBlock implements BonemealableBlock {
+public class CustomMushroomBlock extends BushBlock implements BonemealableBlock {
 
-    private static final VoxelShape SHAPE = Block.column((double)11.0F, (double)0.0F, (double)11.0F);
+    private static final VoxelShape SHAPE = Block.box(2.5, 0.0, 2.5, 13.5, 11.0, 13.5);
 
+    public static final MapCodec<CustomMushroomBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+            propertiesCodec(), Codec.STRING.listOf().fieldOf("giants").forGetter(block -> block.rawIds)).apply(instance, (properties, ids) -> new CustomMushroomBlock(properties, ids.toArray(String[]::new))));
+
+    private final List<String> rawIds;
     private final List<ResourceLocation> giantIds;
 
     public CustomMushroomBlock(Properties properties, String... ids) {
         super(properties);
+        this.rawIds = List.of(ids);
         this.giantIds = Arrays.stream(ids).map(id -> ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, id)).toList();
     }
 
     @Override
     protected boolean mayPlaceOn(final BlockState state, final BlockGetter level, final BlockPos pos) {
-        return state.isSolidRender();
+        return state.isSolidRender(level, pos);
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -44,7 +55,7 @@ public class CustomMushroomBlock extends VegetationBlock implements Bonemealable
     }
 
     private boolean tryGrow(ServerLevel level, RandomSource random, BlockPos pos, ResourceLocation id) {
-        Optional<StructureTemplate> optional = level.getStructureTemplateManager().get(id);
+        Optional<StructureTemplate> optional = level.getStructureManager().get(id);
         if (optional.isEmpty()) {
             return false;
         }
@@ -64,17 +75,17 @@ public class CustomMushroomBlock extends VegetationBlock implements Bonemealable
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, BonemealSource source) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return true;
     }
 
     @Override
-    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
+    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
         return random.nextFloat() < 0.4F;
     }
 
     @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         List<ResourceLocation> candidates = new ArrayList<>(giantIds);
         Collections.shuffle(candidates, new Random(random.nextLong()));
 

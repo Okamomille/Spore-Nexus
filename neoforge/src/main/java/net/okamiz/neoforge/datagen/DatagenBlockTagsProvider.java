@@ -4,6 +4,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.Nullable;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.modded_registries.TagsRegistry;
@@ -11,14 +13,16 @@ import net.okamiz.common.modded_registries.TagsRegistry;
 import java.util.concurrent.CompletableFuture;
 
 public class DatagenBlockTagsProvider extends BlockTagsProvider {
-    public DatagenBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(output, lookupProvider, SporeNexus.MOD_ID);
+    public DatagenBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+                                    @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, SporeNexus.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        tag(BlockTags.OVERRIDES_MUSHROOM_LIGHT_REQUIREMENT)
+
+        tag(BlockTags.MUSHROOM_GROW_BLOCK)
                 .add(BlocksRegistry.FERTILIZED_MYCELIUM.getKey())
                 .add(BlocksRegistry.FUNGAL_MYCELIUM.getKey())
                 .add(BlocksRegistry.INFERNAL_MYCELIUM.getKey())

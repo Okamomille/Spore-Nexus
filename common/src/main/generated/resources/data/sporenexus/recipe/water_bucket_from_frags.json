@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "fragments_to_resource",
   "key": {
-    "I": "minecraft:bucket",
-    "X": "sporenexus:ice_fragments"
+    "I": {
+      "item": "minecraft:bucket"
+    },
+    "X": {
+      "item": "sporenexus:ice_fragments"
+    }
   },
   "pattern": [
     "X X",
@@ -11,6 +16,7 @@
     "X X"
   ],
   "result": {
+    "count": 1,
     "id": "minecraft:water_bucket"
   }
 }

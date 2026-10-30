@@ -1,8 +1,7 @@
 package net.okamiz.common.menus.custom;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -36,22 +35,28 @@ public class SporeNexusCraftScreen extends AbstractContainerScreen<SporeNexusCra
 
 
     @Override
-    protected boolean hasClickedOutside(double mouseX, double mouseY, int left, int top) {
+    protected boolean hasClickedOutside(double mouseX, double mouseY, int left, int top, int mouseButton) {
         return mouseX < left || mouseY < top || mouseX >= left + GUI_WIDTH || mouseY >= top + GUI_HEIGHT;
     }
 
+    // 1.21.1: the background is drawn in renderBg (extractBackground only exists in 26.x).
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a) {
-        super.extractBackground(graphics, mouseX, mouseY, a);
-        graphics.blit(RenderPipelines.GUI_TEXTURED, GUI_TEXTURE, leftPos, topPos, 0, 0, GUI_WIDTH, GUI_HEIGHT, 256, 256);
+    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
+        graphics.blit(GUI_TEXTURE, leftPos, topPos, 0, 0, GUI_WIDTH, GUI_HEIGHT, 256, 256);
         renderProgressArrow(graphics);
     }
 
-    private void renderProgressArrow(GuiGraphicsExtractor graphics) {
+    private void renderProgressArrow(GuiGraphics graphics) {
         if (menu.isCrafting()) {
-            graphics.blit(RenderPipelines.GUI_TEXTURED, ARROW_TEXTURE,
+            graphics.blit(ARROW_TEXTURE,
                     leftPos + 103, topPos + 88, 0, 0, menu.getScaledArrowProgress(), 3, 26, 3);
         }
+    }
+
+    @Override
+    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
+        this.renderTooltip(guiGraphics, mouseX, mouseY);
     }
 
 

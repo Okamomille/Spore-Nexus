@@ -1,28 +1,38 @@
 package net.okamiz.neoforge.datagen;
 
-import net.minecraft.advancements.Advancement;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.Blocks;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.modded_registries.ItemsRegistry;
 import net.okamiz.common.modded_registries.TagsRegistry;
 import net.okamiz.common.records.FragmentType;
 
+import java.util.concurrent.CompletableFuture;
+
 public class DatagenRecipeProvider extends RecipeProvider {
 
 
-    public DatagenRecipeProvider(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
-        super(recipeOutput, advancementOutput);
+
+    private RecipeOutput output;
+
+    public DatagenRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries) {
+        super(packOutput, registries);
     }
 
+
     @Override
-    protected void buildRecipes() {
-        shaped(RecipeCategory.MISC, ItemsRegistry.NEXUS_FUNGUS.get())
+    protected void buildRecipes(RecipeOutput recipeOutput) {
+        this.output = recipeOutput;
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemsRegistry.NEXUS_FUNGUS.get())
                 .pattern("XXX")
                 .pattern("XXX")
                 .pattern("XXX")
@@ -33,7 +43,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
 
 
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get())
                 .pattern("OOO")
                 .pattern(" X ")
                 .pattern("XBX")
@@ -43,7 +53,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
                 .save(output, "sporenexus:spore_nexus_altar");
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.MYCELIAN_CORE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.MYCELIAN_CORE.get())
                 .pattern("OSO")
                 .pattern(" M ")
                 .pattern("OSO")
@@ -54,7 +64,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output);
 
 
-        shaped(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -64,7 +74,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fungalsteel")
                 .save(output, "sporenexus:fungalsteel_from_powder");
 
-        shaped(RecipeCategory.MISC, ItemsRegistry.INFERNAL_ESSENCE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemsRegistry.INFERNAL_ESSENCE.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -74,7 +84,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("essence")
                 .save(output);
 
-        shaped(RecipeCategory.MISC, ItemsRegistry.ETHEREAL_ESSENCE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemsRegistry.ETHEREAL_ESSENCE.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -84,7 +94,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("essence")
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_LIGHT.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_LIGHT.get())
                 .pattern(" X ")
                 .pattern("XEX")
                 .pattern(" X ")
@@ -94,7 +104,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output);
 
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.MUSHROOM_HARVESTER.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.MUSHROOM_HARVESTER.get())
                 .pattern("XXX")
                 .pattern("EOE")
                 .pattern("XVX")
@@ -105,7 +115,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
                 .group("mushroom_harvesters")
                 .save(output);
-        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_HARVESTER.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_HARVESTER.get())
                 .pattern(" X ")
                 .pattern("XEX")
                 .pattern(" X ")
@@ -114,7 +124,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_fungal_essence", has(ItemsRegistry.FUNGAL_ESSENCE.get()))
                 .group("mushroom_harvesters")
                 .save(output);
-        shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_HARVESTER.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_HARVESTER.get())
                 .pattern(" X ")
                 .pattern("XEX")
                 .pattern(" X ")
@@ -123,7 +133,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_infernal_essence", has(ItemsRegistry.INFERNAL_ESSENCE.get()))
                 .group("mushroom_harvesters")
                 .save(output);
-        shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_HARVESTER.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_HARVESTER.get())
                 .pattern(" X ")
                 .pattern("XEX")
                 .pattern(" X ")
@@ -134,7 +144,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output);
 
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.GROWTH_ACCELERATOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.GROWTH_ACCELERATOR.get())
                 .pattern("AXA")
                 .pattern("BFB")
                 .pattern("AXA")
@@ -146,7 +156,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("growth_accelerators")
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get())
                 .pattern("AXA")
                 .pattern("BFB")
                 .pattern("AXA")
@@ -158,7 +168,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("growth_accelerators")
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -168,7 +178,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("growth_accelerators")
                 .save(output, "sporenexus:fungal_growth_accelerator_from_previous");
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get())
                 .pattern("AXA")
                 .pattern("BFB")
                 .pattern("AXA")
@@ -180,7 +190,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("growth_accelerators")
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -190,7 +200,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("growth_accelerators")
                 .save(output, "sporenexus:infernal_growth_accelerator_from_previous");
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get())
                 .pattern("AXA")
                 .pattern("BFB")
                 .pattern("AXA")
@@ -202,7 +212,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("growth_accelerators")
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -214,10 +224,10 @@ public class DatagenRecipeProvider extends RecipeProvider {
 
 
         createToolsRecipe(ItemsRegistry.FUNGALSTEEL_INGOT.get(),Items.IRON_BARS,ItemsRegistry.FUNGALSTEEL_PICKAXE.get(),ItemsRegistry.FUNGALSTEEL_SWORD.get(),
-                ItemsRegistry.FUNGALSTEEL_AXE.get(), ItemsRegistry.FUNGALSTEEL_SHOVEL.get(), ItemsRegistry.FUNGALSTEEL_HOE.get(), ItemsRegistry.FUNGALSTEEL_SPEAR.get());
+                ItemsRegistry.FUNGALSTEEL_AXE.get(), ItemsRegistry.FUNGALSTEEL_SHOVEL.get(), ItemsRegistry.FUNGALSTEEL_HOE.get());
 
 
-        shaped(RecipeCategory.MISC, Blocks.MYCELIUM)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.MYCELIUM)
                 .pattern("XXX")
                 .pattern("XOX")
                 .pattern("XXX")
@@ -226,7 +236,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_mushroom_spores", has(ItemsRegistry.MUSHROOM_SPORES.get()))
                 .save(output, "sporenexus:mycelium_from_spores");
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.FERTILIZED_MYCELIUM.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.FERTILIZED_MYCELIUM.get())
                 .pattern("XXX")
                 .pattern("XOX")
                 .pattern("XXX")
@@ -235,7 +245,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_mushroom_spores", has(ItemsRegistry.MUSHROOM_SPORES.get()))
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_MYCELIUM.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.FUNGAL_MYCELIUM.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -244,7 +254,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_fertilized_mycelium", has(BlocksRegistry.FERTILIZED_MYCELIUM.get()))
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_MYCELIUM.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.INFERNAL_MYCELIUM.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -253,7 +263,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_fungal_mycelium", has(BlocksRegistry.FUNGAL_MYCELIUM.get()))
                 .save(output);
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_MYCELIUM.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.ETHEREAL_MYCELIUM.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -263,7 +273,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output);
 
 
-        shaped(RecipeCategory.MISC, ItemsRegistry.GREAT_FUNGUS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemsRegistry.GREAT_FUNGUS.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -271,7 +281,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .define('O', ItemsRegistry.NEXUS_FUNGUS.get())
                 .unlockedBy("has_nexus_fungus", has(ItemsRegistry.NEXUS_FUNGUS.get()))
                 .save(output);
-        shaped(RecipeCategory.MISC, ItemsRegistry.INFERNAL_FUNGUS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemsRegistry.INFERNAL_FUNGUS.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -279,7 +289,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .define('O', ItemsRegistry.GREAT_FUNGUS.get())
                 .unlockedBy("has_great_fungus", has(ItemsRegistry.GREAT_FUNGUS.get()))
                 .save(output);
-        shaped(RecipeCategory.MISC, ItemsRegistry.ETHEREAL_FUNGUS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemsRegistry.ETHEREAL_FUNGUS.get())
                 .pattern(" X ")
                 .pattern("XOX")
                 .pattern(" X ")
@@ -289,7 +299,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output);
 
 
-        shaped(RecipeCategory.MISC, BlocksRegistry.FUNGALSTEEL_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlocksRegistry.FUNGALSTEEL_BLOCK.get())
                 .pattern("XX")
                 .pattern("XX")
                 .define('X', ItemsRegistry.FUNGALSTEEL_INGOT.get())
@@ -297,13 +307,13 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fungalsteel")
                 .save(output);
 
-        shapeless(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get(), 4)
                 .requires(BlocksRegistry.FUNGALSTEEL_BLOCK.get())
                 .unlockedBy("has_fungalsteel_block", has(BlocksRegistry.FUNGALSTEEL_BLOCK.get()))
                 .group("fungalsteel")
                 .save(output);
 
-        shaped(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_INGOT.get())
                 .pattern("XXX")
                 .pattern("XXX")
                 .pattern("XXX")
@@ -312,13 +322,13 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fungalsteel")
                 .save(output, "sporenexus:"+"fungalsteel_ingot_from_nuggets");
 
-        shapeless(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_NUGGET.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemsRegistry.FUNGALSTEEL_NUGGET.get(), 9)
                 .requires(ItemsRegistry.FUNGALSTEEL_INGOT.get())
                 .unlockedBy("has_fungalsteel_ingot", has(ItemsRegistry.FUNGALSTEEL_INGOT.get()))
                 .group("fungalsteel")
                 .save(output);
 
-        shapeless(RecipeCategory.MISC, ItemsRegistry.MUSHROOM_SPORES.get(), 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemsRegistry.MUSHROOM_SPORES.get(), 2)
                 .requires(TagsRegistry.MUSHROOMS)
                 .unlockedBy("has_mushroom", has(TagsRegistry.MUSHROOMS))
                 .group("mushroom_spores")
@@ -327,7 +337,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
 
         for (FragmentType type : ItemsRegistry.FRAGMENT_TYPES) {
             Item fragment = ItemsRegistry.fragment(type.name()).get();
-            shaped(RecipeCategory.MISC, type.craftOutput().get(), type.craftCount())
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, type.craftOutput().get(), type.craftCount())
                     .pattern("XX")
                     .pattern("XX")
                     .define('X', fragment)
@@ -337,7 +347,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
         }
 
 
-        shaped(RecipeCategory.MISC, Items.MUD, 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.MUD, 2)
                 .pattern("DX")
                 .pattern("XD")
                 .define('X', ItemsRegistry.fragment("clay").get())
@@ -346,14 +356,14 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fragments_to_resource")
                 .save(output, "sporenexus:"+"mud_from_frags");
 
-        shaped(RecipeCategory.MISC, Items.MOSS_CARPET, 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.MOSS_CARPET, 2)
                 .pattern("XX")
                 .define('X', ItemsRegistry.fragment("moss").get())
                 .unlockedBy("has_moss_fragments", has(ItemsRegistry.fragment("moss").get()))
                 .group("fragments_to_resource")
                 .save(output, "sporenexus:"+"moss_carpet_from_frags");
 
-        shaped(RecipeCategory.MISC, Items.COBBLESTONE, 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.COBBLESTONE, 2)
                 .pattern(" X ")
                 .pattern("X X")
                 .pattern(" X ")
@@ -362,7 +372,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fragments_to_resource")
                 .save(output, "sporenexus:"+"cobblestone_from_frags");
 
-        shaped(RecipeCategory.MISC, Items.STONE_BRICKS, 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STONE_BRICKS, 2)
                 .pattern("X X")
                 .pattern("X X")
                 .define('X', ItemsRegistry.fragment("stone").get())
@@ -370,7 +380,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fragments_to_resource")
                 .save(output, "sporenexus:"+"stone_bricks_from_frags");
 
-        shaped(RecipeCategory.MISC, Items.MOSSY_STONE_BRICKS, 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.MOSSY_STONE_BRICKS, 4)
                 .pattern("XOX")
                 .pattern("XOX")
                 .define('X', ItemsRegistry.fragment("stone").get())
@@ -379,7 +389,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fragments_to_resource")
                 .save(output, "sporenexus:"+"mossy_stone_bricks_from_frags");
 
-        shaped(RecipeCategory.MISC, Items.SOUL_SOIL, 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.SOUL_SOIL, 2)
                 .pattern("X X")
                 .pattern("X X")
                 .define('X', ItemsRegistry.fragment("soul_sand").get())
@@ -387,7 +397,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("fragments_to_resource")
                 .save(output, "sporenexus:"+"soul_soil_from_frags");
 
-        shaped(RecipeCategory.MISC, Items.WATER_BUCKET, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.WATER_BUCKET, 1)
                 .pattern("X X")
                 .pattern(" I ")
                 .pattern("X X")
@@ -398,9 +408,9 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .save(output, "sporenexus:"+"water_bucket_from_frags");
 
     }
-    private void createToolsRecipe(Item ingredient, Item stick, Item pickaxe, Item sword, Item axe, Item shovel, Item hoe, Item spear){
+    private void createToolsRecipe(Item ingredient, Item stick, Item pickaxe, Item sword, Item axe, Item shovel, Item hoe){
 
-        shaped(RecipeCategory.MISC, pickaxe, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pickaxe, 1)
                 .pattern("XXX")
                 .pattern(" I ")
                 .pattern(" I ")
@@ -409,7 +419,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .group("tools")
                 .save(output);
-        shaped(RecipeCategory.MISC, sword, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, sword, 1)
                 .pattern("X")
                 .pattern("X")
                 .pattern("I")
@@ -418,7 +428,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .group("tools")
                 .save(output);
-        shaped(RecipeCategory.MISC, shovel, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, shovel, 1)
                 .pattern("X")
                 .pattern("I")
                 .pattern("I")
@@ -427,7 +437,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .group("tools")
                 .save(output);
-        shaped(RecipeCategory.MISC, axe, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, axe, 1)
                 .pattern("XX")
                 .pattern("XI")
                 .pattern(" I")
@@ -436,7 +446,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .group("tools")
                 .save(output, "sporenexus:"+getItemName(axe)+"_left");
-        shaped(RecipeCategory.MISC, axe, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, axe, 1)
                 .pattern("XX")
                 .pattern("IX")
                 .pattern("I ")
@@ -446,7 +456,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .group("tools")
                 .save(output, "sporenexus:"+getItemName(axe)+"_right");
 
-        shaped(RecipeCategory.MISC, hoe, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, hoe, 1)
                 .pattern("XX")
                 .pattern("I ")
                 .pattern("I ")
@@ -455,7 +465,7 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .group("tools")
                 .save(output, "sporenexus:"+getItemName(hoe)+"_right");
-        shaped(RecipeCategory.MISC, hoe, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, hoe, 1)
                 .pattern("XX")
                 .pattern(" I")
                 .pattern(" I")
@@ -464,14 +474,5 @@ public class DatagenRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .group("tools")
                 .save(output, "sporenexus:"+getItemName(hoe)+"_left");
-        shaped(RecipeCategory.MISC, spear, 1)
-                .pattern("  X")
-                .pattern(" I ")
-                .pattern("I  ")
-                .define('X', ingredient)
-                .define('I', stick)
-                .unlockedBy(getHasName(ingredient), has(ingredient))
-                .group("tools")
-                .save(output);
     }
 }

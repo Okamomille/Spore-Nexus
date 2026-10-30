@@ -2,8 +2,11 @@ package net.okamiz.neoforge.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
-import net.neoforged.neoforge.common.data.ItemTagsProvider;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.Nullable;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.modded_registries.BlocksRegistry;
 import net.okamiz.common.modded_registries.ItemsRegistry;
@@ -12,8 +15,10 @@ import net.okamiz.common.modded_registries.TagsRegistry;
 import java.util.concurrent.CompletableFuture;
 
 public class DatagenItemsTagsProvider extends ItemTagsProvider {
-    public DatagenItemsTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(output, lookupProvider, SporeNexus.MOD_ID);
+    // 1.21.1: the item tags provider needs the block tags (for copy()) and the ExistingFileHelper.
+    public DatagenItemsTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+                                    CompletableFuture<TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, blockTags, SporeNexus.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -38,9 +43,7 @@ public class DatagenItemsTagsProvider extends ItemTagsProvider {
         tag(ItemTags.HOES)
                 .add(ItemsRegistry.FUNGALSTEEL_HOE.getKey())
         ;
-        tag(ItemTags.SPEARS)
-                .add(ItemsRegistry.FUNGALSTEEL_SPEAR.getKey())
-        ;
+        // No spear in 1.21.1 (spears were added by Minecraft 1.21.11).
 
 
     }

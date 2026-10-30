@@ -26,8 +26,8 @@ public class HarvesterProvider implements IBlockComponentProvider {
         CompoundTag data = accessor.getServerData();
         if (!data.contains("used")) return;   // données pas encore reçues
 
-        int used = data.getIntOr("used", 0);
-        int size = data.getIntOr("size", 0);
+        int used = data.getInt("used");
+        int size = data.getInt("size");
         boolean full = used >= size;
 
         tooltip.add(Component.translatable("jade.sporenexus.harvester_storage", used, size)
@@ -35,7 +35,7 @@ public class HarvesterProvider implements IBlockComponentProvider {
         if (full) {
             tooltip.add(Component.translatable("jade.sporenexus.harvester_full").withColor(0xFF5555));
         } else {
-            tooltip.add(Component.translatable("jade.sporenexus.harvester_next_scan", Math.max(1, data.getIntOr("cooldown", 0) / 20)));
+            tooltip.add(Component.translatable("jade.sporenexus.harvester_next_scan", Math.max(1, data.getInt("cooldown") / 20)));
         }
     }
 

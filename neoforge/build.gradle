@@ -69,6 +69,7 @@ dependencies {
 
     modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-neoforge-api:$rootProject.jei_version"
     modRuntimeOnly "mezz.jei:jei-$rootProject.minecraft_version-neoforge:$rootProject.jei_version"
+    modRuntimeOnly "net.mezzdev.config:mezz_config-$rootProject.minecraft_version-neoforge:$rootProject.mezz_config_version"
 
     modCompileOnly "maven.modrinth:jade:${rootProject.jade_version}+neoforge"
     modRuntimeOnly "maven.modrinth:jade:${rootProject.jade_version}+neoforge"

@@ -41,7 +41,7 @@ public final class CustomMushroomValidator {
             return;
         }
         TagKey<Item> key = TagKey.create(Registries.ITEM, ref.id());
-        boolean empty = BuiltInRegistries.ITEM.get(key).map(set -> set.size() == 0).orElse(true);
+        boolean empty = BuiltInRegistries.ITEM.getTag(key).map(set -> set.size() == 0).orElse(true);
         if (empty) {
             SporeNexus.LOGGER.error("Custom mushroom '{}': '{}' points to the item tag '#{}' which does not exist "
                     + "or is empty (block tags don't work here, it must be an item tag)", def.id(), field, ref.id());

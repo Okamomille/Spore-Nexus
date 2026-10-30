@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:mushroom_spores"
+        "recipe": "sporenexus:mushroom_spores"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

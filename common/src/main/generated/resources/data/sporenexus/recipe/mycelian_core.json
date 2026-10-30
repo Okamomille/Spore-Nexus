@@ -1,9 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
-    "M": "minecraft:mycelium",
-    "O": "minecraft:iron_ingot",
-    "S": "sporenexus:mushroom_spores"
+    "M": {
+      "item": "minecraft:mycelium"
+    },
+    "O": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "sporenexus:mushroom_spores"
+    }
   },
   "pattern": [
     "OSO",
@@ -11,6 +18,7 @@
     "OSO"
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:mycelian_core"
   }
 }

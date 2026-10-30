@@ -1,9 +1,9 @@
 package net.okamiz.common.blocks.custom;
 
+import com.mojang.serialization.MapCodec;
 import dev.architectury.registry.menu.MenuRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -35,9 +36,16 @@ public class MycelianCoreBlock extends BaseEntityBlock {
 
     private static final Set<BlockPos> CLEANING_UP_MAINS = new HashSet<>();
 
+    public static final MapCodec<MycelianCoreBlock> CODEC = simpleCodec(MycelianCoreBlock::new);
+
     public MycelianCoreBlock(Properties properties) {
         super(properties);
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
     }
 
     /* FACING */
@@ -83,6 +91,12 @@ public class MycelianCoreBlock extends BaseEntityBlock {
         builder.add(FACING);
     }
 
+    // 1.21.1: BaseEntityBlock is INVISIBLE by default, the model must be enabled explicitly.
+    @Override
+    protected RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
+    }
+
     /*BLOCK ENTITY*/
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -90,13 +104,15 @@ public class MycelianCoreBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
-        removeProxyBlock(level, pos);
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            if (!level.isClientSide()) {
+                removeProxyBlock(level, pos);
+            }
+            level.updateNeighbourForOutputSignal(pos, this);
+        }
 
-        level.updateNeighbourForOutputSignal(pos, this);
-        state.updateNeighbourShapes(level, pos, UPDATE_NEIGHBORS);
-
-        super.affectNeighborsAfterRemoval(state, level, pos, movedByPiston);
+        super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     static boolean isCleaningUpMain(BlockPos mainPos) {
@@ -145,7 +161,7 @@ public class MycelianCoreBlock extends BaseEntityBlock {
     }
 
     public static void openMenu(ServerPlayer serverPlayer, MycelianCoreBlockEntity core, BlockPos pos){
-        MenuRegistry.openExtendedMenu(serverPlayer, core);
+        MenuRegistry.openExtendedMenu(serverPlayer, core, buffer -> buffer.writeBlockPos(pos));
     }
 
 

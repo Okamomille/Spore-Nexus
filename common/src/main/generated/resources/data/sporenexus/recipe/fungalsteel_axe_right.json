@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "tools",
   "key": {
-    "I": "minecraft:iron_bars",
-    "X": "sporenexus:fungalsteel_ingot"
+    "I": {
+      "item": "minecraft:iron_bars"
+    },
+    "X": {
+      "item": "sporenexus:fungalsteel_ingot"
+    }
   },
   "pattern": [
     "XX",
@@ -11,6 +16,7 @@
     "I "
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:fungalsteel_axe"
   }
 }

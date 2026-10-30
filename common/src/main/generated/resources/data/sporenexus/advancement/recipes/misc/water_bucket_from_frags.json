@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:water_bucket_from_frags"
+        "recipe": "sporenexus:water_bucket_from_frags"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

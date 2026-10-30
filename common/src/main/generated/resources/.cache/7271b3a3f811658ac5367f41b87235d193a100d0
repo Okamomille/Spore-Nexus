@@ -1,7 +1,7 @@
-// 26.3	2026-10-23T14:23:15.613346	Tags for minecraft:block mod id sporenexus
+// 1.21.1	2026-10-30T15:50:13.3705443	Tags for minecraft:block mod id sporenexus
 f0c511780dfcd8ca0d636cb3131dae5477937323 data/minecraft/tags/block/mineable/axe.json
 1f880fdbc239682ee98fd2ae6ade673be9b15a67 data/minecraft/tags/block/mineable/hoe.json
 51080aacb4ccc5c501fd853e09d28f00c6925def data/minecraft/tags/block/mineable/pickaxe.json
 1185c099ac2835c56f9c117b7e064e4def08bcb7 data/minecraft/tags/block/mineable/shovel.json
-1185c099ac2835c56f9c117b7e064e4def08bcb7 data/minecraft/tags/block/overrides_mushroom_light_requirement.json
+1185c099ac2835c56f9c117b7e064e4def08bcb7 data/minecraft/tags/block/mushroom_grow_block.json
 950a086f855d118e00d3fc9697663c7721c42db1 data/sporenexus/tags/block/incorrect_fungalsteel_tool.json

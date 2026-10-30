@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:stone_from_fragments"
+        "recipe": "sporenexus:stone_from_fragments"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

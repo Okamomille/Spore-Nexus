@@ -3,7 +3,6 @@ package net.okamiz.common.blocks.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -25,10 +24,17 @@ public class MycelianCoreProxy extends Block implements MultiblockProxyBlock {
 
     public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 
+    public static final MapCodec<MycelianCoreProxy> CODEC = simpleCodec(MycelianCoreProxy::new);
+
     public MycelianCoreProxy(Properties properties) {
         super(properties);
 
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
+    }
+
+    @Override
+    protected @NotNull MapCodec<? extends Block> codec() {
+        return CODEC;
     }
 
 
@@ -86,14 +92,16 @@ public class MycelianCoreProxy extends Block implements MultiblockProxyBlock {
      * disappear and leave the Machine standing.
      */
     @Override
-    protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
-        BlockPos mainPos = getMainPos(pos);
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!level.isClientSide() && !state.is(newState.getBlock())) {
+            BlockPos mainPos = getMainPos(pos);
 
-        if (!MycelianCoreBlock.isCleaningUpMain(mainPos) && level.getBlockState(mainPos).getBlock() instanceof MycelianCoreBlock) {
-            level.destroyBlock(mainPos, true);
+            if (!MycelianCoreBlock.isCleaningUpMain(mainPos) && level.getBlockState(mainPos).getBlock() instanceof MycelianCoreBlock) {
+                level.destroyBlock(mainPos, true);
+            }
         }
 
-        super.affectNeighborsAfterRemoval(state, level, pos, movedByPiston);
+        super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     @Override
@@ -117,7 +125,7 @@ public class MycelianCoreProxy extends Block implements MultiblockProxyBlock {
     }
 
     @Override
-    protected @NotNull VoxelShape getOcclusionShape(BlockState state) {
+    protected @NotNull VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
         return Shapes.empty();
     }
 

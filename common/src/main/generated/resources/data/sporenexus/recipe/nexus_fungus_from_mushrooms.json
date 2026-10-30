@@ -1,8 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "fungus",
   "key": {
-    "X": "#sporenexus:mushrooms"
+    "X": {
+      "tag": "sporenexus:mushrooms"
+    }
   },
   "pattern": [
     "XXX",
@@ -10,6 +13,7 @@
     "XXX"
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:nexus_fungus"
   }
 }

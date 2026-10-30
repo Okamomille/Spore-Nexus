@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "essence",
   "key": {
-    "O": "minecraft:blaze_powder",
-    "X": "sporenexus:fungal_essence"
+    "O": {
+      "item": "minecraft:blaze_powder"
+    },
+    "X": {
+      "item": "sporenexus:fungal_essence"
+    }
   },
   "pattern": [
     " X ",
@@ -11,6 +16,7 @@
     " X "
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:infernal_essence"
   }
 }

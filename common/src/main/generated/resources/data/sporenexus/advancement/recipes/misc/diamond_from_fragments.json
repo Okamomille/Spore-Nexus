@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:diamond_from_fragments"
+        "recipe": "sporenexus:diamond_from_fragments"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

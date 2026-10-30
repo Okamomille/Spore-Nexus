@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:cobblestone_from_frags"
+        "recipe": "sporenexus:cobblestone_from_frags"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

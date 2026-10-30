@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "growth_accelerators",
   "key": {
-    "O": "sporenexus:growth_accelerator",
-    "X": "sporenexus:fungal_essence"
+    "O": {
+      "item": "sporenexus:growth_accelerator"
+    },
+    "X": {
+      "item": "sporenexus:fungal_essence"
+    }
   },
   "pattern": [
     " X ",
@@ -11,6 +16,7 @@
     " X "
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:fungal_growth_accelerator"
   }
 }

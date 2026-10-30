@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "fragments_to_resource",
   "key": {
-    "D": "sporenexus:dirt_fragments",
-    "X": "sporenexus:clay_fragments"
+    "D": {
+      "item": "sporenexus:dirt_fragments"
+    },
+    "X": {
+      "item": "sporenexus:clay_fragments"
+    }
   },
   "pattern": [
     "DX",

@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "fungalsteel",
   "key": {
-    "O": "minecraft:iron_ingot",
-    "X": "sporenexus:fungal_powder"
+    "O": {
+      "item": "minecraft:iron_ingot"
+    },
+    "X": {
+      "item": "sporenexus:fungal_powder"
+    }
   },
   "pattern": [
     " X ",
@@ -11,6 +16,7 @@
     " X "
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:fungalsteel_ingot"
   }
 }

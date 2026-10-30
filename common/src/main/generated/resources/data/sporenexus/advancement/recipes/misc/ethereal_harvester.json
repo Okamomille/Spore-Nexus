@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:ethereal_harvester"
+        "recipe": "sporenexus:ethereal_harvester"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

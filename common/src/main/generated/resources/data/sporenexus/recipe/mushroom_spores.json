@@ -1,8 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "group": "mushroom_spores",
   "ingredients": [
-    "#sporenexus:mushrooms"
+    {
+      "tag": "sporenexus:mushrooms"
+    }
   ],
   "result": {
     "count": 2,

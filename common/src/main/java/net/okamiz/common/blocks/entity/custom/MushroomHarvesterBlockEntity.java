@@ -2,7 +2,9 @@ package net.okamiz.common.blocks.entity.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.*;
@@ -15,8 +17,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.ValueInput;
-import net.minecraft.world.level.storage.ValueOutput;
 import net.okamiz.common.blocks.custom.MushroomHarvesterBlock;
 import net.okamiz.common.blocks.custom.ResourceMushroomBlock;
 import net.okamiz.common.modded_registries.BlockEntitiesRegistry;
@@ -65,20 +65,20 @@ public class MushroomHarvesterBlockEntity extends BlockEntity implements MenuPro
     }
 
     @Override
-    protected void saveAdditional(ValueOutput output) {
-        super.saveAdditional(output);
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
         NonNullList<ItemStack> list = NonNullList.withSize(inventory.getContainerSize(), ItemStack.EMPTY);
         for (int i = 0; i < list.size(); i++) {
             list.set(i, inventory.getItem(i));
         }
-        ContainerHelper.saveAllItems(output, list);
+        ContainerHelper.saveAllItems(tag, list, registries);
     }
 
     @Override
-    protected void loadAdditional(ValueInput input) {
-        super.loadAdditional(input);
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
         NonNullList<ItemStack> list = NonNullList.withSize(inventory.getContainerSize(), ItemStack.EMPTY);
-        ContainerHelper.loadAllItems(input, list);
+        ContainerHelper.loadAllItems(tag, list, registries);
         for (int i = 0; i < list.size(); i++) {
             inventory.setItem(i, list.get(i));
         }

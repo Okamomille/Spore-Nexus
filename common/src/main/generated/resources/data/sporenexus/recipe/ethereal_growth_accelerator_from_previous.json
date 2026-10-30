@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "growth_accelerators",
   "key": {
-    "O": "sporenexus:infernal_growth_accelerator",
-    "X": "sporenexus:ethereal_essence"
+    "O": {
+      "item": "sporenexus:infernal_growth_accelerator"
+    },
+    "X": {
+      "item": "sporenexus:ethereal_essence"
+    }
   },
   "pattern": [
     " X ",
@@ -11,6 +16,7 @@
     " X "
   ],
   "result": {
+    "count": 1,
     "id": "sporenexus:ethereal_growth_accelerator"
   }
 }

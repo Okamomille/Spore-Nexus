@@ -1,8 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "group": "fungalsteel",
   "ingredients": [
-    "sporenexus:fungalsteel_block"
+    {
+      "item": "sporenexus:fungalsteel_block"
+    }
   ],
   "result": {
     "count": 4,

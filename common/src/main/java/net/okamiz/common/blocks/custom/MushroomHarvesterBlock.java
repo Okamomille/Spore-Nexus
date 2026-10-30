@@ -1,10 +1,14 @@
 package net.okamiz.common.blocks.custom;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -17,6 +21,9 @@ import org.jetbrains.annotations.Nullable;
 public class MushroomHarvesterBlock extends BaseEntityBlock {
     public static final int MAX_RADIUS = 4;
 
+    public static final MapCodec<MushroomHarvesterBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+            propertiesCodec(), Codec.INT.fieldOf("radius").forGetter(MushroomHarvesterBlock::getRadius)).apply(instance, MushroomHarvesterBlock::new));
+
     private final int radius;
 
     public MushroomHarvesterBlock(Properties properties, int radius) {
@@ -26,6 +33,17 @@ public class MushroomHarvesterBlock extends BaseEntityBlock {
 
     public int getRadius() {
         return radius;
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
+    }
+
+    // 1.21.1: BaseEntityBlock is INVISIBLE by default, the model must be enabled explicitly.
+    @Override
+    protected RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
     }
 
     @Override

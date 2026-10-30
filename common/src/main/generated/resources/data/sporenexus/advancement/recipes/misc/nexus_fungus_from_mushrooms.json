@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:nexus_fungus_from_mushrooms"
+        "recipe": "sporenexus:nexus_fungus_from_mushrooms"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

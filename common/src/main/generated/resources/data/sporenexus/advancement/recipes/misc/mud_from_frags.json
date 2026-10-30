@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:mud_from_frags"
+        "recipe": "sporenexus:mud_from_frags"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

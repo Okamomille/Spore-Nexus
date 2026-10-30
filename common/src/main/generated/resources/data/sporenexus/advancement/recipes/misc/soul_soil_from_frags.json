@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:soul_soil_from_frags"
+        "recipe": "sporenexus:soul_soil_from_frags"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

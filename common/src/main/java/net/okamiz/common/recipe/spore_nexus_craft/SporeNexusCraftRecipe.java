@@ -2,29 +2,30 @@ package net.okamiz.common.recipe.spore_nexus_craft;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.okamiz.common.modded_registries.RecipesRegistry;
+import net.okamiz.common.recipe.RecipeCodecs;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public record SporeNexusCraftRecipe(Ingredient mushroomInputItem, List<Ingredient> resourceInputs, List<Ingredient> secondaryInputs
-        , ItemStackTemplate output)
+        , ItemStack output)
         implements Recipe<SporeNexusCraftRecipeInput> {
 
     public static final MapCodec<SporeNexusCraftRecipe> CODEC = RecordCodecBuilder.mapCodec(instance ->
             instance.group(
-                    Ingredient.CODEC.fieldOf("mushroom_input").forGetter(SporeNexusCraftRecipe::mushroomInputItem),
-                    Ingredient.CODEC.listOf().optionalFieldOf("resource_input", List.of()).forGetter(SporeNexusCraftRecipe::resourceInputs),
-                    Ingredient.CODEC.listOf().optionalFieldOf("secondary_input", List.of()).forGetter(SporeNexusCraftRecipe::secondaryInputs),
-                    ItemStackTemplate.CODEC.fieldOf("result").forGetter(SporeNexusCraftRecipe::output)
+                    RecipeCodecs.INGREDIENT.fieldOf("mushroom_input").forGetter(SporeNexusCraftRecipe::mushroomInputItem),
+                    RecipeCodecs.INGREDIENT.listOf().optionalFieldOf("resource_input", List.of()).forGetter(SporeNexusCraftRecipe::resourceInputs),
+                    RecipeCodecs.INGREDIENT.listOf().optionalFieldOf("secondary_input", List.of()).forGetter(SporeNexusCraftRecipe::secondaryInputs),
+                    ItemStack.CODEC.fieldOf("result").forGetter(SporeNexusCraftRecipe::output)
             ).apply(instance, SporeNexusCraftRecipe::new));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, SporeNexusCraftRecipe> STREAM_CODEC =
@@ -32,7 +33,7 @@ public record SporeNexusCraftRecipe(Ingredient mushroomInputItem, List<Ingredien
                     Ingredient.CONTENTS_STREAM_CODEC, SporeNexusCraftRecipe::mushroomInputItem,
                     Ingredient.CONTENTS_STREAM_CODEC.apply(ByteBufCodecs.list()), SporeNexusCraftRecipe::resourceInputs,
                     Ingredient.CONTENTS_STREAM_CODEC.apply(ByteBufCodecs.list()), SporeNexusCraftRecipe::secondaryInputs,
-                    ItemStackTemplate.STREAM_CODEC, SporeNexusCraftRecipe::output,
+                    ItemStack.STREAM_CODEC, SporeNexusCraftRecipe::output,
                     SporeNexusCraftRecipe::new);
 
 
@@ -86,8 +87,23 @@ public record SporeNexusCraftRecipe(Ingredient mushroomInputItem, List<Ingredien
     }
 
     @Override
+    public ItemStack assemble(SporeNexusCraftRecipeInput input, HolderLookup.Provider registries) {
+        return output.copy();
+    }
+
+    /** Convenience overload, the registries are not needed to build the result. */
     public ItemStack assemble(SporeNexusCraftRecipeInput input) {
-        return output.create().copy();
+        return output.copy();
+    }
+
+    @Override
+    public boolean canCraftInDimensions(int width, int height) {
+        return true;
+    }
+
+    @Override
+    public ItemStack getResultItem(HolderLookup.Provider registries) {
+        return output;
     }
 
     @Override
@@ -96,31 +112,21 @@ public record SporeNexusCraftRecipe(Ingredient mushroomInputItem, List<Ingredien
     }
 
     @Override
-    public String group() {
+    public String getGroup() {
         return "Spore Nexus Craft";
     }
 
     @Override
-    public RecipeSerializer<? extends Recipe<SporeNexusCraftRecipeInput>> getSerializer() {
+    public RecipeSerializer<?> getSerializer() {
         return RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_SERIALIZER.get();
     }
 
     @Override
-    public RecipeType<? extends Recipe<SporeNexusCraftRecipeInput>> getType() {
+    public RecipeType<?> getType() {
         return RecipesRegistry.SPORE_NEXUS_CRAFT_RECIPE_TYPE.get();
     }
     @Override
     public boolean isSpecial() {
         return true;
-    }
-
-    @Override
-    public PlacementInfo placementInfo() {
-        return PlacementInfo.NOT_PLACEABLE;
-    }
-
-    @Override
-    public RecipeBookCategory recipeBookCategory() {
-        return RecipeBookCategories.CRAFTING_MISC;
     }
 }

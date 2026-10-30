@@ -8,11 +8,10 @@ import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.api.recipe.types.IRecipeType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import mezz.jei.api.recipe.RecipeType;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextColor;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.ItemStack;
 import net.okamiz.SporeNexus;
 import net.okamiz.common.modded_registries.BlocksRegistry;
@@ -21,8 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class MushroomHarvestCategory implements IRecipeCategory<MushroomHarvest> {
 
-    public static final IRecipeType<MushroomHarvest> TYPE = IRecipeType.create(
-            ResourceLocation.fromNamespaceAndPath(SporeNexus.MOD_ID, "textures/gui/mushroom/harvest_gui.png"), MushroomHarvest.class);
+    public static final RecipeType<MushroomHarvest> TYPE = RecipeType.create(SporeNexus.MOD_ID, "mushroom_harvest", MushroomHarvest.class);
 
     private static final int WIDTH = 120;
     private static final int HEIGHT = 56;
@@ -36,7 +34,7 @@ public class MushroomHarvestCategory implements IRecipeCategory<MushroomHarvest>
                 new ItemStack(BlocksRegistry.RESOURCE_MUSHROOMS.get("redstone").get()));
     }
 
-    @Override public IRecipeType<MushroomHarvest> getRecipeType() { return TYPE; }
+    @Override public RecipeType<MushroomHarvest> getRecipeType() { return TYPE; }
     @Override public Component getTitle() { return Component.translatable("jei.sporenexus.mushroom_harvest"); }
     @Override public int getWidth() { return WIDTH; }
     @Override public int getHeight() { return HEIGHT; }
@@ -44,20 +42,20 @@ public class MushroomHarvestCategory implements IRecipeCategory<MushroomHarvest>
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, MushroomHarvest recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 20).add(new ItemStack(recipe.mushroom()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 8, 20).addItemStack(new ItemStack(recipe.mushroom()));
 
         int i = 0;
         for (ResourceMushroomBlock.HarvestDrop drop : recipe.drops()) {
             int x = 50 + (i % 4) * 18;
             int y = 12 + (i / 4) * 18;
             builder.addSlot(RecipeIngredientRole.OUTPUT, x, y)
-                    .add(new ItemStack(drop.item().get(), drop.max()))
+                    .addItemStack(new ItemStack(drop.item().get(), drop.max()))
                     .addRichTooltipCallback((slotView, tooltip) -> {
                         if(drop.chancePercent() < 100){
-                            tooltip.add(Component.translatable("jei.sporenexus.drop_chance", drop.chancePercent()).withColor(TextColor.YELLOW));
+                            tooltip.add(Component.translatable("jei.sporenexus.drop_chance", drop.chancePercent()).withStyle(ChatFormatting.YELLOW));
                         }
                         if (drop.min() != drop.max()) {
-                            tooltip.add(Component.translatable("jei.sporenexus.drop_amount", drop.min(), drop.max()).withColor(TextColor.GOLD));
+                            tooltip.add(Component.translatable("jei.sporenexus.drop_amount", drop.min(), drop.max()).withStyle(ChatFormatting.GOLD));
                         }
                     });
             i++;
@@ -65,7 +63,7 @@ public class MushroomHarvestCategory implements IRecipeCategory<MushroomHarvest>
     }
 
     @Override
-    public void draw(MushroomHarvest recipe, IRecipeSlotsView slotsView, GuiGraphicsExtractor guiGraphics,
+    public void draw(MushroomHarvest recipe, IRecipeSlotsView slotsView, GuiGraphics guiGraphics,
                      double mouseX, double mouseY) {
         this.background.draw(guiGraphics, 0, 0);
     }

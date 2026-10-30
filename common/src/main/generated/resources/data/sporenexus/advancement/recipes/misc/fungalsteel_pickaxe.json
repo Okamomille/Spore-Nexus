@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:fungalsteel_pickaxe"
+        "recipe": "sporenexus:fungalsteel_pickaxe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

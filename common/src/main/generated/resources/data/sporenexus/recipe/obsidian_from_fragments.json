@@ -1,8 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "fragments_to_resource",
   "key": {
-    "X": "sporenexus:obsidian_fragments"
+    "X": {
+      "item": "sporenexus:obsidian_fragments"
+    }
   },
   "pattern": [
     "XX",

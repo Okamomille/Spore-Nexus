@@ -1,8 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "fragments_to_resource",
   "key": {
-    "X": "sporenexus:stone_fragments"
+    "X": {
+      "item": "sporenexus:stone_fragments"
+    }
   },
   "pattern": [
     "XX",

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "sporenexus:fungalsteel_axe_left"
+        "recipe": "sporenexus:fungalsteel_axe_left"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

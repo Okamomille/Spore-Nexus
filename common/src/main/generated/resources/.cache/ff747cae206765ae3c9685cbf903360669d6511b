@@ -1,7 +1,0 @@
-// 26.3	2026-10-23T14:23:15.613346	Registries for World (sporenexus[0]): [sporenexus]
-5c91df81361e9c1a3534072c253ffae518061eb7 data/sporenexus/neoforge/biome_modifier/add_banded_agaric.json
-d72b910c0cabc71c4b046f04b577908cc933dae4 data/sporenexus/neoforge/biome_modifier/add_eternal_light_mushroom.json
-9788f3028e97db35341c9689fd0f53524f69b73d data/sporenexus/worldgen/feature/banded_agaric_key.json
-b279e02279d0dde3880274273fc6d3b0e591825b data/sporenexus/worldgen/feature/eternal_light_mushroom_key.json
-f5c82eb301fee9ac5550140c95b76a323fbabce6 data/sporenexus/worldgen/placed_feature/banded_agaric_placed.json
-c8276ea9dc6429a8034e330fa835ee69706f53ee data/sporenexus/worldgen/placed_feature/eternal_light_mushroom_placed.json
