@@ -17,7 +17,7 @@ let them mutate into new ones, and build machines to harvest and process everyth
 
 | | |
 |---|---|
-| Minecraft | 26.2 |
+| Minecraft | Java |
 | Loader | NeoForge or Fabric (Fabric also needs Fabric API) |
 | Required | [Architectury API](https://modrinth.com/mod/architectury-api) |
 | Optional | JEI, Jade |
