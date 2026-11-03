@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "O": "sporenexus:great_fungus",
     "X": "sporenexus:infernal_essence"

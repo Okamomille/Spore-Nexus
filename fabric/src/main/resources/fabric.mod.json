@@ -32,11 +32,12 @@
   "mixins": [
     "sporenexus.mixins.json"
   ],
+  "accessWidener": "sporenexus.accesswidener",
   "depends": {
     "fabricloader": ">=0.19.5",
-    "minecraft": "~26.2",
+    "minecraft": "~26.1.2",
     "java": ">=25",
-    "architectury": ">=21.0.7",
+    "architectury": ">=20.1.17",
     "fabric-api": "*"
   },
   "suggests": {

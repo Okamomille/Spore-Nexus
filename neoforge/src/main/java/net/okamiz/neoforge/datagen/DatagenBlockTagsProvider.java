@@ -19,52 +19,52 @@ public class DatagenBlockTagsProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
 
         tag(BlockTags.OVERRIDES_MUSHROOM_LIGHT_REQUIREMENT)
-                .add(BlocksRegistry.FERTILIZED_MYCELIUM.getKey())
-                .add(BlocksRegistry.FUNGAL_MYCELIUM.getKey())
-                .add(BlocksRegistry.INFERNAL_MYCELIUM.getKey())
-                .add(BlocksRegistry.ETHEREAL_MYCELIUM.getKey())
+                .add(BlocksRegistry.FERTILIZED_MYCELIUM.get())
+                .add(BlocksRegistry.FUNGAL_MYCELIUM.get())
+                .add(BlocksRegistry.INFERNAL_MYCELIUM.get())
+                .add(BlocksRegistry.ETHEREAL_MYCELIUM.get())
         ;
 
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(BlocksRegistry.FUNGALSTEEL_BLOCK.getKey())
-                .add(BlocksRegistry.MYCELIAN_CORE.getKey())
-                .add(BlocksRegistry.MYCELIAN_CORE_PROXY.getKey())
-                .add(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.getKey())
-                .add(BlocksRegistry.GROWTH_ACCELERATOR.getKey())
-                .add(BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.getKey())
-                .add(BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.getKey())
-                .add(BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.getKey())
-                .add(BlocksRegistry.MUSHROOM_HARVESTER.getKey())
-                .add(BlocksRegistry.FUNGAL_HARVESTER.getKey())
-                .add(BlocksRegistry.INFERNAL_HARVESTER.getKey())
-                .add(BlocksRegistry.ETHEREAL_HARVESTER.getKey())
+                .add(BlocksRegistry.FUNGALSTEEL_BLOCK.get())
+                .add(BlocksRegistry.MYCELIAN_CORE.get())
+                .add(BlocksRegistry.MYCELIAN_CORE_PROXY.get())
+                .add(BlocksRegistry.SPORE_NEXUS_CRAFT_BLOCK.get())
+                .add(BlocksRegistry.GROWTH_ACCELERATOR.get())
+                .add(BlocksRegistry.FUNGAL_GROWTH_ACCELERATOR.get())
+                .add(BlocksRegistry.INFERNAL_GROWTH_ACCELERATOR.get())
+                .add(BlocksRegistry.ETHEREAL_GROWTH_ACCELERATOR.get())
+                .add(BlocksRegistry.MUSHROOM_HARVESTER.get())
+                .add(BlocksRegistry.FUNGAL_HARVESTER.get())
+                .add(BlocksRegistry.INFERNAL_HARVESTER.get())
+                .add(BlocksRegistry.ETHEREAL_HARVESTER.get())
         ;
 
         tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.getKey())
-                .add(BlocksRegistry.BANDED_AGARIC_STEM.getKey())
-                .add(BlocksRegistry.BANDED_AGARIC_BLOCK.getKey())
-                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.getKey())
-                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.getKey())
+                .add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get())
+                .add(BlocksRegistry.BANDED_AGARIC_STEM.get())
+                .add(BlocksRegistry.BANDED_AGARIC_BLOCK.get())
+                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.get())
+                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.get())
         ;
 
-        BlocksRegistry.RESOURCE_MUSHROOMS.values().forEach(block ->tag(BlockTags.MINEABLE_WITH_HOE).add(block.getKey()));
+        BlocksRegistry.RESOURCE_MUSHROOMS.values().forEach(block ->tag(BlockTags.MINEABLE_WITH_HOE).add(block.get()));
 
         tag(BlockTags.MINEABLE_WITH_HOE)
-                .add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.getKey())
-                .add(BlocksRegistry.BANDED_AGARIC_STEM.getKey())
-                .add(BlocksRegistry.BANDED_AGARIC_BLOCK.getKey())
-                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.getKey())
-                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.getKey())
+                .add(BlocksRegistry.BANDED_AGARIC_FLUFFY_STEM.get())
+                .add(BlocksRegistry.BANDED_AGARIC_STEM.get())
+                .add(BlocksRegistry.BANDED_AGARIC_BLOCK.get())
+                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_STEM.get())
+                .add(BlocksRegistry.ETERNAL_LIGHT_MUSHROOM_BLOCK.get())
 
         ;
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(BlocksRegistry.FERTILIZED_MYCELIUM.getKey())
-                .add(BlocksRegistry.FUNGAL_MYCELIUM.getKey())
-                .add(BlocksRegistry.INFERNAL_MYCELIUM.getKey())
-                .add(BlocksRegistry.ETHEREAL_MYCELIUM.getKey())
+                .add(BlocksRegistry.FERTILIZED_MYCELIUM.get())
+                .add(BlocksRegistry.FUNGAL_MYCELIUM.get())
+                .add(BlocksRegistry.INFERNAL_MYCELIUM.get())
+                .add(BlocksRegistry.ETHEREAL_MYCELIUM.get())
         ;
 
 

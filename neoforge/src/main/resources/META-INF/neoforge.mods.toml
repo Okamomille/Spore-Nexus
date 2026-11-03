@@ -16,35 +16,35 @@ iconFile = "icon.png"
 [[dependencies.sporenexus]]
 modId = "neoforge"
 type = "required"
-versionRange = "[26.2.0,)"
+versionRange = "[26.1.2.126,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sporenexus]]
 modId = "minecraft"
 type = "required"
-versionRange = "[26.2,)"
+versionRange = "[26.1.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.sporenexus]]
 modId = "architectury"
 type = "required"
-versionRange = "[21.0.7,)"
+versionRange = "[20.1.17,)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.sporenexus]]
 modId = "jei"
 type = "optional"
-versionRange = "[30.39.0.233,)"
+versionRange = "[29.47.0.110,)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.sporenexus]]
 modId = "jade"
 type = "optional"
-versionRange = "[26.2.10,)"
+versionRange = "[26.1.9,)"
 ordering = "AFTER"
 side = "BOTH"
 

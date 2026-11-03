@@ -6,6 +6,9 @@ sourceSets {
         resources.srcDir 'src/main/generated/resources'
     }
 }
+loom {
+    accessWidenerPath = file("src/main/resources/sporenexus.accesswidener")
+}
 dependencies {
     // We depend on Fabric Loader here to use the Fabric @Environment annotations,
     // which get remapped to the correct annotations on each platform.

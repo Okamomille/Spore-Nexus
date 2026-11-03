@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "essence",
   "key": {
     "O": "minecraft:blaze_powder",

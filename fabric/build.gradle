@@ -24,6 +24,8 @@ configurations {
     }
 }
 
+loom { accessWidenerPath = project(":common").file("src/main/resources/sporenexus.accesswidener") }
+
 dependencies {
     implementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 

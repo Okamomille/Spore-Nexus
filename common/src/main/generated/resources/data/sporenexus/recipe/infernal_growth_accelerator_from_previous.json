@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "growth_accelerators",
   "key": {
     "O": "sporenexus:fungal_growth_accelerator",

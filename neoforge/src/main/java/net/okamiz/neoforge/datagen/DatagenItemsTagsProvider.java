@@ -20,26 +20,26 @@ public class DatagenItemsTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
 
         tag(TagsRegistry.FUNGALSTEEL_REPAIRABLE)
-                .add(ItemsRegistry.FUNGALSTEEL_INGOT.getKey())
+                .add(ItemsRegistry.FUNGALSTEEL_INGOT.get())
         ;
 
         tag(ItemTags.SWORDS)
-                .add(ItemsRegistry.FUNGALSTEEL_SWORD.getKey())
+                .add(ItemsRegistry.FUNGALSTEEL_SWORD.get())
         ;
         tag(ItemTags.PICKAXES)
-                .add(ItemsRegistry.FUNGALSTEEL_PICKAXE.getKey())
+                .add(ItemsRegistry.FUNGALSTEEL_PICKAXE.get())
         ;
         tag(ItemTags.AXES)
-                .add(ItemsRegistry.FUNGALSTEEL_AXE.getKey())
+                .add(ItemsRegistry.FUNGALSTEEL_AXE.get())
         ;
         tag(ItemTags.SHOVELS)
-                .add(ItemsRegistry.FUNGALSTEEL_SHOVEL.getKey())
+                .add(ItemsRegistry.FUNGALSTEEL_SHOVEL.get())
         ;
         tag(ItemTags.HOES)
-                .add(ItemsRegistry.FUNGALSTEEL_HOE.getKey())
+                .add(ItemsRegistry.FUNGALSTEEL_HOE.get())
         ;
         tag(ItemTags.SPEARS)
-                .add(ItemsRegistry.FUNGALSTEEL_SPEAR.getKey())
+                .add(ItemsRegistry.FUNGALSTEEL_SPEAR.get())
         ;
 
 

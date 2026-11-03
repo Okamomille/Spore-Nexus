@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "O": "sporenexus:nexus_fungus",
     "X": "sporenexus:fungal_essence"

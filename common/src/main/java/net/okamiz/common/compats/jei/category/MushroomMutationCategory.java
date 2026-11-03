@@ -9,6 +9,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.api.recipe.types.IRecipeType;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
@@ -62,8 +63,8 @@ public class MushroomMutationCategory implements IRecipeCategory<MushroomMutatio
         builder.addSlot(RecipeIngredientRole.OUTPUT, 96, 12).add(recipe.result())
 
                 .addRichTooltipCallback((slotView, tooltip) -> {
-                    tooltip.add(Component.translatable("jei.sporenexus.mutation_chance", Math.round(recipe.chance() * 100)).withColor(TextColor.YELLOW));
-                    tooltip.add(Component.translatable("jei.sporenexus.mutation_conditions").withColor(TextColor.GRAY));});
+                    tooltip.add(Component.translatable("jei.sporenexus.mutation_chance", Math.round(recipe.chance() * 100)).withStyle(ChatFormatting.YELLOW));
+                    tooltip.add(Component.translatable("jei.sporenexus.mutation_conditions").withStyle(ChatFormatting.GRAY));});
     }
 
     @Override

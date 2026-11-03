@@ -10,8 +10,7 @@ architectury {
 //This is for datagen -> Datagen is generated with neoforge and files are sent to common,
 // so it works on fabric without having to generate them there.
 loom {
-    accessWidenerPath = project(':common').loom.accessWidenerPath
-
+    accessWidenerPath = project(":common").file("src/main/resources/sporenexus.accesswidener")
     runs {
         data {
             clientData()

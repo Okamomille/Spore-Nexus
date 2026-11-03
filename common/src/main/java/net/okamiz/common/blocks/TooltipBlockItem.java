@@ -5,7 +5,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -15,11 +14,11 @@ import java.util.List;
 
 public class TooltipBlockItem extends BlockItem {
     private final String[] tooltipKeys;
-    private final TextColor color;
+    private final ChatFormatting color;
     private final boolean italic;
     private boolean requiresShift = false;
 
-    public TooltipBlockItem(Block block, Item.Properties properties, String tooltipKey, TextColor color) {
+    public TooltipBlockItem(Block block, Item.Properties properties, String tooltipKey, ChatFormatting color) {
         this(block, properties, color, false, tooltipKey);
     }
 
@@ -28,7 +27,7 @@ public class TooltipBlockItem extends BlockItem {
         return this;
     }
 
-    public TooltipBlockItem(Block block, Item.Properties properties, TextColor color, boolean italic, String... tooltipKeys) {
+    public TooltipBlockItem(Block block, Item.Properties properties, ChatFormatting color, boolean italic, String... tooltipKeys) {
         super(block, properties);
         this.tooltipKeys = tooltipKeys;
         this.color = color;
@@ -38,7 +37,7 @@ public class TooltipBlockItem extends BlockItem {
     private List<Component> createTooltips() {
         List<Component> lines = new ArrayList<>();
         for (String key : tooltipKeys) {
-            MutableComponent line = Component.translatable(key).withColor(color);
+            MutableComponent line = Component.translatable(key).withStyle(color);
             if (italic) line = line.withStyle(ChatFormatting.ITALIC);
             lines.add(line);
         }

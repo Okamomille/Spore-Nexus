@@ -9,6 +9,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.api.recipe.types.IRecipeType;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
@@ -54,10 +55,10 @@ public class MushroomHarvestCategory implements IRecipeCategory<MushroomHarvest>
                     .add(new ItemStack(drop.item().get(), drop.max()))
                     .addRichTooltipCallback((slotView, tooltip) -> {
                         if(drop.chancePercent() < 100){
-                            tooltip.add(Component.translatable("jei.sporenexus.drop_chance", drop.chancePercent()).withColor(TextColor.YELLOW));
+                            tooltip.add(Component.translatable("jei.sporenexus.drop_chance", drop.chancePercent()).withStyle(ChatFormatting.YELLOW));
                         }
                         if (drop.min() != drop.max()) {
-                            tooltip.add(Component.translatable("jei.sporenexus.drop_amount", drop.min(), drop.max()).withColor(TextColor.GOLD));
+                            tooltip.add(Component.translatable("jei.sporenexus.drop_amount", drop.min(), drop.max()).withStyle(ChatFormatting.GOLD));
                         }
                     });
             i++;
